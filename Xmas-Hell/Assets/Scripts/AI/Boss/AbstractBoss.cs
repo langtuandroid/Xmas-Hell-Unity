@@ -5,6 +5,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     [SerializeField]
     List<AbstractBossBehaviour> Behaviours;
+    public int Speed;
 
     protected int CurrentBehaviourIndex;
     protected int PreviousBehaviourIndex;
@@ -28,6 +29,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     void Update()
     {
+        UpdateBehaviour();
     }
 
     private void UpdateBehaviour()
