@@ -30,11 +30,19 @@ public class AbstractBossBehaviour : ScriptableObject
         Boss = boss;
     }
 
-    public void Start()
+    public virtual void Start()
     {
+        Reset();
     }
 
-    public void Stop()
+    public virtual void Reset()
+    {
+        CurrentBehaviourLife = InitialBehaviourLife;
+        BehaviourEnded = false;
+        Stop();
+    }
+
+    public virtual void Stop()
     {
     }
 

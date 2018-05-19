@@ -5,17 +5,40 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     [SerializeField]
     List<AbstractBossBehaviour> Behaviours;
-    public int Speed;
+    public float Speed;
 
     protected int CurrentBehaviourIndex;
     protected int PreviousBehaviourIndex;
+
+    private Animator _animator;
+    private float _initialSpeed;
+
+    public float InitialSpeed
+    {
+        get { return _initialSpeed; }
+    }
+
+    public Animator Animator
+    {
+        get { return _animator; }
+    }
 
     public AbstractBoss()
     {
     }
 
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+
+        if (!_animator)
+            throw new System.Exception("No Animator found on this Boss");
+    }
+
     private void Start()
     {
+        _initialSpeed = Speed;
+
         PreviousBehaviourIndex = -1;
         CurrentBehaviourIndex = 0;
 
