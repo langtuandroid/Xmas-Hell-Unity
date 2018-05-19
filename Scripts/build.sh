@@ -1,30 +1,45 @@
 #! /bin/sh
 
-project="Xmas-Hell"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
-echo "Attempting to build $project for Windows"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity
-  -batchmode
-  -nographics
-  -silent-crashes
-  -logFile $(pwd)/unity.log
-  -projectPath $(pwd)
-  -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe"
-  -quit
+project="Xmas-Hell"
+projectPath="Xmas-Hell"
+versionName=${TRAVIS_BUILD_NUMBER}
+
+# echo "Attempting to build $project for Windows"
+# /Applications/Unity/Unity.app/Contents/MacOS/Unity
+#   -batchmode
+#   -nographics
+#   -silent-crashes
+#   -logFile $(pwd)/unity.log
+#   -projectPath $(pwd)/Xmas-Hell-Unity
+#   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe"
+#   -quit
+
+echo "List all files cloned from repository"
+find $(pwd)
 
 echo "Attempting to build $project for Android"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity
-  -batchmode
-  -nographics
-  -silent-crashes
-  -logFile $(pwd)/unity.log
-  -projectPath $(pwd)
-  -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project.apk"
+./Scripts/unity-logger.sh \
+  -batchmode \
+  -nographics \
+  -silent-crashes \
+  -logFile \
+  -projectPath "$(pwd)/$projectPath" \
+  -buildAndroidPlayer "$(pwd)/$projectPath/Build/Android/$project-$versionName.apk" \
   -quit
 
-echo 'Logs from build'
-cat $(pwd)/unity.log
+# echo "Attempting to build $project for Android"
+# /Applications/Unity/Unity.app/Contents/MacOS/Unity \
+#   -batchmode \
+#   -nographics \
+#   -silent-crashes \
+#   -logFile \
+#   -projectPath $(pwd)/ \
+#   -quit \
+#   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
 
 echo 'Attempting to zip builds'
-zip -r $(pwd)/Build/linux.zip $(pwd)/Build/linux/
-zip -r $(pwd)/Build/android.zip $(pwd)/Build/android/
+zip -r "$(pwd)/$projectPath/Build/android.zip" "$(pwd)/$projectPath/Build/android/"
