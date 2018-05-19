@@ -18,6 +18,9 @@ versionName=${TRAVIS_BUILD_NUMBER}
 #   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe"
 #   -quit
 
+echo "List all files cloned from repository"
+find $(pwd)
+
 echo "Attempting to build $project for Android"
 ./Scripts/unity-logger.sh \
   -batchmode \
