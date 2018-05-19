@@ -8,7 +8,7 @@ echo "Attempting to build $project for Windows"
   -nographics
   -silent-crashes
   -logFile $(pwd)/unity.log
-  -projectPath $(pwd)
+  -projectPath $(pwd)/Xmas-Hell-Unity
   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe"
   -quit
 
@@ -18,7 +18,7 @@ echo "Attempting to build $project for Android"
   -nographics
   -silent-crashes
   -logFile $(pwd)/unity.log
-  -projectPath $(pwd)
+  -projectPath $(pwd)/Xmas-Hell-Unity
   -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project.apk"
   -quit
 
