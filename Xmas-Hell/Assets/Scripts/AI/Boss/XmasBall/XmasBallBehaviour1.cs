@@ -8,7 +8,7 @@ public class XmasBallBehaviour1 : AbstractBossBehaviour
         base.Start();
 
         Boss.Speed = Boss.InitialSpeed * 2.5f;
-        Boss.Animator.SetBool("Stunned", true);
+        //Boss.Animator.SetBool("Stunned", true);
     }
 
     public override void Update()

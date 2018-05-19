@@ -117,7 +117,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: io.noxalus.XmasHell.18.05.19 (6d99b2a)
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -150,9 +150,21 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: io.noxalus.XmasHellUnity
-    Standalone: com.Company.ProductName
-  buildNumber: {}
+    '': io.noxalus
+    Android: io.noxalus
+    Facebook: io.noxalus
+    Metro: io.noxalus
+    N3DS: io.noxalus
+    PS4: io.noxalus
+    PSP2: io.noxalus
+    Standalone: io.noxalus
+    Tizen: io.noxalus
+    WebGL: io.noxalus
+    XboxOne: io.noxalus
+    iOS: io.noxalus
+    tvOS: io.noxalus
+  buildNumber:
+    iOS: 6d99b2a
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 18
   AndroidTargetSdkVersion: 0
