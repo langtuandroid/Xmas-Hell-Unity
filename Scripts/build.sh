@@ -19,14 +19,14 @@ versionName=${TRAVIS_BUILD_NUMBER}
 #   -quit
 
 echo "Attempting to build $project for Android"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity
+./Scripts/unity-logger.sh
   -batchmode
   -nographics
   -silent-crashes
-  -logFile $(pwd)/unity.log
+  -logFile
   -projectPath $(pwd)/$(projectPath)
   -buildTarget "Android"
-  -executeMethod BuildScript.PerformAndroidBuild "Build/Android/$project-$versionName.apk"
+  -executeMethod BuildScript.PerformAndroidBuild $(pwd)/$(projectPath)/Build/Android/$(project)-$(versionName).apk
   -quit
 
 # echo "Attempting to build $project for Android"
