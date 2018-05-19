@@ -24,11 +24,16 @@ find $(pwd)
 echo "Attempting to build $project for Android"
 ./Scripts/unity-logger.sh \
   -batchmode \
-  -nographics \
-  -silent-crashes \
+  -skipMissingProjectID \
+  -skipMissingUPID \
+  -force-free \
   -logFile \
+  -buildconfig \
+  -bvrbuildtarget \
+  default-android \
   -projectPath "$(pwd)/$projectPath" \
-  -buildAndroidPlayer "$(pwd)/$projectPath/Build/Android/$project-$versionName.apk" \
+  -buildTarget \
+  android
   -quit
 
 # echo "Attempting to build $project for Android"
