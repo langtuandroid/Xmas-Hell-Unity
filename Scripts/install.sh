@@ -7,9 +7,6 @@ VERSION=2018.1.1f1
 ANDROID_BUILD_TOOLS_VERSION="25.0.2"
 ANDROID_PLATFORM_VERSION="android-23"
 
-echo "executing: brew update"
-brew update
-
 echo "executing: brew cask install caskroom/versions/java8"
 brew cask install caskroom/versions/java8
 echo "executing: export JAVA_HOME=$(/usr/libexec/java_home)"
@@ -52,6 +49,6 @@ install()
 # of available packages, where PLATFORM is `osx` or `win`
 
 install "MacEditorInstaller/Unity-$VERSION.pkg"
-install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
-# install "MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-$VERSION.pkg"
+# install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
+install "MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-$VERSION.pkg"
 # install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg"
