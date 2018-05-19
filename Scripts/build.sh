@@ -1,5 +1,9 @@
 #! /bin/sh
 
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 project="Xmas-Hell"
 versionName=${TRAVIS_BUILD_NUMBER}
 
@@ -13,29 +17,25 @@ versionName=${TRAVIS_BUILD_NUMBER}
 #   -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe"
 #   -quit
 
-# echo "Attempting to build $project for Android"
-# /Applications/Unity/Unity.app/Contents/MacOS/Unity
-#   -batchmode
-#   -nographics
-#   -silent-crashes
-#   -logFile $(pwd)/unity.log
-#   -projectPath $(pwd)/Xmas-Hell-Unity
-#   -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project.apk"
-#   -quit
-
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 echo "Attempting to build $project for Android"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile \
-  -projectPath $(pwd)/ \
-  -quit \
-  -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
+/Applications/Unity/Unity.app/Contents/MacOS/Unity
+  -batchmode
+  -nographics
+  -silent-crashes
+  -logFile $(pwd)/unity.log
+  -projectPath $(pwd)/Xmas-Hell-Unity
+  -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project-$versionName.apk"
+  -quit
+
+# echo "Attempting to build $project for Android"
+# /Applications/Unity/Unity.app/Contents/MacOS/Unity \
+#   -batchmode \
+#   -nographics \
+#   -silent-crashes \
+#   -logFile \
+#   -projectPath $(pwd)/ \
+#   -quit \
+#   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
 
 echo 'Logs from build'
 cat $(pwd)/unity.log
