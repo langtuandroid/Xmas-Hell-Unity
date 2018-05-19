@@ -25,8 +25,8 @@ echo "Attempting to build $project for Android"
   -silent-crashes
   -logFile $(pwd)/unity.log
   -projectPath $(pwd)/$(projectPath)
-  -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project-$versionName.apk"
   -quit
+  -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
 
 # echo "Attempting to build $project for Android"
 # /Applications/Unity/Unity.app/Contents/MacOS/Unity \
