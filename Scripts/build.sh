@@ -23,7 +23,7 @@ echo "Attempting to build $project for Android"
   -batchmode
   -nographics
   -silent-crashes
-  -logFile $(pwd)/unity.log
+  -logFile
   -projectPath $(pwd)/$(projectPath)
   -quit
   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
@@ -37,9 +37,6 @@ echo "Attempting to build $project for Android"
 #   -projectPath $(pwd)/ \
 #   -quit \
 #   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
-
-echo 'Logs from build'
-cat $(pwd)/unity.log
 
 echo 'Attempting to zip builds'
 zip -r $(pwd)/Build/android.zip $(pwd)/Build/android/
