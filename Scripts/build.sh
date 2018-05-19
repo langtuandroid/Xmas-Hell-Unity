@@ -5,6 +5,7 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 project="Xmas-Hell"
+projectPath="Xmas-Hell"
 versionName=${TRAVIS_BUILD_NUMBER}
 
 # echo "Attempting to build $project for Windows"
@@ -23,7 +24,7 @@ echo "Attempting to build $project for Android"
   -nographics
   -silent-crashes
   -logFile $(pwd)/unity.log
-  -projectPath $(pwd)/Xmas-Hell-Unity
+  -projectPath $(pwd)/$(projectPath)
   -buildAndroidUniversalPlayer "$(pwd)/Build/android/$project-$versionName.apk"
   -quit
 
