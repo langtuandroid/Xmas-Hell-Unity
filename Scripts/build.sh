@@ -24,8 +24,8 @@ echo "Attempting to build $project for Android"
   -nographics \
   -silent-crashes \
   -logFile \
-  -projectPath $(pwd)/$(projectPath) \
-  -buildAndroidPlayer "$(pwd)/$(projectPath)/Build/Android/$(project)-$(versionName).apk" \
+  -projectPath "$(pwd)/$projectPath" \
+  -buildAndroidPlayer "$(pwd)/$projectPath/Build/Android/$project-$versionName.apk" \
   -quit
 
 # echo "Attempting to build $project for Android"
@@ -39,4 +39,4 @@ echo "Attempting to build $project for Android"
 #   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
 
 echo 'Attempting to zip builds'
-zip -r $(pwd)/$(projectPath)/Build/android.zip $(pwd)/$(projectPath)/Build/android/
+zip -r "$(pwd)/$projectPath/Build/android.zip" "$(pwd)/$projectPath/Build/android/"
