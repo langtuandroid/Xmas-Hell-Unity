@@ -19,14 +19,13 @@ versionName=${TRAVIS_BUILD_NUMBER}
 #   -quit
 
 echo "Attempting to build $project for Android"
-./Scripts/unity-logger.sh
-  -batchmode
-  -nographics
-  -silent-crashes
-  -logFile
-  -projectPath $(pwd)/$(projectPath)
-  -buildTarget "Android"
-  -executeMethod BuildScript.PerformAndroidBuild $(pwd)/$(projectPath)/Build/Android/$(project)-$(versionName).apk
+./Scripts/unity-logger.sh \
+  -batchmode \
+  -nographics \
+  -silent-crashes \
+  -logFile \
+  -projectPath $(pwd)/$(projectPath) \
+  -buildAndroidPlayer "$(pwd)/$(projectPath)/Build/Android/$(project)-$(versionName).apk" \
   -quit
 
 # echo "Attempting to build $project for Android"
@@ -39,8 +38,5 @@ echo "Attempting to build $project for Android"
 #   -quit \
 #   -executeMethod BuildScript.BuildAndroid $(pwd)/Build/android/${project}-${versionName}.apk
 
-echo 'Logs from build'
-cat $(pwd)/unity.log
-
 echo 'Attempting to zip builds'
-zip -r $(pwd)/Build/android.zip $(pwd)/Build/android/
+zip -r $(pwd)/$(projectPath)/Build/android.zip $(pwd)/$(projectPath)/Build/android/
