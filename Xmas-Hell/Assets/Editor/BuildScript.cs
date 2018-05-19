@@ -1,28 +1,54 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
+using UnityEngine;
 
-public class BuildScript
+class BuildScript
 {
-    public static void BuildAndroid()
+    [MenuItem("File/Builder/Android")]
+    static void PerformAndroidBuild()
     {
-        Console.WriteLine("changing AndroidSdkRoot from: " + EditorSetup.AndroidSdkRoot + " to:" + Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT"));
-        EditorSetup.AndroidSdkRoot = Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT");
-        Console.WriteLine("changing AndroidNdkRoot from: " + EditorSetup.AndroidNdkRoot + " to:" + Environment.GetEnvironmentVariable("ANDROID_NDK_HOME"));
-        EditorSetup.AndroidNdkRoot = Environment.GetEnvironmentVariable("ANDROID_NDK_HOME");
-        Console.WriteLine("changing JdkRoot from: " + EditorSetup.JdkRoot + " to:"+ Environment.GetEnvironmentVariable("JAVA_HOME"));
-        EditorSetup.JdkRoot = Environment.GetEnvironmentVariable("JAVA_HOME");
-
-        Build(BuildTarget.Android);
-    }
-
-    public static void Build(BuildTarget target) {
-        VersionHelper.setBuildProperties();
-        string[] levels = {
+        string[] scenes = {
             "Assets/Scenes/main.unity"
         };
 
-        BuildPipeline.BuildPlayer(levels.ToArray(), Environment.GetCommandLineArgs().Last(), target, BuildOptions.None);
-        VersionHelper.revertBuildPropertiesToDefault();
+        string[] commandLineArguments = Environment.GetCommandLineArgs();
+        List<string> buildArguments = new List<string>();
+        bool areBuildArguments = false;
+        foreach (var argument in commandLineArguments)
+        {
+            if (areBuildArguments)
+            {
+                if (argument.StartsWith("-"))
+                    break;
+                else
+                {
+                    buildArguments.Add(argument);
+                }
+            }
+            else if (argument == "-executeMethod")
+                areBuildArguments = true;
+        }
+
+        Debug.Log("Build arguments: " + string.Join(" | ", buildArguments));
+
+        string buildPath = "Builds/Android/Xmas-Hell.apk";
+
+        // We assume the first argument is the static method to call
+        // and the second argument is the build output path
+        if (buildArguments.Count > 1)
+            buildPath = buildArguments[1];
+
+        // Create build folder if not yet exists
+        DirectoryInfo dirInfo;
+        if (!Directory.Exists(buildPath))
+            dirInfo = new DirectoryInfo(buildPath);
+        else
+            dirInfo = Directory.CreateDirectory(buildPath);
+
+        Debug.Log("Output directory: " + dirInfo.FullName);
+
+        BuildPipeline.BuildPlayer(scenes, buildPath, BuildTarget.Android, BuildOptions.Development);
     }
 }

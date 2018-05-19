@@ -117,7 +117,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: io.noxalus.XmasHell.18.05.19 (6d99b2a)
+  bundleVersion: io.noxalus.unknown
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -164,7 +164,7 @@ PlayerSettings:
     iOS: io.noxalus
     tvOS: io.noxalus
   buildNumber:
-    iOS: 6d99b2a
+    iOS: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 18
   AndroidTargetSdkVersion: 0
