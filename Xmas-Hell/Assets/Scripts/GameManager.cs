@@ -1,19 +1,28 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // Boss
     public AbstractBoss Boss;
     public GameObject LifeBar;
     public float LifeBarBlinkTime = 0.2f;
 
+    // Timer
+    public TextMeshProUGUI TimerText;
+
+    // Boss life bar
     private RectTransform _lifeBarRectTransform;
     private float _lifeBarTotalWidth;
     private RawImage _lifeBarRawImage;
     private float _lifeBarBlinkTimer;
     private Color _lifeBarOriginalColor;
     private bool _bossTookDamage;
+
+    // Timer
+    private float _gameTimer;
 
     void Awake()
     {
@@ -40,6 +49,11 @@ public class GameManager : MonoBehaviour
             Boss.OnTakeDamage.AddListener(OnBossTakeDamage);
     }
 
+    private void Start()
+    {
+        _gameTimer = 0f;
+    }
+
     private void Update()
     {
         if (_bossTookDamage)
@@ -54,6 +68,19 @@ public class GameManager : MonoBehaviour
                 _bossTookDamage = false;
             }
         }
+    }
+
+    void FixedUpdate()
+    {
+        _gameTimer += Time.deltaTime;
+
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        // Timer
+        TimerText.text = TimeSpan.FromSeconds((double)_gameTimer).ToString(@"mm\:ss\.fff");
     }
 
     private void OnBossTakeDamage()
