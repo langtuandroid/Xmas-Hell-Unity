@@ -15,6 +15,6 @@ public class XmasBallBehaviour1 : AbstractBossBehaviour
     {
         base.Update();
 
-        Boss.transform.Translate(Vector3.down * Boss.Speed * Time.deltaTime);
+        //Boss.transform.Translate(Vector3.down * Boss.Speed * Time.deltaTime);
     }
 }

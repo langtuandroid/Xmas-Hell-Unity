@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class AbstractBoss : MonoBehaviour {
@@ -7,6 +8,8 @@ public abstract class AbstractBoss : MonoBehaviour {
     [SerializeField]
     List<AbstractBossBehaviour> Behaviours;
     public float Speed;
+
+    public UnityEvent OnTakeDamage; 
 
     protected int CurrentBehaviourIndex;
     protected int PreviousBehaviourIndex;
@@ -95,6 +98,13 @@ public abstract class AbstractBoss : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
+
+        OnTakeDamage.Invoke();
+    }
+
+    public float GetLifePercentage()
+    {
+        return Behaviours[CurrentBehaviourIndex].GetLifePercentage();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

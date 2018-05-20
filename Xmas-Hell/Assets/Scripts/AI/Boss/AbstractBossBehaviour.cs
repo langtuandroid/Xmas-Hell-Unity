@@ -15,7 +15,7 @@ public class AbstractBossBehaviour : ScriptableObject
     {
     }
 
-    public float GetCurrentBehaviourLife()
+    public float GetLife()
     {
         return CurrentBehaviourLife;
     }

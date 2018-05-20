@@ -738,6 +738,11 @@ MonoBehaviour:
   Behaviours:
   - {fileID: 11400000, guid: cd2347c9a9d88af4eb495397718c80ae, type: 2}
   Speed: 1
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114854094619218128
 MonoBehaviour:
   m_ObjectHideFlags: 1
