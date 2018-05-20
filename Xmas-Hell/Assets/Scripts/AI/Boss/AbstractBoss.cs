@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public abstract class AbstractBoss : MonoBehaviour {
 
     [SerializeField]
@@ -88,6 +89,23 @@ public abstract class AbstractBoss : MonoBehaviour {
 
             if (CurrentBehaviourIndex >= Behaviours.Count)
                 Destroy(this);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // TODO: Use an enum for tag
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            var bullet = collision.gameObject.GetComponent<AbstractBullet>();
+
+            if (bullet)
+                TakeDamage(bullet.Damage);
         }
     }
 }

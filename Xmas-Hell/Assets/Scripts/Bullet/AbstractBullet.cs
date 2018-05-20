@@ -4,6 +4,7 @@ public abstract class AbstractBullet : MonoBehaviour
 {
     public float Speed = 1f;
     public Bounds DestructionBounds;
+    public float Damage = 1f;
 
     protected Vector2 Direction = Vector2.up;
     protected GameObject Emitter;

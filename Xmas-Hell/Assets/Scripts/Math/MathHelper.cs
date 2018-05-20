@@ -19,8 +19,6 @@ public static class MathHelper
     /// <returns></returns>
     public static Vector2 AngleToDirection(float angle)
     {
-        Debug.Log("Angle: " + angle);
-
         // Convert the angle in radians
         angle = (angle + 90f) * Mathf.Deg2Rad;
 

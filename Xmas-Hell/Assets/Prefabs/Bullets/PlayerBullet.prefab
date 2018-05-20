@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4208832475988686}
   - component: {fileID: 114434151766362884}
+  - component: {fileID: 58611463917487890}
   m_Layer: 8
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
@@ -70,6 +71,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58611463917487890
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563610061789910}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.09
 --- !u!114 &114434151766362884
 MonoBehaviour:
   m_ObjectHideFlags: 1
