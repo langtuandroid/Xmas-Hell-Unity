@@ -9,7 +9,7 @@ public class AbstractBossBehaviour : ScriptableObject
 
     protected AbstractBoss Boss;
     protected float CurrentBehaviourLife;
-    protected bool BehaviourEnded;
+    protected bool BehaviourEnded = false;
 
     public AbstractBossBehaviour()
     {

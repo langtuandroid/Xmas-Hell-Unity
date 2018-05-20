@@ -9,6 +9,9 @@ public class XmasBallBehaviour1 : AbstractBossBehaviour
 
         Boss.Speed = Boss.InitialSpeed * 2.5f;
         //Boss.Animator.SetBool("Stunned", true);
+
+        // TODO: Add helper in the AbstractBoss or CameraExtensions class to avoid magic numbers
+        Boss.StartMovingRandomly();
     }
 
     public override void Update()
