@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4176366352968192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4662414294767250}
   - component: {fileID: 114510535709705034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4593145403561860}
   - component: {fileID: 114313086035771626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4809422516653790}
   - component: {fileID: 114473955529027274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 114314134112802858}
   - component: {fileID: 50685750936614658}
   - component: {fileID: 114097897913670854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4157454746302804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473442467249158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388979173368976}
   - component: {fileID: 114589489971185068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pompon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4258759583486942}
   - component: {fileID: 114487493150165396}
   - component: {fileID: 137677203610840536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 4869505716327304}
   - component: {fileID: 114792181387708342}
   - component: {fileID: 137757453009654406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4758811418235342}
   - component: {fileID: 114825290910974056}
   - component: {fileID: 137232037330650160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rbunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4433457049661496}
   - component: {fileID: 114324832941926148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightBunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 4108276064138650}
   - component: {fileID: 114117469491225336}
   - component: {fileID: 137288970342197610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 4707012111485260}
   - component: {fileID: 114079145234091416}
   - component: {fileID: 137503236108471300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569196019372596}
   - component: {fileID: 114662364790266364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4437825550780294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 4448632057350870}
   - component: {fileID: 114620517474990608}
   - component: {fileID: 137082781287057644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 4249529988682340}
   - component: {fileID: 114882780813343586}
   - component: {fileID: 137567335574865840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lbunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 4633726438474400}
   - component: {fileID: 114906157155096646}
   - component: {fileID: 137809056357925236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4676466814635468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4656163203117440}
   - component: {fileID: 114804265098306530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 4650803180778058}
   - component: {fileID: 114599961713949826}
   - component: {fileID: 137576711549428512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dress-top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 4512416842751702}
   - component: {fileID: 114306518192201604}
   - component: {fileID: 137075404936227712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4255487017727238}
   - component: {fileID: 114838207229137366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 4693508174515874}
   - component: {fileID: 114737072782869224}
   - component: {fileID: 137550631847822198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: larm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 4834192299546706}
   - component: {fileID: 114774262547772634}
   - component: {fileID: 137336517775287590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dress-bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4007099752273560}
   - component: {fileID: 114399048427682162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftBunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4965343703437628}
   - component: {fileID: 114316607889328036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4075505224439688}
   - component: {fileID: 114473590800383808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4731120882078352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1427,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43917510359325458, guid: aaffdb37241e86b43ba771dc0eddb654, type: 2}
   m_Bones:
   - {fileID: 4593145403561860}
   m_BlendShapeWeights: []
@@ -1475,7 +1475,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43407024146535266, guid: 301d96671de9fa0408a05c896a7379cf, type: 2}
   m_Bones:
   - {fileID: 4569196019372596}
   m_BlendShapeWeights: []
@@ -1523,7 +1523,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43365065880528014, guid: a2b1fedd48597664bba5649d849168b4, type: 2}
   m_Bones:
   - {fileID: 4433457049661496}
   m_BlendShapeWeights: []
@@ -1571,7 +1571,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43069317244597684, guid: 63406ff6fa9973d409519491e7ddae4c, type: 2}
   m_Bones:
   - {fileID: 4662414294767250}
   m_BlendShapeWeights: []
@@ -1619,7 +1619,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43153404731713608, guid: 3df98cafd9fa48d478d4b094bb708e3b, type: 2}
   m_Bones:
   - {fileID: 4662414294767250}
   m_BlendShapeWeights: []
@@ -1667,7 +1667,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43844276508973030, guid: ae2d0d3361b391349b0bc545cc1cda52, type: 2}
   m_Bones:
   - {fileID: 4809422516653790}
   m_BlendShapeWeights: []
@@ -1715,7 +1715,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43687852127458028, guid: 0ea089e9bb0a0a0429d910f233fa09b0, type: 2}
   m_Bones:
   - {fileID: 4255487017727238}
   m_BlendShapeWeights: []
@@ -1763,7 +1763,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43365065880528014, guid: a2b1fedd48597664bba5649d849168b4, type: 2}
   m_Bones:
   - {fileID: 4007099752273560}
   m_BlendShapeWeights: []
@@ -1811,7 +1811,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43209883619267122, guid: 0aff6c29de0389a41a6cf35f692da614, type: 2}
   m_Bones:
   - {fileID: 4593145403561860}
   m_BlendShapeWeights: []
@@ -1859,7 +1859,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43687852127458028, guid: 0ea089e9bb0a0a0429d910f233fa09b0, type: 2}
   m_Bones:
   - {fileID: 4965343703437628}
   m_BlendShapeWeights: []
@@ -1907,7 +1907,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43844276508973030, guid: ae2d0d3361b391349b0bc545cc1cda52, type: 2}
   m_Bones:
   - {fileID: 4656163203117440}
   m_BlendShapeWeights: []
@@ -1955,7 +1955,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43454125415806760, guid: 93b30332c4d7e704583b3a9579da8066, type: 2}
   m_Bones:
   - {fileID: 4075505224439688}
   - {fileID: 4388979173368976}

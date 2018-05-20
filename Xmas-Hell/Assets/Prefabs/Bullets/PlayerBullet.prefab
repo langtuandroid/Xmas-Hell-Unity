@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038789096088882}
   - component: {fileID: 212143409785873168}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4208832475988686}
   - component: {fileID: 114434151766362884}
   - component: {fileID: 58611463917487890}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   DestructionBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 7, y: 11, z: 0}
+  Damage: 1
 --- !u!212 &212143409785873168
 SpriteRenderer:
   m_ObjectHideFlags: 1
