@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf27ac28dab5644ab2a1296e6432cb4, type: 3}
   m_Name: BossStore
   m_EditorClassIdentifier: 
-  BossTypeToPrefab:
-    keys: 
-    values: []
+  BossTypeToPrefabDictionary:
+    m_keys: 02000000
+    m_values:
+    - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 2}
