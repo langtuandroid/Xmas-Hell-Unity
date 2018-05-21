@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            ScreenManager.GoToScreen("MenuScreen");
+            ScreenManager.GoBack();
 
         if (_bossTookDamage)
         {

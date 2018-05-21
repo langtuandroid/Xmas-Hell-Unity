@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public class AbstractBossBehaviour : ScriptableObject
+public class AbstractBossBehaviour //: ScriptableObject
 {
     [SerializeField]
     public float InitialBehaviourLife;

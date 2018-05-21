@@ -7,6 +7,6 @@ public class BossBall : MonoBehaviour
     public void OnClick()
     {
         SessionData.SelectedBoss = BossType;
-        ScreenManager.GoToScreen("GameScreen");
+        ScreenManager.GoToScreen(EScreen.Game);
     }
 }
