@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 
-public class ScreenManager : MonoBehaviour
+public static class ScreenManager
 {
-    public void GoToScreen(string screenName)
+    public static void GoToScreen(string screenName)
     {
         SceneManager.LoadScene(screenName);
     }

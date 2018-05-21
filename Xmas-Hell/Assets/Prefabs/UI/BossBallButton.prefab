@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222018524224578418}
   - component: {fileID: 114121612720523236}
   - component: {fileID: 114637669258861800}
+  - component: {fileID: 114536280507766670}
   m_Layer: 0
   m_Name: BossBallButton
   m_TagString: Untagged
@@ -56,6 +57,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114536280507766670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037396721540176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ca114a15cea3341a3423ea2009db9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossType: 2
 --- !u!114 &114637669258861800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,9 +108,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: GoToScreen
-        m_Mode: 5
+      - m_Target: {fileID: 114536280507766670}
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

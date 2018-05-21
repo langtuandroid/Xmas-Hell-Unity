@@ -28,6 +28,8 @@ public class AbstractBossBehaviour : ScriptableObject
     public void Initialize(AbstractBoss boss)
     {
         Boss = boss;
+        CurrentBehaviourLife = InitialBehaviourLife;
+        BehaviourEnded = false;
     }
 
     public virtual void Start()

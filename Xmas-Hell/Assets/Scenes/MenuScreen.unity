@@ -785,7 +785,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 319163750}
-  - component: {fileID: 319163751}
   - component: {fileID: 319163752}
   - component: {fileID: 319163753}
   m_Layer: 0
@@ -813,17 +812,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &319163751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 319163749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872c793131673ed4c94b634df4cc6d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &319163752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,11 +1055,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -1201,11 +1189,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -1335,11 +1323,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -1962,11 +1950,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -7454,11 +7442,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -7741,6 +7729,12 @@ Transform:
   m_Father: {fileID: 554717059}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369813350 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114536280507766670, guid: e630415f3b2727940a0092e53036fb7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 2125964107}
+  m_Script: {fileID: 11500000, guid: 35ca114a15cea3341a3423ea2009db9d, type: 3}
 --- !u!1 &1405624902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8925,11 +8919,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -9235,11 +9229,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -9387,16 +9381,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 319163751}
-    - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -9646,11 +9630,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}
@@ -9861,11 +9845,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319163751}
+      objectReference: {fileID: 1369813350}
     - target: {fileID: 114637669258861800, guid: e630415f3b2727940a0092e53036fb7e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScreen
+      value: OnClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e630415f3b2727940a0092e53036fb7e, type: 2}

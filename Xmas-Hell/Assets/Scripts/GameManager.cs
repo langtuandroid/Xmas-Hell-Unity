@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Boss
+    public BossStore BossStore;
     public AbstractBoss Boss;
     public GameObject LifeBar;
     public float LifeBarBlinkTime = 0.2f;
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (!Boss)
+            Boss = FindObjectOfType<AbstractBoss>();
+
         if (Boss)
             Boss.OnTakeDamage.AddListener(OnBossTakeDamage);
     }
@@ -52,10 +56,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _gameTimer = 0f;
+
+        LoadBoss(SessionData.SelectedBoss);
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ScreenManager.GoToScreen("MenuScreen");
+
         if (_bossTookDamage)
         {
             if (_lifeBarBlinkTimer > 0)
@@ -101,6 +110,13 @@ public class GameManager : MonoBehaviour
     public void LoadBoss(EBoss BossType)
     {
         // TODO: Should create a new instance of a boss according to the given type
+        var bossPrefab = BossStore.GetBossPrefab(BossType);
+
+        if (bossPrefab)
+        {
+            var bossObject = Instantiate(bossPrefab);
+            Boss = bossObject.GetComponent<AbstractBoss>();
+        }
     }
 
 }

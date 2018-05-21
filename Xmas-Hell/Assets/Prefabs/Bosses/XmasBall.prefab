@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4681852800675624}
   - component: {fileID: 114752281738679952}
   - component: {fileID: 50960328967856826}
+  - component: {fileID: 210749179678344874}
   m_Layer: 9
   m_Name: XmasBall
   m_TagString: Enemy
@@ -277,7 +278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1034342319130522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.68, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4001201511942324}
@@ -738,11 +739,16 @@ MonoBehaviour:
   Behaviours:
   - {fileID: 11400000, guid: cd2347c9a9d88af4eb495397718c80ae, type: 2}
   Speed: 1
+  Direction: {x: 0, y: 0}
+  Acceleration: {x: 1, y: 1}
+  AngularVelocity: 5
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  TargetingPosition: 0
+  TargetingAngle: 0
 --- !u!114 &114854094619218128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -782,3 +788,13 @@ MonoBehaviour:
   m_SortingOrder: 1
   m_Bones: []
   m_BoneTransforms: []
+--- !u!210 &210749179678344874
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1034342319130522}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
