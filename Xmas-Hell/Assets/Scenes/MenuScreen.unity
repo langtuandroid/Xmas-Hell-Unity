@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuAnimator: {fileID: 319163753}
+  MenuAnimation: {fileID: 7400000, guid: 935978ecb1835464d8b5dd4fa49c508c, type: 2}
 --- !u!95 &319163753
 Animator:
   serializedVersion: 3
