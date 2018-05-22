@@ -212,17 +212,19 @@ public abstract class AbstractBoss : MonoBehaviour {
         if (CurrentBehaviourIndex != PreviousBehaviourIndex)
         {
             if (PreviousBehaviourIndex >= 0)
-                Behaviours[PreviousBehaviourIndex].Stop();
+                Behaviours[PreviousBehaviourIndex].StopBehaviour();
 
             // TODO: Trigger signal to clear all bullets
             // TODO: Make sure we restore the initial boss state for transition
 
             if (Behaviours.Count > 0)
-                Behaviours[CurrentBehaviourIndex].Start();
+            {
+                Behaviours[CurrentBehaviourIndex].StartBehaviour();
+            }
         }
 
         if (Behaviours.Count > 0)
-            Behaviours[CurrentBehaviourIndex].Update();
+            Behaviours[CurrentBehaviourIndex].Step();
 
         PreviousBehaviourIndex = CurrentBehaviourIndex;
     }

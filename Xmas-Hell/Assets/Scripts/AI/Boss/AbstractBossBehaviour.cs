@@ -2,12 +2,12 @@
 using UnityEngine;
 
 [Serializable]
-public class AbstractBossBehaviour //: ScriptableObject
+public class AbstractBossBehaviour : MonoBehaviour
 {
     [SerializeField]
     public float InitialBehaviourLife;
 
-    protected AbstractBoss Boss;
+    public AbstractBoss Boss;
     protected float CurrentBehaviourLife;
     protected bool BehaviourEnded = false;
 
@@ -32,7 +32,7 @@ public class AbstractBossBehaviour //: ScriptableObject
         BehaviourEnded = false;
     }
 
-    public virtual void Start()
+    public virtual void StartBehaviour()
     {
         Reset();
     }
@@ -41,10 +41,10 @@ public class AbstractBossBehaviour //: ScriptableObject
     {
         CurrentBehaviourLife = InitialBehaviourLife;
         BehaviourEnded = false;
-        Stop();
+        StopBehaviour();
     }
 
-    public virtual void Stop()
+    public virtual void StopBehaviour()
     {
     }
 
@@ -64,7 +64,7 @@ public class AbstractBossBehaviour //: ScriptableObject
             BehaviourEnded = true;
     }
 
-    public virtual void Update()
+    public virtual void Step()
     {
         CheckBehaviourIsEnded();
     }

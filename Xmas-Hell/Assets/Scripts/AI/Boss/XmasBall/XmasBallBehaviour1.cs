@@ -3,9 +3,9 @@
 [CreateAssetMenu(fileName = "XmasBallBehaviour1", menuName = "AI/Behaviour/XmasBall/Behaviour1", order = 1)]
 public class XmasBallBehaviour1 : AbstractBossBehaviour
 {
-    public override void Start()
+    public override void StartBehaviour()
     {
-        base.Start();
+        base.StartBehaviour();
 
         Boss.Speed = Boss.InitialSpeed * 2.5f;
         //Boss.Animator.SetBool("Stunned", true);
@@ -14,9 +14,9 @@ public class XmasBallBehaviour1 : AbstractBossBehaviour
         Boss.StartMovingRandomly();
     }
 
-    public override void Update()
+    public override void Step()
     {
-        base.Update();
+        base.Step();
 
         //Boss.transform.Translate(Vector3.down * Boss.Speed * Time.deltaTime);
     }
