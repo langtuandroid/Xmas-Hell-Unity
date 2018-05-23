@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossType: 2
+  Animator: {fileID: 95723114679684530}
 --- !u!114 &114637669258861800
 MonoBehaviour:
   m_ObjectHideFlags: 1
