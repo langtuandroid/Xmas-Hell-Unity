@@ -24,6 +24,8 @@ public abstract class AbstractBoss : MonoBehaviour {
     private Animator _animator;
     private float _initialSpeed;
 
+    protected Vector2 InitialPosition = new Vector2(0, 7.5f); // Should not be hard coded 
+
     // Random moving
     private bool _movingRandomly;
     private bool _movingLongDistance;
@@ -87,9 +89,6 @@ public abstract class AbstractBoss : MonoBehaviour {
         _initialSpeed = Speed;
 
         #region Initialize behaviour
-        PreviousBehaviourIndex = -1;
-        CurrentBehaviourIndex = 0;
-
         if (Behaviours.Count > 0)
         {
             // Make sure each behaviour have access to the linked boss
@@ -98,16 +97,29 @@ public abstract class AbstractBoss : MonoBehaviour {
         }
         #endregion
 
+        Reset();
+    }
+
+    private void Reset()
+    {
+        PreviousBehaviourIndex = -1;
+        CurrentBehaviourIndex = 0;
+
+        foreach (var behaviour in Behaviours)
+            behaviour.Reset();
+
         _movingRandomly = false;
         _movingLongDistance = false;
-
         // TODO: Should depends on the camera/game area data
         _randomMovingArea = new Rect(-4, 8, 4, 7.5f);
+
+        transform.position = new Vector2(0, 15);
+
+        MoveTo(InitialPosition, 1, true);
     }
 
     void Update()
     {
-
         if (_movingRandomly)
             FindRandomPosition();
 
