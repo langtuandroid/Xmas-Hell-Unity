@@ -4,6 +4,7 @@ public class BossBall : MonoBehaviour
 {
     public EBoss BossType;
     public Animator Animator;
+    public GameObject BossPanel;
 
     public void Start()
     {
@@ -14,6 +15,6 @@ public class BossBall : MonoBehaviour
     public void OnClick()
     {
         SessionData.SelectedBoss = BossType;
-        ScreenManager.GoToScreen(EScreen.Game);
+        BossPanel.SetActive(true);
     }
 }

@@ -15,3 +15,7 @@ MonoBehaviour:
     m_keys: 02000000
     m_values:
     - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 2}
+  BossTypeToBossBallSpriteDictionary:
+    m_keys: 02000000
+    m_values:
+    - {fileID: 21300000, guid: fb43b3a1cca5d584da6ab4af0a39d5c7, type: 3}

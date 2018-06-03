@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1037396721540176}
+  m_RootGameObject: {fileID: 1194024481680572}
   m_IsPrefabParent: 1
---- !u!1 &1037396721540176
+--- !u!1 &1194024481680572
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224760264746732942}
-  - component: {fileID: 222018524224578418}
-  - component: {fileID: 114121612720523236}
-  - component: {fileID: 114637669258861800}
-  - component: {fileID: 114536280507766670}
-  - component: {fileID: 95723114679684530}
+  - component: {fileID: 224742050788096594}
+  - component: {fileID: 222819570718425044}
+  - component: {fileID: 114442623433589812}
+  - component: {fileID: 114560308750282808}
+  - component: {fileID: 114847681253311390}
+  - component: {fileID: 95256660291778938}
   m_Layer: 0
   m_Name: BossBallButton
   m_TagString: Untagged
@@ -31,13 +31,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95723114679684530
+--- !u!95 &95256660291778938
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 1194024481680572}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0c6ab4ac1d79af6499d2b9894c02be65, type: 2}
@@ -49,12 +49,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114121612720523236
+--- !u!114 &114442623433589812
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 1194024481680572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -76,26 +76,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114536280507766670
+--- !u!114 &114560308750282808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ca114a15cea3341a3423ea2009db9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BossType: 2
-  Animator: {fileID: 95723114679684530}
-  BossPanel: {fileID: 0}
---- !u!114 &114637669258861800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 1194024481680572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -125,11 +111,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114121612720523236}
+  m_TargetGraphic: {fileID: 114442623433589812}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114536280507766670}
+      - m_Target: {fileID: 114847681253311390}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -142,18 +128,32 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!222 &222018524224578418
+--- !u!114 &114847681253311390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194024481680572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ca114a15cea3341a3423ea2009db9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossType: 2
+  Animator: {fileID: 95256660291778938}
+  BossPanel: {fileID: 0}
+--- !u!222 &222819570718425044
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
---- !u!224 &224760264746732942
+  m_GameObject: {fileID: 1194024481680572}
+--- !u!224 &224742050788096594
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 1194024481680572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
