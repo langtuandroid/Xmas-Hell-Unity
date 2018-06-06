@@ -927,7 +927,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1196855814621594}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -978,6 +978,7 @@ MonoBehaviour:
   - {fileID: 4437825550780294}
   - {fileID: 4676466814635468}
   ShootSound: {fileID: 0}
+  BulletsPoolSize: 60
 --- !u!114 &114117469491225336
 MonoBehaviour:
   m_ObjectHideFlags: 1

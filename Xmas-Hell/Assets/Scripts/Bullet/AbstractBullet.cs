@@ -25,13 +25,15 @@ public abstract class AbstractBullet : MonoBehaviour
         CheckOutOfBounds();
     }
 
-    private void CheckOutOfBounds()
+    protected virtual void CheckOutOfBounds()
     {
         if (transform.position.x > DestructionBounds.extents.x ||
             transform.position.x < -DestructionBounds.extents.x ||
             transform.position.y > DestructionBounds.extents.y ||
             transform.position.y < -DestructionBounds.extents.y)
+        {
             Destroy(gameObject);
+        }
     }
 
     public Vector2 GetDirection()
