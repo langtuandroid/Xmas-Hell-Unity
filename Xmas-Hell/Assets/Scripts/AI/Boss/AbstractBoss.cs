@@ -257,7 +257,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     public void TakeDamage(float damage)
     {
-        if (Behaviours.Count < CurrentBehaviourIndex)
+        if (Behaviours.Count > CurrentBehaviourIndex)
             Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
 
         OnTakeDamage.Invoke();
@@ -265,7 +265,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     public float GetLifePercentage()
     {
-        if (Behaviours.Count < CurrentBehaviourIndex)
+        if (Behaviours.Count > CurrentBehaviourIndex)
             return Behaviours[CurrentBehaviourIndex].GetLifePercentage();
 
         return 1f;
