@@ -487,11 +487,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -990,6 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuAnimator: {fileID: 319163753}
+  PlayerFront: {fileID: 1738948268}
 --- !u!95 &319163753
 Animator:
   serializedVersion: 3
@@ -1816,7 +1817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587522394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2772,28 +2773,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f096d501460e3f4c8fc18221dc0d7be, type: 2}
   m_IsPrefabParent: 0
---- !u!95 &923192283 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95977616246996732, guid: 9f096d501460e3f4c8fc18221dc0d7be,
-    type: 2}
-  m_PrefabInternal: {fileID: 923192282}
---- !u!1 &923192284 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1639832691050660, guid: 9f096d501460e3f4c8fc18221dc0d7be,
-    type: 2}
-  m_PrefabInternal: {fileID: 923192282}
---- !u!114 &923192285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 923192284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21250968f4b36f45ad9ca8f1cf4ac68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Animator: {fileID: 923192283}
 --- !u!4 &971032551 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4272961327847540, guid: 9f096d501460e3f4c8fc18221dc0d7be,
@@ -2848,7 +2827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8459,7 +8438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9363,6 +9342,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1738948268 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1639832691050660, guid: 9f096d501460e3f4c8fc18221dc0d7be,
+    type: 2}
+  m_PrefabInternal: {fileID: 923192282}
 --- !u!1 &1742189788
 GameObject:
   m_ObjectHideFlags: 0
