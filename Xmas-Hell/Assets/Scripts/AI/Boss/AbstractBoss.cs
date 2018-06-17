@@ -257,14 +257,18 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     public void TakeDamage(float damage)
     {
-        Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
+        if (Behaviours.Count < CurrentBehaviourIndex)
+            Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
 
         OnTakeDamage.Invoke();
     }
 
     public float GetLifePercentage()
     {
-        return Behaviours[CurrentBehaviourIndex].GetLifePercentage();
+        if (Behaviours.Count < CurrentBehaviourIndex)
+            return Behaviours[CurrentBehaviourIndex].GetLifePercentage();
+
+        return 1f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
