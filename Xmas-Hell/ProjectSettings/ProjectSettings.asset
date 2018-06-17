@@ -151,7 +151,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     '': io.noxalus
-    Android: io.noxalus.XmasHell
+    Android: io.noxalus.XmasHellUnity
     Facebook: io.noxalus
     Metro: io.noxalus
     N3DS: io.noxalus
