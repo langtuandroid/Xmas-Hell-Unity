@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Application.targetFrameRate = 60;
-
         if (!Boss)
             Boss = FindObjectOfType<AbstractBoss>();
 
@@ -67,4 +65,5 @@ public class GameManager : MonoBehaviour
             Boss = bossObject.GetComponent<AbstractBoss>();
         }
     }
+
 }
