@@ -12,7 +12,6 @@ public class GameMusicManager : MonoBehaviour
     void Start()
     {
         Intro.Play();
-        //StartCoroutine(PlayEngineSound());
     }
 
     void FixedUpdate()
@@ -20,17 +19,7 @@ public class GameMusicManager : MonoBehaviour
         if (!Intro.isPlaying && !startedLoop)
         {
             Loop.Play();
-            Debug.Log("Done playing");
             startedLoop = true;
         }
-    }
-
-    IEnumerator PlayEngineSound()
-    {
-        Intro.Play();
-
-        yield return new WaitForSeconds(Intro.clip.length);
-
-        Loop.Play();
     }
 }
