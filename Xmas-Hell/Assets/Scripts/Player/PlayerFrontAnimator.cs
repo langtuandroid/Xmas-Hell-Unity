@@ -13,7 +13,7 @@ public class PlayerFrontAnimator : MonoBehaviour
 
     void OnDisable()
     {
-        StopCoroutine("StartRandomAnimationLoop");
+        StopCoroutine(StartRandomAnimationLoop());
         Animator.Play("Idle");
     }
 
