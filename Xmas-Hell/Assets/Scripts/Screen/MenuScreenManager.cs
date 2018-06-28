@@ -8,6 +8,8 @@ public class MenuScreenManager : MonoBehaviour
 
     public void Start()
     {
+        Application.targetFrameRate = 60;
+
         if (ScreenManager.GetPreviousScreen() == EScreen.Game)
         {
             MenuAnimator.Play("GoToBossSelection", 0, 1f);
