@@ -5,3 +5,6 @@ public class EnumGameObjectSerializableDictionaryPropertyDrawer : SerializableDi
 
 [CustomPropertyDrawer(typeof(BossTypeToBossBallDictionary))]
 public class EnumSpriteSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
+
+[CustomPropertyDrawer(typeof(ScreenCornerToGameObjectDictionary))]
+public class ScreenCornerGameObjectSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }

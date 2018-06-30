@@ -4,7 +4,7 @@
 public class MenuScreenManager : MonoBehaviour
 {
     public Animator MenuAnimator;
-    public GameObject PlayerFront;
+    public PlayerFrontAnimator PlayerFrontAnimator;
 
     public void Start()
     {
@@ -13,7 +13,7 @@ public class MenuScreenManager : MonoBehaviour
         if (ScreenManager.GetPreviousScreen() == EScreen.Game)
         {
             MenuAnimator.Play("GoToBossSelection", 0, 1f);
-            PlayerFront.SetActive(false);
+            PlayerFrontAnimator.StopAnimation(true);
         }
     }
 
@@ -21,7 +21,7 @@ public class MenuScreenManager : MonoBehaviour
     {
         MenuAnimator.SetFloat("SpeedMultiplier", 1f);
         MenuAnimator.Play("GoToBossSelection");
-        PlayerFront.SetActive(false);
+        PlayerFrontAnimator.StopAnimation(true);
     }
 
     public void Update()
@@ -30,13 +30,15 @@ public class MenuScreenManager : MonoBehaviour
         {
             MenuAnimator.SetFloat("SpeedMultiplier", -1f);
             MenuAnimator.Play("GoToBossSelection");
-            PlayerFront.SetActive(true);
         }
 
         // Make sure we stop the animation when we played it entirely
         if ((MenuAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1 && MenuAnimator.GetFloat("SpeedMultiplier") > 0) ||
             (MenuAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0 && MenuAnimator.GetFloat("SpeedMultiplier") < 0))
         {
+            if (MenuAnimator.GetFloat("SpeedMultiplier") < 0)
+                PlayerFrontAnimator.StopAnimation(false);
+
             MenuAnimator.SetFloat("SpeedMultiplier", 0f);
         }
     }
