@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
-public enum EScreenCorner
-{
-    BottomLeft,
-    BottomRight,
-    TopLeft,
-    TopRight
-}
-
-[Serializable]
-public class ScreenCornerToGameObjectDictionary : SerializableDictionary<EScreenCorner, GameObject> { }
 
 public class PlayerFrontAnimator : MonoBehaviour
 {

@@ -26,6 +26,8 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     protected Vector2 InitialPosition = new Vector2(0, 7.5f); // Should not be hard coded 
 
+    private GameManager _gameManager;
+
     // Random moving
     private bool _movingRandomly;
     private bool _movingLongDistance;
@@ -46,19 +48,22 @@ public abstract class AbstractBoss : MonoBehaviour {
     private float _targetAngleTimer = 0f;
     private float _targetAngleTime = 0f;
 
+    // Sprite
+    private Bounds _spriteBounds;
+
     public Vector3 Position
     {
-        get { return gameObject.transform.position; }
-        set { gameObject.transform.position = value; }
+        get { return gameObject.transform.localPosition; }
+        set { gameObject.transform.localPosition = value; }
     }
 
     public float Rotation
     {
         get { return gameObject.transform.eulerAngles.z; }
         set {
-            var newAngles = gameObject.transform.eulerAngles;
+            var newAngles = gameObject.transform.localEulerAngles;
             newAngles.z = value;
-            gameObject.transform.eulerAngles = newAngles;
+            gameObject.transform.localEulerAngles = newAngles;
         }
     }
 
@@ -81,12 +86,19 @@ public abstract class AbstractBoss : MonoBehaviour {
         _animator = GetComponentInChildren<Animator>();
 
         if (!_animator)
-            throw new System.Exception("No Animator found on this Boss");
+            throw new Exception("No Animator found on this Boss!");
+
+        _gameManager = GetComponentInParent<GameManager>();
+
+        if (!_gameManager)
+            throw new Exception("No GameManager found on this scene!");
     }
 
     private void Start()
     {
         _initialSpeed = Speed;
+
+        ComputeSpriteBounds();
 
         #region Initialize behaviour
         if (Behaviours.Count > 0)
@@ -110,9 +122,11 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         _movingRandomly = false;
         _movingLongDistance = false;
-        // TODO: Should depends on the camera/game area data
-        _randomMovingArea = new Rect(-4, 8, 4, 7.5f);
+        
+        _randomMovingArea = _gameManager.GameArea.GetRect();
+        _randomMovingArea = new Rect(-540, -960, 1080, 1920);
 
+        // TODO: Replace this by local position change (using Position)
         transform.position = new Vector2(0, 15);
 
         MoveTo(InitialPosition, 1, true);
@@ -126,6 +140,19 @@ public abstract class AbstractBoss : MonoBehaviour {
         UpdatePosition();
         UpdateRotation();
         UpdateBehaviour();
+    }
+
+    private void ComputeSpriteBounds()
+    {
+        _spriteBounds = new Bounds();
+
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            _spriteBounds.Encapsulate(renderer.bounds);
+        }
+
+        Debug.Log("Sprite bounds: " + _spriteBounds.extents);
     }
 
     private void FindRandomPosition()
@@ -147,7 +174,7 @@ public abstract class AbstractBoss : MonoBehaviour {
                     if (rightSpace > minDistance)
                     {
                         if (UnityEngine.Random.Range(0f, 1f) > 0.5)
-                            newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, _randomMovingArea.width);
+                            newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
                         else
                             newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
                     }
@@ -155,7 +182,7 @@ public abstract class AbstractBoss : MonoBehaviour {
                         newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
                 }
                 else
-                    newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, _randomMovingArea.width);
+                    newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
 
                 // minDistance only depends on the random area X and width
                 if (_randomMovingArea.height - _randomMovingArea.y > minDistance)
@@ -169,7 +196,7 @@ public abstract class AbstractBoss : MonoBehaviour {
                         if (bottomSpace > minDistance)
                         {
                             if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
-                                newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, _randomMovingArea.height);
+                                newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
                             else
                                 newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
                         }
@@ -177,15 +204,15 @@ public abstract class AbstractBoss : MonoBehaviour {
                             newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
                     }
                     else
-                        newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, _randomMovingArea.height);
+                        newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
                 }
                 else
-                    newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.height);
+                    newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
             }
             else
             {
-                newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, _randomMovingArea.width);
-                newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.height);
+                newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, _randomMovingArea.x + _randomMovingArea.width);
+                newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
             }
 
             MoveTo(newPosition, 1.5f);
@@ -326,7 +353,7 @@ public abstract class AbstractBoss : MonoBehaviour {
             }
             else
             {
-                var newPosition = Vector2.zero;
+                var newPosition = Position;
                 var lerpAmount = (float)(_targetPositionTime / _targetPositionTimer);
 
                 newPosition.x = Mathf.SmoothStep(_targetPosition.x, _initialPosition.x, lerpAmount);

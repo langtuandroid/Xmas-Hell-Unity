@@ -1,7 +1,6 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +9,10 @@ public class GameManager : MonoBehaviour
     public AbstractBoss Boss;
     public GameObject BossLifeBarPrefab;
     public GameObject BossLifeBarHolder;
+
+    // Game area
+    public Canvas GameCanvas;
+    public GameArea GameArea;
 
     // Timer
     public TextMeshProUGUI TimerText;
@@ -61,9 +64,8 @@ public class GameManager : MonoBehaviour
 
         if (bossPrefab)
         {
-            var bossObject = Instantiate(bossPrefab);
+            var bossObject = Instantiate(bossPrefab, GameCanvas.transform);
             Boss = bossObject.GetComponent<AbstractBoss>();
         }
     }
-
 }
