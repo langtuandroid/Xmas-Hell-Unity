@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class AbstractBullet : MonoBehaviour
 {
@@ -9,6 +10,18 @@ public abstract class AbstractBullet : MonoBehaviour
     protected Vector2 Direction = Vector2.up;
     protected GameObject Emitter;
 
+    private Rigidbody2D _rigidbody;
+
+    public void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+
+        if (_rigidbody == null)
+        {
+            throw new Exception("No Rigidbody2D found for this bullet!");
+        }
+    }
+
     public void SetEmitter(GameObject emitter)
     {
         Emitter = emitter;
@@ -17,10 +30,10 @@ public abstract class AbstractBullet : MonoBehaviour
     private void FixedUpdate()
     {
         var newPosition = transform.position;
-        newPosition.x += Direction.x * Speed * Time.deltaTime;
-        newPosition.y += Direction.y * Speed * Time.deltaTime;
+        newPosition.x += Direction.x * Speed * Time.fixedDeltaTime;
+        newPosition.y += Direction.y * Speed * Time.fixedDeltaTime;
 
-        transform.position = newPosition;
+        _rigidbody.MovePosition(newPosition);
 
         CheckOutOfBounds();
     }
@@ -55,7 +68,7 @@ public abstract class AbstractBullet : MonoBehaviour
         Direction = value;
 
         var rotation = MathHelper.DirectionToAngle(value);
-        transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, rotation);
+        _rigidbody.MoveRotation(rotation);
     }
 
     public virtual void OnCollisionEnter2D(Collision2D collision)
