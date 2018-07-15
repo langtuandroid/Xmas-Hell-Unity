@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
         if (!Boss)
             Boss = FindObjectOfType<AbstractBoss>();
 
+        if (!Boss)
+        {
+            Debug.Log("No boss found");
+            return;
+        }
+
         _bossLifeBar = Instantiate(BossLifeBarPrefab, BossLifeBarHolder.transform);
         _bossLifeBar.GetComponent<BossLifeBar>().Initialize(Boss);
     }
