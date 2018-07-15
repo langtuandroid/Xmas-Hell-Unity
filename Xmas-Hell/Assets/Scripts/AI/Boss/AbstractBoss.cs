@@ -24,6 +24,8 @@ public abstract class AbstractBoss : MonoBehaviour {
     private Animator _animator;
     private float _initialSpeed;
 
+    private Rigidbody2D _rigidbody;
+
     protected Vector2 InitialPosition = new Vector2(0, 7.5f); // Should not be hard coded 
 
     private GameManager _gameManager;
@@ -49,8 +51,10 @@ public abstract class AbstractBoss : MonoBehaviour {
     private float _targetAngleTime = 0f;
 
     // Sprite
-    private Bounds _spriteBounds;
+    private Vector2 _spriteSize;
 
+    // We assume boss are instantiate in a canvas with screen space coordinate
+    // That's why we always want to refer to its local position instead of its position (that is in world space)
     public Vector3 Position
     {
         get { return gameObject.transform.localPosition; }
@@ -88,17 +92,25 @@ public abstract class AbstractBoss : MonoBehaviour {
         if (!_animator)
             throw new Exception("No Animator found on this Boss!");
 
+        _animator.enabled = false;
+
         _gameManager = GetComponentInParent<GameManager>();
 
         if (!_gameManager)
             throw new Exception("No GameManager found on this scene!");
+
+        _rigidbody = GetComponent<Rigidbody2D>();
+
+        if (!_rigidbody)
+            throw new Exception("No RigidBody2D found on this scene!");
     }
 
     private void Start()
     {
         _initialSpeed = Speed;
 
-        ComputeSpriteBounds();
+
+        ComputeSpriteSize();
 
         #region Initialize behaviour
         if (Behaviours.Count > 0)
@@ -124,12 +136,20 @@ public abstract class AbstractBoss : MonoBehaviour {
         _movingLongDistance = false;
         
         _randomMovingArea = _gameManager.GameArea.GetRect();
-        _randomMovingArea = new Rect(-540, -960, 1080, 1920);
+
+        _randomMovingArea.x += _spriteSize.x / 2f;
+        _randomMovingArea.y += _spriteSize.y / 2f;
+        _randomMovingArea.width -= _spriteSize.x / 2f;
+        _randomMovingArea.height -= _spriteSize.y / 2f;
+
+        _randomMovingArea.width = 0;
+        _randomMovingArea.height = 0;
 
         // TODO: Replace this by local position change (using Position)
-        transform.position = new Vector2(0, 15);
-
-        MoveTo(InitialPosition, 1, true);
+        //MoveTo(new Vector2(0, -500), true);
+        //MoveTo(InitialPosition, 1, true);
+        //_rigidbody.MovePosition(Camera.main.ScreenToViewportPoint(new Vector2(0, _gameManager.GameArea.GetRect().yMax)));
+        _animator.enabled = true;
     }
 
     void Update()
@@ -142,17 +162,21 @@ public abstract class AbstractBoss : MonoBehaviour {
         UpdateBehaviour();
     }
 
-    private void ComputeSpriteBounds()
+    private void ComputeSpriteSize()
     {
-        _spriteBounds = new Bounds();
+        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        Bounds spriteBounds = new Bounds(transform.position, Vector3.zero);
 
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
-        foreach (Renderer renderer in renderers)
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
         {
-            _spriteBounds.Encapsulate(renderer.bounds);
+            spriteBounds.Encapsulate(spriteRenderer.bounds);
         }
 
-        Debug.Log("Sprite bounds: " + _spriteBounds.extents);
+        _spriteSize = Camera.main.WorldToScreenPoint(spriteBounds.min) - Camera.main.WorldToScreenPoint(spriteBounds.max);
+        _spriteSize.x = Mathf.Abs(_spriteSize.x);
+        _spriteSize.y = Mathf.Abs(_spriteSize.y);
+
+        Debug.Log("Sprite size: " + _spriteSize);
     }
 
     private void FindRandomPosition()
