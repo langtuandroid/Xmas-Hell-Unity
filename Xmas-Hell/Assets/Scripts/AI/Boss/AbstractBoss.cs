@@ -26,7 +26,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     private Rigidbody2D _rigidbody;
 
-    protected Vector2 InitialPosition = new Vector2(0, 7.5f); // Should not be hard coded 
+    protected Vector2 InitialPosition;
 
     private GameManager _gameManager;
 
@@ -53,22 +53,16 @@ public abstract class AbstractBoss : MonoBehaviour {
     // Sprite
     private Vector2 _spriteSize;
 
-    // We assume boss are instantiate in a canvas with screen space coordinate
-    // That's why we always want to refer to its local position instead of its position (that is in world space)
     public Vector3 Position
     {
-        get { return gameObject.transform.localPosition; }
-        set { gameObject.transform.localPosition = value; }
+        get { return _rigidbody.position; }
+        set { _rigidbody.MovePosition(value); }
     }
 
     public float Rotation
     {
-        get { return gameObject.transform.eulerAngles.z; }
-        set {
-            var newAngles = gameObject.transform.localEulerAngles;
-            newAngles.z = value;
-            gameObject.transform.localEulerAngles = newAngles;
-        }
+        get { return _rigidbody.rotation; }
+        set { _rigidbody.MoveRotation(value); }
     }
 
     public float InitialSpeed
@@ -81,18 +75,12 @@ public abstract class AbstractBoss : MonoBehaviour {
         get { return _animator; }
     }
 
-    public AbstractBoss()
-    {
-    }
-
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
 
         if (!_animator)
             throw new Exception("No Animator found on this Boss!");
-
-        _animator.enabled = false;
 
         _gameManager = GetComponentInParent<GameManager>();
 
@@ -109,8 +97,24 @@ public abstract class AbstractBoss : MonoBehaviour {
     {
         _initialSpeed = Speed;
 
-
         ComputeSpriteSize();
+
+        var gameArea = _gameManager.GameArea.GetWorldRect();
+
+        InitialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - _spriteSize.y / 2f);
+
+        _randomMovingArea = gameArea;
+
+        _randomMovingArea.x += _spriteSize.x / 2f;
+        _randomMovingArea.y += _spriteSize.y / 2f;
+        // We substract the entire sprite size from the width and height 
+        // of the area as we move it according to the half sprite's size
+        _randomMovingArea.width -= _spriteSize.x;
+        _randomMovingArea.height -= _spriteSize.y;
+
+        var dot = Resources.Load("Debug/Dot");
+        Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity);
+        Instantiate(dot, new Vector2(_randomMovingArea.x + _randomMovingArea.width, _randomMovingArea.y + _randomMovingArea.height), Quaternion.identity);
 
         #region Initialize behaviour
         if (Behaviours.Count > 0)
@@ -134,28 +138,15 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         _movingRandomly = false;
         _movingLongDistance = false;
-        
-        _randomMovingArea = _gameManager.GameArea.GetRect();
 
-        _randomMovingArea.x += _spriteSize.x / 2f;
-        _randomMovingArea.y += _spriteSize.y / 2f;
-        _randomMovingArea.width -= _spriteSize.x / 2f;
-        _randomMovingArea.height -= _spriteSize.y / 2f;
-
-        _randomMovingArea.width = 0;
-        _randomMovingArea.height = 0;
-
-        // TODO: Replace this by local position change (using Position)
-        //MoveTo(new Vector2(0, -500), true);
-        //MoveTo(InitialPosition, 1, true);
-        //_rigidbody.MovePosition(Camera.main.ScreenToViewportPoint(new Vector2(0, _gameManager.GameArea.GetRect().yMax)));
-        _animator.enabled = true;
+        transform.position = new Vector2(0, 15);
+        MoveTo(InitialPosition, 1, true);
     }
 
     void Update()
     {
         if (_movingRandomly)
-            FindRandomPosition();
+            MoveToRandomPosition(1.5f);
 
         UpdatePosition();
         UpdateRotation();
@@ -168,79 +159,87 @@ public abstract class AbstractBoss : MonoBehaviour {
         Bounds spriteBounds = new Bounds(transform.position, Vector3.zero);
 
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-        {
             spriteBounds.Encapsulate(spriteRenderer.bounds);
-        }
 
-        _spriteSize = Camera.main.WorldToScreenPoint(spriteBounds.min) - Camera.main.WorldToScreenPoint(spriteBounds.max);
+        _spriteSize = spriteBounds.min - spriteBounds.max;
         _spriteSize.x = Mathf.Abs(_spriteSize.x);
         _spriteSize.y = Mathf.Abs(_spriteSize.y);
+
+        var dot = Resources.Load("Debug/Dot");
+        Instantiate(dot, spriteBounds.min, Quaternion.identity, transform);
+        Instantiate(dot, spriteBounds.max, Quaternion.identity, transform);
 
         Debug.Log("Sprite size: " + _spriteSize);
     }
 
-    private void FindRandomPosition()
+    private void MoveToRandomPosition(float time)
     {
         if (!TargetingPosition)
         {
-            var newPosition = Vector2.zero;
-            if (_movingLongDistance)
+            var newPosition = FindRandomPosition();
+            MoveTo(newPosition, time);
+        }
+    }
+
+    private Vector2 FindRandomPosition()
+    {
+        var newPosition = Vector2.zero;
+        if (_movingLongDistance)
+        {
+            var currentPosition = Position;
+            var minDistance = (_randomMovingArea.width - _randomMovingArea.x) / 2;
+
+            // Choose a random long distance new X position
+            var leftSpace = currentPosition.x - _randomMovingArea.x;
+            var rightSpace = _randomMovingArea.width - currentPosition.x;
+
+            if (leftSpace > minDistance)
             {
-                var currentPosition = Position;
-                var minDistance = (_randomMovingArea.width - _randomMovingArea.x) / 2;
-
-                // Choose a random long distance new X position
-                var leftSpace = currentPosition.x - _randomMovingArea.x;
-                var rightSpace = _randomMovingArea.width - currentPosition.x;
-
-                if (leftSpace > minDistance)
+                if (rightSpace > minDistance)
                 {
-                    if (rightSpace > minDistance)
-                    {
-                        if (UnityEngine.Random.Range(0f, 1f) > 0.5)
-                            newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
-                        else
-                            newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
-                    }
+                    if (UnityEngine.Random.Range(0f, 1f) > 0.5)
+                        newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
                     else
                         newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
                 }
                 else
-                    newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
+                    newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
+            }
+            else
+                newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
 
-                // minDistance only depends on the random area X and width
-                if (_randomMovingArea.height - _randomMovingArea.y > minDistance)
+            // minDistance only depends on the random area X and width
+            if (_randomMovingArea.height - _randomMovingArea.y > minDistance)
+            {
+                // Choose a random long distance new Y position
+                var topSpace = currentPosition.y - _randomMovingArea.y;
+                var bottomSpace = _randomMovingArea.height - currentPosition.y;
+
+                if (topSpace > minDistance)
                 {
-                    // Choose a random long distance new Y position
-                    var topSpace = currentPosition.y - _randomMovingArea.y;
-                    var bottomSpace = _randomMovingArea.height - currentPosition.y;
-
-                    if (topSpace > minDistance)
+                    if (bottomSpace > minDistance)
                     {
-                        if (bottomSpace > minDistance)
-                        {
-                            if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
-                                newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
-                            else
-                                newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
-                        }
+                        if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
+                            newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
                         else
                             newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
                     }
                     else
-                        newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
+                        newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
                 }
                 else
-                    newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
+                    newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
             }
             else
-            {
-                newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, _randomMovingArea.x + _randomMovingArea.width);
                 newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
-            }
-
-            MoveTo(newPosition, 1.5f);
         }
+        else
+        {
+            newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, _randomMovingArea.x + _randomMovingArea.width);
+            newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
+        }
+
+        return newPosition;
     }
 
     // Move to a given position in "time" seconds

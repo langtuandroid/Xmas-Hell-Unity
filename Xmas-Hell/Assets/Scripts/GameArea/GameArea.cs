@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameArea : MonoBehaviour
 {
+    [SerializeField] private Canvas _canvas;
     [SerializeField] private ScreenCornerToGameObjectDictionary _gameAreaCorners;
     [SerializeField] private RectTransform _rectTransform;
 
@@ -12,6 +13,16 @@ public class GameArea : MonoBehaviour
             throw new Exception("No anchor found for this screen corner (" + corner.ToString() + ")");
 
         return _gameAreaCorners[corner];
+    }
+
+    public RectTransform GetRectTransform()
+    {
+        return _rectTransform;
+    }
+
+    public Rect GetWorldRect()
+    {
+        return _rectTransform.GetWorldRect(_canvas.gameObject.transform.localScale);
     }
 
     public Rect GetRect()
