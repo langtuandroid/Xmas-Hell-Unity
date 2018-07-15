@@ -105,6 +105,13 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         _randomMovingArea = gameArea;
 
+        // Restrict the default random area to the top part of the screen
+        _randomMovingArea.height = gameArea.height * 0.2f;
+        _randomMovingArea.y = gameArea.yMax - _randomMovingArea.height;
+        _randomMovingArea.width = gameArea.width * 0.9f;
+        _randomMovingArea.x = gameArea.xMin + ((gameArea.width - _randomMovingArea.width) / 2f);
+
+        // Area position = bottom left corner
         _randomMovingArea.x += _spriteSize.x / 2f;
         _randomMovingArea.y += _spriteSize.y / 2f;
         // We substract the entire sprite size from the width and height 
