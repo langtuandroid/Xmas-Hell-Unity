@@ -16,6 +16,7 @@ public abstract class AbstractBoss : MonoBehaviour {
     public Vector2 Acceleration = Vector2.one;
     public float AngularVelocity = 5f;
 
+    public bool Invincible;
     public UnityEvent OnTakeDamage; 
 
     protected int CurrentBehaviourIndex;
@@ -29,6 +30,8 @@ public abstract class AbstractBoss : MonoBehaviour {
     protected Vector2 InitialPosition;
 
     private GameManager _gameManager;
+
+    private bool _ready;
 
     // Random moving
     private bool _movingRandomly;
@@ -144,17 +147,30 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     private void Reset()
     {
+        RestoreDefaultState();
+
+        // Reset behaviours
         PreviousBehaviourIndex = -1;
         CurrentBehaviourIndex = 0;
 
         foreach (var behaviour in Behaviours)
             behaviour.Reset();
 
-        _movingRandomly = false;
-        _movingLongDistance = false;
+        Invincible = true;
+        _ready = false;
 
         transform.position = new Vector2(0, 15);
         MoveTo(InitialPosition, 1, true);
+    }
+
+    private void RestoreDefaultState()
+    {
+        Direction = Vector2.zero;
+        Rotation = 0;
+        TargetingPosition = false;
+        TargetingAngle = false;
+        _movingRandomly = false;
+        _movingLongDistance = false;
     }
 
     void Update()
@@ -164,6 +180,19 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         UpdatePosition();
         UpdateRotation();
+
+        if (!_ready)
+        {
+            if (!(Mathf.Abs(Position.x - InitialPosition.x) < 0.5f &&
+                Mathf.Abs(Position.y - InitialPosition.y) < 0.5f))
+            {
+                return;
+            }
+
+            Invincible = false;
+            _ready = true;
+        }
+
         UpdateBehaviour();
 
         UpdateTimers();
@@ -289,16 +318,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         if (CurrentBehaviourIndex != PreviousBehaviourIndex)
         {
-            if (PreviousBehaviourIndex >= 0)
-                Behaviours[PreviousBehaviourIndex].StopBehaviour();
-
-            // TODO: Trigger signal to clear all bullets
-            // TODO: Make sure we restore the initial boss state for transition
-
-            if (Behaviours.Count > 0)
-            {
-                Behaviours[CurrentBehaviourIndex].StartBehaviour();
-            }
+            NextBehaviour();
         }
 
         if (Behaviours.Count > 0)
@@ -321,8 +341,26 @@ public abstract class AbstractBoss : MonoBehaviour {
         }
     }
 
+    private void NextBehaviour()
+    {
+        if (PreviousBehaviourIndex >= 0)
+            Behaviours[PreviousBehaviourIndex].StopBehaviour();
+
+        // TODO: Trigger signal to clear all bullets
+        // TODO: Make sure we restore the initial boss state for transition
+        RestoreDefaultState();
+
+        if (Behaviours.Count > 0)
+        {
+            Behaviours[CurrentBehaviourIndex].StartBehaviour();
+        }
+    }
+
     public void TakeDamage(float damage)
     {
+        if (Invincible)
+            return;
+
         if (Behaviours.Count > CurrentBehaviourIndex)
             Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
 
