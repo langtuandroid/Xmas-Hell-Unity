@@ -17,7 +17,5 @@ public class XmasBallBehaviour1 : AbstractBossBehaviour
     public override void Step()
     {
         base.Step();
-
-        //Boss.transform.Translate(Vector3.down * Boss.Speed * Time.deltaTime);
     }
 }
