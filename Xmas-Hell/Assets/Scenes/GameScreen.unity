@@ -1409,6 +1409,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114400563395662890, guid: 39a0bace6994aa6489e7ec32c6339c32,
+        type: 2}
+      propertyPath: FSM
+      value: 
+      objectReference: {fileID: 9100000, guid: a5a0128db771cc04e89e777bd86b0420, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 2}
   m_IsPrefabAsset: 0
