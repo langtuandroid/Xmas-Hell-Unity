@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e76f829d2f984648847f39bed0302e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationRoot: {fileID: 1978665513887760}
+  FSM: {fileID: 9100000, guid: a1d68b2e0c00d77479c38b4ed9c8282c, type: 2}
   InitialBehaviourLife: 1000
   Boss: {fileID: 114752281738679952}
 --- !u!114 &114752281738679952

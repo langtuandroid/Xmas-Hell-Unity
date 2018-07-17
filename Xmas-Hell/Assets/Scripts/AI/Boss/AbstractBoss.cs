@@ -32,6 +32,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     // Random moving
     private bool _movingRandomly;
+    private float _randomMovementTime;
     private bool _movingLongDistance;
     private Rect _randomMovingArea;
 
@@ -49,6 +50,12 @@ public abstract class AbstractBoss : MonoBehaviour {
     private float _targetAngle = 0f;
     private float _targetAngleTimer = 0f;
     private float _targetAngleTime = 0f;
+
+    // Shoot timer
+    public bool EnableShootTimer = false;
+    private float ShootTimer = 0f;
+    public float ShootTimerTime = 0f;
+    public Action ShootTimerCallback = null;
 
     // Sprite
     private Vector2 _spriteSize;
@@ -153,11 +160,13 @@ public abstract class AbstractBoss : MonoBehaviour {
     void Update()
     {
         if (_movingRandomly)
-            MoveToRandomPosition(1.5f);
+            MoveToRandomPosition(_randomMovementTime);
 
         UpdatePosition();
         UpdateRotation();
         UpdateBehaviour();
+
+        UpdateTimers();
     }
 
     private void ComputeSpriteSize()
@@ -340,7 +349,7 @@ public abstract class AbstractBoss : MonoBehaviour {
         }
     }
 
-    public void StartMovingRandomly(Rect? movingArea = null, bool longDistance = false)
+    public void StartMovingRandomly(Rect? movingArea = null, bool longDistance = false, float time = 1.5f)
     {
         _movingRandomly = true;
 
@@ -348,11 +357,26 @@ public abstract class AbstractBoss : MonoBehaviour {
             _randomMovingArea = movingArea.Value;
 
         _movingLongDistance = longDistance;
+        _randomMovementTime = time;
     }
 
     public void StopMovingRandomly()
     {
         _movingRandomly = false;
+    }
+
+    public void StartShootTimer(float time, Action callback)
+    {
+        EnableShootTimer = true;
+        ShootTimerTime = time;
+        ShootTimerCallback = callback;
+    }
+
+    public void StopShootTimer()
+    {
+        EnableShootTimer = false;
+        ShootTimerTime = 0;
+        ShootTimerCallback = null;
     }
 
     private void UpdatePosition()
@@ -446,6 +470,21 @@ public abstract class AbstractBoss : MonoBehaviour {
                     _targetAngleTime -= Time.deltaTime;
 
                 Rotation = newAngle;
+            }
+        }
+    }
+
+    private void UpdateTimers()
+    {
+        // Shoot timer
+        if (EnableShootTimer && ShootTimerCallback != null)
+        {
+            if (ShootTimer > 0)
+                ShootTimer -= Time.deltaTime;
+            else
+            {
+                ShootTimer = ShootTimerTime;
+                ShootTimerCallback();
             }
         }
     }

@@ -1,11 +1,13 @@
 ﻿using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [Serializable]
 public class AbstractBossBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    public float InitialBehaviourLife;
+    [SerializeField] public GameObject AnimationRoot;
+    [SerializeField] public AnimatorController FSM;
+    [SerializeField] public float InitialBehaviourLife;
 
     public AbstractBoss Boss;
     protected float CurrentBehaviourLife;
@@ -34,6 +36,7 @@ public class AbstractBossBehaviour : MonoBehaviour
 
     public virtual void StartBehaviour()
     {
+        AnimationRoot.GetComponent<Animator>().runtimeAnimatorController = FSM;
         Reset();
     }
 
