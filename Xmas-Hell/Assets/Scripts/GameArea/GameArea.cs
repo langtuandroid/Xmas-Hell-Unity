@@ -29,4 +29,10 @@ public class GameArea : MonoBehaviour
     {
         return _rectTransform.rect;
     }
+
+    public Vector2 NormalizedToWorldPoint(Vector2 position)
+    {
+        var gameAreaSpacePosition = _rectTransform.rect.size * position;
+        return Camera.main.ScreenToWorldPoint(gameAreaSpacePosition);
+    }
 }
