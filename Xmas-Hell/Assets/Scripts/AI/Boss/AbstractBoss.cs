@@ -15,7 +15,6 @@ public abstract class AbstractBoss : MonoBehaviour {
     public Vector2 Direction = Vector2.zero; // values in radians
     public Vector2 Acceleration = Vector2.one;
     public float AngularVelocity = 5f;
-
     public bool Invincible;
     public UnityEvent OnTakeDamage; 
 
@@ -23,12 +22,11 @@ public abstract class AbstractBoss : MonoBehaviour {
     protected int PreviousBehaviourIndex;
 
     private Animator _animator;
+
+    private Vector2 _initialPosition;
     private float _initialSpeed;
 
     private Rigidbody2D _rigidbody;
-
-    protected Vector2 InitialPosition;
-
     private GameManager _gameManager;
 
     private bool _ready;
@@ -41,7 +39,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
     // Position targeting
     public bool TargetingPosition = false;
-    private Vector2 _initialPosition = Vector2.zero;
+    private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;
     private float _targetPositionTimer = 0f;
     private float _targetPositionTime = 0f;
@@ -80,9 +78,19 @@ public abstract class AbstractBoss : MonoBehaviour {
         get { return _initialSpeed; }
     }
 
+    public Vector2 InitialPosition
+    {
+        get { return _initialPosition; }
+    }
+
     public Animator Animator
     {
         get { return _animator; }
+    }
+
+    public GameManager GameManager
+    {
+        get { return _gameManager; }
     }
 
     private void Awake()
@@ -111,7 +119,7 @@ public abstract class AbstractBoss : MonoBehaviour {
 
         var gameArea = _gameManager.GameArea.GetWorldRect();
 
-        InitialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - _spriteSize.y / 2f);
+        _initialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - _spriteSize.y / 2f);
 
         _randomMovingArea = gameArea;
 
@@ -159,8 +167,9 @@ public abstract class AbstractBoss : MonoBehaviour {
         Invincible = true;
         _ready = false;
 
+        // Entrance "animation"
         transform.position = new Vector2(0, 15);
-        MoveTo(InitialPosition, 1, true);
+        MoveToInitialPosition(1, true);
     }
 
     private void RestoreDefaultState()
@@ -288,28 +297,36 @@ public abstract class AbstractBoss : MonoBehaviour {
     }
 
     // Move to a given position in "time" seconds
-    public void MoveTo(Vector2 position, float time, bool force = false)
+    public void MoveTo(Vector2 position, float? time = null, bool force = false)
     {
         if (TargetingPosition && !force)
             return;
 
         TargetingPosition = true;
-        _targetPositionTimer = time;
-        _targetPositionTime = time;
         _targetPosition = position;
-        _initialPosition = Position;
+
+        if (time.HasValue && time.Value > 0)
+        {
+            _startPosition = Position;
+
+            _targetPositionTimer = time.Value;
+            _targetPositionTime = time.Value;
+        }
+        else
+        {
+            _targetDirection = (position - new Vector2(Position.x, Position.y));
+            _targetDirection.Normalize();
+        }
     }
 
-    // Move to a given position keeping the actual speed
-    public void MoveTo(Vector2 position, bool force = false)
+    public void MoveToInitialPosition(float? time = null, bool force = false)
     {
-        if (TargetingPosition && !force)
-            return;
+        MoveTo(InitialPosition, time, force);
+    }
 
-        TargetingPosition = true;
-        _targetPosition = position;
-        _targetDirection = (position - new Vector2(Position.x, Position.y));
-        _targetDirection.Normalize();
+    public void MoveToCenter(float? time = null, bool force = false)
+    {
+        MoveTo(Vector2.zero, time, force);
     }
 
     private void UpdateBehaviour()
@@ -446,10 +463,10 @@ public abstract class AbstractBoss : MonoBehaviour {
             else
             {
                 var newPosition = Position;
-                var lerpAmount = (float)(_targetPositionTime / _targetPositionTimer);
+                var lerpAmount = _targetPositionTime / _targetPositionTimer;
 
-                newPosition.x = Mathf.SmoothStep(_targetPosition.x, _initialPosition.x, lerpAmount);
-                newPosition.y = Mathf.SmoothStep(_targetPosition.y, _initialPosition.y, lerpAmount);
+                newPosition.x = Mathf.SmoothStep(_targetPosition.x, _startPosition.x, lerpAmount);
+                newPosition.y = Mathf.SmoothStep(_targetPosition.y, _startPosition.y, lerpAmount);
 
                 if (lerpAmount < 0.001f)
                 {

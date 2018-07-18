@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace XmasBallBehaviour1FSM
+namespace XmasSnowflakeBehaviour1FSM
 {
     public class RandomMovement : BossStateMachineBehaviour
     {
