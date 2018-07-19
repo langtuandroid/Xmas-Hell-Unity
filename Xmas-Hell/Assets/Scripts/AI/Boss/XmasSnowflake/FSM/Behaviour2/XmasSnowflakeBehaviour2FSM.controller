@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NormalizedPositionX: 0.5
-  NormalizedPositionY: 0.5
+  NormalizedPositionY: 0.75
   TimeToMove: 2
 --- !u!1101 &1101249246269075624
 AnimatorStateTransition:
@@ -162,7 +162,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 4c278414778b4204d828041227c840a8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

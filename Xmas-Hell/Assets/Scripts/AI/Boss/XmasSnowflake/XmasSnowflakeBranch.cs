@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class XmasSnowflakeBranch : MonoBehaviour
+public class XmasSnowflakeBranch : AbstractEntity
 {
-    public Rigidbody2D Rigidbody;
-    public float AngularSpeed;
-
     private bool _rotateClockwise;
     private float _rotationFactor = 1f;
     private AbstractBoss _boss;
     private float _timeBeforeRush;
     private bool _rushing;
 
-    public void Start()
+    protected override void Start()
     {
+        base.Start();
+
         _rotateClockwise = Random.value > 0.5f;
         _rushing = false;
 
@@ -44,13 +43,24 @@ public class XmasSnowflakeBranch : MonoBehaviour
         var angle = MathHelper.DirectionToAngle(_boss.Player.transform.position - transform.position) + 180f;
         Rigidbody.MoveRotation(angle);
 
-        Rigidbody.AddForce(transform.right * 1);
-        _rushing = true;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -MathHelper.AngleToDirection(angle), 2300, LayerMask.GetMask("Wall"));
+
+        if (hit.collider != null)
+        {
+            MoveTo(hit.point);
+            _rushing = true;
+        }
+        else
+        {
+            Debug.LogWarning("No wall found by this Xmas Snowflake branch!");
+        }
     }
 
-    public void FixedUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
+
         if (!_rushing)
-            Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularSpeed * Time.fixedDeltaTime));
+            Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularVelocity * Time.fixedDeltaTime));
     }
 }

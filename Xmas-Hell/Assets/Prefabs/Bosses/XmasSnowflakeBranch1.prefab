@@ -99,8 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5268b01768791442b551057992bc1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 50191585349940646}
-  AngularSpeed: 100
+  Speed: 10
+  Direction: {x: 0, y: 0}
+  Acceleration: {x: 1, y: 1}
+  AngularVelocity: 100
+  Invincible: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212084885251850028
 SpriteRenderer:
   m_ObjectHideFlags: 1

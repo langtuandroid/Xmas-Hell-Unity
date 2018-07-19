@@ -12,7 +12,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public bool Invincible;
     public UnityEvent OnTakeDamage; 
 
-    private Rigidbody2D _rigidbody;
+    protected Rigidbody2D Rigidbody;
 
     // Random moving
     private bool _movingRandomly;
@@ -40,21 +40,21 @@ public abstract class AbstractEntity : MonoBehaviour
 
     public Vector3 Position
     {
-        get { return _rigidbody.position; }
-        set { _rigidbody.MovePosition(value); }
+        get { return Rigidbody.position; }
+        set { Rigidbody.MovePosition(value); }
     }
 
     public float Rotation
     {
-        get { return _rigidbody.rotation; }
-        set { _rigidbody.MoveRotation(value); }
+        get { return Rigidbody.rotation; }
+        set { Rigidbody.MoveRotation(value); }
     }
 
     protected virtual void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
 
-        if (!_rigidbody)
+        if (!Rigidbody)
             throw new Exception("No RigidBody2D found in this scene!");
     }
 
@@ -80,6 +80,10 @@ public abstract class AbstractEntity : MonoBehaviour
 
         UpdatePosition();
         UpdateRotation();
+    }
+
+    protected virtual void FixedUpdate()
+    {
     }
 
     private void ComputeSpriteSize()
@@ -272,6 +276,8 @@ public abstract class AbstractEntity : MonoBehaviour
             var newPosition = Position + new Vector3(deltaPosition.x, deltaPosition.y, 0f);
             Position = newPosition;
         }
+
+        //Debug.Log("Position: " + Position);
     }
 
     private void UpdateRotation()

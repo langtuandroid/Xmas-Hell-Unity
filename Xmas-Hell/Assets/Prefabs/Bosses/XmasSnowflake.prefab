@@ -585,8 +585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4174d00571a28e746856c99166b475d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviours:
-  - {fileID: 114497844811400206}
   Speed: 0
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
@@ -597,8 +595,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TargetingPosition: 0
-  TargetingAngle: 0
+  Behaviours:
+  - {fileID: 114497844811400206}
   EnableShootTimer: 0
   ShootTimerTime: 0
 --- !u!114 &114497844811400206
