@@ -23,7 +23,6 @@ namespace XmasSnowflakeBehaviour2FSM
 
         private void ReplaceAllBranches()
         {
-
             for (var i = 0; i < _branch1Group.childCount; i++)
             {
                 var branch1 = _branch1Group.GetChild(i);
@@ -31,6 +30,7 @@ namespace XmasSnowflakeBehaviour2FSM
                 dynamicBranch1.transform.localPosition = branch1.localPosition;
                 dynamicBranch1.transform.localRotation = branch1.localRotation;
                 dynamicBranch1.transform.localScale = branch1.localScale;
+                dynamicBranch1.GetComponent<XmasSnowflakeBranch>().SetBoss(Boss);
                 branch1.gameObject.SetActive(false);
             }
 
@@ -43,6 +43,7 @@ namespace XmasSnowflakeBehaviour2FSM
                 dynamicBranch2.transform.localPosition = branch2.localPosition;
                 dynamicBranch2.transform.localRotation = branch2.localRotation;
                 dynamicBranch2.transform.localScale = branch2.localScale;
+                dynamicBranch2.GetComponent<XmasSnowflakeBranch>().SetBoss(Boss);
                 branch2.gameObject.SetActive(false);
             }
 
@@ -53,6 +54,13 @@ namespace XmasSnowflakeBehaviour2FSM
         {
             _branch1Group.gameObject.SetActive(true);
             _branch2Group.gameObject.SetActive(true);
+        }
+
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            base.OnStateExit(animator, stateInfo, layerIndex);
+
+            ShowAllBranches();
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

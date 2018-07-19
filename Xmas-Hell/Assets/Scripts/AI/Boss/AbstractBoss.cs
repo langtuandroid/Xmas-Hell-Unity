@@ -1,77 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public abstract class AbstractBoss : MonoBehaviour {
-
+public abstract class AbstractBoss : AbstractEntity
+{
     [SerializeField]
     List<AbstractBossBehaviour> Behaviours;
 
     public readonly EBoss BossType;
 
-    public float Speed;
-    public Vector2 Direction = Vector2.zero; // values in radians
-    public Vector2 Acceleration = Vector2.one;
-    public float AngularVelocity = 5f;
-    public bool Invincible;
-    public UnityEvent OnTakeDamage; 
-
     protected int CurrentBehaviourIndex;
     protected int PreviousBehaviourIndex;
 
+    private GameObject _player;
     private Animator _animator;
 
     private Vector2 _initialPosition;
     private float _initialSpeed;
 
-    private Rigidbody2D _rigidbody;
     private GameManager _gameManager;
 
     private bool _ready;
-
-    // Random moving
-    private bool _movingRandomly;
-    private float _randomMovementTime;
-    private bool _movingLongDistance;
-    private Rect _randomMovingArea;
-
-    // Position targeting
-    public bool TargetingPosition = false;
-    private Vector2 _startPosition = Vector2.zero;
-    private Vector2 _targetPosition = Vector2.zero;
-    private float _targetPositionTimer = 0f;
-    private float _targetPositionTime = 0f;
-    private Vector2 _targetDirection = Vector2.zero;
-
-    // Angle targeting
-    public bool TargetingAngle = false;
-    private float _initialAngle = 0f;
-    private float _targetAngle = 0f;
-    private float _targetAngleTimer = 0f;
-    private float _targetAngleTime = 0f;
 
     // Shoot timer
     public bool EnableShootTimer = false;
     private float ShootTimer = 0f;
     public float ShootTimerTime = 0f;
     public Action ShootTimerCallback = null;
-
-    // Sprite
-    private Vector2 _spriteSize;
-
-    public Vector3 Position
-    {
-        get { return _rigidbody.position; }
-        set { _rigidbody.MovePosition(value); }
-    }
-
-    public float Rotation
-    {
-        get { return _rigidbody.rotation; }
-        set { _rigidbody.MoveRotation(value); }
-    }
 
     public float InitialSpeed
     {
@@ -93,8 +48,15 @@ public abstract class AbstractBoss : MonoBehaviour {
         get { return _gameManager; }
     }
 
-    private void Awake()
+    public GameObject Player
     {
+        get { return _player; }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
         _animator = GetComponentInChildren<Animator>();
 
         if (!_animator)
@@ -103,23 +65,23 @@ public abstract class AbstractBoss : MonoBehaviour {
         _gameManager = GetComponentInParent<GameManager>();
 
         if (!_gameManager)
-            throw new Exception("No GameManager found on this scene!");
+            throw new Exception("No GameManager found in this scene!");
 
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _player = GameObject.FindGameObjectWithTag("Player");
 
-        if (!_rigidbody)
-            throw new Exception("No RigidBody2D found on this scene!");
+        if (!_player)
+            throw new Exception("No player found in this scene!");
     }
 
-    private void Start()
+    protected override void Start()
     {
-        _initialSpeed = Speed;
+        base.Start();
 
-        ComputeSpriteSize();
+        _initialSpeed = Speed;
 
         var gameArea = _gameManager.GameArea.GetWorldRect();
 
-        _initialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - _spriteSize.y / 2f);
+        _initialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - SpriteSize.y / 2f);
 
         _randomMovingArea = gameArea;
 
@@ -130,12 +92,12 @@ public abstract class AbstractBoss : MonoBehaviour {
         _randomMovingArea.x = gameArea.xMin + ((gameArea.width - _randomMovingArea.width) / 2f);
 
         // Area position = bottom left corner
-        _randomMovingArea.x += _spriteSize.x / 2f;
-        _randomMovingArea.y += _spriteSize.y / 2f;
+        _randomMovingArea.x += SpriteSize.x / 2f;
+        _randomMovingArea.y += SpriteSize.y / 2f;
         // We substract the entire sprite size from the width and height 
         // of the area as we move it according to the half sprite's size
-        _randomMovingArea.width -= _spriteSize.x;
-        _randomMovingArea.height -= _spriteSize.y;
+        _randomMovingArea.width -= SpriteSize.x;
+        _randomMovingArea.height -= SpriteSize.y;
 
         var dot = Resources.Load("Debug/Dot");
         Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity);
@@ -172,23 +134,14 @@ public abstract class AbstractBoss : MonoBehaviour {
         MoveToInitialPosition(1, true);
     }
 
-    private void RestoreDefaultState()
+    protected override void RestoreDefaultState()
     {
-        Direction = Vector2.zero;
-        Rotation = 0;
-        TargetingPosition = false;
-        TargetingAngle = false;
-        _movingRandomly = false;
-        _movingLongDistance = false;
+        base.RestoreDefaultState();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (_movingRandomly)
-            MoveToRandomPosition(_randomMovementTime);
-
-        UpdatePosition();
-        UpdateRotation();
+        base.Update();
 
         if (!_ready)
         {
@@ -207,127 +160,12 @@ public abstract class AbstractBoss : MonoBehaviour {
         UpdateTimers();
     }
 
-    private void ComputeSpriteSize()
-    {
-        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        Bounds spriteBounds = new Bounds(transform.position, Vector3.zero);
-
-        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-            spriteBounds.Encapsulate(spriteRenderer.bounds);
-
-        _spriteSize = spriteBounds.min - spriteBounds.max;
-        _spriteSize.x = Mathf.Abs(_spriteSize.x);
-        _spriteSize.y = Mathf.Abs(_spriteSize.y);
-
-        var dot = Resources.Load("Debug/Dot");
-        Instantiate(dot, spriteBounds.min, Quaternion.identity, transform);
-        Instantiate(dot, spriteBounds.max, Quaternion.identity, transform);
-
-        Debug.Log("Sprite size: " + _spriteSize);
-    }
-
-    private void MoveToRandomPosition(float time)
-    {
-        if (!TargetingPosition)
-        {
-            var newPosition = FindRandomPosition();
-            MoveTo(newPosition, time);
-        }
-    }
-
-    private Vector2 FindRandomPosition()
-    {
-        var newPosition = Vector2.zero;
-        if (_movingLongDistance)
-        {
-            var currentPosition = Position;
-            var minDistance = (_randomMovingArea.width - _randomMovingArea.x) / 2;
-
-            // Choose a random long distance new X position
-            var leftSpace = currentPosition.x - _randomMovingArea.x;
-            var rightSpace = _randomMovingArea.width - currentPosition.x;
-
-            if (leftSpace > minDistance)
-            {
-                if (rightSpace > minDistance)
-                {
-                    if (UnityEngine.Random.Range(0f, 1f) > 0.5)
-                        newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
-                    else
-                        newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
-                }
-                else
-                    newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, currentPosition.x - minDistance);
-            }
-            else
-                newPosition.x = UnityEngine.Random.Range(currentPosition.x + minDistance, currentPosition.x + minDistance + _randomMovingArea.width);
-
-            // minDistance only depends on the random area X and width
-            if (_randomMovingArea.height - _randomMovingArea.y > minDistance)
-            {
-                // Choose a random long distance new Y position
-                var topSpace = currentPosition.y - _randomMovingArea.y;
-                var bottomSpace = _randomMovingArea.height - currentPosition.y;
-
-                if (topSpace > minDistance)
-                {
-                    if (bottomSpace > minDistance)
-                    {
-                        if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
-                            newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
-                        else
-                            newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
-                    }
-                    else
-                        newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, currentPosition.y - minDistance);
-                }
-                else
-                    newPosition.y = UnityEngine.Random.Range(currentPosition.y + minDistance, currentPosition.y + minDistance + _randomMovingArea.height);
-            }
-            else
-                newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
-        }
-        else
-        {
-            newPosition.x = UnityEngine.Random.Range(_randomMovingArea.x, _randomMovingArea.x + _randomMovingArea.width);
-            newPosition.y = UnityEngine.Random.Range(_randomMovingArea.y, _randomMovingArea.y + _randomMovingArea.height);
-        }
-
-        return newPosition;
-    }
-
-    // Move to a given position in "time" seconds
-    public void MoveTo(Vector2 position, float? time = null, bool force = false)
-    {
-        if (TargetingPosition && !force)
-            return;
-
-        TargetingPosition = true;
-        _targetPosition = position;
-
-        if (time.HasValue && time.Value > 0)
-        {
-            _startPosition = Position;
-
-            _targetPositionTimer = time.Value;
-            _targetPositionTime = time.Value;
-        }
-        else
-        {
-            _targetDirection = (position - new Vector2(Position.x, Position.y));
-            _targetDirection.Normalize();
-        }
-    }
-
     public void MoveToInitialPosition(float? time = null, bool force = false)
     {
         MoveTo(InitialPosition, time, force);
     }
 
-    public void MoveToCenter(float? time = null, bool force = false)
-    {
-        MoveTo(Vector2.zero, time, force);
-    }
+    #region Behaviours
 
     private void UpdateBehaviour()
     {
@@ -373,15 +211,17 @@ public abstract class AbstractBoss : MonoBehaviour {
         }
     }
 
-    public void TakeDamage(float damage)
+    #endregion
+
+    public override void TakeDamage(float damage)
     {
         if (Invincible)
             return;
 
+        base.TakeDamage(damage);
+        
         if (Behaviours.Count > CurrentBehaviourIndex)
             Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
-
-        OnTakeDamage.Invoke();
     }
 
     public float GetLifePercentage()
@@ -404,22 +244,6 @@ public abstract class AbstractBoss : MonoBehaviour {
         }
     }
 
-    public void StartMovingRandomly(Rect? movingArea = null, bool longDistance = false, float time = 1.5f)
-    {
-        _movingRandomly = true;
-
-        if (movingArea.HasValue)
-            _randomMovingArea = movingArea.Value;
-
-        _movingLongDistance = longDistance;
-        _randomMovementTime = time;
-    }
-
-    public void StopMovingRandomly()
-    {
-        _movingRandomly = false;
-    }
-
     public void StartShootTimer(float time, Action callback)
     {
         EnableShootTimer = true;
@@ -432,101 +256,6 @@ public abstract class AbstractBoss : MonoBehaviour {
         EnableShootTimer = false;
         ShootTimerTime = 0;
         ShootTimerCallback = null;
-    }
-
-    private void UpdatePosition()
-    {
-        var deltaPosition = Speed * Time.deltaTime * Acceleration * Direction;
-
-        if (TargetingPosition)
-        {
-            if (!_targetDirection.Equals(Vector2.zero))
-            {
-                var currentPosition = Position;
-                var distance = Vector2.Distance(currentPosition, _targetPosition);
-                var deltaDistance = Speed * Time.deltaTime;
-
-                if (distance < deltaDistance)
-                {
-                    TargetingPosition = false;
-                    _targetDirection = Vector2.zero;
-                    Position = _targetPosition;
-                }
-                else
-                {
-                    // TODO: Perform some cubic interpolation
-                    deltaPosition = ((_targetDirection * deltaDistance) * Acceleration);
-                    var newPosition = currentPosition + new Vector3(deltaPosition.x, deltaPosition.y, 0f);
-                    Position = newPosition;
-                }
-            }
-            else
-            {
-                var newPosition = Position;
-                var lerpAmount = _targetPositionTime / _targetPositionTimer;
-
-                newPosition.x = Mathf.SmoothStep(_targetPosition.x, _startPosition.x, lerpAmount);
-                newPosition.y = Mathf.SmoothStep(_targetPosition.y, _startPosition.y, lerpAmount);
-
-                if (lerpAmount < 0.001f)
-                {
-                    TargetingPosition = false;
-                    _targetPositionTime = 0;
-                    Position = _targetPosition;
-                }
-                else
-                    _targetPositionTime -= Time.deltaTime;
-
-                Position = newPosition;
-            }
-        }
-        else
-        {
-            var newPosition = Position + new Vector3(deltaPosition.x, deltaPosition.y, 0f);
-            Position = newPosition;
-        }
-    }
-
-    private void UpdateRotation()
-    {
-        if (TargetingAngle)
-        {
-            // TODO: Add some logic to know if the boss has to turn to the left or to the right
-
-            if (_targetAngleTimer <= 0)
-            {
-                var currentRotation = Rotation;
-                var distance = Math.Abs(currentRotation - _targetAngle);
-                var deltaDistance = AngularVelocity * Time.deltaTime;
-
-                if (distance < deltaDistance)
-                {
-                    TargetingAngle = false;
-                    Rotation = _targetAngle;
-                }
-                else
-                {
-                    var factor = (currentRotation < _targetAngle) ? 1 : -1;
-                    Rotation = currentRotation + (factor * deltaDistance);
-                }
-            }
-            else
-            {
-                var lerpAmount = (float)(_targetAngleTime / _targetAngleTimer);
-                var newAngle = Mathf.Lerp(_targetAngle, _initialAngle, lerpAmount);
-
-                if (lerpAmount < 0.001f)
-                {
-                    TargetingAngle = false;
-                    _targetAngleTimer = 0;
-                    Rotation = _targetAngle;
-                }
-                else
-                    _targetAngleTime -= Time.deltaTime;
-
-                Rotation = newAngle;
-            }
-        }
     }
 
     private void UpdateTimers()

@@ -32,7 +32,6 @@ public class GameArea : MonoBehaviour
 
     public Vector2 NormalizedToWorldPoint(Vector2 position)
     {
-        var gameAreaSpacePosition = _rectTransform.rect.size * position;
-        return Camera.main.ScreenToWorldPoint(gameAreaSpacePosition);
+        return GetWorldRect().min + (GetWorldRect().size * position);
     }
 }
