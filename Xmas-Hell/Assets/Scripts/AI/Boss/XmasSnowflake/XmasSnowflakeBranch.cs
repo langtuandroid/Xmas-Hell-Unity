@@ -40,10 +40,11 @@ public class XmasSnowflakeBranch : AbstractEntity
     {
         yield return new WaitForSeconds(_timeBeforeRush);
 
-        var angle = MathHelper.DirectionToAngle(_boss.Player.transform.position - transform.position) + 180f;
-        Rigidbody.MoveRotation(angle);
+        var direction = _boss.Player.transform.position - transform.position;
+        var angle = MathHelper.DirectionToAngle(direction);
+        Rigidbody.MoveRotation(angle + 180f);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -MathHelper.AngleToDirection(angle), 2300, LayerMask.GetMask("Wall"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2300, LayerMask.GetMask("Wall"));
 
         if (hit.collider != null)
         {

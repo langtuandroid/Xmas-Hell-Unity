@@ -77,13 +77,12 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         if (_movingRandomly)
             MoveToRandomPosition(_randomMovementTime);
-
-        UpdatePosition();
-        UpdateRotation();
     }
 
     protected virtual void FixedUpdate()
     {
+        UpdatePosition();
+        UpdateRotation();
     }
 
     private void ComputeSpriteSize()
@@ -227,7 +226,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
     private void UpdatePosition()
     {
-        var deltaPosition = Speed * Time.deltaTime * Acceleration * Direction;
+        var deltaPosition = Speed * Time.fixedDeltaTime * Acceleration * Direction;
 
         if (_targetingPosition)
         {
@@ -235,7 +234,7 @@ public abstract class AbstractEntity : MonoBehaviour
             {
                 var currentPosition = Position;
                 var distance = Vector2.Distance(currentPosition, _targetPosition);
-                var deltaDistance = Speed * Time.deltaTime;
+                var deltaDistance = Speed * Time.fixedDeltaTime;
 
                 if (distance < deltaDistance)
                 {
@@ -247,7 +246,7 @@ public abstract class AbstractEntity : MonoBehaviour
                 {
                     // TODO: Perform some cubic interpolation
                     deltaPosition = ((_targetDirection * deltaDistance) * Acceleration);
-                    var newPosition = currentPosition + new Vector3(deltaPosition.x, deltaPosition.y, 0f);
+                    var newPosition = currentPosition + new Vector3(deltaPosition.x, deltaPosition.y, Position.z);
                     Position = newPosition;
                 }
             }
@@ -266,14 +265,14 @@ public abstract class AbstractEntity : MonoBehaviour
                     Position = _targetPosition;
                 }
                 else
-                    _targetPositionTime -= Time.deltaTime;
+                    _targetPositionTime -= Time.fixedDeltaTime;
 
                 Position = newPosition;
             }
         }
         else
         {
-            var newPosition = Position + new Vector3(deltaPosition.x, deltaPosition.y, 0f);
+            var newPosition = Position + new Vector3(deltaPosition.x, deltaPosition.y, Position.z);
             Position = newPosition;
         }
 
@@ -290,7 +289,7 @@ public abstract class AbstractEntity : MonoBehaviour
             {
                 var currentRotation = Rotation;
                 var distance = Math.Abs(currentRotation - _targetAngle);
-                var deltaDistance = AngularVelocity * Time.deltaTime;
+                var deltaDistance = AngularVelocity * Time.fixedDeltaTime;
 
                 if (distance < deltaDistance)
                 {
@@ -315,7 +314,7 @@ public abstract class AbstractEntity : MonoBehaviour
                     Rotation = _targetAngle;
                 }
                 else
-                    _targetAngleTime -= Time.deltaTime;
+                    _targetAngleTime -= Time.fixedDeltaTime;
 
                 Rotation = newAngle;
             }
