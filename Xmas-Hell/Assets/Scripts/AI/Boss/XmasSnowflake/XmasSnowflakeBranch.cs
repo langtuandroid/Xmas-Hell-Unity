@@ -26,7 +26,7 @@ public class XmasSnowflakeBranch : AbstractEntity
         else
             Debug.LogWarning("No boss found in this scene");
 
-        _timeBeforeRush = Random.Range(0, 2);
+        _timeBeforeRush = Random.Range(2f, 3f);
 
         StartCoroutine(RushOnPlayer());
     }
@@ -63,5 +63,9 @@ public class XmasSnowflakeBranch : AbstractEntity
 
         if (!_rushing)
             Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularVelocity * Time.fixedDeltaTime));
+        else if (!TargetingPosition)
+        {
+            IsAlive = false;
+        }
     }
 }

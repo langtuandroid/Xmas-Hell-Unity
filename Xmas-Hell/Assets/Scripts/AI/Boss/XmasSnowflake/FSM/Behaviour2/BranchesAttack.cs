@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace XmasSnowflakeBehaviour2FSM
 {
@@ -9,6 +10,7 @@ namespace XmasSnowflakeBehaviour2FSM
 
         private Transform _branch1Group;
         private Transform _branch2Group;
+        private List<XmasSnowflakeBranch> _branches = new List<XmasSnowflakeBranch>(8);
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -27,8 +29,10 @@ namespace XmasSnowflakeBehaviour2FSM
             {
                 var branch1 = _branch1Group.GetChild(i);
                 var dynamicBranch1 = Instantiate(Branch1Prefab, branch1.position, branch1.rotation);
-                dynamicBranch1.GetComponent<XmasSnowflakeBranch>().SetBoss(Boss);
-                branch1.gameObject.SetActive(false);
+                var snowflakeBranch = dynamicBranch1.GetComponent<XmasSnowflakeBranch>();
+                snowflakeBranch.SetBoss(Boss);
+
+                _branches.Add(snowflakeBranch);
             }
 
             _branch1Group.gameObject.SetActive(false);
@@ -37,8 +41,10 @@ namespace XmasSnowflakeBehaviour2FSM
             {
                 var branch2 = _branch2Group.GetChild(i);
                 var dynamicBranch2 = Instantiate(Branch2Prefab, branch2.position, branch2.rotation);
-                dynamicBranch2.GetComponent<XmasSnowflakeBranch>().SetBoss(Boss);
-                branch2.gameObject.SetActive(false);
+                var snowflakeBranch = dynamicBranch2.GetComponent<XmasSnowflakeBranch>();
+                snowflakeBranch.SetBoss(Boss);
+
+                _branches.Add(snowflakeBranch);
             }
 
             _branch2Group.gameObject.SetActive(false);
@@ -60,6 +66,21 @@ namespace XmasSnowflakeBehaviour2FSM
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
+
+            for (int i = 0; i < _branches.Count; i++)
+            {
+                var branch = _branches[i];
+
+                if (!branch.IsAlive)
+                {
+                    _branches.Remove(branch);
+                    // TODO: Trigger pattern
+                    Destroy(branch.gameObject);
+                }
+            }
+
+            if (_branches.Count == 0)
+                animator.SetTrigger("RespawnBranches");
         }
     }
 }

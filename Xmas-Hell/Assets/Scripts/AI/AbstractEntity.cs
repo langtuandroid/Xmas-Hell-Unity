@@ -10,6 +10,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public Vector2 Acceleration = Vector2.one;
     public float AngularVelocity = 5f;
     public bool Invincible;
+    public bool IsAlive;
     public UnityEvent OnTakeDamage; 
 
     protected Rigidbody2D Rigidbody;
@@ -21,7 +22,7 @@ public abstract class AbstractEntity : MonoBehaviour
     protected Rect _randomMovingArea;
 
     // Position targeting
-    private bool _targetingPosition = false;
+    protected bool TargetingPosition = false;
     private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;
     private float _targetPositionTimer = 0f;
@@ -29,7 +30,7 @@ public abstract class AbstractEntity : MonoBehaviour
     private Vector2 _targetDirection = Vector2.zero;
 
     // Angle targeting
-    private bool _targetingAngle = false;
+    protected bool TargetingAngle = false;
     private float _initialAngle = 0f;
     private float _targetAngle = 0f;
     private float _targetAngleTimer = 0f;
@@ -60,6 +61,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
     protected virtual void Start()
     {
+        IsAlive = true;
         ComputeSpriteSize();
     }
 
@@ -67,8 +69,8 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         Direction = Vector2.zero;
         Rotation = 0;
-        _targetingPosition = false;
-        _targetingAngle = false;
+        TargetingPosition = false;
+        TargetingAngle = false;
         _movingRandomly = false;
         _movingLongDistance = false;
     }
@@ -97,14 +99,14 @@ public abstract class AbstractEntity : MonoBehaviour
         SpriteSize.x = Mathf.Abs(SpriteSize.x);
         SpriteSize.y = Mathf.Abs(SpriteSize.y);
 
-        var dot = Resources.Load("Debug/Dot");
-        Instantiate(dot, spriteBounds.min, Quaternion.identity, transform);
-        Instantiate(dot, spriteBounds.max, Quaternion.identity, transform);
+        //var dot = Resources.Load("Debug/Dot");
+        //Instantiate(dot, spriteBounds.min, Quaternion.identity, transform);
+        //Instantiate(dot, spriteBounds.max, Quaternion.identity, transform);
     }
 
     private void MoveToRandomPosition(float time)
     {
-        if (!_targetingPosition)
+        if (!TargetingPosition)
         {
             var newPosition = FindRandomPosition();
             MoveTo(newPosition, time);
@@ -175,10 +177,10 @@ public abstract class AbstractEntity : MonoBehaviour
     // Move to a given position in "time" seconds
     public void MoveTo(Vector2 position, float? time = null, bool force = false)
     {
-        if (_targetingPosition && !force)
+        if (TargetingPosition && !force)
             return;
 
-        _targetingPosition = true;
+        TargetingPosition = true;
         _targetPosition = position;
 
         if (time.HasValue && time.Value > 0)
@@ -228,7 +230,7 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         var deltaPosition = Speed * Time.fixedDeltaTime * Acceleration * Direction;
 
-        if (_targetingPosition)
+        if (TargetingPosition)
         {
             if (!_targetDirection.Equals(Vector2.zero))
             {
@@ -238,7 +240,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
                 if (distance < deltaDistance)
                 {
-                    _targetingPosition = false;
+                    TargetingPosition = false;
                     _targetDirection = Vector2.zero;
                     Position = _targetPosition;
                 }
@@ -260,7 +262,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
                 if (lerpAmount < 0.001f)
                 {
-                    _targetingPosition = false;
+                    TargetingPosition = false;
                     _targetPositionTime = 0;
                     Position = _targetPosition;
                 }
@@ -275,13 +277,11 @@ public abstract class AbstractEntity : MonoBehaviour
             var newPosition = Position + new Vector3(deltaPosition.x, deltaPosition.y, Position.z);
             Position = newPosition;
         }
-
-        //Debug.Log("Position: " + Position);
     }
 
     private void UpdateRotation()
     {
-        if (_targetingAngle)
+        if (TargetingAngle)
         {
             // TODO: Add some logic to know if the boss has to turn to the left or to the right
 
@@ -293,7 +293,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
                 if (distance < deltaDistance)
                 {
-                    _targetingAngle = false;
+                    TargetingAngle = false;
                     Rotation = _targetAngle;
                 }
                 else
@@ -309,7 +309,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
                 if (lerpAmount < 0.001f)
                 {
-                    _targetingAngle = false;
+                    TargetingAngle = false;
                     _targetAngleTimer = 0;
                     Rotation = _targetAngle;
                 }

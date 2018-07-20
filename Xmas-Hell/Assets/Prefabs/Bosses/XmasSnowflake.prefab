@@ -590,6 +590,7 @@ MonoBehaviour:
   Acceleration: {x: 1, y: 1}
   AngularVelocity: 5
   Invincible: 0
+  IsAlive: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []

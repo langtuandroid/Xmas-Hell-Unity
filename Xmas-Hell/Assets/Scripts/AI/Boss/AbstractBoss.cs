@@ -99,9 +99,9 @@ public abstract class AbstractBoss : AbstractEntity
         _randomMovingArea.width -= SpriteSize.x;
         _randomMovingArea.height -= SpriteSize.y;
 
-        var dot = Resources.Load("Debug/Dot");
-        Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity);
-        Instantiate(dot, new Vector2(_randomMovingArea.x + _randomMovingArea.width, _randomMovingArea.y + _randomMovingArea.height), Quaternion.identity);
+        //var dot = Resources.Load("Debug/Dot");
+        //Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity);
+        //Instantiate(dot, new Vector2(_randomMovingArea.x + _randomMovingArea.width, _randomMovingArea.y + _randomMovingArea.height), Quaternion.identity);
 
         #region Initialize behaviour
         if (Behaviours.Count > 0)
