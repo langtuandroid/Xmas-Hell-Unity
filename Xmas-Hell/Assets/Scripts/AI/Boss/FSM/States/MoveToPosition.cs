@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace XmasSnowflakeBehaviour2FSM
+namespace BossBehaviourState
 {
     public class MoveToPosition : BossStateMachineBehaviour
     {
@@ -9,6 +9,7 @@ namespace XmasSnowflakeBehaviour2FSM
         [Range(0f, 1f)]
         public float NormalizedPositionY;
         public float TimeToMove;
+        public string NextStateTrigger;
 
         private Vector2 _worldPosition;
 
@@ -27,10 +28,10 @@ namespace XmasSnowflakeBehaviour2FSM
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            if (Mathf.Abs(Boss.Position.x - _worldPosition.x) < 0.5f && Mathf.Abs(Boss.Position.y - _worldPosition.y) < 0.5f)
+            if (!Boss.TargetingPosition)
             {
                 Boss.Invincible = false;
-                animator.SetTrigger("DetachBranches");
+                animator.SetTrigger(NextStateTrigger);
             }
         }
     }

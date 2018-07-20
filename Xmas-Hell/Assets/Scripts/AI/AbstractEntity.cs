@@ -22,7 +22,7 @@ public abstract class AbstractEntity : MonoBehaviour
     protected Rect _randomMovingArea;
 
     // Position targeting
-    protected bool TargetingPosition = false;
+    public bool TargetingPosition = false;
     private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;
     private float _targetPositionTimer = 0f;

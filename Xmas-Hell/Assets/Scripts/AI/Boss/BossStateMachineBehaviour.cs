@@ -4,9 +4,22 @@ public class BossStateMachineBehaviour : StateMachineBehaviour
 {
     protected AbstractBoss Boss;
 
+    protected Animator Animator;
+    protected AnimatorStateInfo StateInfo;
+    protected int LayerIndex;
+
+    private void OnDestroy()
+    {
+        OnStateExit(Animator, StateInfo, LayerIndex);
+    }
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Animator = animator;
+        StateInfo = stateInfo;
+        LayerIndex = layerIndex;
+
         Boss = animator.transform.parent.gameObject.GetComponent<AbstractBoss>();
     }
 

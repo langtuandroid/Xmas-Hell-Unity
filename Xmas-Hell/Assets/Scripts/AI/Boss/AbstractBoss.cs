@@ -7,6 +7,9 @@ public abstract class AbstractBoss : AbstractEntity
     [SerializeField]
     List<AbstractBossBehaviour> Behaviours;
 
+    [SerializeField]
+    private RuntimeAnimatorController BaseAnimatorController;
+
     public readonly EBoss BossType;
 
     protected int CurrentBehaviourIndex;
@@ -23,10 +26,10 @@ public abstract class AbstractBoss : AbstractEntity
     private bool _ready;
 
     // Shoot timer
-    public bool EnableShootTimer = false;
-    private float ShootTimer = 0f;
-    public float ShootTimerTime = 0f;
-    public Action ShootTimerCallback = null;
+    private bool _enableShootTimer = false;
+    private float _shootTimer = 0f;
+    private float _shootTimerTime = 0f;
+    private Action _shootTimerCallback = null;
 
     public float InitialSpeed
     {
@@ -119,6 +122,8 @@ public abstract class AbstractBoss : AbstractEntity
     {
         RestoreDefaultState();
 
+        _animator.runtimeAnimatorController = BaseAnimatorController;
+
         // Reset behaviours
         PreviousBehaviourIndex = -1;
         CurrentBehaviourIndex = 0;
@@ -145,11 +150,8 @@ public abstract class AbstractBoss : AbstractEntity
 
         if (!_ready)
         {
-            if (!(Mathf.Abs(Position.x - InitialPosition.x) < 0.5f &&
-                Mathf.Abs(Position.y - InitialPosition.y) < 0.5f))
-            {
+            if (TargetingPosition)
                 return;
-            }
 
             Invincible = false;
             _ready = true;
@@ -173,7 +175,15 @@ public abstract class AbstractBoss : AbstractEntity
 
         if (CurrentBehaviourIndex != PreviousBehaviourIndex)
         {
-            NextBehaviour();
+            if (CurrentBehaviourIndex >= Behaviours.Count)
+            {
+                Reset();
+                return;
+            }
+            else
+            {
+                NextBehaviour();
+            }
         }
 
         if (Behaviours.Count > 0)
@@ -188,12 +198,7 @@ public abstract class AbstractBoss : AbstractEntity
             return;
 
         if (Behaviours[CurrentBehaviourIndex].IsBehaviourEnded())
-        {
             CurrentBehaviourIndex++;
-
-            if (CurrentBehaviourIndex >= Behaviours.Count)
-                Destroy(gameObject);
-        }
     }
 
     private void NextBehaviour()
@@ -246,29 +251,29 @@ public abstract class AbstractBoss : AbstractEntity
 
     public void StartShootTimer(float time, Action callback)
     {
-        EnableShootTimer = true;
-        ShootTimerTime = time;
-        ShootTimerCallback = callback;
+        _enableShootTimer = true;
+        _shootTimerTime = time;
+        _shootTimerCallback = callback;
     }
 
     public void StopShootTimer()
     {
-        EnableShootTimer = false;
-        ShootTimerTime = 0;
-        ShootTimerCallback = null;
+        _enableShootTimer = false;
+        _shootTimerTime = 0;
+        _shootTimerCallback = null;
     }
 
     private void UpdateTimers()
     {
         // Shoot timer
-        if (EnableShootTimer && ShootTimerCallback != null)
+        if (_enableShootTimer && _shootTimerCallback != null)
         {
-            if (ShootTimer > 0)
-                ShootTimer -= Time.deltaTime;
+            if (_shootTimer > 0)
+                _shootTimer -= Time.deltaTime;
             else
             {
-                ShootTimer = ShootTimerTime;
-                ShootTimerCallback();
+                _shootTimer = _shootTimerTime;
+                _shootTimerCallback();
             }
         }
     }

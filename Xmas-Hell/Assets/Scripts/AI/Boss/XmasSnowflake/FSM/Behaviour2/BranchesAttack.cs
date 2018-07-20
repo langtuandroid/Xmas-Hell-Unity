@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace XmasSnowflakeBehaviour2FSM
+namespace BossBehaviourState
 {
     public class BranchesAttack : BossStateMachineBehaviour
     {
@@ -50,17 +50,12 @@ namespace XmasSnowflakeBehaviour2FSM
             _branch2Group.gameObject.SetActive(false);
         }
 
-        private void ShowAllBranches()
-        {
-            _branch1Group.gameObject.SetActive(true);
-            _branch2Group.gameObject.SetActive(true);
-        }
-
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
 
-            ShowAllBranches();
+            for (int i = 0; i < _branches.Count; i++)
+                Destroy(_branches[i].gameObject);
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -50,6 +50,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9692320082b0ce64c9d67a60b1556430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114335130831450274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a74b00170f3ead4ab9a22542eacdade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LongDistance: 0
+  RandomMovementTime: 1.5
+  EnableShooting: 1
+  ShootFrequency: 0.5
 --- !u!114 &114346124006735934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,6 +79,17 @@ MonoBehaviour:
   LongDistance: 0
   RandomMovementTime: 1.5
   ShootFrequency: 0.5
+--- !u!114 &114729473273343180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d81f646b6cdfc4cb2b812655039f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &1101565275940948246
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -121,7 +147,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101565275940948246}
   m_StateMachineBehaviours:
-  - {fileID: 114346124006735934}
+  - {fileID: 114335130831450274}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -155,7 +181,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cc1ffd0e60959674fb65ecfd378a7a72, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4c278414778b4204d828041227c840a8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -173,7 +199,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101688315422803436}
   m_StateMachineBehaviours:
-  - {fileID: 114320602971135488}
+  - {fileID: 114729473273343180}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -222,7 +248,7 @@ AnimatorStateMachine:
     m_Position: {x: 396, y: 108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102869521724945860}
-    m_Position: {x: 384, y: 228, z: 0}
+    m_Position: {x: 396, y: 216, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

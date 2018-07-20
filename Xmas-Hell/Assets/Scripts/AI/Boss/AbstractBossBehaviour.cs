@@ -35,8 +35,8 @@ public class AbstractBossBehaviour : MonoBehaviour
 
     public virtual void StartBehaviour()
     {
-        AnimationRoot.GetComponent<Animator>().runtimeAnimatorController = FSM;
         Reset();
+        AnimationRoot.GetComponent<Animator>().runtimeAnimatorController = FSM;
     }
 
     public virtual void Reset()

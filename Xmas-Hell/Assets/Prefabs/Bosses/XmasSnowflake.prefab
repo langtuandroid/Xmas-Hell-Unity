@@ -274,6 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4143409632579208}
   - component: {fileID: 114366224273595384}
+  - component: {fileID: 114654727519938244}
   - component: {fileID: 114497844811400206}
   - component: {fileID: 50783332811021234}
   - component: {fileID: 210578541629793970}
@@ -596,10 +597,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  TargetingPosition: 0
   Behaviours:
+  - {fileID: 114654727519938244}
   - {fileID: 114497844811400206}
-  EnableShootTimer: 0
-  ShootTimerTime: 0
+  BaseAnimatorController: {fileID: 9100000, guid: 0cd6561ef3e29724b8c409c6e5375e6c,
+    type: 2}
 --- !u!114 &114497844811400206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,7 +616,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1105345469741290}
   FSM: {fileID: 9100000, guid: 52a5913e80cf33749836493dc2dab478, type: 2}
-  InitialBehaviourLife: 500
+  InitialBehaviourLife: 50
+  Boss: {fileID: 114366224273595384}
+--- !u!114 &114654727519938244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877944070540562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014d40b2f842a9940b038f388b530b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationRoot: {fileID: 1105345469741290}
+  FSM: {fileID: 9100000, guid: 0bed34b25f3692f4493c25f33c3431b1, type: 2}
+  InitialBehaviourLife: 50
   Boss: {fileID: 114366224273595384}
 --- !u!210 &210578541629793970
 SortingGroup:

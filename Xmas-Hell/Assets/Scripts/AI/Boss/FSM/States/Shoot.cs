@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace XmasBallBehaviour1FSM
+namespace BossBehaviourState
 {
     public class Shoot : BossStateMachineBehaviour
     {
