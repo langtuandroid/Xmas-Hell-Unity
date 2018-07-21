@@ -598,6 +598,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TargetingPosition: 0
+  DamageBlinkTime: 0.2
   Behaviours:
   - {fileID: 114654727519938244}
   - {fileID: 114497844811400206}

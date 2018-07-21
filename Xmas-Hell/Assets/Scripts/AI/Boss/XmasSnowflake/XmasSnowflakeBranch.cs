@@ -31,6 +31,11 @@ public class XmasSnowflakeBranch : AbstractEntity
         StartCoroutine(RushOnPlayer());
     }
 
+    public void OnDestroy()
+    {
+        StopCoroutine(RushOnPlayer());
+    }
+
     public void SetBoss(AbstractBoss boss)
     {
         _boss = boss;
@@ -55,6 +60,11 @@ public class XmasSnowflakeBranch : AbstractEntity
         {
             Debug.LogWarning("No wall found by this Xmas Snowflake branch!");
         }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        _boss.TakeDamage(damage / 8f);
     }
 
     protected override void FixedUpdate()
