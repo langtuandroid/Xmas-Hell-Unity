@@ -23,7 +23,7 @@ namespace BossBehaviourState
             if (TopSide) screenSides.Add(EScreenSide.Top);
             if (BottomSide) screenSides.Add(EScreenSide.Bottom);
 
-            var randomSide = screenSides[Random.Range(0, screenSides.Count - 1)];
+            var randomSide = screenSides[Random.Range(0, screenSides.Count)];
 
             switch (randomSide)
             {
