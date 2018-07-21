@@ -19,12 +19,12 @@ namespace BossBehaviourState
 
             Boss.StartMovingRandomly(
                 new Vector4(
-                    BottomLeftCorner.x, 
-                    BottomLeftCorner.y, 
-                    TopRightCorner.x, 
+                    BottomLeftCorner.x,
+                    BottomLeftCorner.y,
+                    TopRightCorner.x,
                     TopRightCorner.y
-                ), 
-                LongDistance, 
+                ),
+                LongDistance,
                 RandomMovementTime
             );
 

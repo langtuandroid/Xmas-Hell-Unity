@@ -63,6 +63,16 @@ public abstract class AbstractEntity : MonoBehaviour
         set { Rigidbody.MoveRotation(value); }
     }
 
+    public float Width
+    {
+        get { return SpriteSize.x; }
+    }
+
+    public float Height
+    {
+        get { return SpriteSize.y; }
+    }
+
     protected virtual void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
@@ -146,6 +156,75 @@ public abstract class AbstractEntity : MonoBehaviour
         {
             var newPosition = FindRandomPosition();
             MoveTo(newPosition, time);
+        }
+    }
+    public void MoveOutOfScreen(float? time = null, bool force = true)
+    {
+        MoveTo(GetNearestOutOfScreenPosition(), time, force);
+    }
+
+    private Vector2 GetNearestOutOfScreenPosition()
+    {
+        var outOfScreenPosition = Position;
+        EScreenSide side = GetNearestBorder();
+        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+
+        switch (side)
+        {
+            case EScreenSide.Left:
+                outOfScreenPosition.x = gameAreaBounds.xMin - Width;
+                break;
+            case EScreenSide.Right:
+                outOfScreenPosition.x = gameAreaBounds.xMax + Width;
+                break;
+            case EScreenSide.Top:
+                outOfScreenPosition.y = gameAreaBounds.yMax + Height;
+                break;
+            case EScreenSide.Bottom:
+                outOfScreenPosition.y = gameAreaBounds.yMin - Height;
+                break;
+        }
+
+        return outOfScreenPosition;
+    }
+
+    public EScreenSide GetNearestBorder()
+    {
+        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+
+        // Left part
+        if (Position.x < 0)
+        {
+            if (Position.y < 0)
+            {
+                if (Position.y - gameAreaBounds.yMin < Position.x - gameAreaBounds.xMin)
+                    return EScreenSide.Bottom;
+            }
+            else
+            {
+                if (gameAreaBounds.yMax - Position.y < Position.x - gameAreaBounds.xMin)
+                    return EScreenSide.Top;
+            }
+
+            return EScreenSide.Left;
+        }
+        // Right part
+        else
+        {
+            if (Position.y < 0)
+            {
+                if (Position.y - gameAreaBounds.yMin < gameAreaBounds.xMax - Position.x)
+                    return EScreenSide.Bottom;
+            }
+            else
+            {
+                if (gameAreaBounds.yMax - Position.y < gameAreaBounds.xMax - Position.x)
+                {
+                    return EScreenSide.Top;
+                }
+            }
+
+            return EScreenSide.Right;
         }
     }
 
