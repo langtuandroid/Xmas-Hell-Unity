@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4681852800675624}
   - component: {fileID: 114752281738679952}
   - component: {fileID: 114400563395662890}
+  - component: {fileID: 114172075279106296}
   - component: {fileID: 50960328967856826}
   - component: {fileID: 210157526770372072}
   m_Layer: 9
@@ -307,6 +308,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114172075279106296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1034342319130522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8615bf3b7145c3c41a33e41120308a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationRoot: {fileID: 1978665513887760}
+  FSM: {fileID: 9100000, guid: a5a0128db771cc04e89e777bd86b0420, type: 2}
+  InitialBehaviourLife: 50
+  Boss: {fileID: 114752281738679952}
 --- !u!114 &114400563395662890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: a1d68b2e0c00d77479c38b4ed9c8282c, type: 2}
-  InitialBehaviourLife: 1000
+  InitialBehaviourLife: 50
   Boss: {fileID: 114752281738679952}
 --- !u!114 &114752281738679952
 MonoBehaviour:
@@ -333,19 +349,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7621c39ea5c3742900ea016b646fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviours:
-  - {fileID: 114400563395662890}
   Speed: 1
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
   AngularVelocity: 5
+  Invincible: 0
+  IsAlive: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TargetingPosition: 0
-  TargetingAngle: 0
+  Behaviours:
+  - {fileID: 114400563395662890}
+  - {fileID: 114172075279106296}
+  BaseAnimatorController: {fileID: 9100000, guid: a3356d2aed7c0674ebc0eccf50cf997f,
+    type: 2}
 --- !u!210 &210157526770372072
 SortingGroup:
   m_ObjectHideFlags: 1

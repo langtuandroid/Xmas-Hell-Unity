@@ -63,7 +63,7 @@ public abstract class AbstractEntity : MonoBehaviour
         if (!Rigidbody)
             throw new Exception("No RigidBody2D found in this scene!");
 
-        GameManager = GetComponentInParent<GameManager>();
+        GameManager = GameObject.FindGameObjectWithTag("Root").GetComponent<GameManager>();
 
         if (!GameManager)
             throw new Exception("No GameManager found in this scene!");

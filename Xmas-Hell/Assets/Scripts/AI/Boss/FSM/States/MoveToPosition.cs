@@ -5,9 +5,9 @@ namespace BossBehaviourState
     public class MoveToPosition : BossStateMachineBehaviour
     {
         [Range(0f, 1f)]
-        public float NormalizedPositionX;
+        public float PositionX;
         [Range(0f, 1f)]
-        public float NormalizedPositionY;
+        public float PositionY;
         public float TimeToMove;
         public string NextStateTrigger;
 
@@ -19,7 +19,7 @@ namespace BossBehaviourState
 
             Boss.Invincible = true;
 
-            _worldPosition = Boss.GameManager.GameArea.NormalizedToWorldPoint(new Vector2(NormalizedPositionX, NormalizedPositionY));
+            _worldPosition = Boss.GameManager.GameArea.NormalizedToWorldPoint(new Vector2(PositionX, PositionY));
 
             Boss.MoveTo(_worldPosition, TimeToMove, true);
         }

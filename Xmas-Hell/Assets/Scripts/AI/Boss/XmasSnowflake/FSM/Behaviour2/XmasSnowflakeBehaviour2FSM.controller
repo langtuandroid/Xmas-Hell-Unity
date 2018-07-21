@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ab315b3c2344847b492036aeb1b9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalizedPositionX: 0.5
-  NormalizedPositionY: 0.75
+  PositionX: 0.5
+  PositionY: 0.75
   TimeToMove: 2
   NextStateTrigger: DetachBranches
 --- !u!114 &114442714257285990
