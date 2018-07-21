@@ -21,9 +21,8 @@ namespace BossBehaviourState
 
             // Make sure the sum of weight is equal to 1
             var sum = NextStateTriggers.Values.Sum();
-            sum = (float)Math.Round(sum, 1);
 
-            if (sum != 1)
+            if (sum < 0.99f || sum > 1f)
                 throw new Exception("Sum of all next state triggers weight must be equal to 1!");
 
             var sortedNextStateTriggers = NextStateTriggers.OrderBy(pair => pair.Value);

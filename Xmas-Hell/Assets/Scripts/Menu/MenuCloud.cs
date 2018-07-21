@@ -15,7 +15,7 @@ public class MenuCloud : MonoBehaviour
 
 	void Start ()
     {
-        StartCoroutine("CrossScreenHorizontaly");
+        StartCoroutine(CrossScreenHorizontaly());
     }
 
     IEnumerator CrossScreenHorizontaly()

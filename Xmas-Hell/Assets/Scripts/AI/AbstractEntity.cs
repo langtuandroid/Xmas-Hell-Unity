@@ -14,7 +14,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public bool IsAlive;
     public UnityEvent OnTakeDamage; 
 
-    protected Rigidbody2D Rigidbody;
+    public Rigidbody2D Rigidbody;
     protected GameManager GameManager;
 
     // Random moving
