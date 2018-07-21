@@ -10,6 +10,11 @@ public abstract class AbstractBoss : AbstractEntity
     [SerializeField]
     private RuntimeAnimatorController BaseAnimatorController;
 
+    // Life Bar 
+    [SerializeField]
+    private GameObject BossLifeBarPrefab;
+    private BossLifeBar _bossLifeBar;
+
     public readonly EBoss BossType;
 
     protected int CurrentBehaviourIndex;
@@ -67,6 +72,11 @@ public abstract class AbstractBoss : AbstractEntity
 
         if (!_player)
             throw new Exception("No player found in this scene!");
+
+        var bossLifeBarHolder = GameObject.FindGameObjectWithTag("BossLifeBarHolder");
+        var lifeBar = Instantiate(BossLifeBarPrefab, bossLifeBarHolder.transform);
+        _bossLifeBar = lifeBar.GetComponent<BossLifeBar>();
+        _bossLifeBar.Initialize(this);
     }
 
     protected override void Start()
@@ -129,6 +139,8 @@ public abstract class AbstractBoss : AbstractEntity
     protected override void RestoreDefaultState()
     {
         base.RestoreDefaultState();
+
+        _bossLifeBar.GetComponent<BossLifeBar>().Reset();
     }
 
     protected override void Update()

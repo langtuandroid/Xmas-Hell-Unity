@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Wall
   - Root
+  - BossLifeBarHolder
   layers:
   - Default
   - TransparentFX

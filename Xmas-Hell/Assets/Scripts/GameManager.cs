@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     // Boss
     public BossStore BossStore;
+
+    [HideInInspector]
     public AbstractBoss Boss;
-    public GameObject BossLifeBarPrefab;
-    public GameObject BossLifeBarHolder;
 
     // Game area
     public Canvas GameCanvas;
@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
     // Timer
     private float _gameTimer;
 
-    private GameObject _bossLifeBar;
-
     void Awake()
     {
         if (!Boss)
@@ -32,9 +30,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("No boss found");
             return;
         }
-
-        _bossLifeBar = Instantiate(BossLifeBarPrefab, BossLifeBarHolder.transform);
-        _bossLifeBar.GetComponent<BossLifeBar>().Initialize(Boss);
     }
 
     private void Start()

@@ -31,6 +31,12 @@ public class BossLifeBar : MonoBehaviour
         _boss.OnTakeDamage.AddListener(OnBossTakeDamage);
     }
 
+    public void Reset()
+    {
+        _lifeBarRawImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _lifeBarTotalWidth);
+        _lifeBarRawImage.color = Color;
+    }
+
     public void Update()
     {
         if (_bossTookDamage)

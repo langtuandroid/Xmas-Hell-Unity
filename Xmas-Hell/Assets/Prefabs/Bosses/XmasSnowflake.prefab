@@ -603,6 +603,8 @@ MonoBehaviour:
   - {fileID: 114497844811400206}
   BaseAnimatorController: {fileID: 9100000, guid: 0cd6561ef3e29724b8c409c6e5375e6c,
     type: 2}
+  BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
+    type: 2}
 --- !u!114 &114497844811400206
 MonoBehaviour:
   m_ObjectHideFlags: 1

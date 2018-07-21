@@ -626,6 +626,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 2}
+      propertyPath: BossLifeBarPrefab
+      value: 
+      objectReference: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ae0f11e482d64a96a13bffa936192, type: 2}
   m_IsPrefabAsset: 0
@@ -913,9 +919,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossStore: {fileID: 11400000, guid: 147be0528e41e004dacab5b556687e16, type: 2}
   Boss: {fileID: 0}
-  BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
-    type: 2}
-  BossLifeBarHolder: {fileID: 1482682879}
   GameCanvas: {fileID: 1580924062}
   GameArea: {fileID: 503411856}
   TimerText: {fileID: 810765679}
@@ -1185,7 +1188,7 @@ GameObject:
   - component: {fileID: 1482682880}
   m_Layer: 5
   m_Name: BossLifeBarHolder
-  m_TagString: Untagged
+  m_TagString: BossLifeBarHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
