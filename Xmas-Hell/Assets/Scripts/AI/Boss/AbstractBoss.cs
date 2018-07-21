@@ -21,8 +21,6 @@ public abstract class AbstractBoss : AbstractEntity
     private Vector2 _initialPosition;
     private float _initialSpeed;
 
-    private GameManager _gameManager;
-
     private bool _ready;
 
     // Shoot timer
@@ -48,7 +46,7 @@ public abstract class AbstractBoss : AbstractEntity
 
     public GameManager GameManager
     {
-        get { return _gameManager; }
+        get { return base.GameManager; }
     }
 
     public GameObject Player
@@ -65,11 +63,6 @@ public abstract class AbstractBoss : AbstractEntity
         if (!_animator)
             throw new Exception("No Animator found on this Boss!");
 
-        _gameManager = GetComponentInParent<GameManager>();
-
-        if (!_gameManager)
-            throw new Exception("No GameManager found in this scene!");
-
         _player = GameObject.FindGameObjectWithTag("Player");
 
         if (!_player)
@@ -82,25 +75,19 @@ public abstract class AbstractBoss : AbstractEntity
 
         _initialSpeed = Speed;
 
-        var gameArea = _gameManager.GameArea.GetWorldRect();
+        var gameArea = base.GameManager.GameArea.GetWorldRect();
 
         _initialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - SpriteSize.y / 2f);
 
-        _randomMovingArea = gameArea;
-
         // Restrict the default random area to the top part of the screen
-        _randomMovingArea.height = gameArea.height * 0.2f;
-        _randomMovingArea.y = gameArea.yMax - _randomMovingArea.height;
-        _randomMovingArea.width = gameArea.width * 0.9f;
-        _randomMovingArea.x = gameArea.xMin + ((gameArea.width - _randomMovingArea.width) / 2f);
+        var randomMovingArea = new Rect(
+            gameArea.xMin + ((gameArea.width - (gameArea.width * 0.9f)) / 2f),
+            gameArea.yMax - (gameArea.height * 0.2f),
+            gameArea.width * 0.9f,
+            gameArea.height * 0.2f
+        );
 
-        // Area position = bottom left corner
-        _randomMovingArea.x += SpriteSize.x / 2f;
-        _randomMovingArea.y += SpriteSize.y / 2f;
-        // We substract the entire sprite size from the width and height 
-        // of the area as we move it according to the half sprite's size
-        _randomMovingArea.width -= SpriteSize.x;
-        _randomMovingArea.height -= SpriteSize.y;
+        UpdateRandomMovingArea(new Vector4(0f, 0.95f, 1f, 0.98f));
 
         //var dot = Resources.Load("Debug/Dot");
         //Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity);

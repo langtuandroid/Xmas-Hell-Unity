@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,12 +15,13 @@ public abstract class AbstractEntity : MonoBehaviour
     public UnityEvent OnTakeDamage; 
 
     protected Rigidbody2D Rigidbody;
+    protected GameManager GameManager;
 
     // Random moving
     private bool _movingRandomly;
     private float _randomMovementTime;
     private bool _movingLongDistance;
-    protected Rect _randomMovingArea;
+    private Rect _randomMovingArea;
 
     // Position targeting
     public bool TargetingPosition = false;
@@ -39,6 +41,9 @@ public abstract class AbstractEntity : MonoBehaviour
     // Sprite
     protected Vector2 SpriteSize;
 
+    // Debug
+    List<GameObject> _debugDots = new List<GameObject>();
+
     public Vector3 Position
     {
         get { return Rigidbody.position; }
@@ -57,6 +62,11 @@ public abstract class AbstractEntity : MonoBehaviour
 
         if (!Rigidbody)
             throw new Exception("No RigidBody2D found in this scene!");
+
+        GameManager = GetComponentInParent<GameManager>();
+
+        if (!GameManager)
+            throw new Exception("No GameManager found in this scene!");
     }
 
     protected virtual void Start()
@@ -210,15 +220,50 @@ public abstract class AbstractEntity : MonoBehaviour
         OnTakeDamage.Invoke();
     }
 
-    public void StartMovingRandomly(Rect? movingArea = null, bool longDistance = false, float time = 1.5f)
+    public void StartMovingRandomly(Vector4? normalizedMovingArea = null, bool longDistance = false, float time = 1.5f)
     {
         _movingRandomly = true;
 
-        if (movingArea.HasValue)
-            _randomMovingArea = movingArea.Value;
+        if (normalizedMovingArea.HasValue)
+            UpdateRandomMovingArea(normalizedMovingArea.Value);
 
         _movingLongDistance = longDistance;
         _randomMovementTime = time;
+    }
+
+    protected void UpdateRandomMovingArea(Vector4 movingArea, bool stayInScreen = true)
+    {
+        // Normalized position
+        var bottomLeftCorner = new Vector2(Mathf.Clamp01(movingArea.x), Mathf.Clamp01(movingArea.y));
+        var topRightCorner = new Vector2(Mathf.Clamp01(movingArea.z), Mathf.Clamp01(movingArea.w));
+
+        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+
+        var min = gameAreaBounds.min;
+        var max = gameAreaBounds.max;
+
+        if (stayInScreen)
+        {
+            min += SpriteSize / 2f;
+            max -= SpriteSize / 2f;
+        }
+
+        var size = max - min;
+
+        min = min + size * bottomLeftCorner;
+        max = max + -size * (Vector2.one - topRightCorner);
+
+        _randomMovingArea = new Rect(min.x, min.y, max.x - min.x, max.y - min.y);
+
+        for (int i = 0; i < _debugDots.Count; i++)
+            Destroy(_debugDots[i]);
+
+        _debugDots.Clear();
+
+        var dot = Resources.Load("Debug/Dot");
+
+        _debugDots.Add((GameObject)Instantiate(dot, new Vector2(_randomMovingArea.x, _randomMovingArea.y), Quaternion.identity));
+        _debugDots.Add((GameObject)Instantiate(dot, new Vector2(_randomMovingArea.x + _randomMovingArea.width, _randomMovingArea.y + _randomMovingArea.height), Quaternion.identity));
     }
 
     public void StopMovingRandomly()
