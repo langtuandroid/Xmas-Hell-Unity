@@ -54,13 +54,13 @@ public abstract class AbstractEntity : MonoBehaviour
     public Vector3 Position
     {
         get { return Rigidbody.position; }
-        set { Rigidbody.MovePosition(value); }
+        set { Rigidbody.position = value; }
     }
 
     public float Rotation
     {
         get { return Rigidbody.rotation; }
-        set { Rigidbody.MoveRotation(value); }
+        set { Rigidbody.rotation = value; }
     }
 
     public float Width
