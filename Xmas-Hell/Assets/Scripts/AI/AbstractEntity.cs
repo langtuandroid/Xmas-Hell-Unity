@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class AbstractEntity : MonoBehaviour
 {
-    public float Speed;
+    public float Speed = 1f;
     public Vector2 Direction = Vector2.zero; // values in radians
     public Vector2 Acceleration = Vector2.one;
     public float AngularVelocity = 5f;

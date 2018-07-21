@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c165952442cb4d64691427f4ae251ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 3
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
   AngularVelocity: 5
