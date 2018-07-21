@@ -8,3 +8,6 @@ public class EnumSpriteSerializableDictionaryPropertyDrawer : SerializableDictio
 
 [CustomPropertyDrawer(typeof(ScreenCornerToGameObjectDictionary))]
 public class ScreenCornerGameObjectSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
+
+[CustomPropertyDrawer(typeof(StringToFloatDictionary))]
+public class StringToFloatDictionarySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }

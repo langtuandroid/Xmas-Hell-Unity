@@ -34,10 +34,10 @@ namespace BossBehaviourState
                     newPosition.x = gameAreaBounds.xMax + Boss.Width;
                     break;
                 case EScreenSide.Top:
-                    newPosition.x = gameAreaBounds.yMax + Boss.Height;
+                    newPosition.y = gameAreaBounds.yMax + Boss.Height;
                     break;
                 case EScreenSide.Bottom:
-                    newPosition.x = gameAreaBounds.yMin - Boss.Height;
+                    newPosition.y = gameAreaBounds.yMin - Boss.Height;
                     break;
             }
 
