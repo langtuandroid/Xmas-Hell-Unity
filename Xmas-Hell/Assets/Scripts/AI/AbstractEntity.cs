@@ -40,6 +40,13 @@ public abstract class AbstractEntity : MonoBehaviour
 
     // Sprite
     protected Vector2 SpriteSize;
+    private SpriteRenderer[] _spriteRenderers;
+
+    // Color blink
+    public float DamageBlinkTime = 0.2f;
+    private float _damageBlinkTimer;
+    private Color _damageColor = new Color(0f, 0f, 0f, 1f);
+    private bool _tookDamage = false;
 
     // Debug
     List<GameObject> _debugDots = new List<GameObject>();
@@ -72,6 +79,7 @@ public abstract class AbstractEntity : MonoBehaviour
     protected virtual void Start()
     {
         IsAlive = true;
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         ComputeSpriteSize();
     }
 
@@ -89,6 +97,19 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         if (_movingRandomly)
             MoveToRandomPosition(_randomMovementTime);
+
+        if (_tookDamage)
+        {
+            if (_damageBlinkTimer > 0)
+            {
+                _damageBlinkTimer -= Time.deltaTime;
+            }
+            else
+            {
+                SetColor(Color.white);
+                _tookDamage = false;
+            }
+        }
     }
 
     protected virtual void FixedUpdate()
@@ -97,12 +118,17 @@ public abstract class AbstractEntity : MonoBehaviour
         UpdateRotation();
     }
 
+    public void SetColor(Color color)
+    {
+        foreach (var spriteRenderer in _spriteRenderers)
+            spriteRenderer.material.SetColor("_Color", color);
+    }
+
     private void ComputeSpriteSize()
     {
-        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         Bounds spriteBounds = new Bounds(transform.position, Vector3.zero);
 
-        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
             spriteBounds.Encapsulate(spriteRenderer.bounds);
 
         SpriteSize = spriteBounds.min - spriteBounds.max;
@@ -216,6 +242,13 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         if (Invincible)
             return;
+
+        if (!_tookDamage)
+        {
+            _tookDamage = true;
+            _damageBlinkTimer = DamageBlinkTime;
+            SetColor(_damageColor);
+        }
 
         OnTakeDamage.Invoke();
     }
