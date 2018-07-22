@@ -7,6 +7,13 @@ public class GameArea : MonoBehaviour
     [SerializeField] private ScreenCornerToGameObjectDictionary _gameAreaCorners;
     [SerializeField] private RectTransform _rectTransform;
 
+    private Vector2 _initialGameCanvasLocalScale;
+
+    public void Awake()
+    {
+        _initialGameCanvasLocalScale = _canvas.gameObject.transform.localScale;
+    }
+
     public GameObject GetCorner(EScreenCorner corner)
     {
         if (!_gameAreaCorners.ContainsKey(corner))
@@ -22,7 +29,11 @@ public class GameArea : MonoBehaviour
 
     public Rect GetWorldRect()
     {
-        return _rectTransform.GetWorldRect(_canvas.gameObject.transform.localScale);
+        var cameraOrthographicSize = Camera.main.orthographicSize;
+        var scale = (cameraOrthographicSize / (((RectTransform)_canvas.gameObject.transform).rect.height / 200f)) / 100f;
+        var localGameCanvasScale = new Vector2(scale, scale);
+
+        return _rectTransform.GetWorldRect(localGameCanvasScale);
     }
 
     public Rect GetRect()

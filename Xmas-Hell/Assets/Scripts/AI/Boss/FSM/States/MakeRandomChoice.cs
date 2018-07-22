@@ -41,13 +41,6 @@ namespace BossBehaviourState
                 previousWeight = currentWeight;
             }
 
-            if (string.IsNullOrEmpty(nextState))
-            {
-                Debug.Log("State is null!");
-            }
-
-            Debug.Log("Next state: " + nextState);
-
             animator.SetTrigger(nextState);
         }
     }

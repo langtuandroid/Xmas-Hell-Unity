@@ -4,22 +4,44 @@ using UnityEngine;
 public abstract class AbstractBullet : MonoBehaviour
 {
     public float Speed = 1f;
-    public Bounds DestructionBounds;
+    // Normalized position of bottom left and top right corners
+    // that describe the bullet destruction area
+    public Vector2 DestructionBoundsBottomLeft;
+    public Vector2 DestructionBoundsTopRight;
     public float Damage = 1f;
 
     protected Vector2 Direction = Vector2.up;
     protected GameObject Emitter;
 
     private Rigidbody2D _rigidbody;
+    private GameArea _gameArea;
+    private Rect _gameBounds;
+    private Vector2 _destructionBoundMin;
+    private Vector2 _destructionBoundMax;
 
     public void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
         if (_rigidbody == null)
-        {
             throw new Exception("No Rigidbody2D found for this bullet!");
-        }
+
+        _gameArea = GameObject.FindGameObjectWithTag("GameArea").GetComponent<GameArea>();
+
+        if (_gameArea == null)
+            throw new Exception("No GameArea found in the scene!");
+
+        _gameBounds = _gameArea.GetWorldRect();
+    }
+
+    public void Start()
+    {
+        var min = _gameBounds.min;
+        var max = _gameBounds.max;
+        var size = max - min;
+
+        _destructionBoundMin = min + size * DestructionBoundsBottomLeft;
+        _destructionBoundMax = max + -size * (Vector2.one - DestructionBoundsTopRight);
     }
 
     public void SetEmitter(GameObject emitter)
@@ -38,15 +60,20 @@ public abstract class AbstractBullet : MonoBehaviour
         CheckOutOfBounds();
     }
 
-    protected virtual void CheckOutOfBounds()
+    private void CheckOutOfBounds()
     {
-        if (transform.position.x > DestructionBounds.extents.x ||
-            transform.position.x < -DestructionBounds.extents.x ||
-            transform.position.y > DestructionBounds.extents.y ||
-            transform.position.y < -DestructionBounds.extents.y)
+        if (transform.position.x > _destructionBoundMax.x ||
+            transform.position.x < _destructionBoundMin.x ||
+            transform.position.y > _destructionBoundMax.y ||
+            transform.position.y < _destructionBoundMin.y)
         {
-            Destroy(gameObject);
+            OnOutOfBounds();
         }
+    }
+
+    protected virtual void OnOutOfBounds()
+    {
+        Destroy(gameObject);
     }
 
     public Vector2 GetDirection()

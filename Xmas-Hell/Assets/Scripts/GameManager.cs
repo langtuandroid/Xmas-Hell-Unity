@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
         if (bossPrefab)
         {
-            var bossObject = Instantiate(bossPrefab, GameCanvas.transform);
+            var bossObject = Instantiate(bossPrefab);
             Boss = bossObject.GetComponent<AbstractBoss>();
         }
     }

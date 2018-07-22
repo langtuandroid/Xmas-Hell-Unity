@@ -119,9 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  DestructionBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 7, y: 11, z: 0}
+  DestructionBoundsBottomLeft: {x: 0, y: 0}
+  DestructionBoundsTopRight: {x: 1, y: 1}
   Damage: 1
 --- !u!212 &212143409785873168
 SpriteRenderer:

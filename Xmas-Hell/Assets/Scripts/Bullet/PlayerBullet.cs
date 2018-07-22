@@ -2,15 +2,9 @@
 
 public class PlayerBullet : AbstractBullet
 {
-    protected override void CheckOutOfBounds()
+    protected override void OnOutOfBounds()
     {
-        if (transform.position.x > DestructionBounds.extents.x ||
-            transform.position.x < -DestructionBounds.extents.x ||
-            transform.position.y > DestructionBounds.extents.y ||
-            transform.position.y < -DestructionBounds.extents.y)
-        {
-            HideBullet();
-        }
+        HideBullet();
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)

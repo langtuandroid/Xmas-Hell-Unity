@@ -14,7 +14,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public bool IsAlive;
     public UnityEvent OnTakeDamage; 
 
-    public Rigidbody2D Rigidbody;
+    private Rigidbody2D _rigidbody;
     protected GameManager GameManager;
 
     // Random moving
@@ -73,9 +73,14 @@ public abstract class AbstractEntity : MonoBehaviour
         get { return SpriteSize.y; }
     }
 
+    public Rigidbody2D Rigidbody
+    {
+        get { return _rigidbody; }
+    }
+
     protected virtual void Awake()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
 
         if (!Rigidbody)
             throw new Exception("No RigidBody2D found in this scene!");
