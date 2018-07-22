@@ -8,11 +8,11 @@ public class PlayerControls : MonoBehaviour
 
     private Vector3 _initialTouchPosition;
     private Vector3 _initialPosition;
-    private Bounds _cameraBounds;
+    private Rect _gameAreaBounds;
 
     private void Start()
     {
-        _cameraBounds = Camera.main.OrthographicBounds();
+        _gameAreaBounds = GameObject.FindGameObjectWithTag("GameArea").GetComponent<GameArea>().GetWorldRect();
     }
 
     void FixedUpdate()
@@ -37,9 +37,9 @@ public class PlayerControls : MonoBehaviour
             var newPosition = _initialPosition + (deltaPosition * MoveSensitivity);
             newPosition.z = _initialPosition.z; // Make sure we don't alter the Z position
 
-            // Make sure the player stay in the camera area
-            newPosition.x = Mathf.Clamp(newPosition.x, -_cameraBounds.extents.x, _cameraBounds.extents.x);
-            newPosition.y = Mathf.Clamp(newPosition.y, -_cameraBounds.extents.y, _cameraBounds.extents.y);
+            // Make sure the player stay in the game area
+            newPosition.x = Mathf.Clamp(newPosition.x, _gameAreaBounds.xMin, _gameAreaBounds.xMax);
+            newPosition.y = Mathf.Clamp(newPosition.y, _gameAreaBounds.yMin, _gameAreaBounds.yMax);
 
             Rigidbody.MovePosition(newPosition);
         }
