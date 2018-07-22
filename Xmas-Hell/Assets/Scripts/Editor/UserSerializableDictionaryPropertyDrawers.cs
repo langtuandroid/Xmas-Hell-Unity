@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 
-[CustomPropertyDrawer(typeof(BossTypeToPrefabDictionary))]
+[CustomPropertyDrawer(typeof(BossTypeToGameObjectDictionary))]
 public class EnumGameObjectSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
 
-[CustomPropertyDrawer(typeof(BossTypeToBossBallDictionary))]
+[CustomPropertyDrawer(typeof(BossTypeToSpriteDictionary))]
 public class EnumSpriteSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
 
 [CustomPropertyDrawer(typeof(ScreenCornerToGameObjectDictionary))]

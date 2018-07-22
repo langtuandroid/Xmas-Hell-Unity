@@ -18,10 +18,19 @@ MonoBehaviour:
     - {fileID: 1152998548348758, guid: 828ba6d77f0ba6140b4a85ded747759b, type: 2}
     - {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 2}
     - {fileID: 1877944070540562, guid: 088ae0f11e482d64a96a13bffa936192, type: 2}
-  BossTypeToBossBallSpriteDictionary:
+  BossTypeToBossBallAvailableSpriteDictionary:
     m_keys: 02000000030000000400000005000000
     m_values:
-    - {fileID: 1194024481680572, guid: 36848096dd2439c42bdccb3c4aa6cd15, type: 2}
-    - {fileID: 1194024481680572, guid: 36848096dd2439c42bdccb3c4aa6cd15, type: 2}
-    - {fileID: 1194024481680572, guid: 36848096dd2439c42bdccb3c4aa6cd15, type: 2}
-    - {fileID: 1194024481680572, guid: 36848096dd2439c42bdccb3c4aa6cd15, type: 2}
+    - {fileID: 21300000, guid: fb43b3a1cca5d584da6ab4af0a39d5c7, type: 3}
+    - {fileID: 21300000, guid: 64f04e5bb23aad44db3971d0608d1e15, type: 3}
+    - {fileID: 21300000, guid: d6ec6c90a85a2d34ea4642410cf7193b, type: 3}
+    - {fileID: 21300000, guid: 3c3ad674a468e0642a25108b22310354, type: 3}
+  BossTypeToBossBallBeatenSpriteDictionary:
+    m_keys: 02000000030000000400000005000000
+    m_values:
+    - {fileID: 21300000, guid: f031eff823299904884ad3f6d35e884f, type: 3}
+    - {fileID: 21300000, guid: d91362730799bec449974d08cf1c57c0, type: 3}
+    - {fileID: 21300000, guid: 1887fcb39da8f714e84700e4e3b4c8d7, type: 3}
+    - {fileID: 21300000, guid: 55fe9dcb33bb44a49870f8c5eb4d6985, type: 3}
+  BossBallUnknownSprite: {fileID: 21300000, guid: bdd8bc1d95a79c94897965a9c3e20d9f,
+    type: 3}

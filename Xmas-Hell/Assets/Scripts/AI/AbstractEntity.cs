@@ -15,7 +15,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public UnityEvent OnTakeDamage; 
 
     private Rigidbody2D _rigidbody;
-    protected GameManager GameManager;
+    protected GameManager _gameManager;
 
     // Random moving
     private bool _movingRandomly;
@@ -78,6 +78,11 @@ public abstract class AbstractEntity : MonoBehaviour
         get { return _rigidbody; }
     }
 
+    public GameManager GameManager
+    {
+        get { return _gameManager; }
+    }
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -85,9 +90,9 @@ public abstract class AbstractEntity : MonoBehaviour
         if (!Rigidbody)
             throw new Exception("No RigidBody2D found in this scene!");
 
-        GameManager = GameObject.FindGameObjectWithTag("Root").GetComponent<GameManager>();
+        _gameManager = GameObject.FindGameObjectWithTag("Root").GetComponent<GameManager>();
 
-        if (!GameManager)
+        if (!_gameManager)
             throw new Exception("No GameManager found in this scene!");
     }
 
@@ -172,7 +177,7 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         var outOfScreenPosition = Position;
         EScreenSide side = GetNearestBorder();
-        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+        var gameAreaBounds = _gameManager.GameArea.GetWorldRect();
 
         switch (side)
         {
@@ -195,7 +200,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
     public EScreenSide GetNearestBorder()
     {
-        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+        var gameAreaBounds = _gameManager.GameArea.GetWorldRect();
 
         // Left part
         if (Position.x < 0)
@@ -354,7 +359,7 @@ public abstract class AbstractEntity : MonoBehaviour
         var bottomLeftCorner = new Vector2(Mathf.Clamp01(movingArea.x), Mathf.Clamp01(movingArea.y));
         var topRightCorner = new Vector2(Mathf.Clamp01(movingArea.z), Mathf.Clamp01(movingArea.w));
 
-        var gameAreaBounds = GameManager.GameArea.GetWorldRect();
+        var gameAreaBounds = _gameManager.GameArea.GetWorldRect();
 
         var min = gameAreaBounds.min;
         var max = gameAreaBounds.max;

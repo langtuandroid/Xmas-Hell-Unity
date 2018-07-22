@@ -49,11 +49,6 @@ public abstract class AbstractBoss : AbstractEntity
         get { return _animator; }
     }
 
-    public GameManager GameManager
-    {
-        get { return base.GameManager; }
-    }
-
     public GameObject Player
     {
         get { return _player; }
@@ -85,7 +80,7 @@ public abstract class AbstractBoss : AbstractEntity
 
         _initialSpeed = Speed;
 
-        var gameArea = base.GameManager.GameArea.GetWorldRect();
+        var gameArea = base._gameManager.GameArea.GetWorldRect();
 
         _initialPosition = new Vector2(0, gameArea.yMax - (0.1f * gameArea.yMax) - SpriteSize.y / 2f);
 

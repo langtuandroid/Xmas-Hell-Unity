@@ -5,6 +5,7 @@ public class MenuScreenManager : MonoBehaviour
 {
     public Animator MenuAnimator;
     public PlayerFrontAnimator PlayerFrontAnimator;
+    public BossStore BossStore;
 
     public void Start()
     {
