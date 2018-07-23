@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI TimerText;
     private float _gameTimer;
 
+    // Pause
+    private bool _pause;
+
+    public bool Pause
+    {
+        get { return _pause; }
+    }
+
     public float GameTimer
     {
         get { return _gameTimer; }
@@ -53,6 +61,18 @@ public class GameManager : MonoBehaviour
         _gameTimer = 0f;
     }
 
+    public void PauseGame()
+    {
+        _pause = true;
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        _pause = false;
+        Time.timeScale = 1;
+    }
+
     void OnBossDeath()
     {
         Debug.Log("End game: boss death");
@@ -69,6 +89,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             ScreenManager.GoBack();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (_pause)
+                ResumeGame();
+            else
+                PauseGame();
+        }
     }
 
     void FixedUpdate()
