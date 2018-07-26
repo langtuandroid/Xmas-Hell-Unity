@@ -27,6 +27,6 @@ public class BossPanel : MonoBehaviour
 
     public void OnStartBattleButtonClick()
     {
-        ScreenManager.GoToScreen(EScreen.Game);
+        _menuScreenManager.GoToScreen(EScreen.Game);
     }
 }

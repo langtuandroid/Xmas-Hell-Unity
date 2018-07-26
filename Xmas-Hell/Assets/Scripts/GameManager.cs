@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Player Player;
 
+    // Screen
+    public ScreenManager GameScreenManager;
+
     // Game area
     public Canvas GameCanvas;
     public GameArea GameArea;
@@ -70,7 +73,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         _pause = false;
-        Time.timeScale = 1;
+        Time.timeScale = 0.01f;
     }
 
     void OnBossDeath()
@@ -88,7 +91,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            ScreenManager.GoBack();
+            GameScreenManager.GoBack();
 
         if (Input.GetKeyDown(KeyCode.P))
         {

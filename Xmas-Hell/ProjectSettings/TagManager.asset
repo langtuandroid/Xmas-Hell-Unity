@@ -11,6 +11,7 @@ TagManager:
   - Root
   - BossLifeBarHolder
   - GameArea
+  - ScreenTransition
   layers:
   - Default
   - TransparentFX

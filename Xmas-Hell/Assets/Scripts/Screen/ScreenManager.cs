@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum EScreen
@@ -10,22 +11,38 @@ public enum EScreen
     Game
 }
 
-public static class ScreenManager
+public class ScreenManager : MonoBehaviour
 {
     private static EScreen CurrentScreen = EScreen.MainMenu;
     private static Stack<EScreen> _previousScenes = new Stack<EScreen>();
 
-    public static void GoToScreen(EScreen screenType)
+    public void GoToScreen(EScreen screenType)
     {
+        Animator screenTransitionAnimator = GameObject.FindGameObjectWithTag("ScreenTransition").GetComponent<Animator>();
+
+        if (screenTransitionAnimator != null)
+        {
+            screenTransitionAnimator.SetTrigger("StopAnimation");
+            StartCoroutine(LoadScene(screenType));
+        }
+        else
+        {
+            SceneManager.LoadScene(ScreenTypeToString(screenType));
+        }
+
         if (CurrentScreen != EScreen.None)
             _previousScenes.Push(CurrentScreen);
-
-        SceneManager.LoadScene(ScreenTypeToString(screenType));
 
         CurrentScreen = screenType;
     }
 
-    public static void GoBack()
+    private IEnumerator LoadScene(EScreen screenType)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(ScreenTypeToString(screenType));
+    }
+
+    public void GoBack()
     {
         if (_previousScenes.Count > 0)
             GoToScreen(_previousScenes.Pop());

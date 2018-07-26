@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class MenuScreenManager : MonoBehaviour
+public class MenuScreenManager : ScreenManager
 {
     public Animator MenuAnimator;
     public PlayerFrontAnimator PlayerFrontAnimator;
