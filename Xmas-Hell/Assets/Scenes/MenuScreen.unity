@@ -781,6 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215048444}
   - component: {fileID: 215048445}
+  - component: {fileID: 215048446}
   m_Layer: 0
   m_Name: PlayerFrontHolder
   m_TagString: Untagged
@@ -831,6 +832,26 @@ MonoBehaviour:
   StartAnimationDelay: 5
   NextAnimationRandomTimeMin: 0
   NextAnimationRandomTimeMax: 0
+--- !u!223 &215048446
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215048443}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: -1598786479
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &235115802
 Prefab:
   m_ObjectHideFlags: 0
@@ -1277,7 +1298,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1815503962}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
@@ -1292,22 +1313,22 @@ Prefab:
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
@@ -1332,12 +1353,12 @@ Prefab:
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
         type: 2}
@@ -8780,11 +8801,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 31
---- !u!224 &1437523381 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224664442295304588, guid: 1694562adbc57814b82874e4fab8b7f2,
-    type: 2}
-  m_PrefabInternal: {fileID: 350629841}
 --- !u!4 &1443753102
 Transform:
   m_ObjectHideFlags: 0
@@ -9909,7 +9925,6 @@ RectTransform:
   m_Children:
   - {fileID: 1572267346}
   - {fileID: 391318066}
-  - {fileID: 1437523381}
   m_Father: {fileID: 319163750}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9972,7 +9987,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1536171793
   m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!114 &1836205710 stripped
