@@ -38,7 +38,7 @@ public class ScreenManager : MonoBehaviour
 
     private IEnumerator LoadScene(EScreen screenType)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(ScreenTypeToString(screenType));
     }
 
