@@ -11,11 +11,12 @@ public abstract class AbstractEntity : MonoBehaviour
     public Vector2 Acceleration = Vector2.one;
     public float AngularVelocity = 5f;
     public bool Invincible;
-    public bool IsAlive;
-    public UnityEvent OnTakeDamage; 
+    public UnityEvent OnTakeDamage;
+
+    protected GameManager _gameManager;
 
     private Rigidbody2D _rigidbody;
-    protected GameManager _gameManager;
+    private bool _isAlive;
 
     // Random moving
     private bool _movingRandomly;
@@ -24,6 +25,7 @@ public abstract class AbstractEntity : MonoBehaviour
     private Rect _randomMovingArea;
 
     // Position targeting
+    [HideInInspector]
     public bool TargetingPosition = false;
     private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;
@@ -32,11 +34,14 @@ public abstract class AbstractEntity : MonoBehaviour
     private Vector2 _targetDirection = Vector2.zero;
 
     // Angle targeting
-    protected bool TargetingAngle = false;
-    private float _initialAngle = 0f;
+    [HideInInspector]
+    public bool TargetingAngle = false;
+    private readonly float _initialAngle = 0f;
     private float _targetAngle = 0f;
     private float _targetAngleTimer = 0f;
     private float _targetAngleTime = 0f;
+    private int _previousRotationDirection = 0; // -1 left, 1 right
+    private bool _keepRotationDirection = false;
 
     // Sprite
     protected Vector2 SpriteSize;
@@ -82,6 +87,8 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         get { return _gameManager; }
     }
+
+    public bool IsAlive { get => _isAlive; set => _isAlive = value; }
 
     protected virtual void Awake()
     {
@@ -327,6 +334,16 @@ public abstract class AbstractEntity : MonoBehaviour
         MoveTo(Vector2.zero, time, force);
     }
 
+    public void RotateTo(float angle, bool force = false, bool keepDirection = false)
+    {
+        if (TargetingAngle && !force)
+            return;
+
+        TargetingAngle = true;
+        _targetAngle = angle;
+        _keepRotationDirection = keepDirection;
+    }
+
     public virtual void TakeDamage(float damage)
     {
         if (Invincible)
@@ -450,41 +467,64 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         if (TargetingAngle)
         {
-            // TODO: Add some logic to know if the boss has to turn to the left or to the right
-
             if (_targetAngleTimer <= 0)
             {
                 var currentRotation = Rotation;
-                var distance = Math.Abs(currentRotation - _targetAngle);
+
+                // Compute left and right distance to know if 
+                // the boss has to turn to the left or to the right
+                var leftDistance = 0f;
+                var rightDistance = 0f;
+
+                if (_targetAngle < currentRotation)
+                {
+                    leftDistance = 360 - currentRotation + _targetAngle;
+                    rightDistance = currentRotation - _targetAngle;
+
+                    if (!_keepRotationDirection || (_keepRotationDirection && _previousRotationDirection == 0))
+                        _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
+                }
+                else
+                {
+                    leftDistance = _targetAngle - currentRotation;
+                    rightDistance = 360 - _targetAngle + currentRotation;
+
+                    if (!_keepRotationDirection || (_keepRotationDirection && _previousRotationDirection == 0))
+                        _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
+                }
+
+                var distance = Mathf.Min(leftDistance, rightDistance);
                 var deltaDistance = AngularVelocity * Time.fixedDeltaTime;
 
-                if (distance < deltaDistance)
+                if (distance < deltaDistance + 5f)
                 {
                     TargetingAngle = false;
                     Rotation = _targetAngle;
+                    _previousRotationDirection = 0;
                 }
                 else
                 {
-                    var factor = (currentRotation < _targetAngle) ? 1 : -1;
-                    Rotation = currentRotation + (factor * deltaDistance);
+                    var newAngle = currentRotation + (_previousRotationDirection * deltaDistance);
+                    Debug.Log("New angle: " + newAngle);
+                    Rotation = MathHelper.WrapAngle(currentRotation + (_previousRotationDirection * deltaDistance));
                 }
             }
-            else
-            {
-                var lerpAmount = (float)(_targetAngleTime / _targetAngleTimer);
-                var newAngle = Mathf.Lerp(_targetAngle, _initialAngle, lerpAmount);
+            //else
+            //{
+            //    var lerpAmount = _targetAngleTime / _targetAngleTimer;
+            //    var newAngle = Mathf.Lerp(_targetAngle, _initialAngle, lerpAmount);
 
-                if (lerpAmount < 0.001f)
-                {
-                    TargetingAngle = false;
-                    _targetAngleTimer = 0;
-                    Rotation = _targetAngle;
-                }
-                else
-                    _targetAngleTime -= Time.fixedDeltaTime;
+            //    if (lerpAmount < 0.001f)
+            //    {
+            //        TargetingAngle = false;
+            //        _targetAngleTimer = 0;
+            //        Rotation = _targetAngle;
+            //    }
+            //    else
+            //        _targetAngleTime -= Time.fixedDeltaTime;
 
-                Rotation = newAngle;
-            }
+            //    Rotation = newAngle;
+            //}
         }
     }
 }

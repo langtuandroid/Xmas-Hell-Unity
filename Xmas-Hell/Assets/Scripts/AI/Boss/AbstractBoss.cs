@@ -151,9 +151,8 @@ public abstract class AbstractBoss : AbstractEntity
             _ready = true;
         }
 
-        UpdateBehaviour();
-
         UpdateTimers();
+        UpdateBehaviour();
     }
 
     public void MoveToInitialPosition(float? time = null, bool force = false)
@@ -271,4 +270,28 @@ public abstract class AbstractBoss : AbstractEntity
             }
         }
     }
+
+    #region Player
+
+    public Vector2 GetPlayerPosition()
+    {
+        return _player.transform.position;
+    }
+
+    public Vector2 GetPlayerDirection()
+    {
+        Vector2 playerPosition = GetPlayerPosition();
+        Vector2 currentPosition = transform.position;
+        var heading = currentPosition - playerPosition;
+        var direction = heading / heading.magnitude;
+
+        return direction;
+    }
+
+    public float GetPlayerDirectionAngle()
+    {
+        return MathHelper.DirectionToAngle(GetPlayerDirection());
+    }
+
+    #endregion
 }

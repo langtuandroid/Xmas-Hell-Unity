@@ -47,7 +47,7 @@ public class XmasSnowflakeBranch : AbstractEntity
 
         var direction = _boss.Player.transform.position - transform.position;
         var angle = MathHelper.DirectionToAngle(direction);
-        Rigidbody.MoveRotation(angle + 180f);
+        Rigidbody.MoveRotation(angle);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2300, LayerMask.GetMask("Wall"));
 
