@@ -480,23 +480,20 @@ public abstract class AbstractEntity : MonoBehaviour
                 {
                     leftDistance = 360 - currentRotation + _targetAngle;
                     rightDistance = currentRotation - _targetAngle;
-
-                    if (!_keepRotationDirection || (_keepRotationDirection && _previousRotationDirection == 0))
-                        _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
                 }
                 else
                 {
                     leftDistance = _targetAngle - currentRotation;
                     rightDistance = 360 - _targetAngle + currentRotation;
-
-                    if (!_keepRotationDirection || (_keepRotationDirection && _previousRotationDirection == 0))
-                        _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
                 }
+
+                if (!_keepRotationDirection || (_keepRotationDirection && _previousRotationDirection == 0))
+                    _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
 
                 var distance = Mathf.Min(leftDistance, rightDistance);
                 var deltaDistance = AngularVelocity * Time.fixedDeltaTime;
 
-                if (distance < deltaDistance + 5f)
+                if (distance < deltaDistance)
                 {
                     TargetingAngle = false;
                     Rotation = _targetAngle;
@@ -504,8 +501,6 @@ public abstract class AbstractEntity : MonoBehaviour
                 }
                 else
                 {
-                    var newAngle = currentRotation + (_previousRotationDirection * deltaDistance);
-                    Debug.Log("New angle: " + newAngle);
                     Rotation = MathHelper.WrapAngle(currentRotation + (_previousRotationDirection * deltaDistance));
                 }
             }

@@ -36,16 +36,6 @@ public static class MathHelper
     /// <returns>Wrapped angle in degrees</returns>
     public static float WrapAngle(float angle)
     {
-        //if (angle > 180)
-        //    angle = 360 - angle;
-
-        //angle = Mathf.Clamp(angle, 0, 360);
-
-        //if (angle < 0)
-        //    angle = 360 + angle;
-
-        //return angle;
-
         return (angle + 360) % 360;
     }
 }

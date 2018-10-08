@@ -25,7 +25,7 @@ namespace BossBehaviourState
             if (Reverse)
                 playerDirection = (playerDirection + 180) % 360;
 
-            Boss.RotateTo(playerDirection, true);
+            Boss.RotateTo(playerDirection, true, true);
 
             if (_lockingTargetTimer <= 0 || !Boss.TargetingAngle)
                 animator.SetTrigger("LockedPlayer");
