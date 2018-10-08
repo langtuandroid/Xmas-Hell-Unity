@@ -420,9 +420,9 @@ public abstract class AbstractEntity : MonoBehaviour
             {
                 var currentPosition = Position;
                 var distance = Vector2.Distance(currentPosition, _targetPosition);
-                var deltaDistance = Speed * Time.fixedDeltaTime;
+                var deltaDistance = Speed * Time.fixedDeltaTime * Acceleration;
 
-                if (distance < deltaDistance)
+                if (distance < deltaDistance.magnitude)
                 {
                     TargetingPosition = false;
                     _targetDirection = Vector2.zero;
@@ -431,7 +431,7 @@ public abstract class AbstractEntity : MonoBehaviour
                 else
                 {
                     // TODO: Perform some cubic interpolation
-                    deltaPosition = ((_targetDirection * deltaDistance) * Acceleration);
+                    deltaPosition = _targetDirection * deltaDistance;
                     var newPosition = currentPosition + new Vector3(deltaPosition.x, deltaPosition.y, Position.z);
                     Position = newPosition;
                 }
