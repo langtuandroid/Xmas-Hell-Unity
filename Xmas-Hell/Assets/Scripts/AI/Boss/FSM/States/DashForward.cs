@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Animations;
 
 namespace BossBehaviourState
 {
@@ -8,13 +7,18 @@ namespace BossBehaviourState
         public float SpeedMultiplier = 1f;
         public Vector2 Acceleration = Vector2.zero;
 
+        private Animator _animator;
+
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
             Boss.Speed *= SpeedMultiplier;
 
-            var wallLayerMask = LayerMask.NameToLayer("Wall");
+            Boss.OnCollision.AddListener(OnCollision);
+
+            _animator = animator;
+
             var direction = MathHelper.AngleToDirection(Boss.Rotation);
             var raycastHit = Physics2D.Raycast(Boss.Position, direction, 2300f, LayerMask.GetMask("Wall"));
 
@@ -24,31 +28,24 @@ namespace BossBehaviourState
             }
         }
 
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        private void OnCollision(Collision2D collision)
         {
-            base.OnStateExit(animator, stateInfo, layerIndex);
-
-            Boss.Rotation = 0;
+            Boss.TargetingPosition = false;
+            _animator.SetBool("IsStunned", true);
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            if (Boss.TargetingPosition)
-            {
-                Boss.Acceleration += Acceleration;
-            }
-            else
-            {
-                animator.SetBool("IsStunned", true);
-            }
+            Boss.Acceleration += Acceleration;
         }
 
-        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller)
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            base.OnStateExit(animator, stateInfo, layerIndex, controller);
+            base.OnStateExit(animator, stateInfo, layerIndex);
 
+            Boss.OnCollision.RemoveListener(OnCollision);
             Boss.Acceleration = Vector2.one;
         }
     }

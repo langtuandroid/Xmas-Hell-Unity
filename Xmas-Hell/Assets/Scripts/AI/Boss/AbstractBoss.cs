@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class CollisionEvent : UnityEvent<Collision2D>
+{
+}
 
 public abstract class AbstractBoss : AbstractEntity
 {
@@ -14,6 +19,9 @@ public abstract class AbstractBoss : AbstractEntity
     [SerializeField]
     private GameObject BossLifeBarPrefab;
     private BossLifeBar _bossLifeBar;
+
+    // Events
+    public CollisionEvent OnCollision = new CollisionEvent();
 
     public readonly EBoss BossType;
 
@@ -232,6 +240,8 @@ public abstract class AbstractBoss : AbstractEntity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        OnCollision.Invoke(collision);
+
         // TODO: Use an enum for tag
         if (collision.gameObject.tag == "PlayerBullet")
         {
