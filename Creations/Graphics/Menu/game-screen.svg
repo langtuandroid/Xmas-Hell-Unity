@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1080"
+   height="1920"
+   viewBox="0 0 285.74999 508.00001"
+   version="1.1"
+   id="svg3963"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="game-screen.svg">
+  <defs
+     id="defs3957">
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2228"
+       id="radialGradient2971"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.2577003,-1.218565e-7,9.4450751e-8,5.3800705,106.74071,-768.44009)"
+       cx="105.83873"
+       cy="148.93266"
+       fx="105.83873"
+       fy="148.93266"
+       r="107.87327" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2228">
+      <stop
+         style="stop-color:#eaf9fd;stop-opacity:1"
+         offset="0"
+         id="stop2224" />
+      <stop
+         style="stop-color:#b7e5f2;stop-opacity:0"
+         offset="1"
+         id="stop2226" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="1982.651"
+     inkscape:cy="640.18084"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1072"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px"
+     objecttolerance="1"
+     guidetolerance="1" />
+  <metadata
+     id="metadata3960">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,211.00002)">
+    <rect
+       style="opacity:1;fill:url(#radialGradient2971);fill-opacity:1;stroke:#000000;stroke-width:4.30358553;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2969"
+       width="270.08951"
+       height="483.48923"
+       x="422.32547"
+       y="-208.91661" />
+    <rect
+       style="opacity:1;fill:#a0612b;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:7.73588753;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3051"
+       width="215.54665"
+       height="289.48569"
+       x="451.24286"
+       y="-106.68269"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-background.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100" />
+    <circle
+       style="opacity:1;fill:#d04f4f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.96875024;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3053"
+       cx="661.09839"
+       cy="-105.72411"
+       r="16.819939" />
+    <g
+       id="g3065"
+       transform="matrix(0.93749998,0,0,0.93749998,2420.589,-476.16441)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3059"
+         d="m -1881.3636,400.55828 10.1587,-11.75265"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4.23887253;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4.23887253;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -1871.2049,400.55828 -10.1587,-11.75265"
+         id="path3061"
+         inkscape:connector-curvature="0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="557.84644"
+       y="-52.051483"
+       id="text3481"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-title-label.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100"><tspan
+         sodipodi:role="line"
+         id="tspan3479"
+         x="557.84644"
+         y="-52.051483"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.33333206px;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';text-align:center;text-anchor:middle;stroke-width:0.26458332px">You died</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;line-height:125%;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="467.04056"
+       y="-9.241272"
+       id="text4339"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-player-deaths-label.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100"><tspan
+         sodipodi:role="line"
+         id="tspan4337"
+         x="467.04056"
+         y="-9.241272"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';stroke-width:0.26458332px">for the 42 time(s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;line-height:125%;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="561.49628"
+       y="37.44347"
+       id="text4339-5"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-player-deaths-label.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100"><tspan
+         sodipodi:role="line"
+         id="tspan4337-9"
+         x="565.01855"
+         y="37.44347"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Avoid your </tspan><tspan
+         sodipodi:role="line"
+         x="565.01855"
+         y="69.193466"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan5022">opponent's </tspan><tspan
+         sodipodi:role="line"
+         x="561.49628"
+         y="100.94347"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Santas Big Secret BB';-inkscape-font-specification:'Santas Big Secret BB';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan5020">bullets next time</tspan></text>
+    <g
+       id="g5165"
+       transform="translate(416.67319,77.508167)">
+      <g
+         transform="matrix(1.5509425,0,0,1.5509425,962.77419,-437.78041)"
+         id="g5091">
+        <circle
+           style="opacity:1;fill:#ead74d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle5087"
+           cx="-528.86401"
+           cy="349.60971"
+           r="21.208113" />
+        <path
+           sodipodi:nodetypes="sssss"
+           inkscape:connector-curvature="0"
+           id="path5089"
+           d="m -512.02264,341.03888 c 1.07106,2.18192 -9.53571,-2.58023 -16.78382,-2.58023 -7.24812,0 -18.40791,6.21974 -17.16897,3.21923 2.72961,-6.61065 10.16573,-10.87237 17.41385,-10.87237 7.24811,0 13.98208,5.02462 16.53894,10.23337 z"
+           style="opacity:1;fill:#ffffff;fill-opacity:0.29411765;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <g
+         id="g5157">
+        <path
+           style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.61459494;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path5063"
+           sodipodi:type="arc"
+           sodipodi:cx="-93.755806"
+           sodipodi:cy="-149.36835"
+           sodipodi:rx="17.794821"
+           sodipodi:ry="17.84388"
+           sodipodi:start="6.046653"
+           sodipodi:end="5.1058188"
+           sodipodi:open="true"
+           d="m -76.456457,-153.54976 a 17.794821,17.84388 0 0 1 -9.212712,20.07636 17.794821,17.84388 0 0 1 -21.616871,-4.30504 17.794821,17.84388 0 0 1 -0.86273,-22.08289 17.794821,17.84388 0 0 1 21.214759,-5.98762"
+           transform="matrix(-0.92661576,0.37600962,-0.37354289,-0.92761291,0,0)" />
+        <path
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 135.05851,120.73523 6.79013,-5.94629 v 11.99689 z"
+           id="path5085"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="g4198"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\GameScreen\game-panel-background.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100">
+      <rect
+         style="opacity:1;fill:#a0612b;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:7.73588753;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4184"
+         width="215.54665"
+         height="289.48569"
+         x="810.45312"
+         y="-106.68269"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-background.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100" />
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\BossSelection\boss-panel-background.png"
+         y="-99.288261"
+         x="817.93665"
+         height="277.93704"
+         width="200.57956"
+         id="rect4186"
+         style="opacity:1;fill:#bd7233;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:7.31210661;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       transform="matrix(-0.92661576,0.37600962,-0.37354289,-0.92761291,0,0)"
+       d="m -376.08386,-561.54066 a 17.794821,17.84388 0 0 1 -9.21271,20.07635 17.794821,17.84388 0 0 1 -21.61687,-4.30503 17.794821,17.84388 0 0 1 -0.86274,-22.0829 17.794821,17.84388 0 0 1 21.21477,-5.98761"
+       sodipodi:open="true"
+       sodipodi:end="5.1058188"
+       sodipodi:start="6.046653"
+       sodipodi:ry="17.84388"
+       sodipodi:rx="17.794821"
+       sodipodi:cy="-557.35925"
+       sodipodi:cx="-393.38321"
+       sodipodi:type="arc"
+       id="path1762"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.61459494;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g1791"
+       transform="translate(-20.78869,-57.074404)"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\GUI\GameScreen\skip-button.png"
+       inkscape:export-xdpi="100"
+       inkscape:export-ydpi="100">
+      <g
+         style="fill:#0e7619;fill-opacity:0.64705882"
+         transform="matrix(0.38323032,0,0,0.38323032,398.04271,204.30092)"
+         id="g1784">
+        <circle
+           r="32.892563"
+           cy="274.55649"
+           cx="761.80493"
+           id="circle1756"
+           style="opacity:1;fill:#0e7619;fill-opacity:0.64705882;fill-rule:nonzero;stroke:#000000;stroke-width:7.75471258;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <path
+           style="opacity:1;fill:#0e7619;fill-opacity:0.64705882;fill-rule:nonzero;stroke:none;stroke-width:7.75471258;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 787.92493,261.26361 c 1.66115,3.38404 -14.78934,-4.00179 -26.03074,-4.00179 -11.24142,0 -28.54961,9.64646 -26.62809,4.99285 4.23347,-10.25274 15.76646,-16.86243 27.00788,-16.86243 11.2414,0 21.6854,7.7929 25.65095,15.87137 z"
+           id="path1758"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssss" />
+      </g>
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 692.29524,309.02189 -6.79013,-5.94629 v 11.99689 z"
+         id="path1764"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1780"
+         d="m 698.17517,309.02189 -6.79013,-5.94629 v 11.99689 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

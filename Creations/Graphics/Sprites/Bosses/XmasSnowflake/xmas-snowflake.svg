@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg5397"
+   version="1.1"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="xmas-snowflake.svg"
+   inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake.png"
+   inkscape:export-xdpi="29"
+   inkscape:export-ydpi="29">
+  <defs
+     id="defs5399" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="-2834.1147"
+     inkscape:cy="-796.997"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5402">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:nodetypes="sscsscsscsscss"
+       inkscape:connector-curvature="0"
+       id="path4163"
+       d="m 502.7266,295.25222 c 5.79043,0 11.58091,1.78599 15.15234,5.35742 9.7619,9.76191 0,41.41601 0,41.41601 l 31.4707,-37.88867 c 8.64749,-10.41101 38.44618,21.10459 28.9707,28.97461 l -37.89063,31.47071 c 0,0 31.65411,-9.76192 41.41602,0 7.14286,7.14286 7.14286,23.16182 0,30.30468 -17.14286,17.14286 -72.73046,0 -72.73046,0 l -56.33091,56.33287 c -7.06461,7.06485 -28.2562,-14.83365 -21.54297,-21.54688 l 56.33287,-56.33286 c 0,0 -17.14286,-55.58761 0,-72.73047 3.57143,-3.57143 9.36191,-5.35742 15.15234,-5.35742 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 360.12403,580.03615 0,76.77149 c 0,0 -36.08029,10.92114 -44.70704,25.81054 -3.45163,5.95736 -4.92352,15.78036 -0.0625,20.65626 4.59317,4.60721 13.23164,1.68379 19.51563,0 9.60569,-2.57384 25.83789,-14.91797 25.83789,-14.91797 l 0,27.48242 c 0,0 -36.55982,10.37332 -45.31836,25.29101 -3.77167,6.42397 -5.26749,17.08017 0,22.34766 4.77753,4.77753 13.7623,1.81809 20.26953,0 9.3263,-2.60572 24.84375,-15.05859 24.84375,-15.05859 l 0,32.91601 c 0,10.13195 30.86324,9.73976 30.86324,-0.0234 l 0,-32.91601 c 0,0 15.51745,12.45287 24.84375,15.05859 6.50723,1.81809 15.492,4.77753 20.26953,0 5.26749,-5.26749 3.77167,-15.92368 0,-22.34765 -8.75854,-14.91769 -45.31835,-25.29102 -45.31835,-25.29102 l 0,-27.48242 c 0,0 16.2322,12.34413 25.83789,14.91797 6.28399,1.68379 14.9244,4.60722 19.51757,0 4.86102,-4.87589 3.38718,-14.69889 -0.0644,-20.65625 -8.62675,-14.8894 -44.70703,-25.81055 -44.70703,-25.81055 l 0,-76.77344 c 0,-10.54039 -31.6211,-10.54298 -31.6211,0.0254 z"
+       id="path5999"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 393.60841,407.52203 0,-76.77149 c 0,0 36.08029,-10.92114 44.70704,-25.81054 3.45163,-5.95736 4.92352,-15.78036 0.0625,-20.65626 -4.59317,-4.60721 -13.23164,-1.68379 -19.51563,0 -9.60569,2.57384 -25.83789,14.91797 -25.83789,14.91797 l 0,-27.48242 c 0,0 36.55982,-10.37332 45.31836,-25.29101 3.77167,-6.42397 5.26749,-17.08017 0,-22.34766 -4.77753,-4.77753 -13.7623,-1.81809 -20.26953,0 -9.3263,2.60572 -24.84375,15.05859 -24.84375,15.05859 l 0,-32.91601 c 0,-10.13195 -30.86324,-9.73976 -30.86324,0.0234 l 0,32.91601 c 0,0 -15.51745,-12.45287 -24.84375,-15.05859 -6.50723,-1.81809 -15.492,-4.77753 -20.26953,0 -5.26749,5.26749 -3.77167,15.92368 0,22.34765 8.75854,14.91769 45.31835,25.29102 45.31835,25.29102 l 0,27.48242 c 0,0 -16.2322,-12.34413 -25.83789,-14.91797 -6.28399,-1.68379 -14.9244,-4.60722 -19.51757,0 -4.86102,4.87589 -3.38718,14.69889 0.0644,20.65625 8.62675,14.8894 44.70703,25.81055 44.70703,25.81055 l 0,76.77344 c 0,10.54039 31.6211,10.54298 31.6211,-0.0254 z"
+       id="path5999-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       sodipodi:nodetypes="sscsscsscsscss"
+       inkscape:connector-curvature="0"
+       id="path4159"
+       d="m 262.89232,701.10471 c -5.79043,0 -11.58091,-1.78599 -15.15234,-5.35742 -9.7619,-9.76191 0,-41.41601 0,-41.41601 l -31.4707,37.88867 c -8.64749,10.41101 -38.44618,-21.10459 -28.9707,-28.97461 l 37.89063,-31.47071 c 0,0 -31.65411,9.76192 -41.41602,0 -7.14286,-7.14286 -7.14286,-23.16182 0,-30.30468 17.14286,-17.14286 72.73046,0 72.73046,0 l 56.33091,-56.33287 c 7.06461,-7.06485 28.2562,14.83365 21.54297,21.54688 l -56.33287,56.33286 c 0,0 17.14286,55.58761 0,72.73047 -3.57143,3.57143 -9.36191,5.35742 -15.15234,5.35742 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 293.8784,491.64635 -76.77149,0 c 0,0 -10.92114,-36.08029 -25.81054,-44.70704 -5.95736,-3.45163 -15.78036,-4.92352 -20.65626,-0.0625 -4.60721,4.59317 -1.68379,13.23164 0,19.51563 2.57384,9.60569 14.91797,25.83789 14.91797,25.83789 l -27.48242,0 c 0,0 -10.37332,-36.55982 -25.29101,-45.31836 -6.42397,-3.77167 -17.08017,-5.26749 -22.34766,0 -4.77753,4.77753 -1.81809,13.7623 0,20.26953 2.60572,9.3263 15.05859,24.84375 15.05859,24.84375 l -32.916001,0 c -10.131953,0 -9.739763,30.86324 0.0234,30.86324 l 32.916001,0 c 0,0 -12.45287,15.51745 -15.05859,24.84375 -1.81809,6.50723 -4.77753,15.492 0,20.26953 5.26749,5.26749 15.92368,3.77167 22.34765,0 14.91769,-8.75854 25.29102,-45.31835 25.29102,-45.31835 l 27.48242,0 c 0,0 -12.34413,16.2322 -14.91797,25.83789 -1.68379,6.28399 -4.60722,14.9244 0,19.51757 4.87589,4.86102 14.69889,3.38718 20.65625,-0.0644 14.8894,-8.62675 25.81055,-44.70703 25.81055,-44.70703 l 76.77344,0 c 10.54039,0 10.54298,-31.6211 -0.0254,-31.6211 z"
+       id="path5999-7-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 463.08263,521.89807 76.77149,0 c 0,0 10.92114,36.08029 25.81054,44.70704 5.95736,3.45163 15.78036,4.92352 20.65626,0.0625 4.60721,-4.59317 1.68379,-13.23164 0,-19.51563 -2.57384,-9.60569 -14.91797,-25.83789 -14.91797,-25.83789 l 27.48242,0 c 0,0 10.37332,36.55982 25.29101,45.31836 6.42397,3.77167 17.08017,5.26749 22.34766,0 4.77753,-4.77753 1.81809,-13.7623 0,-20.26953 -2.60572,-9.3263 -15.05859,-24.84375 -15.05859,-24.84375 l 32.91601,0 c 10.13194,0 9.73975,-30.86324 -0.0234,-30.86324 l -32.91601,0 c 0,0 12.45287,-15.51745 15.05859,-24.84375 1.81809,-6.50723 4.77753,-15.492 0,-20.26953 -5.26749,-5.26749 -15.92368,-3.77167 -22.34765,0 -14.91769,8.75854 -25.29102,45.31835 -25.29102,45.31835 l -27.48242,0 c 0,0 12.34413,-16.2322 14.91797,-25.83789 1.68379,-6.28399 4.60722,-14.9244 0,-19.51757 -4.87589,-4.86102 -14.69889,-3.38718 -20.65625,0.0644 -14.8894,8.62675 -25.81055,44.70703 -25.81055,44.70703 l -76.77344,0 c -10.54039,0 -10.54298,31.6211 0.0254,31.6211 z"
+       id="path5999-7-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 242.16679,283.34352 c -5.79043,0 -11.58091,1.78598 -15.15235,5.35741 -9.7619,9.76191 1e-5,41.41602 1e-5,41.41602 l -31.47071,-37.88868 c -8.64749,-10.41101 -38.44619,21.10459 -28.97053,28.97478 l 37.89063,31.47072 c 0,0 -31.65411,-9.76193 -41.41603,-10e-6 -7.14286,7.14286 -7.14285,23.16182 1e-5,30.30468 17.14287,17.14286 72.73047,0 72.73047,0 l 72.04548,72.04689 c 7.06465,7.0648 28.2562,-14.83366 21.5428,-21.54705 l -72.04716,-72.04714 c 0,0 17.14287,-55.58761 0,-72.73048 -3.57142,-3.57142 -9.36191,-5.35742 -15.15234,-5.35741 z"
+       id="path6070"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsscsscsscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 495.65553,695.0438 c 5.79043,0 11.58091,-1.78599 15.15234,-5.35742 9.7619,-9.76191 0,-41.41601 0,-41.41601 l 31.4707,37.88867 c 8.64749,10.41101 38.44618,-21.10459 28.9707,-28.97461 l -37.89063,-31.47071 c 0,0 31.65411,9.76192 41.41602,0 7.14286,-7.14286 7.14286,-23.16182 0,-30.30468 -17.14286,-17.14286 -72.73046,0 -72.73046,0 l -56.33091,-56.33287 c -7.06461,-7.06485 -28.2562,14.83365 -21.54297,21.54688 l 56.33287,56.33286 c 0,0 -17.14286,55.58761 0,72.73047 3.57143,3.57143 9.36191,5.35742 15.15234,5.35742 z"
+       id="path4161"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscsscsscsscss"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <circle
+       style="opacity:1;fill:#b3e5fc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5945"
+       cx="379.16315"
+       cy="493.46521"
+       r="82.480377"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 353.69397,528.97641 c 0,0 12.60769,-23.21429 23.21429,-23.21429 10.6066,0 22.79586,22.79586 22.79586,22.79586"
+       id="path5947"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <g
+       id="g4172"
+       transform="translate(-11.428571,85.714286)"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45">
+      <circle
+         transform="scale(-1,1)"
+         r="17.765646"
+         cy="388.97742"
+         cx="-421.9982"
+         id="path5953-3"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="5.4988909"
+         cy="401.13846"
+         cx="-421.89249"
+         id="path5955-1"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path5957-2"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       transform="matrix(-1,0,0,1,766.86909,85.966775)"
+       id="g4172-5"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45">
+      <circle
+         transform="scale(-1,1)"
+         r="17.765646"
+         cy="388.97742"
+         cx="-421.9982"
+         id="path5953-3-4"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="5.4988909"
+         cy="401.13846"
+         cx="-421.89249"
+         id="path5955-1-2"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path5957-2-9"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\branch1.png"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:connector-curvature="0"
+       id="path5576"
+       d="m -266.39159,207.52203 0,-76.77149 c 0,0 36.08029,-10.92114 44.70704,-25.81054 3.45163,-5.95736 4.92352,-15.78036 0.0625,-20.65626 -4.59317,-4.60721 -13.23164,-1.68379 -19.51563,0 -9.60569,2.57384 -25.83789,14.91797 -25.83789,14.91797 l 0,-27.48242 c 0,0 36.55982,-10.37332 45.31836,-25.29101 3.77167,-6.42397 5.26749,-17.08017 0,-22.34766 -4.77753,-4.77753 -13.7623,-1.81809 -20.26953,0 -9.3263,2.60572 -24.84375,15.05859 -24.84375,15.05859 l 0,-32.9160099 c 0,-10.13195 -30.86324,-9.73976 -30.86324,0.0234 l 0,32.9160099 c 0,0 -15.51745,-12.45287 -24.84375,-15.05859 -6.50723,-1.81809 -15.492,-4.77753 -20.26953,0 -5.26749,5.26749 -3.77167,15.92368 0,22.34765 8.75854,14.91769 45.31835,25.29102 45.31835,25.29102 l 0,27.48242 c 0,0 -16.2322,-12.34413 -25.83789,-14.91797 -6.28399,-1.68379 -14.9244,-4.60722 -19.51757,0 -4.86102,4.87589 -3.38718,14.69889 0.0644,20.65625 8.62675,14.8894 44.70703,25.81055 44.70703,25.81055 l 0,76.77344 c 0,10.54039 31.6211,10.54298 31.6211,-0.0254 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\branch2.png"
+       sodipodi:nodetypes="cscsscsscsscssc"
+       inkscape:connector-curvature="0"
+       id="path5578"
+       d="m -230.34096,318.69578 c -4.09446,-4.09446 -9.45182,-6.92607 -14.5026,-6.92607 -13.80541,0 -29.28554,29.28555 -29.28554,29.28555 l 4.53819,-49.04449 c 1.247,-13.4764 -42.10876,-12.26237 -40.97352,0.003 l 4.53956,49.04588 c 0,0 -15.48011,-29.28556 -29.28554,-29.28556 -10.10153,0 -21.42864,11.32712 -21.42864,21.42865 0,24.24367 51.42821,51.42821 51.42821,51.42821 l -0.001,101.88869 c -1.1e-4,9.99103 30.46913,9.49117 30.46912,-0.003 l -1e-5,-101.89006 c 0,0 51.42822,-27.18454 51.42822,-51.42821 0,-5.05076 -2.83161,-10.40814 -6.92607,-14.50259 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\body.png"
+       r="82.480377"
+       cy="640.60809"
+       cx="-289.40829"
+       id="circle5580"
+       style="opacity:1;fill:#b3e5fc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\left_eye.png"
+       id="g5582"
+       transform="matrix(-1,0,0,1,74.10123,480.60963)">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle5584"
+         cx="-421.9982"
+         cy="388.97742"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle5586"
+         cx="-421.89249"
+         cy="401.13846"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         id="path5588"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\right_eye.png"
+       transform="translate(-701.42858,487.14285)"
+       id="g5590">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle5592"
+         cx="-421.9982"
+         cy="388.97742"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle5594"
+         cx="-421.89249"
+         cy="401.13846"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         id="path5596"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\mouth.png"
+       sodipodi:nodetypes="czc"
+       inkscape:connector-curvature="0"
+       id="path5598"
+       d="m -336.66317,920.31569 c 0,0 12.60769,-23.21429 23.21429,-23.21429 10.6066,0 22.79586,22.79586 22.79586,22.79586"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -923.53445,187.52203 0,-76.77149 c 0,0 36.08029,-10.92114 44.70704,-25.81054 3.45163,-5.95736 4.92352,-15.78036 0.0625,-20.65626 -4.59317,-4.60721 -13.23164,-1.68379 -19.51563,0 -9.60569,2.57384 -25.83789,14.91797 -25.83789,14.91797 l 0,-27.48242 c 0,0 36.55982,-10.37332 45.31836,-25.29101 3.77167,-6.42397 5.26749,-17.08017 0,-22.34766 -4.77753,-4.77753 -13.7623,-1.81809 -20.26953,0 -9.3263,2.60572 -24.84375,15.05859 -24.84375,15.05859 l 0,-32.91601 c 0,-10.13195 -30.86324,-9.73976 -30.86324,0.0234 l 0,32.91601 c 0,0 -15.51745,-12.45287 -24.84375,-15.05859 -6.50723,-1.81809 -15.492,-4.77753 -20.26953,0 -5.26753,5.26749 -3.77163,15.92368 0,22.34765 8.75854,14.91769 45.31835,25.29102 45.31835,25.29102 l 0,27.48242 c 0,0 -16.2322,-12.34413 -25.83789,-14.91797 -6.28399,-1.68379 -14.9244,-4.60722 -19.51757,0 -4.86102,4.87589 -3.38722,14.69889 0.0644,20.65625 8.62675,14.8894 44.70703,25.81055 44.70703,25.81055 l 0,76.77344 c 0,10.54039 31.6211,10.54298 31.6211,-0.0254 z"
+       id="path6054"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\branch1.png"
+       inkscape:export-xdpi="44"
+       inkscape:export-ydpi="44" />
+    <path
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -887.48382,298.69578 c -4.09446,-4.09446 -9.45182,-6.92607 -14.5026,-6.92607 -13.80541,0 -29.28554,29.28555 -29.28554,29.28555 l 4.53819,-49.04449 c 1.247,-13.4764 -42.10876,-12.26237 -40.97352,0.003 l 4.53956,49.04588 c 0,0 -15.48011,-29.28556 -29.28554,-29.28556 -10.10153,0 -21.42863,11.32712 -21.42863,21.42865 0,24.24367 51.4282,51.42821 51.4282,51.42821 l -10e-4,101.88869 c -1.1e-4,9.99103 30.46913,9.49117 30.46912,-0.003 l -10e-6,-101.89006 c 0,0 51.42822,-27.18454 51.42822,-51.42821 0,-5.05076 -2.83161,-10.40814 -6.92607,-14.50259 z"
+       id="path6056"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsscsscsscssc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\branch2.png"
+       inkscape:export-xdpi="29"
+       inkscape:export-ydpi="29" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.52550411;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1057.8654,697.55791 c -12.6671,-2.9132 -20.0524,-1.61966 -30.7781,5.10001"
+       id="path6074"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4210"
+       d="m -734.54666,684.33123 c 12.66715,-2.9132 20.0524,-1.61966 30.77808,5.10001"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.52550411;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g1524"
+       transform="translate(-455.35714,-204.91071)">
+      <circle
+         r="17.765646"
+         cy="948.60492"
+         cx="-634.50409"
+         id="circle1511"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         r="5.4988909"
+         cy="960.76593"
+         cx="-634.39838"
+         id="circle1513"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -651.76712,922.18062 38.35566,15.73043"
+       id="path1515"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1474.647,882.40338 c 5.7904,0 11.5809,1.78599 15.1523,5.35742 9.7619,9.76191 0,41.41601 0,41.41601 l 31.4707,-37.88867 c 8.6475,-10.41101 38.4462,21.10459 28.9707,28.97461 l -37.8906,31.47071 c 0,0 31.6541,-9.76192 41.416,0 7.1429,7.14286 7.1429,23.16182 0,30.30468 -17.1428,17.14286 -72.7304,0 -72.7304,0 l -56.3309,56.33286 c -7.0646,7.0649 -28.2562,-14.8336 -21.543,-21.5469 l 56.3329,-56.33283 c 0,0 -17.1429,-55.58761 0,-72.73047 3.5714,-3.57143 9.3619,-5.35742 15.1523,-5.35742 z"
+       id="path866"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscsscsscsscss" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:connector-curvature="0"
+       id="path868"
+       d="m -1617.2496,1167.1873 v 76.7715 c 0,0 -36.0803,10.9211 -44.707,25.8105 -3.4516,5.9574 -4.9235,15.7804 -0.062,20.6563 4.5932,4.6072 13.2316,1.6838 19.5156,0 9.6057,-2.5738 25.8379,-14.918 25.8379,-14.918 v 27.4825 c 0,0 -36.5598,10.3733 -45.3183,25.291 -3.7717,6.4239 -5.2675,17.0801 0,22.3476 4.7775,4.7776 13.7623,1.8181 20.2695,0 9.3263,-2.6057 24.8437,-15.0586 24.8437,-15.0586 v 32.916 c 0,10.132 30.8633,9.7398 30.8633,-0.023 v -32.916 c 0,0 15.5174,12.4529 24.8437,15.0586 6.5073,1.8181 15.492,4.7776 20.2696,0 5.2674,-5.2675 3.7716,-15.9237 0,-22.3476 -8.7586,-14.9177 -45.3184,-25.291 -45.3184,-25.291 v -27.4825 c 0,0 16.2322,12.3442 25.8379,14.918 6.284,1.6838 14.9244,4.6072 19.5176,0 4.861,-4.8759 3.3871,-14.6989 -0.064,-20.6562 -8.6268,-14.8894 -44.7071,-25.8106 -44.7071,-25.8106 v -76.7734 c 0,-10.5404 -31.6211,-10.543 -31.6211,0.025 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:connector-curvature="0"
+       id="path870"
+       d="M -1583.7652,994.67319 V 917.9017 c 0,0 36.0803,-10.92114 44.7071,-25.81054 3.4516,-5.95736 4.9235,-15.78036 0.062,-20.65626 -4.5932,-4.60721 -13.2317,-1.68379 -19.5157,0 -9.6057,2.57384 -25.8379,14.91797 -25.8379,14.91797 v -27.48242 c 0,0 36.5599,-10.37332 45.3184,-25.29101 3.7717,-6.42397 5.2675,-17.08017 0,-22.34766 -4.7775,-4.77753 -13.7623,-1.81809 -20.2695,0 -9.3263,2.60572 -24.8438,15.05859 -24.8438,15.05859 v -32.91601 c 0,-10.13195 -30.8632,-9.73976 -30.8632,0.0234 v 32.91601 c 0,0 -15.5175,-12.45287 -24.8438,-15.05859 -6.5072,-1.81809 -15.492,-4.77753 -20.2695,0 -5.2675,5.26749 -3.7717,15.92368 0,22.34765 8.7585,14.91769 45.3183,25.29102 45.3183,25.29102 v 27.48242 c 0,0 -16.2322,-12.34413 -25.8378,-14.91797 -6.284,-1.68379 -14.9244,-4.60722 -19.5176,0 -4.861,4.87589 -3.3872,14.69889 0.064,20.65625 8.6267,14.8894 44.707,25.81055 44.707,25.81055 v 76.77344 c 0,10.54036 31.6211,10.54296 31.6211,-0.0254 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1714.4813,1288.2559 c -5.7904,0 -11.5809,-1.786 -15.1523,-5.3574 -9.7619,-9.762 0,-41.4161 0,-41.4161 l -31.4707,37.8887 c -8.6475,10.411 -38.4462,-21.1046 -28.9707,-28.9746 l 37.8906,-31.4707 c 0,0 -31.6541,9.7619 -41.416,0 -7.1429,-7.1429 -7.1429,-23.1618 0,-30.3047 17.1429,-17.1428 72.7305,0 72.7305,0 l 56.3309,-56.3329 c 7.0646,-7.0648 28.2562,14.8337 21.5429,21.5469 l -56.3328,56.3329 c 0,0 17.1428,55.5876 0,72.7305 -3.5715,3.5714 -9.3619,5.3574 -15.1524,5.3574 z"
+       id="path872"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscsscsscsscss" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:connector-curvature="0"
+       id="path874"
+       d="m -1683.4952,1078.7975 h -76.7715 c 0,0 -10.9211,-36.0803 -25.8105,-44.707 -5.9574,-3.4517 -15.7804,-4.9235 -20.6563,-0.062 -4.6072,4.5931 -1.6838,13.2316 0,19.5156 2.5739,9.6057 14.918,25.8379 14.918,25.8379 h -27.4824 c 0,0 -10.3734,-36.5598 -25.291,-45.3184 -6.424,-3.7716 -17.0802,-5.2675 -22.3477,0 -4.7775,4.7776 -1.8181,13.7623 0,20.2696 2.6057,9.3263 15.0586,24.8437 15.0586,24.8437 h -32.916 c -10.132,0 -9.7398,30.8633 0.023,30.8633 h 32.916 c 0,0 -12.4529,15.5174 -15.0586,24.8437 -1.8181,6.5072 -4.7775,15.492 0,20.2695 5.2675,5.2675 15.9237,3.7717 22.3476,0 14.9177,-8.7585 25.2911,-45.3183 25.2911,-45.3183 h 27.4824 c 0,0 -12.3441,16.2322 -14.918,25.8379 -1.6838,6.284 -4.6072,14.9244 0,19.5175 4.8759,4.8611 14.6989,3.3872 20.6563,-0.064 14.8894,-8.6267 25.8105,-44.707 25.8105,-44.707 h 76.7735 c 10.5403,0 10.5429,-31.6211 -0.025,-31.6211 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+       inkscape:connector-curvature="0"
+       id="path876"
+       d="m -1514.291,1109.0492 h 76.7715 c 0,0 10.9212,36.0803 25.8106,44.7071 5.9573,3.4516 15.7803,4.9235 20.6562,0.062 4.6072,-4.5932 1.6838,-13.2317 0,-19.5157 -2.5738,-9.6056 -14.9179,-25.8378 -14.9179,-25.8378 h 27.4824 c 0,0 10.3733,36.5598 25.291,45.3183 6.424,3.7717 17.0802,5.2675 22.3476,0 4.7776,-4.7775 1.8181,-13.7623 0,-20.2695 -2.6057,-9.3263 -15.0585,-24.8438 -15.0585,-24.8438 h 32.916 c 10.1319,0 9.7397,-30.8632 -0.023,-30.8632 h -32.916 c 0,0 12.4528,-15.5175 15.0585,-24.8438 1.8181,-6.5072 4.7776,-15.492 0,-20.2695 -5.2674,-5.2675 -15.9236,-3.7717 -22.3476,0 -14.9177,8.7586 -25.291,45.3184 -25.291,45.3184 h -27.4824 c 0,0 12.3441,-16.2322 14.9179,-25.8379 1.6838,-6.284 4.6072,-14.9244 0,-19.5176 -4.8759,-4.861 -14.6989,-3.3872 -20.6562,0.064 -14.8894,8.6268 -25.8106,44.707 -25.8106,44.707 h -76.7734 c -10.5404,0 -10.543,31.6211 0.025,31.6211 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="cscsscsscsscssc"
+       inkscape:connector-curvature="0"
+       id="path878"
+       d="m -1735.2068,870.49468 c -5.7904,0 -11.5809,1.78598 -15.1524,5.35741 -9.7619,9.76191 1e-4,41.41602 1e-4,41.41602 l -31.4708,-37.88868 c -8.6474,-10.41101 -38.4461,21.10459 -28.9705,28.97478 l 37.8906,31.47072 c 0,0 -31.6541,-9.76193 -41.416,-10e-6 -7.1428,7.14286 -7.1428,23.16182 0,30.30468 17.1429,17.14286 72.7305,0 72.7305,0 l 72.0455,72.0469 c 7.0646,7.0648 28.2562,-14.8337 21.5428,-21.5471 l -72.0472,-72.0471 c 0,0 17.1429,-55.58761 0,-72.73048 -3.5714,-3.57142 -9.3619,-5.35742 -15.1523,-5.35741 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="sscsscsscsscss"
+       inkscape:connector-curvature="0"
+       id="path880"
+       d="m -1481.7181,1282.195 c 5.7905,0 11.5809,-1.786 15.1524,-5.3575 9.7619,-9.7619 0,-41.416 0,-41.416 l 31.4707,37.8887 c 8.6475,10.411 38.4462,-21.1046 28.9707,-28.9746 l -37.8907,-31.4707 c 0,0 31.6542,9.7619 41.4161,0 7.1428,-7.1429 7.1428,-23.1618 0,-30.3047 -17.1429,-17.1429 -72.7305,0 -72.7305,0 l -56.3309,-56.3329 c -7.0646,-7.0648 -28.2562,14.8337 -21.543,21.5469 l 56.3329,56.3329 c 0,0 -17.1429,55.5876 0,72.7304 3.5714,3.5715 9.3619,5.3575 15.1523,5.3575 z"
+       style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       style="opacity:1;fill:#b3e5fc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle6058"
+       cx="-1602.824"
+       cy="1082.4375"
+       r="82.480377"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\body.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <g
+       id="g2929">
+      <circle
+         transform="scale(-1,1)"
+         r="17.765646"
+         cy="1060.3737"
+         cx="1626.3517"
+         id="circle6070"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="5.4988909"
+         cy="1066.8427"
+         cx="1626.9596"
+         id="circle6072"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1581.1233,1088.4552 c 0,0 -12.6077,13.2706 -23.2143,13.2706 -10.6066,0 -22.7959,-12.8521 -22.7959,-12.8521"
+       id="path6076"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\mouth.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <circle
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       r="82.480377"
+       cy="1016.3306"
+       cx="-2432.5854"
+       id="circle882"
+       style="opacity:1;fill:#b3e5fc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       sodipodi:nodetypes="czc"
+       inkscape:connector-curvature="0"
+       id="path884"
+       d="m -2458.0546,1051.8419 c 0,0 12.6077,-23.2143 23.2143,-23.2143 10.6066,0 22.7958,22.7958 22.7958,22.7958"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       transform="translate(-2823.1772,608.57974)"
+       id="g892">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle886"
+         cx="-421.9982"
+         cy="388.97742"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle888"
+         cx="-421.89249"
+         cy="401.13846"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         id="path890"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+       id="g900"
+       transform="matrix(-1,0,0,1,-2044.8795,608.83223)">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle894"
+         cx="-421.9982"
+         cy="388.97742"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle896"
+         cx="-421.89249"
+         cy="401.13846"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:12.93993568;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 439.26121,362.55313 -38.35566,15.73043"
+         id="path898"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\left_eye.png"
+       transform="translate(792.85715,103.12501)"
+       id="g1238">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1234"
+         cx="931.26239"
+         cy="759.03436"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1236"
+         cx="931.3681"
+         cy="771.19543"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+    </g>
+    <path
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\mouth.png"
+       sodipodi:nodetypes="czc"
+       inkscape:connector-curvature="0"
+       id="path1240"
+       d="m -93.176869,890.24093 c 0,0 -12.607701,13.2706 -23.214301,13.2706 -10.6066,0 -22.7959,-12.8521 -22.7959,-12.8521"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\right_eye.png"
+       id="g1246"
+       transform="translate(844.12466,98.579318)">
+      <circle
+         transform="scale(-1,1)"
+         r="17.765646"
+         cy="763.58002"
+         cx="938.3335"
+         id="circle1242"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="5.4988909"
+         cy="775.74109"
+         cx="938.43921"
+         id="circle1244"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g2935"
+       transform="translate(45.535715)">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle2931"
+         cx="1626.3517"
+         cy="1060.3737"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle2933"
+         cx="1626.9596"
+         cy="1066.8427"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+    </g>
+    <g
+       transform="translate(1424.3939,-238.64854)"
+       id="g2941"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\left_eye.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45">
+      <circle
+         transform="scale(-1,1)"
+         r="17.765646"
+         cy="1060.3737"
+         cx="1626.3517"
+         id="circle2937"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="5.4988909"
+         cy="1066.8427"
+         cx="1626.9596"
+         id="circle2939"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\right_eye.png"
+       id="g2947"
+       transform="translate(1469.8508,-238.64854)">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle2943"
+         cx="1626.3517"
+         cy="1060.3737"
+         r="17.765646"
+         transform="scale(-1,1)" />
+      <circle
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle2945"
+         cx="1626.9596"
+         cy="1066.8427"
+         r="5.4988909"
+         transform="scale(-1,1)" />
+    </g>
+    <g
+       transform="matrix(0.52512071,0,0,0.52512071,-1983.4666,978.29084)"
+       id="g5929">
+      <g
+         id="g5964"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Creations\Screenshots\Google Play\Achievements\defeat-xmas-snowflake-icon.png"
+         inkscape:export-xdpi="76.348518"
+         inkscape:export-ydpi="76.348518">
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -805.00415,1452.9391 c 5.7904,0 11.5809,1.786 15.1523,5.3574 9.7619,9.7619 0,41.416 0,41.416 l 31.4707,-37.8886 c 8.6475,-10.4111 38.4462,21.1045 28.9707,28.9746 l -37.8906,31.4707 c 0,0 31.6541,-9.7619 41.416,0 7.1429,7.1428 7.1429,23.1618 0,30.3047 -17.1428,17.1428 -72.7304,0 -72.7304,0 l -56.3309,56.3328 c -7.0646,7.0649 -28.2562,-14.8336 -21.543,-21.5469 l 56.3329,-56.3328 c 0,0 -17.1429,-55.5876 0,-72.7305 3.5714,-3.5714 9.3619,-5.3574 15.1523,-5.3574 z"
+           id="path5872"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sscsscsscsscss"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+           inkscape:connector-curvature="0"
+           id="path5874"
+           d="m -947.60675,1737.723 v 76.7715 c 0,0 -36.0803,10.9211 -44.707,25.8105 -3.4516,5.9574 -4.9235,15.7804 -0.062,20.6563 4.5932,4.6072 13.2316,1.6838 19.5156,0 9.6057,-2.5738 25.8379,-14.918 25.8379,-14.918 v 27.4825 c 0,0 -36.5598,10.3733 -45.3183,25.291 -3.7717,6.4239 -5.2675,17.0801 0,22.3476 4.7775,4.7776 13.7623,1.8181 20.2695,0 9.3263,-2.6057 24.8437,-15.0586 24.8437,-15.0586 v 32.916 c 0,10.132 30.8633,9.7398 30.8633,-0.023 v -32.916 c 0,0 15.5174,12.4529 24.8437,15.0586 6.5073,1.8181 15.492,4.7776 20.2696,0 5.2674,-5.2675 3.7716,-15.9237 0,-22.3476 -8.7586,-14.9177 -45.3184,-25.291 -45.3184,-25.291 v -27.4825 c 0,0 16.2322,12.3442 25.8379,14.918 6.284,1.6838 14.9244,4.6072 19.5176,0 4.861,-4.8759 3.3871,-14.6989 -0.064,-20.6562 -8.6268,-14.8894 -44.7071,-25.8106 -44.7071,-25.8106 v -76.7734 c 0,-10.5404 -31.6211,-10.543 -31.6211,0.025 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+           inkscape:connector-curvature="0"
+           id="path5876"
+           d="m -914.12235,1565.2089 v -76.7715 c 0,0 36.0803,-10.9211 44.7071,-25.8105 3.4516,-5.9574 4.9235,-15.7804 0.062,-20.6563 -4.5932,-4.6072 -13.2317,-1.6838 -19.5157,0 -9.6057,2.5739 -25.8379,14.918 -25.8379,14.918 v -27.4824 c 0,0 36.5599,-10.3734 45.3184,-25.291 3.7717,-6.424 5.2675,-17.0802 0,-22.3477 -4.7775,-4.7775 -13.7623,-1.8181 -20.2695,0 -9.3263,2.6057 -24.8438,15.0586 -24.8438,15.0586 v -32.916 c 0,-10.132 -30.8632,-9.7398 -30.8632,0.023 v 32.916 c 0,0 -15.5175,-12.4529 -24.8438,-15.0586 -6.5072,-1.8181 -15.492,-4.7775 -20.2695,0 -5.2675,5.2675 -3.7717,15.9237 0,22.3476 8.7585,14.9177 45.3183,25.2911 45.3183,25.2911 v 27.4824 c 0,0 -16.2322,-12.3441 -25.8378,-14.918 -6.284,-1.6838 -14.9244,-4.6072 -19.5176,0 -4.861,4.8759 -3.3872,14.6989 0.064,20.6563 8.6267,14.8894 44.707,25.8105 44.707,25.8105 v 76.7735 c 0,10.5403 31.6211,10.5429 31.6211,-0.025 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -1044.8384,1858.7916 c -5.7904,0 -11.5809,-1.786 -15.1523,-5.3574 -9.7619,-9.762 0,-41.4161 0,-41.4161 l -31.4707,37.8887 c -8.6475,10.411 -38.4462,-21.1046 -28.9707,-28.9746 l 37.8906,-31.4707 c 0,0 -31.6541,9.7619 -41.416,0 -7.1429,-7.1429 -7.1429,-23.1618 0,-30.3047 17.1429,-17.1428 72.7305,0 72.7305,0 l 56.33085,-56.3329 c 7.0646,-7.0648 28.2562,14.8337 21.5429,21.5469 l -56.33275,56.3329 c 0,0 17.1428,55.5876 0,72.7305 -3.5715,3.5714 -9.3619,5.3574 -15.1524,5.3574 z"
+           id="path5878"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sscsscsscsscss"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+           inkscape:connector-curvature="0"
+           id="path5880"
+           d="m -1013.8523,1649.3332 h -76.7715 c 0,0 -10.9211,-36.0803 -25.8105,-44.707 -5.9574,-3.4517 -15.7804,-4.9235 -20.6563,-0.062 -4.6072,4.5931 -1.6838,13.2316 0,19.5156 2.5739,9.6057 14.918,25.8379 14.918,25.8379 h -27.4824 c 0,0 -10.3734,-36.5598 -25.291,-45.3184 -6.424,-3.7716 -17.0802,-5.2675 -22.3477,0 -4.7775,4.7776 -1.8181,13.7623 0,20.2696 2.6057,9.3263 15.0586,24.8437 15.0586,24.8437 h -32.916 c -10.132,0 -9.7398,30.8633 0.023,30.8633 h 32.916 c 0,0 -12.4529,15.5174 -15.0586,24.8437 -1.8181,6.5072 -4.7775,15.492 0,20.2695 5.2675,5.2675 15.9237,3.7717 22.3476,0 14.9177,-8.7585 25.2911,-45.3183 25.2911,-45.3183 h 27.4824 c 0,0 -12.3441,16.2322 -14.918,25.8379 -1.6838,6.284 -4.6072,14.9244 0,19.5175 4.8759,4.8611 14.6989,3.3872 20.6563,-0.064 14.8894,-8.6267 25.8105,-44.707 25.8105,-44.707 h 76.7735 c 10.5403,0 10.5429,-31.6211 -0.025,-31.6211 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+           inkscape:connector-curvature="0"
+           id="path5882"
+           d="m -844.64815,1679.5849 h 76.7715 c 0,0 10.9212,36.0803 25.8106,44.7071 5.9573,3.4516 15.7803,4.9235 20.6562,0.062 4.6072,-4.5932 1.6838,-13.2317 0,-19.5157 -2.5738,-9.6056 -14.9179,-25.8378 -14.9179,-25.8378 h 27.4824 c 0,0 10.3733,36.5598 25.291,45.3183 6.424,3.7717 17.0802,5.2675 22.3476,0 4.7776,-4.7775 1.8181,-13.7623 0,-20.2695 -2.6057,-9.3263 -15.0585,-24.8438 -15.0585,-24.8438 h 32.916 c 10.1319,0 9.7397,-30.8632 -0.023,-30.8632 h -32.916 c 0,0 12.4528,-15.5175 15.0585,-24.8438 1.8181,-6.5072 4.7776,-15.492 0,-20.2695 -5.2674,-5.2675 -15.9236,-3.7717 -22.3476,0 -14.9177,8.7586 -25.291,45.3184 -25.291,45.3184 h -27.4824 c 0,0 12.3441,-16.2322 14.9179,-25.8379 1.6838,-6.284 4.6072,-14.9244 0,-19.5176 -4.8759,-4.861 -14.6989,-3.3872 -20.6562,0.064 -14.8894,8.6268 -25.8106,44.707 -25.8106,44.707 h -76.7734 c -10.5404,0 -10.543,31.6211 0.025,31.6211 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="cscsscsscsscssc"
+           inkscape:connector-curvature="0"
+           id="path5884"
+           d="m -1065.5639,1441.0304 c -5.7904,0 -11.5809,1.786 -15.1524,5.3574 -9.7619,9.7619 10e-5,41.416 10e-5,41.416 l -31.4708,-37.8887 c -8.6474,-10.411 -38.4461,21.1046 -28.9705,28.9748 l 37.8906,31.4707 c 0,0 -31.6541,-9.7619 -41.416,0 -7.1428,7.1429 -7.1428,23.1619 0,30.3047 17.1429,17.1429 72.7305,0 72.7305,0 l 72.04545,72.0469 c 7.0646,7.0648 28.2562,-14.8337 21.5428,-21.5471 l -72.04715,-72.0471 c 0,0 17.1429,-55.5876 0,-72.7305 -3.5714,-3.5714 -9.3619,-5.3574 -15.1523,-5.3574 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           inkscape:export-ydpi="45"
+           inkscape:export-xdpi="45"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+           sodipodi:nodetypes="sscsscsscsscss"
+           inkscape:connector-curvature="0"
+           id="path5886"
+           d="m -812.07525,1852.7307 c 5.7905,0 11.5809,-1.786 15.1524,-5.3575 9.7619,-9.7619 0,-41.416 0,-41.416 l 31.4707,37.8887 c 8.6475,10.411 38.4462,-21.1046 28.9707,-28.9746 l -37.8907,-31.4707 c 0,0 31.6542,9.7619 41.4161,0 7.1428,-7.1429 7.1428,-23.1618 0,-30.3047 -17.1429,-17.1429 -72.7305,0 -72.7305,0 l -56.3309,-56.3329 c -7.0646,-7.0648 -28.2562,14.8337 -21.543,21.5469 l 56.3329,56.3329 c 0,0 -17.1429,55.5876 0,72.7304 3.5714,3.5715 9.3619,5.3575 15.1523,5.3575 z"
+           style="fill:#b3e5fc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <circle
+           style="opacity:1;fill:#b3e5fc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle5888"
+           cx="-933.18109"
+           cy="1652.9733"
+           r="82.480377"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\body.png"
+           inkscape:export-xdpi="45"
+           inkscape:export-ydpi="45"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -957.59426,1671.8377 c 0,0 12.82019,-13.0655 23.42541,-12.8943 10.60522,0.1711 22.58555,13.2182 22.58555,13.2182"
+           id="path5896"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="czc"
+           inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\mouth.png"
+           inkscape:export-xdpi="45"
+           inkscape:export-ydpi="45"
+           transform="matrix(1.9043241,0,0,1.9043241,3777.1632,-1862.9828)" />
+        <g
+           transform="matrix(0.84385771,0,0,0.84385771,239.71471,194.18298)"
+           id="g5081"
+           style="">
+          <path
+             style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#d00404;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:11.22466946;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             d="m 2065.0419,1214.59 a 1.1875216,1.1875216 0 0 0 -0.906,0.4249 l -47.9782,55.6548 a 1.1875216,1.1875216 0 1 0 1.7987,1.5507 l 47.9783,-55.6548 a 1.1875216,1.1875216 0 0 0 -0.8928,-1.9756 z"
+             id="path5077"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path5079"
+             d="m 2017.0043,1214.59 a 1.1875216,1.1875216 0 0 1 0.906,0.4249 l 47.9783,55.6548 a 1.1875216,1.1875216 0 1 1 -1.7988,1.5507 l -47.9783,-55.6548 a 1.1875216,1.1875216 0 0 1 0.8928,-1.9756 z"
+             style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#d00404;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:11.22466946;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+        </g>
+        <g
+           transform="matrix(0.84385772,0,0,0.84385772,312.00206,194.18282)"
+           id="g5933">
+          <path
+             style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#d00404;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:11.22466946;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             d="m 2065.0419,1214.59 a 1.1875216,1.1875216 0 0 0 -0.906,0.4249 l -47.9782,55.6548 a 1.1875216,1.1875216 0 1 0 1.7987,1.5507 l 47.9783,-55.6548 a 1.1875216,1.1875216 0 0 0 -0.8928,-1.9756 z"
+             id="path5925"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path5927"
+             d="m 2017.0043,1214.59 a 1.1875216,1.1875216 0 0 1 0.906,0.4249 l 47.9783,55.6548 a 1.1875216,1.1875216 0 1 1 -1.7988,1.5507 l -47.9783,-55.6548 a 1.1875216,1.1875216 0 0 1 0.8928,-1.9756 z"
+             style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#d00404;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:11.22466946;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g21227"
+       style="fill:#000000;fill-opacity:1">
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -2232.6827,1573.4748 c 5.7904,0 11.5809,1.786 15.1523,5.3574 9.7619,9.7619 0,41.416 0,41.416 l 31.4707,-37.8886 c 8.6475,-10.411 38.4462,21.1046 28.9707,28.9746 l -37.8906,31.4707 c 0,0 31.6541,-9.7619 41.416,0 7.1429,7.1428 7.1429,23.1618 0,30.3047 -17.1428,17.1428 -72.7304,0 -72.7304,0 l -56.3309,56.3328 c -7.0646,7.0649 -28.2562,-14.8336 -21.543,-21.5469 l 56.3329,-56.3328 c 0,0 -17.1429,-55.5876 0,-72.7305 3.5714,-3.5714 9.3619,-5.3574 15.1523,-5.3574 z"
+         id="path21179"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sscsscsscsscss" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+         inkscape:connector-curvature="0"
+         id="path21181"
+         d="m -2375.2853,1858.2587 v 76.7715 c 0,0 -36.0803,10.9211 -44.707,25.8105 -3.4516,5.9574 -4.9235,15.7804 -0.062,20.6563 4.5932,4.6072 13.2316,1.6838 19.5156,0 9.6057,-2.5738 25.8379,-14.918 25.8379,-14.918 v 27.4825 c 0,0 -36.5598,10.3733 -45.3183,25.291 -3.7717,6.4239 -5.2675,17.0801 0,22.3476 4.7775,4.7776 13.7623,1.8181 20.2695,0 9.3263,-2.6057 24.8437,-15.0586 24.8437,-15.0586 v 32.916 c 0,10.132 30.8633,9.7398 30.8633,-0.023 v -32.916 c 0,0 15.5174,12.4529 24.8437,15.0586 6.5073,1.8181 15.492,4.7776 20.2696,0 5.2674,-5.2675 3.7716,-15.9237 0,-22.3476 -8.7586,-14.9177 -45.3184,-25.291 -45.3184,-25.291 v -27.4825 c 0,0 16.2322,12.3442 25.8379,14.918 6.284,1.6838 14.9244,4.6072 19.5176,0 4.861,-4.8759 3.3871,-14.6989 -0.064,-20.6562 -8.6268,-14.8894 -44.7071,-25.8106 -44.7071,-25.8106 v -76.7734 c 0,-10.5404 -31.6211,-10.543 -31.6211,0.025 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+         inkscape:connector-curvature="0"
+         id="path21183"
+         d="m -2341.8009,1685.7446 v -76.7715 c 0,0 36.0803,-10.9211 44.7071,-25.8105 3.4516,-5.9574 4.9235,-15.7804 0.062,-20.6563 -4.5932,-4.6072 -13.2317,-1.6838 -19.5157,0 -9.6057,2.5739 -25.8379,14.918 -25.8379,14.918 v -27.4824 c 0,0 36.5599,-10.3733 45.3184,-25.291 3.7717,-6.424 5.2675,-17.0802 0,-22.3477 -4.7775,-4.7775 -13.7623,-1.8181 -20.2695,0 -9.3263,2.6057 -24.8438,15.0586 -24.8438,15.0586 v -32.916 c 0,-10.132 -30.8632,-9.7398 -30.8632,0.023 v 32.916 c 0,0 -15.5175,-12.4529 -24.8438,-15.0586 -6.5072,-1.8181 -15.492,-4.7775 -20.2695,0 -5.2675,5.2675 -3.7717,15.9237 0,22.3477 8.7585,14.9176 45.3183,25.291 45.3183,25.291 v 27.4824 c 0,0 -16.2322,-12.3441 -25.8378,-14.918 -6.284,-1.6838 -14.9244,-4.6072 -19.5176,0 -4.861,4.8759 -3.3872,14.6989 0.064,20.6563 8.6267,14.8894 44.707,25.8105 44.707,25.8105 v 76.7735 c 0,10.5403 31.6211,10.5429 31.6211,-0.025 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -2472.517,1979.3273 c -5.7904,0 -11.5809,-1.786 -15.1523,-5.3574 -9.7619,-9.762 0,-41.4161 0,-41.4161 l -31.4707,37.8887 c -8.6475,10.411 -38.4462,-21.1046 -28.9707,-28.9746 l 37.8906,-31.4707 c 0,0 -31.6541,9.7619 -41.416,0 -7.1429,-7.1429 -7.1429,-23.1618 0,-30.3047 17.1429,-17.1428 72.7305,0 72.7305,0 l 56.3309,-56.3329 c 7.0646,-7.0648 28.2562,14.8337 21.5429,21.5469 l -56.3328,56.3329 c 0,0 17.1428,55.5876 0,72.7305 -3.5715,3.5714 -9.3619,5.3574 -15.1524,5.3574 z"
+         id="path21185"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sscsscsscsscss" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+         inkscape:connector-curvature="0"
+         id="path21187"
+         d="m -2441.5309,1769.8689 h -76.7715 c 0,0 -10.9211,-36.0803 -25.8105,-44.707 -5.9574,-3.4517 -15.7804,-4.9235 -20.6563,-0.062 -4.6072,4.5931 -1.6838,13.2316 0,19.5156 2.5739,9.6057 14.918,25.8379 14.918,25.8379 h -27.4824 c 0,0 -10.3734,-36.5598 -25.291,-45.3184 -6.424,-3.7716 -17.0802,-5.2675 -22.3477,0 -4.7775,4.7776 -1.8181,13.7623 0,20.2696 2.6057,9.3263 15.0586,24.8437 15.0586,24.8437 h -32.916 c -10.132,0 -9.7398,30.8633 0.023,30.8633 h 32.916 c 0,0 -12.4529,15.5174 -15.0586,24.8437 -1.8181,6.5072 -4.7775,15.492 0,20.2695 5.2675,5.2675 15.9237,3.7717 22.3476,0 14.9177,-8.7585 25.2911,-45.3183 25.2911,-45.3183 h 27.4824 c 0,0 -12.3441,16.2322 -14.918,25.8379 -1.6838,6.284 -4.6072,14.9244 0,19.5175 4.8759,4.8611 14.6989,3.3872 20.6563,-0.064 14.8894,-8.6267 25.8105,-44.707 25.8105,-44.707 h 76.7735 c 10.5403,0 10.5429,-31.6211 -0.025,-31.6211 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="ccsssccssscsscsssccssscssc"
+         inkscape:connector-curvature="0"
+         id="path21189"
+         d="m -2272.3267,1800.1206 h 76.7715 c 0,0 10.9212,36.0803 25.8106,44.7071 5.9573,3.4516 15.7803,4.9235 20.6562,0.062 4.6072,-4.5932 1.6838,-13.2317 0,-19.5157 -2.5738,-9.6056 -14.9179,-25.8378 -14.9179,-25.8378 h 27.4824 c 0,0 10.3733,36.5598 25.291,45.3183 6.424,3.7717 17.0802,5.2675 22.3476,0 4.7776,-4.7775 1.8181,-13.7623 0,-20.2695 -2.6057,-9.3263 -15.0585,-24.8438 -15.0585,-24.8438 h 32.916 c 10.1319,0 9.7397,-30.8632 -0.023,-30.8632 h -32.916 c 0,0 12.4528,-15.5175 15.0585,-24.8438 1.8181,-6.5072 4.7776,-15.492 0,-20.2695 -5.2674,-5.2675 -15.9236,-3.7717 -22.3476,0 -14.9177,8.7586 -25.291,45.3184 -25.291,45.3184 h -27.4824 c 0,0 12.3441,-16.2322 14.9179,-25.8379 1.6838,-6.284 4.6072,-14.9244 0,-19.5176 -4.8759,-4.861 -14.6989,-3.3872 -20.6562,0.064 -14.8894,8.6268 -25.8106,44.707 -25.8106,44.707 h -76.7734 c -10.5404,0 -10.543,31.6211 0.025,31.6211 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="cscsscsscsscssc"
+         inkscape:connector-curvature="0"
+         id="path21191"
+         d="m -2493.2425,1561.5661 c -5.7904,0 -11.5809,1.786 -15.1524,5.3574 -9.7619,9.7619 10e-5,41.416 10e-5,41.416 l -31.4708,-37.8886 c -8.6474,-10.4111 -38.4461,21.1045 -28.9705,28.9747 l 37.8906,31.4708 c 0,0 -31.6541,-9.762 -41.416,-10e-5 -7.1428,7.1429 -7.1428,23.1619 0,30.3047 17.1429,17.1429 72.7305,0 72.7305,0 l 72.0455,72.0469 c 7.0646,7.0648 28.2562,-14.8337 21.5428,-21.5471 l -72.0472,-72.0471 c 0,0 17.1429,-55.5876 0,-72.7305 -3.5714,-3.5714 -9.3619,-5.3574 -15.1523,-5.3574 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Creations\Graphics\Sprites\Bosses\XmasSnowflake\xmas-snowflake-hd.png"
+         sodipodi:nodetypes="sscsscsscsscss"
+         inkscape:connector-curvature="0"
+         id="path21193"
+         d="m -2239.7538,1973.2664 c 5.7905,0 11.5809,-1.786 15.1524,-5.3575 9.7619,-9.7619 0,-41.416 0,-41.416 l 31.4707,37.8887 c 8.6475,10.411 38.4462,-21.1046 28.9707,-28.9746 l -37.8907,-31.4707 c 0,0 31.6542,9.7619 41.4161,0 7.1428,-7.1429 7.1428,-23.1618 0,-30.3047 -17.1429,-17.1429 -72.7305,0 -72.7305,0 l -56.3309,-56.3329 c -7.0646,-7.0648 -28.2562,14.8337 -21.543,21.5469 l 56.3329,56.3329 c 0,0 -17.1429,55.5876 0,72.7304 3.5714,3.5715 9.3619,5.3575 15.1523,5.3575 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle21195"
+         cx="-2360.8596"
+         cy="1773.5089"
+         r="82.480377"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\body.png"
+         inkscape:export-xdpi="45"
+         inkscape:export-ydpi="45" />
+      <g
+         transform="translate(-758.03571,691.07143)"
+         id="g21201"
+         style="fill:#000000;fill-opacity:1">
+        <circle
+           transform="scale(-1,1)"
+           r="17.765646"
+           cy="1060.3737"
+           cx="1626.3517"
+           id="circle21197"
+           style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           transform="scale(-1,1)"
+           r="5.4988909"
+           cy="1066.8427"
+           cx="1626.9596"
+           id="circle21199"
+           style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <path
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+         d="m -2339.159,1779.5266 c 0,0 -12.6077,13.2706 -23.2143,13.2706 -10.6066,0 -22.7959,-12.8521 -22.7959,-12.8521"
+         id="path21203"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="czc"
+         inkscape:export-filename="D:\Projets\Xmas-Hell\Xmas-Hell\Xmas-Hell\Xmas-Hell-Core\Content\Graphics\Sprites\Bosses\XmasSnowflake\mouth.png"
+         inkscape:export-xdpi="45"
+         inkscape:export-ydpi="45" />
+      <g
+         id="g21209"
+         transform="translate(-712.5,691.07143)"
+         style="fill:#000000;fill-opacity:1">
+        <circle
+           style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle21205"
+           cx="1626.3517"
+           cy="1060.3737"
+           r="17.765646"
+           transform="scale(-1,1)" />
+        <circle
+           style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle21207"
+           cx="1626.9596"
+           cy="1066.8427"
+           r="5.4988909"
+           transform="scale(-1,1)" />
+      </g>
+    </g>
+  </g>
+</svg>
