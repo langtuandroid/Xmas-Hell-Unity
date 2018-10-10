@@ -30,8 +30,11 @@ namespace BossBehaviourState
 
         private void OnCollision(Collision2D collision)
         {
-            Boss.TargetingPosition = false;
-            _animator.SetBool("IsStunned", true);
+            if (collision.gameObject.tag == "Wall")
+            {
+                //Boss.TargetingPosition = false;
+                _animator.SetBool("IsStunned", true);
+            }
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
