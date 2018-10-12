@@ -535,6 +535,7 @@ Transform:
   - {fileID: 1422763083}
   - {fileID: 342462904}
   - {fileID: 2010589292}
+  - {fileID: 854135477}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1317,6 +1318,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810765677}
   m_CullTransparentMesh: 0
+--- !u!1001 &854135476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 368163146}
+    m_Modifications:
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+      propertyPath: m_Name
+      value: XmasLog
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114351855978273664, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+--- !u!4 &854135477 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4394168650080496, guid: a542a0ae333b5694dacf149b9a450789,
+    type: 3}
+  m_PrefabInstance: {fileID: 854135476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &867199340
 GameObject:
   m_ObjectHideFlags: 0
