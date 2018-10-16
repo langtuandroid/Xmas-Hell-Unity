@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 114400563395662890}
   - component: {fileID: 114172075279106296}
   - component: {fileID: 8784219533882636553}
+  - component: {fileID: 7535960125402449629}
   - component: {fileID: 50960328967856826}
   - component: {fileID: 210157526770372072}
   m_Layer: 9
@@ -229,18 +230,19 @@ MonoBehaviour:
   Acceleration: {x: 1, y: 1}
   AngularVelocity: 5
   Invincible: 0
-  IsAlive: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TargetingPosition: 0
+  TargetingAngle: 0
   DamageBlinkTime: 0.2
   Behaviours:
   - {fileID: 114400563395662890}
   - {fileID: 114172075279106296}
   - {fileID: 8784219533882636553}
+  - {fileID: 7535960125402449629}
   BaseAnimatorController: {fileID: 9100000, guid: a3356d2aed7c0674ebc0eccf50cf997f,
     type: 2}
   BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
@@ -291,6 +293,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: 90393033e616e8345b851ac60cb1599c, type: 2}
+  InitialBehaviourLife: 500
+  Boss: {fileID: 114752281738679952}
+--- !u!114 &7535960125402449629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034342319130522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c037802b1412f644a463748843d08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationRoot: {fileID: 1978665513887760}
+  FSM: {fileID: 9100000, guid: 568c7b389333dd74091e6e3ab9c5e831, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
 --- !u!50 &50960328967856826

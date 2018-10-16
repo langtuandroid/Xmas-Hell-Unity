@@ -485,23 +485,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 342462898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4658b657146194c94722905832997a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c037802b1412f644a463748843d08b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 0}
   FSM: {fileID: 0}
   InitialBehaviourLife: 0
   Boss: {fileID: 0}
---- !u!114 &342462906 stripped
+--- !u!114 &342462907 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8784219533882636553, guid: 39a0bace6994aa6489e7ec32c6339c32,
+  m_CorrespondingSourceObject: {fileID: 7535960125402449629, guid: 39a0bace6994aa6489e7ec32c6339c32,
     type: 3}
   m_PrefabInstance: {fileID: 1112404608}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342462898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4658b657146194c94722905832997a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c037802b1412f644a463748843d08b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &368163145
@@ -2049,13 +2049,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
         type: 3}
       propertyPath: Behaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 342462906}
+      objectReference: {fileID: 342462907}
     - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
         type: 3}
       propertyPath: AngularVelocity
@@ -2092,6 +2092,16 @@ PrefabInstance:
     - target: {fileID: 4531734020884106, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50960328967856826, guid: 39a0bace6994aa6489e7ec32c6339c32,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50960328967856826, guid: 39a0bace6994aa6489e7ec32c6339c32,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
@@ -3278,6 +3288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XmasGift
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584292416155044786, guid: 9c2146d3dbe87cb4198682bb33683308,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2146d3dbe87cb4198682bb33683308, type: 3}

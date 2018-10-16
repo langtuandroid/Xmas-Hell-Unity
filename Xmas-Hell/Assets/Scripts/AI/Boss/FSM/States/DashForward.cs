@@ -6,6 +6,7 @@ namespace BossBehaviourState
     {
         public float SpeedMultiplier = 1f;
         public Vector2 Acceleration = Vector2.zero;
+        public bool Bounce = false;
 
         private Animator _animator;
 
@@ -14,26 +15,26 @@ namespace BossBehaviourState
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
             Boss.Speed *= SpeedMultiplier;
-
             Boss.OnCollision.AddListener(OnCollision);
 
             _animator = animator;
 
-            var direction = MathHelper.AngleToDirection(Boss.Rotation);
-            var raycastHit = Physics2D.Raycast(Boss.Position, direction, 2300f, LayerMask.GetMask("Wall"));
-
-            if (raycastHit.collider != null)
-            {
-                Boss.MoveTo(raycastHit.point, null, true);
-            }
+            Boss.Direction = Boss.transform.up;
         }
 
         private void OnCollision(Collision2D collision)
         {
             if (collision.gameObject.tag == "Wall")
             {
-                //Boss.TargetingPosition = false;
-                _animator.SetBool("IsStunned", true);
+                if (Bounce)
+                {
+                    Boss.Direction = Vector2.Reflect(Boss.Direction, collision.contacts[0].normal);
+                    Boss.Rotation = MathHelper.DirectionToAngle(Boss.Direction) + 180f;
+                }
+                else
+                {
+                    _animator.SetBool("IsStunned", true);
+                }
             }
         }
 
@@ -50,6 +51,7 @@ namespace BossBehaviourState
 
             Boss.OnCollision.RemoveListener(OnCollision);
             Boss.Acceleration = Vector2.one;
+            Boss.Direction = Vector2.zero;
         }
     }
 }
