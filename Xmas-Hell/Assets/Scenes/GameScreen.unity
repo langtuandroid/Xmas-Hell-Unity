@@ -879,6 +879,77 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: 960.2801}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &663944610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663944612}
+  - component: {fileID: 663944611}
+  - component: {fileID: 663944613}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &663944611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663944610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046b7ce7413fad04693cae566a8cb453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _difficulty: 0.5
+  _player: {fileID: 878838468}
+  _maxBulletsAmount: 10000
+  _bulletsTexture: {fileID: 21300000, guid: 493b523f6e0faf647aaf570c1b8a4f8a, type: 3}
+  _bulletsTextureTiling: {x: 0.25, y: 0.25}
+  _bulletProfiles:
+  - {fileID: 11400000, guid: 827be6d50fc05454d92c3578948846ca, type: 2}
+  - {fileID: 11400000, guid: 6883725df85456747a7b24c6b2d04091, type: 2}
+  - {fileID: 11400000, guid: a94c2ae960dae05438b6790e13f33003, type: 2}
+  - {fileID: 11400000, guid: 38f65d19e94e7af478fa1e3e35d4202c, type: 2}
+  - {fileID: 11400000, guid: e3a0c4ae1f680904f8b321ff4e2e4de8, type: 2}
+  - {fileID: 11400000, guid: 7d85f29914d25f343b4cf36da8934234, type: 2}
+  - {fileID: 11400000, guid: 91b32e0663fcb414ea81eb9702793661, type: 2}
+--- !u!4 &663944612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663944610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &663944613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663944610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979562cfef099b44bb97c55ab631dbb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 17905b32d99e9e0428055466d091164c, type: 2}
+  _bulletManager: {fileID: 663944611}
 --- !u!1001 &741044889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1699,6 +1770,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
+--- !u!1 &878838468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1196855814621594, guid: 776b4d1a5a3f2fa40af844d43a190065,
+    type: 3}
+  m_PrefabInstance: {fileID: 878838467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1046684483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3144,8 +3221,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101799705}
+  - component: {fileID: 2101799706}
   m_Layer: 0
-  m_Name: BulletManager
+  m_Name: BulletEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3163,8 +3241,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101799706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101799704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147aaeb6501865746ac0defcf13e9289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patternFile: {fileID: 4900000, guid: e5070daadcc87054c85092936744ba7d, type: 3}
+  _bulletManager: {fileID: 663944611}
 --- !u!1 &2124102669
 GameObject:
   m_ObjectHideFlags: 0
