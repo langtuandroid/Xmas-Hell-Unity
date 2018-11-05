@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityBulletML.Bullets;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,6 +21,9 @@ public abstract class AbstractBoss : AbstractEntity
     private GameObject BossLifeBarPrefab;
     private BossLifeBar _bossLifeBar;
 
+    // Bullet patterns
+    [SerializeField] private List<BulletEmitter> _bulletEmitters = new List<BulletEmitter>();
+
     // Events
     public CollisionEvent OnCollision = new CollisionEvent();
 
@@ -33,6 +37,8 @@ public abstract class AbstractBoss : AbstractEntity
 
     private Vector2 _initialPosition;
     private float _initialSpeed;
+
+    private BulletManager _bulletManager;
 
     private bool _ready;
 
@@ -80,6 +86,13 @@ public abstract class AbstractBoss : AbstractEntity
         var lifeBar = Instantiate(BossLifeBarPrefab, bossLifeBarHolder.transform);
         _bossLifeBar = lifeBar.GetComponent<BossLifeBar>();
         _bossLifeBar.Initialize(this);
+
+        _bulletManager = GameManager.BulletManager;
+
+        foreach (var bulletEmitter in _bulletEmitters)
+        {
+            bulletEmitter.BulletManager = _bulletManager;
+        }
     }
 
     protected override void Start()
@@ -159,7 +172,7 @@ public abstract class AbstractBoss : AbstractEntity
             _ready = true;
         }
 
-        UpdateTimers();
+        UpdateShootTimer();
         UpdateBehaviour();
     }
 
@@ -252,6 +265,18 @@ public abstract class AbstractBoss : AbstractEntity
         }
     }
 
+    #region Bullet pattern
+
+    public void ShootPattern(string patternName)
+    {
+        foreach (var bulletEmitter in _bulletEmitters)
+        {
+            var pattern = _bulletManager.GetPattern(patternName);
+            bulletEmitter.SetPattern(pattern);
+            bulletEmitter.AddBullet();
+        }
+    }
+
     public void StartShootTimer(float time, Action callback)
     {
         _enableShootTimer = true;
@@ -266,7 +291,7 @@ public abstract class AbstractBoss : AbstractEntity
         _shootTimerCallback = null;
     }
 
-    private void UpdateTimers()
+    private void UpdateShootTimer()
     {
         // Shoot timer
         if (_enableShootTimer && _shootTimerCallback != null)
@@ -280,6 +305,8 @@ public abstract class AbstractBoss : AbstractEntity
             }
         }
     }
+
+    #endregion
 
     #region Player
 

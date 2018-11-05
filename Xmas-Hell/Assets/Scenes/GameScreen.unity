@@ -470,6 +470,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1112404608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &342462903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114400563395662890, guid: 39a0bace6994aa6489e7ec32c6339c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1112404608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342462898}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e76f829d2f984648847f39bed0302e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &342462904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4681852800675624, guid: 39a0bace6994aa6489e7ec32c6339c32,
@@ -492,18 +504,6 @@ MonoBehaviour:
   FSM: {fileID: 0}
   InitialBehaviourLife: 0
   Boss: {fileID: 0}
---- !u!114 &342462907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7535960125402449629, guid: 39a0bace6994aa6489e7ec32c6339c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 1112404608}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342462898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c037802b1412f644a463748843d08b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &368163145
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _difficulty: 0.5
+  _patternFilesFolder: Assets/GameData/Resources/Patterns
   _player: {fileID: 878838468}
   _maxBulletsAmount: 10000
   _bulletsTexture: {fileID: 21300000, guid: 493b523f6e0faf647aaf570c1b8a4f8a, type: 3}
@@ -1507,6 +1508,7 @@ MonoBehaviour:
   GameCanvas: {fileID: 1580924062}
   GameArea: {fileID: 503411856}
   TimerText: {fileID: 810765679}
+  BulletManager: {fileID: 663944611}
 --- !u!114 &867199343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2177,13 +2179,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
         type: 3}
       propertyPath: Behaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 342462907}
+      objectReference: {fileID: 342462903}
     - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
         type: 3}
       propertyPath: AngularVelocity
@@ -3334,51 +3336,6 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: -959.72}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2101799704
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2101799705}
-  - component: {fileID: 2101799706}
-  m_Layer: 0
-  m_Name: BulletEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2101799705
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101799704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2101799706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101799704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147aaeb6501865746ac0defcf13e9289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _patternFile: {fileID: 4900000, guid: e5070daadcc87054c85092936744ba7d, type: 3}
-  _bulletManager: {fileID: 663944611}
 --- !u!1 &2124102669
 GameObject:
   m_ObjectHideFlags: 0

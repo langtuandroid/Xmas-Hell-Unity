@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" ?>
 <!DOCTYPE bulletml SYSTEM "bulletml.dtd">
 <bulletml>
   <action label="top">
     <fire>
       <bullet>
-        <speed>5</speed>
-        <sprite>7</sprite>
+        <direction>0</direction>
+        <speed>1</speed>
       </bullet>
     </fire>
   </action>

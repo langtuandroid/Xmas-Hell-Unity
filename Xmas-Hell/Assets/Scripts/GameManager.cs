@@ -1,5 +1,6 @@
 ﻿using System;
 using TMPro;
+using UnityBulletML.Bullets;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,9 @@ public class GameManager : MonoBehaviour
     // Timer
     public TextMeshProUGUI TimerText;
     private float _gameTimer;
+
+    // Bullet engine
+    public BulletManager BulletManager;
 
     // Pause
     private bool _pause;
@@ -55,6 +59,8 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
+
+        BulletManager.LoadPatterns();
 
         Reset();
     }
