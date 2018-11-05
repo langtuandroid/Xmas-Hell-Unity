@@ -96,9 +96,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Back
         if (Input.GetKeyDown(KeyCode.Escape))
             GameScreenManager.GoBack();
 
+        // Pause
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (_pause)
@@ -106,6 +108,14 @@ public class GameManager : MonoBehaviour
             else
                 PauseGame();
         }
+
+        // Debug
+#if DEBUG
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            BulletManager.Clear();
+        }
+#endif
     }
 
     void FixedUpdate()
