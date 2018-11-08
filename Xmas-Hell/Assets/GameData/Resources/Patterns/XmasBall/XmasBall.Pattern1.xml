@@ -20,5 +20,6 @@
         </action>
       </bullet>
     </fire>
+    <vanish />
   </action>
 </bulletml>
