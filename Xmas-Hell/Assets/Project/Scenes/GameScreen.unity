@@ -512,7 +512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minZoom: 9.6
   _maxZoom: 1
-  _zoom: 0.01
   OnCameraZoomInFinished:
     m_PersistentCalls:
       m_Calls:
@@ -534,25 +533,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _zoomFocus: {fileID: 90088562}
 --- !u!1 &342462898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32,
     type: 3}
   m_PrefabInstance: {fileID: 1112404608}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &342462903 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114400563395662890, guid: 39a0bace6994aa6489e7ec32c6339c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 1112404608}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342462898}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e76f829d2f984648847f39bed0302e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &342462904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4681852800675624, guid: 39a0bace6994aa6489e7ec32c6339c32,
@@ -575,6 +561,18 @@ MonoBehaviour:
   FSM: {fileID: 0}
   InitialBehaviourLife: 0
   Boss: {fileID: 0}
+--- !u!114 &342462906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114172075279106296, guid: 39a0bace6994aa6489e7ec32c6339c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1112404608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342462898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8615bf3b7145c3c41a33e41120308a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368163145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663944610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8016645f0245b014f809bfd9f4b803c7, type: 3}
   m_Name: 
@@ -2516,7 +2514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Behaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 342462903}
+      objectReference: {fileID: 342462906}
     - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
         type: 3}
       propertyPath: AngularVelocity

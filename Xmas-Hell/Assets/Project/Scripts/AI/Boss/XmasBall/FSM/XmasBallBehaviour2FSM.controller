@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d81f646b6cdfc4cb2b812655039f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatternName: XmasBall.Pattern2
 --- !u!1101 &1101589825608516482
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
