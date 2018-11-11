@@ -1,0 +1,3 @@
+[submodule "Xmas-Hell/Assets/Libraries/BulletML-Unity"]
+	path = Xmas-Hell/Assets/Libraries/BulletML-Unity
+	url = https://github.com/Noxalus/BulletML-Unity
