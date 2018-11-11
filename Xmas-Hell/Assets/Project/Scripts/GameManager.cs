@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     // Screen
     public ScreenManager GameScreenManager;
 
+    // Camera
+    public CameraManager CameraManager;
+
     // Game area
     public Canvas GameCanvas;
     public GameArea GameArea;
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("End game: player death");
 
         // TODO: Start camera zoom on player
+        CameraManager.ZoomTo(3f, Player.transform, 0.5f);
         _playerControls.Disable();
         Boss.Pause();
         BulletManager.Pause();
@@ -107,12 +111,18 @@ public class GameManager : MonoBehaviour
     {
         Boss.Resume();
         BulletManager.Resume();
+        CameraManager.ZoomTo(9.6f, Player.transform, 0.5f);
     }
 
     void OnBulletCollision(Bullet bullet)
     {
         Debug.Log("Player hit by a bullet!");
         _fsm.SetTrigger("PlayerDeath");
+    }
+
+    public void OnCameraZoomInFinished()
+    {
+        _fsm.SetTrigger("CameraZoomFinished");
     }
 
     private void Update()
