@@ -9,7 +9,7 @@ public class GameStateMachineBehaviour : StateMachineBehaviour
     protected int LayerIndex;
 
     private bool _timerEnabled;
-    private float _timer;
+    private float _localTimer;
 
     private void OnDestroy()
     {
@@ -36,9 +36,9 @@ public class GameStateMachineBehaviour : StateMachineBehaviour
     {
         if (_timerEnabled)
         {
-            _timer -= Time.deltaTime;
+            _localTimer -= Time.deltaTime;
 
-            if (_timer <= 0)
+            if (_localTimer <= 0)
             {
                 animator.SetTrigger("TimerFinished");
             }
@@ -48,7 +48,7 @@ public class GameStateMachineBehaviour : StateMachineBehaviour
     protected void StartTimer(float time)
     {
         _timerEnabled = true;
-        _timer = time;
+        _localTimer = time;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
