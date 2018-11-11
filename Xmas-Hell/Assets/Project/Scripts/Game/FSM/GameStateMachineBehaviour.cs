@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class BossStateMachineBehaviour : StateMachineBehaviour
+public class GameStateMachineBehaviour : StateMachineBehaviour
 {
-    protected AbstractBoss Boss;
+    protected GameManager GameManager;
 
     protected Animator Animator;
     protected AnimatorStateInfo StateInfo;
@@ -20,11 +20,11 @@ public class BossStateMachineBehaviour : StateMachineBehaviour
         StateInfo = stateInfo;
         LayerIndex = layerIndex;
 
-        Boss = animator.transform.parent.gameObject.GetComponent<AbstractBoss>();
+        GameManager = animator.gameObject.GetComponent<GameManager>();
 
-        if (Boss == null)
+        if (GameManager == null)
         {
-            Debug.LogError("No Boss found for this Behaviour.");
+            Debug.LogError("No GameManager found for this Behaviour.");
         }
     }
 

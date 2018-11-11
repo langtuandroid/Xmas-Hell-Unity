@@ -1036,13 +1036,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _difficulty: 0.5
-  _patternFilesFolder: Assets/GameData/Resources/Patterns
+  _patternFilesFolder: Assets/Project/GameData/Resources/Patterns
   _playerTransform: {fileID: 90088562}
   _maxBulletsAmount: 10000
   _bulletInitialSize: 2
   _bulletsWidthBoundary: {x: -0.25, y: 1.25}
   _bulletsHeightBoundary: {x: -0.25, y: 1.25}
-  _bulletsTexture: {fileID: 21300000, guid: 493b523f6e0faf647aaf570c1b8a4f8a, type: 3}
+  _bulletsTexture: {fileID: 21300000, guid: 77113ab205d8a5248b4e720bb9f27c7b, type: 3}
   _bulletsTextureTiling: {x: 0.25, y: 0.25}
   _bulletProfiles:
   - {fileID: 11400000, guid: 827be6d50fc05454d92c3578948846ca, type: 2}
