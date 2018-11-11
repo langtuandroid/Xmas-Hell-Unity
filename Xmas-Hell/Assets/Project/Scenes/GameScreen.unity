@@ -1081,7 +1081,7 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: 17905b32d99e9e0428055466d091164c, type: 2}
   _bulletManager: {fileID: 663944611}
   _layer: 11
-  _camera: {fileID: 0}
+  _camera: {fileID: 694070782}
 --- !u!114 &663944614
 MonoBehaviour:
   m_ObjectHideFlags: 0
