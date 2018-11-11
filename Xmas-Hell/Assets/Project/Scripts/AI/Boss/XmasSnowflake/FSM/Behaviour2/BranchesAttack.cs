@@ -30,7 +30,7 @@ namespace BossBehaviourState
                 var branch1 = _branch1Group.GetChild(i);
                 var dynamicBranch1 = Instantiate(Branch1Prefab, branch1.position, branch1.rotation);
                 var snowflakeBranch = dynamicBranch1.GetComponent<XmasSnowflakeBranch>();
-                snowflakeBranch.SetBoss(Boss);
+                snowflakeBranch.SetTarget(Boss.Player.transform);
 
                 _branches.Add(snowflakeBranch);
             }
@@ -42,7 +42,7 @@ namespace BossBehaviourState
                 var branch2 = _branch2Group.GetChild(i);
                 var dynamicBranch2 = Instantiate(Branch2Prefab, branch2.position, branch2.rotation);
                 var snowflakeBranch = dynamicBranch2.GetComponent<XmasSnowflakeBranch>();
-                snowflakeBranch.SetBoss(Boss);
+                snowflakeBranch.SetTarget(Boss.Player.transform);
 
                 _branches.Add(snowflakeBranch);
             }

@@ -8,6 +8,7 @@ public class XmasSnowflakeBranch : AbstractEntity
     private AbstractBoss _boss;
     private float _timeBeforeRush;
     private bool _rushing;
+    private Transform _target;
 
     protected override void Start()
     {
@@ -36,16 +37,16 @@ public class XmasSnowflakeBranch : AbstractEntity
         StopCoroutine(RushOnPlayer());
     }
 
-    public void SetBoss(AbstractBoss boss)
+    public void SetTarget(Transform target)
     {
-        _boss = boss;
+        _target = target;
     }
 
     public IEnumerator RushOnPlayer()
     {
         yield return new WaitForSeconds(_timeBeforeRush);
 
-        var direction = _boss.Player.transform.position - transform.position;
+        var direction = _target.transform.position - transform.position;
         var angle = MathHelper.DirectionToAngle(direction);
         Rigidbody.MoveRotation(angle);
 
@@ -74,8 +75,6 @@ public class XmasSnowflakeBranch : AbstractEntity
         if (!_rushing)
             Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularVelocity * Time.fixedDeltaTime));
         else if (!TargetingPosition)
-        {
             IsAlive = false;
-        }
     }
 }
