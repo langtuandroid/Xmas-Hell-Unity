@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     // Pause
     private bool _pause;
+    private PlayerControls _playerControls;
 
     public bool Pause
     {
@@ -58,8 +59,10 @@ public class GameManager : MonoBehaviour
 
         _fsm = GetComponent<Animator>();
 
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var playerObject = GameObject.FindGameObjectWithTag("Player");
+        Player = playerObject.GetComponent<Player>();
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
+        _playerControls = playerObject.GetComponent<PlayerControls>();
 
         BulletManager.LoadPatterns();
         BulletPhysics.OnCollision.AddListener(OnBulletCollision);
@@ -84,26 +87,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.01f;
     }
 
-    void OnBossDeath()
+    public void OnBossDeath()
     {
         Debug.Log("End game: boss death");
         _fsm.SetTrigger("BossDeath");
     }
 
-    void OnPlayerDeath()
+    public void OnPlayerDeath()
     {
         Debug.Log("End game: player death");
 
-        // TODO: Camera zoom on player
+        // TODO: Start camera zoom on player
+        _playerControls.Disable();
         Boss.Pause();
         BulletManager.Pause();
+    }
+
+    public void OnPlayerExplosion()
+    {
+        Boss.Resume();
+        BulletManager.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)
     {
         Debug.Log("Player hit by a bullet!");
         _fsm.SetTrigger("PlayerDeath");
-        OnPlayerDeath();
     }
 
     private void Update()
