@@ -3,12 +3,21 @@ using UnityEngine;
 
 public class XmasSnowflakeBranch : AbstractEntity
 {
+    #region Serialize fields
+
+    [SerializeField] private Transform _target = null;
+    [SerializeField] private float _accelerationOverTime = 0.01f;
+    [SerializeField] private float _maxAcceleration = 5f;
+    [SerializeField] private float _rushTimeMin = 1f;
+    [SerializeField] private float _rushTimeMax = 10f;
+
+    #endregion
+
     private bool _rotateClockwise;
     private float _rotationFactor = 1f;
     private AbstractBoss _boss;
     private float _timeBeforeRush;
     private bool _rushing;
-    private Transform _target;
 
     protected override void Start()
     {
@@ -20,21 +29,19 @@ public class XmasSnowflakeBranch : AbstractEntity
         if (!_rotateClockwise)
             _rotationFactor = -1f;
 
-        var bossGameObject = GameObject.FindGameObjectWithTag("Enemy");
+        _timeBeforeRush = Random.Range(_rushTimeMin, _rushTimeMax);
 
-        if (bossGameObject != null)
-            _boss = bossGameObject.GetComponent<AbstractBoss>();
-        else
-            Debug.LogWarning("No boss found in this scene");
+        StartCoroutine(RushOnTarget());
+    }
 
-        _timeBeforeRush = Random.Range(2f, 3f);
-
-        StartCoroutine(RushOnPlayer());
+    public void Initialize(AbstractBoss boss)
+    {
+        _boss = boss;
     }
 
     public void OnDestroy()
     {
-        StopCoroutine(RushOnPlayer());
+        StopCoroutine(RushOnTarget());
     }
 
     public void SetTarget(Transform target)
@@ -42,24 +49,20 @@ public class XmasSnowflakeBranch : AbstractEntity
         _target = target;
     }
 
-    public IEnumerator RushOnPlayer()
+    public IEnumerator RushOnTarget()
     {
         yield return new WaitForSeconds(_timeBeforeRush);
 
         var direction = _target.transform.position - transform.position;
         var angle = MathHelper.DirectionToAngle(direction);
-        Rigidbody.MoveRotation(angle);
+        Rigidbody.rotation = angle;
+        Direction = -MathHelper.AngleToDirection(angle);
+        _rushing = true;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2300, LayerMask.GetMask("Wall"));
-
-        if (hit.collider != null)
+        while (Acceleration.x < _maxAcceleration && Acceleration.y < _maxAcceleration)
         {
-            MoveTo(hit.point);
-            _rushing = true;
-        }
-        else
-        {
-            Debug.LogWarning("No wall found by this Xmas Snowflake branch!");
+            Acceleration += Vector2.one * _accelerationOverTime;
+            yield return null;
         }
     }
 
@@ -74,7 +77,10 @@ public class XmasSnowflakeBranch : AbstractEntity
 
         if (!_rushing)
             Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularVelocity * Time.fixedDeltaTime));
-        else if (!TargetingPosition)
-            IsAlive = false;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        IsAlive = false;
     }
 }

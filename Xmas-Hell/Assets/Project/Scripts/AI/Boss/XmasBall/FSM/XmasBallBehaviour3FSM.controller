@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedMultiplier: 1
   Acceleration: {x: 0.5, y: 0.5}
+  Bounce: 0
 --- !u!114 &114365261014118230
 MonoBehaviour:
   m_ObjectHideFlags: 1

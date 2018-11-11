@@ -4,9 +4,7 @@ using UnityBulletML.Bullets;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CollisionEvent : UnityEvent<Collision2D>
-{
-}
+public class CollisionEvent : UnityEvent<Collision2D> { }
 
 public abstract class AbstractBoss : AbstractEntity
 {
