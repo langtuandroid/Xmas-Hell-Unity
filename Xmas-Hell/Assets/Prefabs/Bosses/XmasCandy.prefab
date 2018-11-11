@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1413851121762450}
-  FSM: {fileID: 0}
+  FSM: {fileID: 9100000, guid: 26496a757e50d784fb56feb21c3b4778, type: 2}
   InitialBehaviourLife: 1000
   Boss: {fileID: 114044016453238836}
 --- !u!50 &50465413244262340

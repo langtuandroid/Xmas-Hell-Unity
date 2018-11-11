@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 8749066444927318205}
-  FSM: {fileID: 0}
+  FSM: {fileID: 9100000, guid: a4ba0715474ab5547a98dfa303218f92, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 6056725799598972307}
 --- !u!210 &8900570927496134577
@@ -1031,6 +1031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8754769667371145529}
+  - component: {fileID: 7959759605674443879}
   m_Layer: 9
   m_Name: AnimationRoot
   m_TagString: Untagged
@@ -1053,6 +1054,25 @@ Transform:
   m_Father: {fileID: 8746118060482943199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7959759605674443879
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749066444927318205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4277c036012386d4880149483c742737, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8759381894548125027
 GameObject:
   m_ObjectHideFlags: 0
