@@ -6,13 +6,18 @@ public class PlayerControls : MonoBehaviour
     public float MoveSensitivity = 1f;
     public Rigidbody2D Rigidbody;
 
+    [SerializeField] private GameArea _gameArea;
+
     private Vector3 _initialTouchPosition;
     private Vector3 _initialPosition;
     private Rect _gameAreaBounds;
 
     private void Start()
     {
-        _gameAreaBounds = GameObject.FindGameObjectWithTag("GameArea").GetComponent<GameArea>().GetWorldRect();
+        if (_gameArea != null)
+        {
+            _gameAreaBounds = _gameArea.GetWorldRect();
+        }
     }
 
     void FixedUpdate()
@@ -38,8 +43,11 @@ public class PlayerControls : MonoBehaviour
             newPosition.z = _initialPosition.z; // Make sure we don't alter the Z position
 
             // Make sure the player stay in the game area
-            newPosition.x = Mathf.Clamp(newPosition.x, _gameAreaBounds.xMin, _gameAreaBounds.xMax);
-            newPosition.y = Mathf.Clamp(newPosition.y, _gameAreaBounds.yMin, _gameAreaBounds.yMax);
+            if (_gameArea != null)
+            {
+                newPosition.x = Mathf.Clamp(newPosition.x, _gameAreaBounds.xMin, _gameAreaBounds.xMax);
+                newPosition.y = Mathf.Clamp(newPosition.y, _gameAreaBounds.yMin, _gameAreaBounds.yMax);
+            }
 
             Rigidbody.MovePosition(newPosition);
         }
