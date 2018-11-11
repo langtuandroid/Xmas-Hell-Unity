@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("End game: player death");
 
-        // TODO: Start camera zoom on player
         CameraManager.ZoomTo(3f, Player.transform, 0.5f);
         _playerControls.Disable();
         Boss.Pause();
