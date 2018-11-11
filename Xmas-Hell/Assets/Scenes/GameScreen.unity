@@ -1030,8 +1030,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _difficulty: 0.5
   _patternFilesFolder: Assets/GameData/Resources/Patterns
-  _player: {fileID: 878838468}
+  _playerTransform: {fileID: 90088562}
   _maxBulletsAmount: 10000
+  _bulletInitialSize: 2
+  _bulletsWidthBoundary: {x: -0.25, y: 1.25}
+  _bulletsHeightBoundary: {x: -0.25, y: 1.25}
   _bulletsTexture: {fileID: 21300000, guid: 493b523f6e0faf647aaf570c1b8a4f8a, type: 3}
   _bulletsTextureTiling: {x: 0.25, y: 0.25}
   _bulletProfiles:
@@ -1070,7 +1073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: 17905b32d99e9e0428055466d091164c, type: 2}
   _bulletManager: {fileID: 663944611}
-  _bulletSize: 2
   _layer: 11
   _camera: {fileID: 0}
 --- !u!1 &694070779
@@ -2022,14 +2024,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4468661915289256, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468661915289256, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468661915289256, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
---- !u!1 &878838468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1196855814621594, guid: 776b4d1a5a3f2fa40af844d43a190065,
-    type: 3}
-  m_PrefabInstance: {fileID: 878838467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1046684483
 PrefabInstance:
   m_ObjectHideFlags: 0
