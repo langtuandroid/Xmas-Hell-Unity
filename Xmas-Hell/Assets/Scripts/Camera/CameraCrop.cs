@@ -4,8 +4,8 @@
 [ExecuteInEditMode]
 public class CameraCrop : MonoBehaviour
 {
-    // Set this to your target aspect ratio, eg. (16, 9) or (4, 3).
-    public Vector2 targetAspect = new Vector2(16, 9);
+    // Set this to your target resolution
+    public Vector2 targetResolution = new Vector2(9, 16);
     Camera _camera;
 
     void Start()
@@ -19,7 +19,7 @@ public class CameraCrop : MonoBehaviour
     {
         // Determine ratios of screen/window & target, respectively.
         float screenRatio = Screen.width / (float)Screen.height;
-        float targetRatio = targetAspect.x / targetAspect.y;
+        float targetRatio = targetResolution.x / targetResolution.y;
 
         if (Mathf.Approximately(screenRatio, targetRatio))
         {

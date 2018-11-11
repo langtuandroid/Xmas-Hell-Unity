@@ -135,6 +135,7 @@ MonoBehaviour:
     type: 2}
   BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
     type: 3}
+  _bulletEmitters: []
 --- !u!50 &50465413244262340
 Rigidbody2D:
   serializedVersion: 4
