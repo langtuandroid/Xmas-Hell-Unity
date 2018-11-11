@@ -11,13 +11,24 @@ public class PlayerControls : MonoBehaviour
     private Vector3 _initialTouchPosition;
     private Vector3 _initialPosition;
     private Rect _gameAreaBounds;
+    private bool _disabled;
 
     private void Start()
     {
         if (_gameArea != null)
-        {
             _gameAreaBounds = _gameArea.GetWorldRect();
-        }
+
+        _disabled = false;
+    }
+
+    public void Enable()
+    {
+        _disabled = false;
+    }
+
+    public void Disable()
+    {
+        _disabled = true;
     }
 
     void FixedUpdate()
@@ -27,6 +38,9 @@ public class PlayerControls : MonoBehaviour
 
     private void UpdatePosition()
     {
+        if (_disabled)
+            return;
+
         // Mouse inputs seem to be taken into account on Android
         if (Input.GetMouseButton(0))
         {
