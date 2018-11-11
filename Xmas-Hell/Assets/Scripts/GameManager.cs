@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         // TODO: Camera zoom on player
         Boss.Pause();
+        BulletManager.Pause();
     }
 
     void OnBulletCollision(Bullet bullet)
