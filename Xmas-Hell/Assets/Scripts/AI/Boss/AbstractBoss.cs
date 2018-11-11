@@ -41,6 +41,7 @@ public abstract class AbstractBoss : AbstractEntity
     private BulletManager _bulletManager;
 
     private bool _ready;
+    private bool _pause;
 
     // Shoot timer
     private bool _enableShootTimer = false;
@@ -146,10 +147,23 @@ public abstract class AbstractBoss : AbstractEntity
 
         Invincible = true;
         _ready = false;
+        _pause = false;
 
         // Entrance "animation"
         transform.position = new Vector2(0, 15);
         MoveToInitialPosition(1, true);
+    }
+
+    public void Pause()
+    {
+        _animator.speed = 0f;
+        _pause = true;
+    }
+
+    public void Resume()
+    {
+        _animator.speed = 1f;
+        _pause = false;
     }
 
     protected override void RestoreDefaultState()
@@ -161,6 +175,9 @@ public abstract class AbstractBoss : AbstractEntity
 
     protected override void Update()
     {
+        if (_pause)
+            return;
+
         base.Update();
 
         if (!_ready)

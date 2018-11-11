@@ -93,12 +93,16 @@ public class GameManager : MonoBehaviour
     void OnPlayerDeath()
     {
         Debug.Log("End game: player death");
-        _fsm.SetTrigger("PlayerDeath");
+
+        // TODO: Camera zoom on player
+        Boss.Pause();
     }
 
     void OnBulletCollision(Bullet bullet)
     {
         Debug.Log("Player hit by a bullet!");
+        _fsm.SetTrigger("PlayerDeath");
+        OnPlayerDeath();
     }
 
     private void Update()
