@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     // Bullet engine
     public BulletManager BulletManager;
+    public BulletPhysics BulletPhysics;
 
     // Pause
     private bool _pause;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
 
         BulletManager.LoadPatterns();
+        BulletPhysics.OnCollision.AddListener(OnBulletCollision);
 
         Reset();
     }
@@ -92,6 +94,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("End game: player death");
         _fsm.SetTrigger("PlayerDeath");
+    }
+
+    void OnBulletCollision(Bullet bullet)
+    {
+        Debug.Log("Player hit by a bullet!");
     }
 
     private void Update()
