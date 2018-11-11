@@ -108,9 +108,13 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerExplosion()
     {
-        Boss.Resume();
         BulletManager.Resume();
-        CameraManager.ZoomTo(9.6f, Player.transform, 0.5f);
+    }
+
+    public void ShowEndGamePanel()
+    {
+        CameraManager.Reset();
+        Boss.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)

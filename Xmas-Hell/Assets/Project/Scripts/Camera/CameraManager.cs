@@ -68,7 +68,6 @@ public class CameraManager : MonoBehaviour
                 camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, _maxZoom, _minZoom);
             }
 
-
             if (progress > 1f)
             {
                 _isZooming = false;
