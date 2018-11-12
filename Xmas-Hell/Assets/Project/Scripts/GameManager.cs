@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     // Screen
     public ScreenManager GameScreenManager;
 
+    // UI
+    [SerializeField] private GamePanel _gamePanel;
+
     // Camera
     public CameraManager CameraManager;
 
@@ -34,7 +37,10 @@ public class GameManager : MonoBehaviour
 
     // Pause
     private bool _pause;
+
     private PlayerControls _playerControls;
+
+    private bool _gameIsFinished;
 
     public bool Pause
     {
@@ -45,6 +51,8 @@ public class GameManager : MonoBehaviour
     {
         get { return _gameTimer; }
     }
+
+    public bool GameIsFinished => _gameIsFinished;
 
     // FSM
     private Animator _fsm;
@@ -75,7 +83,9 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        _gamePanel.gameObject.SetActive(false);
         _gameTimer = 0f;
+        _gameIsFinished = false;
     }
 
     public void PauseGame()
@@ -92,18 +102,28 @@ public class GameManager : MonoBehaviour
 
     public void OnBossDeath()
     {
-        Debug.Log("End game: boss death");
+        if (_gameIsFinished)
+            return;
+
+        _gameIsFinished = true;
         _fsm.SetTrigger("BossDeath");
     }
 
     public void OnPlayerDeath()
     {
-        Debug.Log("End game: player death");
+        if (_gameIsFinished)
+            return;
 
-        CameraManager.ZoomTo(3f, Player.transform, 0.5f);
+        _gameIsFinished = true;
+        _fsm.SetTrigger("PlayerDeath");
+    }
+
+    public void PlayerDeath()
+    {
         _playerControls.Disable();
         Boss.Pause();
         BulletManager.Pause();
+        CameraManager.ZoomTo(3f, Player.transform, 0.5f);
     }
 
     public void OnPlayerExplosion()
@@ -113,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowEndGamePanel()
     {
+        _gamePanel.gameObject.SetActive(true);
         CameraManager.Reset();
         Boss.Resume();
     }
@@ -120,7 +141,7 @@ public class GameManager : MonoBehaviour
     void OnBulletCollision(Bullet bullet)
     {
         Debug.Log("Player hit by a bullet!");
-        _fsm.SetTrigger("PlayerDeath");
+        OnPlayerDeath();
     }
 
     public void OnCameraZoomInFinished()
@@ -134,6 +155,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             GameScreenManager.GoBack();
 
+#if DEBUG
         // Pause
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -144,7 +166,6 @@ public class GameManager : MonoBehaviour
         }
 
         // Debug
-#if DEBUG
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             BulletManager.Clear();
