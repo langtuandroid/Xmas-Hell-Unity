@@ -11,7 +11,7 @@ public class MenuScreenManager : ScreenManager
     {
         Application.targetFrameRate = 60;
 
-        if (ScreenManager.GetPreviousScreen() == EScreen.Game)
+        if (GetPreviousScreen() == EScreen.Game)
         {
             MenuAnimator.Play("GoToBossSelection", 0, 1f);
             PlayerFrontAnimator.StopAnimation(true);

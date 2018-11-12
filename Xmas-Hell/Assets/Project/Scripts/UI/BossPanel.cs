@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +21,13 @@ public class BossPanel : MonoBehaviour
         BossBallImage.sprite = _menuScreenManager.BossStore.GetBossBallSprite(SessionData.SelectedBoss, EBossBallState.Available);
     }
 
+    [UsedImplicitly]
     public void OnCloseButtonClick()
     {
         gameObject.SetActive(false);
     }
 
+    [UsedImplicitly]
     public void OnStartBattleButtonClick()
     {
         _menuScreenManager.GoToScreen(EScreen.Game);

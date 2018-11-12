@@ -18,12 +18,21 @@ public class ScreenManager : MonoBehaviour
 
     public void GoToScreen(EScreen screenType)
     {
-        Animator screenTransitionAnimator = GameObject.FindGameObjectWithTag("ScreenTransition").GetComponent<Animator>();
+        GameObject screenTransitionObject = GameObject.FindGameObjectWithTag("ScreenTransition");
 
-        if (screenTransitionAnimator != null)
+        if (screenTransitionObject != null)
         {
-            screenTransitionAnimator.SetTrigger("StopAnimation");
-            StartCoroutine(LoadScene(screenType));
+            Animator screenTransitionAnimator = screenTransitionObject.GetComponent<Animator>();
+
+            if (screenTransitionAnimator != null)
+            {
+                screenTransitionAnimator.SetTrigger("StopAnimation");
+                StartCoroutine(LoadScene(screenType));
+            }
+            else
+            {
+                SceneManager.LoadScene(ScreenTypeToString(screenType));
+            }
         }
         else
         {

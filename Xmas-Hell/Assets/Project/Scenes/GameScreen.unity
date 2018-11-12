@@ -1713,7 +1713,7 @@ MonoBehaviour:
   BossStore: {fileID: 11400000, guid: 147be0528e41e004dacab5b556687e16, type: 2}
   Boss: {fileID: 0}
   Player: {fileID: 0}
-  GameScreenManager: {fileID: 867199348}
+  GameScreenManager: {fileID: 0}
   CameraManager: {fileID: 286106676}
   GameCanvas: {fileID: 1580924062}
   GameArea: {fileID: 503411856}
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 867199340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872c793131673ed4c94b634df4cc6d63, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d8fc29c23a5a341a57df274bbdf18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &874767652
@@ -2203,7 +2203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1052786173553460, guid: 1694562adbc57814b82874e4fab8b7f2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114218068279140906, guid: 1694562adbc57814b82874e4fab8b7f2, type: 3}
@@ -2325,6 +2325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGamePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5534369466663972742, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 867199342}
     - target: {fileID: 8758713777516751566, guid: 5425a6dfd33264149988d49585177f84,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -2334,67 +2339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_FillCenter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cb8fbebaa1bdbec48b61767e396bb221,
-        type: 3}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 750
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758713777093137237, guid: 5425a6dfd33264149988d49585177f84,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5425a6dfd33264149988d49585177f84, type: 3}
@@ -3267,11 +3211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 1000
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0.84
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
