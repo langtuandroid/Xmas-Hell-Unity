@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private Vector3 _initialPosition;
     private Rect _gameAreaBounds;
     private bool _isDead;
+    private int _previousTouchCount;
 
     private void Start()
     {
@@ -101,10 +102,10 @@ public class Player : MonoBehaviour
 
     private void UpdatePosition()
     {
-        // Mouse inputs seem to be taken into account on Android
+        // Mouse inputs seem to be taken into account on mobile
         if (Input.GetMouseButton(0))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || _previousTouchCount != Input.touchCount)
             {
                 _initialPosition = transform.position;
                 _initialTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -125,6 +126,8 @@ public class Player : MonoBehaviour
 
             _rigidbody.MovePosition(newPosition);
         }
+
+        _previousTouchCount = Input.touchCount;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
