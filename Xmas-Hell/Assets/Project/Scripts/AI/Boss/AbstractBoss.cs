@@ -284,6 +284,11 @@ public abstract class AbstractBoss : AbstractEntity
 
     public void ShootPattern(string patternName)
     {
+        if (_bulletEmitters.Count == 0)
+        {
+            Debug.LogWarning("No bullet emitter found for this boss!");
+        }
+
         foreach (var bulletEmitter in _bulletEmitters)
         {
             var pattern = _bulletManager.GetPattern(patternName);

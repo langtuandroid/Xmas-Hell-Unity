@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE bulletml SYSTEM "bulletml.dtd">
+<bulletml>
+  <action label="top">
+    <fire>
+      <bullet>
+        <direction type="aim">0</direction>
+        <speed>20</speed>
+        <sprite>1</sprite>
+        <actionRef label="snowflake" />
+      </bullet>
+    </fire>
+  </action>
+
+  <action label="snowflake">
+    <wait>($rand * 25)</wait>
+    <action>
+      <changeSpeed>
+        <speed>0</speed>
+        <term>60</term>
+      </changeSpeed>
+    </action>
+    <wait>20</wait>
+    <action>
+      <changeDirection>
+        <direction type="absolute">30</direction>
+        <term>0</term>
+      </changeDirection>
+    </action>
+    <vanish />
+    <repeat>
+      <times>6</times>
+      <action>
+        <fire>
+          <bullet>
+            <direction type="sequence">360 / 6</direction>
+            <speed>8</speed>
+            <sprite>1</sprite>
+          </bullet>
+        </fire>
+      </action>
+    </repeat>
+  </action>
+
+</bulletml>
