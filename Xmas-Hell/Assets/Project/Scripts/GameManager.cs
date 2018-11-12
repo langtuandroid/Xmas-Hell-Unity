@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
     // Pause
     private bool _pause;
 
-    private PlayerControls _playerControls;
-
     private bool _gameIsFinished;
 
     public bool Pause
@@ -73,7 +71,6 @@ public class GameManager : MonoBehaviour
         var playerObject = GameObject.FindGameObjectWithTag("Player");
         Player = playerObject.GetComponent<Player>();
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
-        _playerControls = playerObject.GetComponent<PlayerControls>();
 
         BulletManager.LoadPatterns();
         BulletPhysics.OnCollision.AddListener(OnBulletCollision);
@@ -120,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        _playerControls.Disable();
+        Player.Kill();
         Boss.Pause();
         BulletManager.Pause();
         CameraManager.ZoomTo(3f, Player.transform, 0.5f);

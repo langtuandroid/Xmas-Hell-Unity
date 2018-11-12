@@ -23,31 +23,41 @@ public class Player : MonoBehaviour
 
     // Shoot
     private float _nextFire = 0f;
-    private Queue<GameObject> _bulletsPool;
+    private Queue<AbstractBullet> _bulletsPool;
 
     // Controls
     private Vector3 _initialTouchPosition;
     private Vector3 _initialPosition;
     private Rect _gameAreaBounds;
-    private bool _disabled;
+    private bool _isDead;
 
     private void Start()
     {
         // Bullets
-        _bulletsPool = new Queue<GameObject>();
+        _bulletsPool = new Queue<AbstractBullet>();
 
         for (int i = 0; i < _bulletsPoolSize; i++)
         {
             var bullet = Instantiate(_bulletPrefab);
             bullet.SetActive(false);
-            _bulletsPool.Enqueue(bullet);
+            _bulletsPool.Enqueue(bullet.GetComponent<AbstractBullet>());
         }
 
         // Game area
         if (_gameArea != null)
             _gameAreaBounds = _gameArea.GetWorldRect();
 
-        _disabled = false;
+        _isDead = false;
+    }
+
+    public void Kill()
+    {
+        _isDead = true;
+    }
+
+    public void Destroy()
+    {
+        // TODO: Trigger explosion FX + destroy this GameObject
     }
 
     void FixedUpdate()
@@ -67,20 +77,18 @@ public class Player : MonoBehaviour
 
                 foreach (var shootingPoint in _shootingPoints)
                 {
-                    var playerBulletObject = _bulletsPool.Dequeue();
-                    playerBulletObject.SetActive(true);
-                    var bulletScript = playerBulletObject.GetComponent<AbstractBullet>();
+                    var bullet = _bulletsPool.Dequeue();
+                    bullet.gameObject.SetActive(true);
 
-                    bulletScript.Speed = _bulletSpeed;
-                    bulletScript.SetEmitter(gameObject);
+                    bullet.Speed = _bulletSpeed;
+                    bullet.SetEmitter(gameObject);
 
-                    playerBulletObject.transform.position = shootingPoint.transform.position;
+                    bullet.transform.position = shootingPoint.transform.position;
 
-                    // TODO: Should be computed only once in the Start method
                     var shootingPointRotation = shootingPoint.transform.localRotation.eulerAngles.z;
-                    bulletScript.SetDirectionFromAngle(shootingPointRotation);
+                    bullet.SetDirectionFromAngle(shootingPointRotation);
 
-                    _bulletsPool.Enqueue(playerBulletObject);
+                    _bulletsPool.Enqueue(bullet);
                 }
 
                 if (_shootSound)
@@ -91,7 +99,7 @@ public class Player : MonoBehaviour
 
     private void UpdatePosition()
     {
-        if (_disabled)
+        if (_isDead)
             return;
 
         // Mouse inputs seem to be taken into account on Android
