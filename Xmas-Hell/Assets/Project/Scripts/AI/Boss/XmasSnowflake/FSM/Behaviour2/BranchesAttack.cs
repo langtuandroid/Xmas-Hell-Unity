@@ -59,7 +59,12 @@ namespace BossBehaviourState
             base.OnStateExit(animator, stateInfo, layerIndex);
 
             for (int i = 0; i < _branches.Count; i++)
-                Destroy(_branches[i].gameObject);
+            {
+                if (_branches[i] != null)
+                {
+                    Destroy(_branches[i].gameObject);
+                }
+            }
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

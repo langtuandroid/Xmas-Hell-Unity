@@ -2323,7 +2323,7 @@ PrefabInstance:
     - target: {fileID: 8758713777093137237, guid: 5425a6dfd33264149988d49585177f84,
         type: 3}
       propertyPath: m_Name
-      value: EndGamePanel
+      value: GamePanel
       objectReference: {fileID: 0}
     - target: {fileID: 5534369466663972742, guid: 5425a6dfd33264149988d49585177f84,
         type: 3}
