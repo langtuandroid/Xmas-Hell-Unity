@@ -62,8 +62,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdatePosition();
+        if (_isDead)
+            return;
 
+        UpdatePosition();
         UpdateShoot();
     }
 
@@ -99,9 +101,6 @@ public class Player : MonoBehaviour
 
     private void UpdatePosition()
     {
-        if (_isDead)
-            return;
-
         // Mouse inputs seem to be taken into account on Android
         if (Input.GetMouseButton(0))
         {
