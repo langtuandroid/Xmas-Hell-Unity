@@ -460,8 +460,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4468661915289256}
   - component: {fileID: 114591431922106360}
-  - component: {fileID: 114314134112802858}
-  - component: {fileID: 114097897913670854}
   - component: {fileID: 50685750936614658}
   - component: {fileID: 210518341715151614}
   m_Layer: 8
@@ -498,48 +496,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57a57475e6ac02459ef2585b00844ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameArea: {fileID: 0}
   OnPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114314134112802858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196855814621594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3493cef422cf9418a7e038554c521a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSensitivity: 1
-  Rigidbody: {fileID: 50685750936614658}
-  _gameArea: {fileID: 0}
---- !u!114 &114097897913670854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196855814621594}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0947fc8c7ccbf84187cc4027dbf3b12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet: {fileID: 1563610061789910, guid: 18a46a07b55d8e247b4c6a8cc4d0ccb5, type: 3}
-  FireRate: 0.05
-  BulletSpeed: 25
-  ShootingPoints:
+  _bulletPrefab: {fileID: 1563610061789910, guid: 18a46a07b55d8e247b4c6a8cc4d0ccb5,
+    type: 3}
+  _fireRate: 0.05
+  _bulletSpeed: 25
+  _shootingPoints:
   - {fileID: 4157454746302804}
   - {fileID: 4473442467249158}
   - {fileID: 4437825550780294}
   - {fileID: 4676466814635468}
-  ShootSound: {fileID: 0}
-  BulletsPoolSize: 60
+  _shootSound: {fileID: 0}
+  _bulletsPoolSize: 60
+  _moveSensitivity: 1
+  _rigidbody: {fileID: 50685750936614658}
 --- !u!50 &50685750936614658
 Rigidbody2D:
   serializedVersion: 4
