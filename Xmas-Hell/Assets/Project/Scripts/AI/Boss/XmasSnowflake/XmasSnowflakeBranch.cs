@@ -55,7 +55,7 @@ public class XmasSnowflakeBranch : AbstractEntity
 
         var direction = _target.transform.position - transform.position;
         var angle = MathHelper.DirectionToAngle(direction);
-        Rigidbody.rotation = angle;
+        Rotation = angle;
         Direction = -MathHelper.AngleToDirection(angle);
         _rushing = true;
 

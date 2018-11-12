@@ -2325,6 +2325,77 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGamePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8758713777516751566, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777516751566, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052225, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb8fbebaa1bdbec48b61767e396bb221,
+        type: 3}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777042052224, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777093137237, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5425a6dfd33264149988d49585177f84, type: 3}
 --- !u!224 &1062257266 stripped
