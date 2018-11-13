@@ -11,8 +11,7 @@ public class CameraManager : MonoBehaviour
 
     #endregion
 
-    public UnityEvent OnCameraZoomInFinished = new UnityEvent();
-    public UnityEvent OnCameraZoomOutFinished = new UnityEvent();
+    public UnityEvent OnCameraZoomFinished = new UnityEvent();
 
     // Cameras
     private Camera[] _cameras;
@@ -20,7 +19,7 @@ public class CameraManager : MonoBehaviour
 
     // Zoom
     private bool _isZooming;
-    private Transform _zoomFocus;
+    private Vector2 _zoomFocusPoint;
     private float _targetZoom;
     private float _initialZoomTimer;
     private float _zoomTimer;
@@ -30,11 +29,6 @@ public class CameraManager : MonoBehaviour
         // Get all cameras in the current GameObject children
         _cameras = GetComponentsInChildren<Camera>();
         _camerasInitialSize = new float[_cameras.Length];
-
-        for (int i = 0; i < _cameras.Length; i++)
-        {
-            _camerasInitialSize[i] = _cameras[i].orthographicSize;
-        }
 
         Debug.Log("Camera manager found " + _cameras.Length + " cameras!");
 
@@ -63,7 +57,7 @@ public class CameraManager : MonoBehaviour
             {
                 Camera camera = _cameras[i];
 
-                transform.position = Vector3.Lerp(Vector3.zero, _zoomFocus.position, progress);
+                transform.position = Vector2.Lerp(Vector2.zero, _zoomFocusPoint, progress);
                 camera.orthographicSize = Mathf.Lerp(_camerasInitialSize[i], _targetZoom, progress);
                 camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, _maxZoom, _minZoom);
             }
@@ -71,18 +65,21 @@ public class CameraManager : MonoBehaviour
             if (progress > 1f)
             {
                 _isZooming = false;
-                OnCameraZoomInFinished.Invoke();
+                OnCameraZoomFinished.Invoke();
             }
         }
     }
 
-    public void ZoomTo(float zoom, Transform focus, float duration = 0f)
+    public void ZoomTo(float zoom, Vector2 focusPoint, float duration = 0f)
     {
         if (_isZooming)
             return;
 
+        for (int i = 0; i < _cameras.Length; i++)
+            _camerasInitialSize[i] = _cameras[i].orthographicSize;
+
         _isZooming = true;
-        _zoomFocus = focus;
+        _zoomFocusPoint = focusPoint;
         _targetZoom = zoom;
         _initialZoomTimer = duration;
         _zoomTimer = _initialZoomTimer;

@@ -47,8 +47,12 @@ public class Player : MonoBehaviour
         // Game area
         if (_gameArea != null)
             _gameAreaBounds = _gameArea.GetWorldRect();
+    }
 
+    public void Initialize()
+    {
         _isDead = false;
+        gameObject.SetActive(true);
     }
 
     public void Kill()
@@ -59,6 +63,7 @@ public class Player : MonoBehaviour
     public void Destroy()
     {
         // TODO: Trigger explosion FX + destroy this GameObject
+        gameObject.SetActive(false);
     }
 
     void FixedUpdate()

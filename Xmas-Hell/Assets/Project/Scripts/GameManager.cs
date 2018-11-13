@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
         BulletManager.LoadPatterns();
         BulletPhysics.OnCollision.AddListener(OnBulletCollision);
 
+        CameraManager.OnCameraZoomFinished.AddListener(OnCameraZoomFinished);
+
         Reset();
     }
 
@@ -83,6 +85,8 @@ public class GameManager : MonoBehaviour
         _gamePanel.gameObject.SetActive(false);
         _gameTimer = 0f;
         _gameIsFinished = false;
+
+        Player.Initialize();
     }
 
     public void PauseGame()
@@ -120,19 +124,20 @@ public class GameManager : MonoBehaviour
         Player.Kill();
         Boss.Pause();
         BulletManager.Pause();
-        CameraManager.ZoomTo(3f, Player.transform, 0.5f);
+        CameraManager.ZoomTo(3f, Player.transform.position, 0.5f);
     }
 
     public void OnPlayerExplosion()
     {
-        BulletManager.Resume();
+        Player.Destroy();
     }
 
     public void ShowEndGamePanel()
     {
         _gamePanel.gameObject.SetActive(true);
-        CameraManager.Reset();
+
         Boss.Resume();
+        BulletManager.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)
@@ -141,10 +146,19 @@ public class GameManager : MonoBehaviour
         OnPlayerDeath();
     }
 
-    public void OnCameraZoomInFinished()
+    #region Camera
+
+    public void CameraZoomOut(float time)
+    {
+        CameraManager.ZoomTo(9.6f, Vector2.zero, time);
+    }
+
+    public void OnCameraZoomFinished()
     {
         _fsm.SetTrigger("CameraZoomFinished");
     }
+
+    #endregion
 
     private void Update()
     {
