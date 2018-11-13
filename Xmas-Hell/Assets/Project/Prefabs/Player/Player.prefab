@@ -139,7 +139,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -266,7 +266,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -445,7 +445,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -598,7 +598,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -725,7 +725,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -904,7 +904,7 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8172097579095852006}
+  m_ConnectedRigidBody: {fileID: 3002371693613541223}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
@@ -1378,6 +1378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468661915289256}
   - component: {fileID: 114591431922106360}
+  - component: {fileID: 3002371693613541223}
   - component: {fileID: 210518341715151614}
   m_Layer: 8
   m_Name: Player
@@ -1437,7 +1438,28 @@ MonoBehaviour:
   _shootSound: {fileID: 0}
   _bulletsPoolSize: 60
   _moveSensitivity: 1
-  _rigidbody: {fileID: 8172097579095852006}
+  _rigidbody: {fileID: 3002371693613541223}
+--- !u!50 &3002371693613541223
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196855814621594}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 2
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!210 &210518341715151614
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -2292,7 +2314,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4522863459035118}
-  - component: {fileID: 8172097579095852006}
   - component: {fileID: 210452662382384292}
   m_Layer: 8
   m_Name: AnimationRoot
@@ -2318,27 +2339,6 @@ Transform:
   m_Father: {fileID: 4468661915289256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &8172097579095852006
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848311283082170}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 2
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!210 &210452662382384292
 SortingGroup:
   m_ObjectHideFlags: 0
