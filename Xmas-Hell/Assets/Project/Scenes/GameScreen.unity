@@ -3836,7 +3836,7 @@ MonoBehaviour:
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
-    textComponent: {fileID: 1986134110}
+    textComponent: {fileID: 0}
     characterCount: 17
     spriteCount: 0
     spaceCount: 0
