@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
-public class PlayerExplosionState : GameStateMachineBehaviour
+public class WaitState : GameStateMachineBehaviour
 {
+    public float _timer;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        GameManager.OnPlayerExplosion();
+        StartTimer(_timer);
     }
 }

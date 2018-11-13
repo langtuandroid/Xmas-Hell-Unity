@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.01f;
     }
 
+    #region Game states
+
     public void OnBossDeath()
     {
         if (_gameIsFinished)
@@ -116,12 +118,13 @@ public class GameManager : MonoBehaviour
         _fsm.SetTrigger("PlayerDeath");
     }
 
+    #endregion
+
     public void PlayerDeath()
     {
         Player.Kill();
         Boss.Pause();
         BulletManager.Pause();
-        CameraManager.ZoomTo(3f, Player.transform.position, 0.5f);
     }
 
     public void OnPlayerExplosion()
@@ -144,6 +147,11 @@ public class GameManager : MonoBehaviour
     }
 
     #region Camera
+
+    public void CameraZoomOnPlayer(float time)
+    {
+        CameraManager.ZoomTo(3f, Player.transform.position, time);
+    }
 
     public void CameraZoomOut(float time)
     {
