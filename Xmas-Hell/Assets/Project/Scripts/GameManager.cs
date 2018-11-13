@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public AbstractBoss Boss;
 
-    [HideInInspector]
     public Player Player;
 
     // Screen
@@ -68,8 +67,6 @@ public class GameManager : MonoBehaviour
 
         _fsm = GetComponent<Animator>();
 
-        var playerObject = GameObject.FindGameObjectWithTag("Player");
-        Player = playerObject.GetComponent<Player>();
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
 
         BulletManager.LoadPatterns();
