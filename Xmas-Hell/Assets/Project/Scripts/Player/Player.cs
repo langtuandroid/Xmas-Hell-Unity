@@ -4,10 +4,8 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject _characterRoot;
     [SerializeField] private GameArea _gameArea;
-
-    [Header("Events")]
-    public UnityEvent OnPlayerDeath = new UnityEvent();
 
     [Header("Shoot")]
     [SerializeField] private GameObject _bulletPrefab;
@@ -20,6 +18,10 @@ public class Player : MonoBehaviour
     [Header("Controls")]
     [SerializeField] private float _moveSensitivity = 1f;
     [SerializeField] private Rigidbody2D _rigidbody;
+
+    [Header("Death")]
+    public UnityEvent OnPlayerDeath = new UnityEvent();
+    [SerializeField] private GameObject _deathFx;
 
     // Shoot
     private float _nextFire = 0f;
@@ -52,7 +54,8 @@ public class Player : MonoBehaviour
     public void Initialize()
     {
         _isDead = false;
-        gameObject.SetActive(true);
+        _characterRoot.SetActive(true);
+        _deathFx.SetActive(false);
     }
 
     public void Kill()
@@ -62,8 +65,10 @@ public class Player : MonoBehaviour
 
     public void Destroy()
     {
-        // TODO: Trigger explosion FX + destroy this GameObject
-        gameObject.SetActive(false);
+        _characterRoot.SetActive(false);
+
+        // Trigger explosion FX
+        _deathFx.SetActive(true);
     }
 
     void FixedUpdate()

@@ -130,14 +130,13 @@ public class GameManager : MonoBehaviour
     public void OnPlayerExplosion()
     {
         Player.Destroy();
+        BulletManager.Resume();
     }
 
     public void ShowEndGamePanel()
     {
         _gamePanel.gameObject.SetActive(true);
-
         Boss.Resume();
-        BulletManager.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)
