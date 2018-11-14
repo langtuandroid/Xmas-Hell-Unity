@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _difficulty: 0.5
-  _patternFilesFolder: Assets/Project/GameData/Resources/Patterns
+  _patternFilesFolder: Patterns
   _playerTransform: {fileID: 90088562}
   _maxBulletsAmount: 10000
   _bulletInitialSize: 2
