@@ -4,20 +4,21 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf27ac28dab5644ab2a1296e6432cb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ae7887cc5b5e914bb51480d398314e4, type: 3}
   m_Name: BossStore
   m_EditorClassIdentifier: 
   BossTypeToPrefabDictionary:
     m_keys: 02000000030000000400000005000000
     m_values:
-    - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 2}
-    - {fileID: 1152998548348758, guid: 828ba6d77f0ba6140b4a85ded747759b, type: 2}
-    - {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 2}
-    - {fileID: 1877944070540562, guid: 088ae0f11e482d64a96a13bffa936192, type: 2}
+    - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
+    - {fileID: 1152998548348758, guid: 828ba6d77f0ba6140b4a85ded747759b, type: 3}
+    - {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
+    - {fileID: 1877944070540562, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
   BossTypeToBossBallAvailableSpriteDictionary:
     m_keys: 02000000030000000400000005000000
     m_values:

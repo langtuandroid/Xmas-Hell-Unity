@@ -6,7 +6,7 @@ public class InitManager : MonoBehaviour
 
     void Awake()
     {
-        _screenManager.GoToScreen(EScreen.MainMenu);
+        _screenManager.GoToScreen(EScreen.MainMenu, true);
     }
 
     public void ShowTransition(string transitionName = null)

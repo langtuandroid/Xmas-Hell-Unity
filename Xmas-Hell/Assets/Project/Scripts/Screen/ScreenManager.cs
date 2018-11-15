@@ -16,23 +16,12 @@ public class ScreenManager : MonoBehaviour
     private static EScreen CurrentScreen = EScreen.MainMenu;
     private static Stack<EScreen> _previousScenes = new Stack<EScreen>();
 
-    public void GoToScreen(EScreen screenType)
+    public void GoToScreen(EScreen screenType, bool showTransition = true)
     {
-        GameObject screenTransitionObject = GameObject.FindGameObjectWithTag("ScreenTransition");
-
-        if (screenTransitionObject != null)
+        if (showTransition)
         {
-            Animator screenTransitionAnimator = screenTransitionObject.GetComponent<Animator>();
-
-            if (screenTransitionAnimator != null)
-            {
-                screenTransitionAnimator.SetTrigger("StopAnimation");
-                StartCoroutine(LoadScene(screenType));
-            }
-            else
-            {
-                SceneManager.LoadScene(ScreenTypeToString(screenType));
-            }
+            ScreenTransitionManager.ShowTransition();
+            StartCoroutine(LoadScene(screenType));
         }
         else
         {
