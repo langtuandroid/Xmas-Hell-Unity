@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1978665513887760}
-  FSM: {fileID: 9100000, guid: a1d68b2e0c00d77479c38b4ed9c8282c, type: 2}
+  FSM: {fileID: 9100000, guid: 8a80b3cb67260774484e797e64feb52a, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
 --- !u!114 &114172075279106296
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationRoot: {fileID: 1978665513887760}
-  FSM: {fileID: 9100000, guid: a5a0128db771cc04e89e777bd86b0420, type: 2}
+  FSM: {fileID: 9100000, guid: 34b7a224c387d03478478b78198fa164, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
 --- !u!114 &8784219533882636553
