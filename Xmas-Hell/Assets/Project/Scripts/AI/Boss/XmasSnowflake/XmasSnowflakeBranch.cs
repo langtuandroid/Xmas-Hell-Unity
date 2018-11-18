@@ -76,7 +76,7 @@ public class XmasSnowflakeBranch : AbstractEntity
         base.FixedUpdate();
 
         if (!_rushing)
-            Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * AngularVelocity * Time.fixedDeltaTime));
+            Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * _angularVelocity * Time.fixedDeltaTime));
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -1073,6 +1073,18 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &698117881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8784219533882636553, guid: 39a0bace6994aa6489e7ec32c6339c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1112404608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4658b657146194c94722905832997a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &741044889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2148,6 +2160,11 @@ PrefabInstance:
       propertyPath: Behaviours.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
+        type: 3}
+      propertyPath: _behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4681852800675624, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2193,6 +2210,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114752281738679952, guid: 39a0bace6994aa6489e7ec32c6339c32,
+        type: 3}
+      propertyPath: _behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 698117881}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
 --- !u!114 &1134669622 stripped

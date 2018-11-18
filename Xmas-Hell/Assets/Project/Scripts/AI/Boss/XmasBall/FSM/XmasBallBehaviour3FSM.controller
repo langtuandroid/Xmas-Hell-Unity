@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001acbb6c06fca34a83b47cd87a34076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LockingTargetTime: 1
+  LockingTargetTime: 2
   Reverse: 0
+  AngularVelocity: 300
 --- !u!114 &114741003250305038
 MonoBehaviour:
   m_ObjectHideFlags: 1

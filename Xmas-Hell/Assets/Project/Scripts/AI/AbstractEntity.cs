@@ -9,7 +9,7 @@ public abstract class AbstractEntity : MonoBehaviour
     public float Speed = 1f;
     public Vector2 Direction = Vector2.zero; // values in radians
     public Vector2 Acceleration = Vector2.one;
-    public float AngularVelocity = 5f;
+    protected float _angularVelocity = 100f;
     public bool Invincible;
     public UnityEvent OnTakeDamage;
 
@@ -66,6 +66,12 @@ public abstract class AbstractEntity : MonoBehaviour
     {
         get { return Rigidbody.rotation; }
         set { Rigidbody.rotation = value; }
+    }
+
+    public float AngularVelocity
+    {
+        get { return _angularVelocity; }
+        set { _angularVelocity = value; }
     }
 
     public float Width
@@ -504,7 +510,7 @@ public abstract class AbstractEntity : MonoBehaviour
                     _previousRotationDirection = leftDistance < rightDistance ? 1 : -1;
 
                 var distance = Mathf.Min(leftDistance, rightDistance);
-                var deltaDistance = AngularVelocity * Time.fixedDeltaTime;
+                var deltaDistance = _angularVelocity * Time.fixedDeltaTime;
 
                 if (distance < deltaDistance)
                 {
