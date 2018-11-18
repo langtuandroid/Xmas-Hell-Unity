@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private bool _pause;
 
     private bool _gameIsFinished;
+    private bool _gameIsWon;
 
     public bool Pause
     {
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
         if (_gameIsFinished)
             return;
 
-        _gameIsFinished = true;
+        EndGame(true);
         _fsm.SetTrigger("BossDeath");
     }
 
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour
         if (_gameIsFinished)
             return;
 
-        _gameIsFinished = true;
+        EndGame(false);
         _fsm.SetTrigger("PlayerDeath");
     }
 
@@ -144,7 +145,10 @@ public class GameManager : MonoBehaviour
     public void ShowEndGamePanel()
     {
         _gamePanel.gameObject.SetActive(true);
-        Boss.Resume();
+        _gamePanel.Initialize(_gameIsWon);
+
+        if (!_gameIsWon)
+            Boss.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)
@@ -171,6 +175,12 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    private void EndGame(bool win)
+    {
+        _gameIsFinished = true;
+        _gameIsWon = win;
+    }
 
     private void Update()
     {

@@ -12,9 +12,13 @@ public class GamePanel : MonoBehaviour
         _gameScreenManager = GameObject.FindGameObjectWithTag("Root").GetComponent<GameScreenManager>();
     }
 
-    public void OnEnable()
+    public void Initialize(bool win)
     {
         // TODO: Check the end game state from the GameManager and update the text
+        if (win)
+            Text.text = "You won, congratulation!";
+        else
+            Text.text = "You lose, try again...";
     }
 
     [UsedImplicitly]
