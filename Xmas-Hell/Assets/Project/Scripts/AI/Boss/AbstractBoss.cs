@@ -186,7 +186,7 @@ public abstract class AbstractBoss : AbstractEntity
 
     protected override void Update()
     {
-        if (_pause)
+        if (!IsAlive || _pause)
             return;
 
         base.Update();
@@ -236,7 +236,7 @@ public abstract class AbstractBoss : AbstractEntity
 
     protected void UpdateBehaviourIndex()
     {
-        if (_behaviours.Count == 0)
+        if (_behaviours.Count == 0 || CurrentBehaviourIndex >= _behaviours.Count)
             return;
 
         if (_behaviours[CurrentBehaviourIndex].IsBehaviourEnded())
