@@ -120,6 +120,11 @@ public abstract class AbstractEntity : MonoBehaviour
         _movingLongDistance = false;
     }
 
+    protected virtual void Reset()
+    {
+        _isAlive = true;
+    }
+
     public virtual void Kill()
     {
         _isAlive = false;

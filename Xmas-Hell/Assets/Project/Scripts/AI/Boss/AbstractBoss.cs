@@ -131,6 +131,8 @@ public abstract class AbstractBoss : AbstractEntity
 
     private void Reset()
     {
+        base.Reset();
+
         RestoreDefaultState();
 
         _animator.runtimeAnimatorController = _baseAnimatorController;
@@ -150,6 +152,7 @@ public abstract class AbstractBoss : AbstractEntity
         transform.position = new Vector2(0, 15);
         MoveToInitialPosition(1, true);
 
+        _animator.gameObject.SetActive(true);
         _deathFx.SetActive(false);
     }
 
@@ -159,6 +162,7 @@ public abstract class AbstractBoss : AbstractEntity
 
         // Play death FX
         _deathFx.SetActive(true);
+        _animator.gameObject.SetActive(false);
     }
 
     public void Pause()
