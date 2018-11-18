@@ -240,14 +240,15 @@ MonoBehaviour:
   TargetingPosition: 0
   TargetingAngle: 0
   DamageBlinkTime: 0.2
-  Behaviours:
+  _behaviours:
   - {fileID: 114400563395662890}
   - {fileID: 114172075279106296}
   - {fileID: 8784219533882636553}
   - {fileID: 7535960125402449629}
-  BaseAnimatorController: {fileID: 9100000, guid: a3356d2aed7c0674ebc0eccf50cf997f,
+  _baseAnimatorController: {fileID: 9100000, guid: a3356d2aed7c0674ebc0eccf50cf997f,
     type: 2}
-  BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
+  _animator: {fileID: 95736420555398888}
+  _bossLifeBarPrefab: {fileID: 114160035960221406, guid: 3a3cc911625df8743a05bd155027cac0,
     type: 3}
   _bulletEmitters:
   - {fileID: 8115372233974242581}
@@ -269,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e76f829d2f984648847f39bed0302e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: 8a80b3cb67260774484e797e64feb52a, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8615bf3b7145c3c41a33e41120308a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: 34b7a224c387d03478478b78198fa164, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
@@ -301,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4658b657146194c94722905832997a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: 90393033e616e8345b851ac60cb1599c, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
@@ -317,7 +315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c037802b1412f644a463748843d08b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1978665513887760}
   FSM: {fileID: 9100000, guid: 568c7b389333dd74091e6e3ab9c5e831, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}

@@ -4,7 +4,6 @@ using UnityEngine;
 [Serializable]
 public class AbstractBossBehaviour : MonoBehaviour
 {
-    [SerializeField] public GameObject AnimationRoot;
     [SerializeField] public RuntimeAnimatorController FSM;
     [SerializeField] public float InitialBehaviourLife;
 
@@ -36,7 +35,7 @@ public class AbstractBossBehaviour : MonoBehaviour
     public virtual void StartBehaviour()
     {
         Reset();
-        AnimationRoot.GetComponent<Animator>().runtimeAnimatorController = FSM;
+        Boss.Animator.runtimeAnimatorController = FSM;
     }
 
     public virtual void Reset()

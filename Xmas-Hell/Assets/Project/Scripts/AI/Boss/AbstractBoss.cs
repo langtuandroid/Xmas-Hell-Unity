@@ -10,19 +10,20 @@ public abstract class AbstractBoss : AbstractEntity
 {
     #region Serialize fields
 
-    [SerializeField] List<AbstractBossBehaviour> Behaviours;
-    [SerializeField] private RuntimeAnimatorController BaseAnimatorController;
-    [SerializeField] private RuntimeAnimatorController BaseAnimatorController;
+    [SerializeField] private List<AbstractBossBehaviour> _behaviours;
+    [SerializeField] private RuntimeAnimatorController _baseAnimatorController;
+    [SerializeField] private Animator _animator;
+
 
     // Life Bar 
-    [SerializeField] private GameObject BossLifeBarPrefab;
+    [SerializeField] private BossLifeBar _bossLifeBarPrefab = null;
     private BossLifeBar _bossLifeBar;
 
     // Bullet patterns
     [SerializeField] private List<BulletEmitter> _bulletEmitters = new List<BulletEmitter>();
 
     // FX
-    [SerializeField] private GameObject _deathFx;
+    [SerializeField] private GameObject _deathFx = null;
 
     #endregion
 
@@ -36,7 +37,6 @@ public abstract class AbstractBoss : AbstractEntity
     protected int PreviousBehaviourIndex;
 
     private GameObject _player;
-    private Animator _animator;
 
     private Vector2 _initialPosition;
     private float _initialSpeed;
@@ -76,19 +76,13 @@ public abstract class AbstractBoss : AbstractEntity
     {
         base.Awake();
 
-        _animator = GetComponentInChildren<Animator>();
-
-        if (!_animator)
-            throw new Exception("No Animator found on this Boss!");
-
         _player = GameObject.FindGameObjectWithTag("Player");
 
         if (!_player)
             throw new Exception("No player found in this scene!");
 
         var bossLifeBarHolder = GameObject.FindGameObjectWithTag("BossLifeBarHolder");
-        var lifeBar = Instantiate(BossLifeBarPrefab, bossLifeBarHolder.transform);
-        _bossLifeBar = lifeBar.GetComponent<BossLifeBar>();
+        _bossLifeBar = Instantiate(_bossLifeBarPrefab, bossLifeBarHolder.transform);
         _bossLifeBar.Initialize(this);
 
         _bulletManager = GameManager.BulletManager;
@@ -124,10 +118,10 @@ public abstract class AbstractBoss : AbstractEntity
         //Instantiate(dot, new Vector2(_randomMovingArea.x + _randomMovingArea.width, _randomMovingArea.y + _randomMovingArea.height), Quaternion.identity);
 
         #region Initialize behaviour
-        if (Behaviours.Count > 0)
+        if (_behaviours.Count > 0)
         {
             // Make sure each behaviour have access to the linked boss
-            foreach (var behaviour in Behaviours)
+            foreach (var behaviour in _behaviours)
                 behaviour.Initialize(this);
         }
         #endregion
@@ -139,13 +133,13 @@ public abstract class AbstractBoss : AbstractEntity
     {
         RestoreDefaultState();
 
-        _animator.runtimeAnimatorController = BaseAnimatorController;
+        _animator.runtimeAnimatorController = _baseAnimatorController;
 
         // Reset behaviours
         PreviousBehaviourIndex = -1;
         CurrentBehaviourIndex = 0;
 
-        foreach (var behaviour in Behaviours)
+        foreach (var behaviour in _behaviours)
             behaviour.Reset();
 
         Invincible = true;
@@ -219,7 +213,7 @@ public abstract class AbstractBoss : AbstractEntity
 
         if (CurrentBehaviourIndex != PreviousBehaviourIndex)
         {
-            if (CurrentBehaviourIndex >= Behaviours.Count)
+            if (CurrentBehaviourIndex >= _behaviours.Count)
             {
                 OnDeath.Invoke();
                 return;
@@ -230,33 +224,33 @@ public abstract class AbstractBoss : AbstractEntity
             }
         }
 
-        if (Behaviours.Count > 0)
-            Behaviours[CurrentBehaviourIndex].Step();
+        if (_behaviours.Count > 0)
+            _behaviours[CurrentBehaviourIndex].Step();
 
         PreviousBehaviourIndex = CurrentBehaviourIndex;
     }
 
     protected void UpdateBehaviourIndex()
     {
-        if (Behaviours.Count == 0)
+        if (_behaviours.Count == 0)
             return;
 
-        if (Behaviours[CurrentBehaviourIndex].IsBehaviourEnded())
+        if (_behaviours[CurrentBehaviourIndex].IsBehaviourEnded())
             CurrentBehaviourIndex++;
     }
 
     private void NextBehaviour()
     {
         if (PreviousBehaviourIndex >= 0)
-            Behaviours[PreviousBehaviourIndex].StopBehaviour();
+            _behaviours[PreviousBehaviourIndex].StopBehaviour();
 
         // TODO: Trigger signal to clear all bullets
         // TODO: Make sure we restore the initial boss state for transition
         RestoreDefaultState();
 
-        if (Behaviours.Count > 0)
+        if (_behaviours.Count > 0)
         {
-            Behaviours[CurrentBehaviourIndex].StartBehaviour();
+            _behaviours[CurrentBehaviourIndex].StartBehaviour();
         }
     }
 
@@ -269,14 +263,14 @@ public abstract class AbstractBoss : AbstractEntity
 
         base.TakeDamage(damage);
         
-        if (Behaviours.Count > CurrentBehaviourIndex)
-            Behaviours[CurrentBehaviourIndex].TakeDamage(damage);
+        if (_behaviours.Count > CurrentBehaviourIndex)
+            _behaviours[CurrentBehaviourIndex].TakeDamage(damage);
     }
 
     public float GetLifePercentage()
     {
-        if (Behaviours.Count > CurrentBehaviourIndex)
-            return Behaviours[CurrentBehaviourIndex].GetLifePercentage();
+        if (_behaviours.Count > CurrentBehaviourIndex)
+            return _behaviours[CurrentBehaviourIndex].GetLifePercentage();
 
         return 1f;
     }

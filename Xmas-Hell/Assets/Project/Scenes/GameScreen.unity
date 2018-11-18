@@ -940,7 +940,7 @@ MonoBehaviour:
   _patternFilesFolder: Patterns
   _playerTransform: {fileID: 90088562}
   _maxBulletsAmount: 10000
-  _bulletInitialSize: 1
+  _bulletInitialSize: 2
   _bulletsWidthBoundary: {x: -0.25, y: 1.25}
   _bulletsHeightBoundary: {x: -0.25, y: 1.25}
   _bulletsTexture: {fileID: 21300000, guid: 77113ab205d8a5248b4e720bb9f27c7b, type: 3}
@@ -1462,11 +1462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e273835edd79b47bfea58df82f9bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deltaTime: 0
 --- !u!114 &867199344
 MonoBehaviour:
   m_ObjectHideFlags: 0
