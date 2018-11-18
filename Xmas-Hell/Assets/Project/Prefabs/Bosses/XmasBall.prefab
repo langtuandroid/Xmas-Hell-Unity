@@ -239,7 +239,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   TargetingPosition: 0
   TargetingAngle: 0
-  DamageBlinkTime: 0.2
+  DamageBlinkTime: 0.02
   _behaviours:
   - {fileID: 114400563395662890}
   - {fileID: 114172075279106296}
