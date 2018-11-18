@@ -8,22 +8,27 @@ public class CollisionEvent : UnityEvent<Collision2D> { }
 
 public abstract class AbstractBoss : AbstractEntity
 {
-    [SerializeField]
-    List<AbstractBossBehaviour> Behaviours;
+    #region Serialize fields
 
-    [SerializeField]
-    private RuntimeAnimatorController BaseAnimatorController;
+    [SerializeField] List<AbstractBossBehaviour> Behaviours;
+    [SerializeField] private RuntimeAnimatorController BaseAnimatorController;
+    [SerializeField] private RuntimeAnimatorController BaseAnimatorController;
 
     // Life Bar 
-    [SerializeField]
-    private GameObject BossLifeBarPrefab;
+    [SerializeField] private GameObject BossLifeBarPrefab;
     private BossLifeBar _bossLifeBar;
 
     // Bullet patterns
     [SerializeField] private List<BulletEmitter> _bulletEmitters = new List<BulletEmitter>();
 
+    // FX
+    [SerializeField] private GameObject _deathFx;
+
+    #endregion
+
     // Events
     public CollisionEvent OnCollision = new CollisionEvent();
+    public UnityEvent OnDeath = new UnityEvent();
 
     public readonly EBoss BossType;
 
@@ -150,6 +155,16 @@ public abstract class AbstractBoss : AbstractEntity
         // Entrance "animation"
         transform.position = new Vector2(0, 15);
         MoveToInitialPosition(1, true);
+
+        _deathFx.SetActive(false);
+    }
+
+    public override void Kill()
+    {
+        base.Kill();
+
+        // Play death FX
+        _deathFx.SetActive(true);
     }
 
     public void Pause()
@@ -206,7 +221,7 @@ public abstract class AbstractBoss : AbstractEntity
         {
             if (CurrentBehaviourIndex >= Behaviours.Count)
             {
-                Reset();
+                OnDeath.Invoke();
                 return;
             }
             else

@@ -120,8 +120,16 @@ public abstract class AbstractEntity : MonoBehaviour
         _movingLongDistance = false;
     }
 
+    public virtual void Kill()
+    {
+        _isAlive = false;
+    }
+
     protected virtual void Update()
     {
+        if (!_isAlive)
+            return;
+
         if (_movingRandomly)
             MoveToRandomPosition(_randomMovementTime);
 

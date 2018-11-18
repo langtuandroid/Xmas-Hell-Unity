@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
 
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
 
+        Boss.OnDeath.AddListener(OnBossDeath);
+
         BulletManager.LoadPatterns();
         BulletPhysics.OnCollision.AddListener(OnBulletCollision);
 
@@ -125,6 +127,12 @@ public class GameManager : MonoBehaviour
         Player.Kill();
         Boss.Pause();
         BulletManager.Pause();
+    }
+
+    public void BossDeath()
+    {
+        Boss.Kill();
+        BulletManager.Clear();
     }
 
     public void OnPlayerExplosion()

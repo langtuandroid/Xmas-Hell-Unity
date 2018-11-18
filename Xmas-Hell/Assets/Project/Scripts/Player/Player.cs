@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     private Vector3 _initialTouchPosition;
     private Vector3 _initialPosition;
     private Rect _gameAreaBounds;
-    private bool _isDead;
+    private bool _isAlive;
     private int _previousTouchCount;
 
     private void Start()
@@ -53,14 +53,14 @@ public class Player : MonoBehaviour
 
     public void Initialize()
     {
-        _isDead = false;
+        _isAlive = true;
         _characterRoot.SetActive(true);
         _deathFx.SetActive(false);
     }
 
     public void Kill()
     {
-        _isDead = true;
+        _isAlive = false;
     }
 
     public void Destroy()
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isDead)
+        if (!_isAlive)
             return;
 
         UpdatePosition();
