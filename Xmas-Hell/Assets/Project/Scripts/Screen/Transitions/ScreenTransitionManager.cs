@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ScreenTransitionManager : MonoBehaviour
 {
+    #region Serialize field
+
     [SerializeField] private ScreenTransitionStore _screenTransitionStore = null;
+    [SerializeField] private Canvas _canvas = null;
+    [SerializeField] private int _canvasSortOrder = 10;
+
+    #endregion
 
     private static ScreenTransitionManager _instance = null;
     private static ScreenTransition _currentTransition = null;
@@ -35,18 +41,22 @@ public class ScreenTransitionManager : MonoBehaviour
     {
         if (_instance == null)
         {
-            _instance = this;
             Initialize(_screenTransitionStore);
-            DontDestroyOnLoad(_instance);
         }
     }
 
     public void Initialize(ScreenTransitionStore screenTransitionStore)
     {
+        if (_instance)
+            return;
+
+        _instance = this;
+        _canvas.sortingOrder = _canvasSortOrder;
+
         // Instantiate all screen transition with don't destroy on load
         foreach (var prefab in screenTransitionStore.ScreenTransitionPrefabs)
         {
-            ScreenTransition screenTransitionInstance = Instantiate(prefab, transform);
+            ScreenTransition screenTransitionInstance = Instantiate(prefab, _canvas.transform);
             screenTransitionInstance.gameObject.SetActive(false);
             _screenTransitionInstances.Add(screenTransitionInstance.Name, screenTransitionInstance);
         }
@@ -59,6 +69,8 @@ public class ScreenTransitionManager : MonoBehaviour
         {
             Debug.LogWarning("No screen transition found!");
         }
+
+        DontDestroyOnLoad(_instance);
     }
 
     public static void ShowTransition(string transitionName = null)
