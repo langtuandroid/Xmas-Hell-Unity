@@ -140,15 +140,15 @@ public class GameManager : MonoBehaviour
     {
         Player.Destroy();
         BulletManager.Resume();
+
+        if (!_gameIsWon)
+            Boss.Resume();
     }
 
     public void ShowEndGamePanel()
     {
         _gamePanel.gameObject.SetActive(true);
         _gamePanel.Initialize(_gameIsWon);
-
-        if (!_gameIsWon)
-            Boss.Resume();
     }
 
     void OnBulletCollision(Bullet bullet)

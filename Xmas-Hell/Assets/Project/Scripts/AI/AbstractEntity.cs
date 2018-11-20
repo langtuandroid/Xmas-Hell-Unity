@@ -17,6 +17,7 @@ public abstract class AbstractEntity : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private bool _isAlive;
+    protected bool _pause;
 
     // Random moving
     private bool _movingRandomly;
@@ -116,6 +117,16 @@ public abstract class AbstractEntity : MonoBehaviour
         ComputeSpriteSize();
     }
 
+    public virtual void Pause()
+    {
+        _pause = true;
+    }
+
+    public virtual void Resume()
+    {
+        _pause = false;
+    }
+
     protected virtual void RestoreDefaultState()
     {
         Direction = Vector2.zero;
@@ -129,6 +140,7 @@ public abstract class AbstractEntity : MonoBehaviour
     protected virtual void Reset()
     {
         _isAlive = true;
+        _pause = false;
     }
 
     public virtual void Kill()
@@ -160,6 +172,9 @@ public abstract class AbstractEntity : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        if (_pause)
+            return;
+
         UpdatePosition();
         UpdateRotation();
     }

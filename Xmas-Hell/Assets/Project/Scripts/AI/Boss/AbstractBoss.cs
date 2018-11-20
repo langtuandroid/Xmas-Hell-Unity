@@ -14,7 +14,6 @@ public abstract class AbstractBoss : AbstractEntity
     [SerializeField] private RuntimeAnimatorController _baseAnimatorController;
     [SerializeField] private Animator _animator;
 
-
     // Life Bar 
     [SerializeField] private BossLifeBar _bossLifeBarPrefab = null;
     private BossLifeBar _bossLifeBar;
@@ -44,7 +43,6 @@ public abstract class AbstractBoss : AbstractEntity
     private BulletManager _bulletManager;
 
     private bool _ready;
-    private bool _pause;
 
     // Shoot timer
     private bool _enableShootTimer = false;
@@ -146,7 +144,6 @@ public abstract class AbstractBoss : AbstractEntity
 
         Invincible = true;
         _ready = false;
-        _pause = false;
 
         // Entrance "animation"
         transform.position = new Vector2(0, 15);
@@ -165,16 +162,16 @@ public abstract class AbstractBoss : AbstractEntity
         _animator.gameObject.SetActive(false);
     }
 
-    public void Pause()
+    public override void Pause()
     {
+        base.Pause();
         _animator.speed = 0f;
-        _pause = true;
     }
 
-    public void Resume()
+    public override void Resume()
     {
+        base.Resume();
         _animator.speed = 1f;
-        _pause = false;
     }
 
     protected override void RestoreDefaultState()
@@ -191,6 +188,7 @@ public abstract class AbstractBoss : AbstractEntity
 
         base.Update();
 
+        // Introduction animation
         if (!_ready)
         {
             if (TargetingPosition)
