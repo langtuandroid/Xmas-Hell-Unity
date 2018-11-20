@@ -15,6 +15,7 @@ namespace BossBehaviourState
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
             _timer = Random.Range(MinTime, MaxTime);
+            animator.SetBool("IsStunned", true);
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

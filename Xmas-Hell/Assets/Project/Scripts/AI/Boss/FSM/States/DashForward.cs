@@ -33,7 +33,7 @@ namespace BossBehaviourState
                 }
                 else
                 {
-                    _animator.SetBool("IsStunned", true);
+                    _animator.SetBool("OnCollision", true);
                 }
             }
         }
