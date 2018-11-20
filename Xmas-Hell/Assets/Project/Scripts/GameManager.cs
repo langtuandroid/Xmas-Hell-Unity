@@ -203,6 +203,12 @@ public class GameManager : MonoBehaviour
         {
             BulletManager.Clear();
         }
+
+        // Camera shake
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            CameraManager.Shake(0.5f, 0.5f);
+        }
 #endif
     }
 

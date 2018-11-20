@@ -6,8 +6,8 @@ public class CameraManager : MonoBehaviour
 {
     #region Serialize fields
 
-    [SerializeField] private float _minZoom = 9.6f;
-    [SerializeField] private float _maxZoom = 1f;
+    [SerializeField] private readonly float _minZoom = 9.6f;
+    [SerializeField] private readonly float _maxZoom = 1f;
 
     #endregion
 
@@ -24,6 +24,12 @@ public class CameraManager : MonoBehaviour
     private float _initialZoomTimer;
     private float _zoomTimer;
 
+    // Shake
+    private bool _shaking;
+    private float _shakingTimer;
+    private float _shakingMagnitude;
+    private Vector2 _initialPosition;
+
     void Start()
     {
         // Get all cameras in the current GameObject children
@@ -33,6 +39,7 @@ public class CameraManager : MonoBehaviour
         Debug.Log("Camera manager found " + _cameras.Length + " cameras!");
 
         _isZooming = false;
+        _initialPosition = transform.position;
     }
 
     public void Reset()
@@ -47,6 +54,12 @@ public class CameraManager : MonoBehaviour
     }
 
     void Update()
+    {
+        UpdateZoom();
+        UpdateShake();
+    }
+
+    private void UpdateZoom()
     {
         if (_isZooming)
         {
@@ -70,6 +83,25 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    private void UpdateShake()
+    {
+        if (_shaking)
+        {
+            if (_shakingTimer > 0)
+            {
+                _shakingTimer -= Time.deltaTime;
+                var shakeOffset = new Vector2(Random.value * _shakingMagnitude, Random.value * _shakingMagnitude);
+                transform.position = _initialPosition + shakeOffset;
+            }
+            else
+            {
+                _shaking = false;
+                _shakingTimer = 0;
+                transform.position = _initialPosition;
+            }
+        }
+    }
+
     public void ZoomTo(float zoom, Vector2 focusPoint, float duration = 0f)
     {
         if (_isZooming)
@@ -87,6 +119,11 @@ public class CameraManager : MonoBehaviour
 
     public void Shake(float duration, float magnitude)
     {
-        // TODO: Implement this
+        if (_shaking)
+            return;
+
+        _shaking = true;
+        _shakingMagnitude = magnitude;
+        _shakingTimer = duration;
     }
 }
