@@ -9,7 +9,7 @@
           <bullet>
             <direction type="sequence">26</direction>
             <speed type="absolute">5</speed>
-            <sprite>2</sprite>
+            <sprite>5</sprite>
             <color>
               <red>1</red>
               <green>0</green>
