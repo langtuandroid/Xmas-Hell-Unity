@@ -127,7 +127,7 @@ public abstract class AbstractBoss : AbstractEntity
         Reset();
     }
 
-    private void Reset()
+    protected override void Reset()
     {
         base.Reset();
 
