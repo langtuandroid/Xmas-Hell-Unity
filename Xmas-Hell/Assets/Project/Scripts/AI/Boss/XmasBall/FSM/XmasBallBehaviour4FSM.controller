@@ -43,8 +43,8 @@ MonoBehaviour:
   InitialSpeed: 10
   Acceleration: {x: 0, y: 0}
   Bounce: 1
-  ShootPatternOnCollision: 1
-  PatternToShoot: XmasBall.Pattern3
+  ShootPatternOnCollision: 0
+  PatternToShoot: 
 --- !u!114 &114360359632579668
 MonoBehaviour:
   m_ObjectHideFlags: 1
