@@ -431,8 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5293431af09e3974eb31cbd56472ad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minZoom: 9.6
-  _maxZoom: 1
   OnCameraZoomFinished:
     m_PersistentCalls:
       m_Calls: []
@@ -998,8 +996,6 @@ MonoBehaviour:
   _playerCollider: {fileID: 613047456}
   _bulletManager: {fileID: 663944611}
   _destroyBulletOnCollision: 0
-  _debugMode: 0
-  _debugMaterial: {fileID: 0}
 --- !u!1 &694070779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2032,11 @@ PrefabInstance:
     - target: {fileID: 8758713777093137237, guid: 5425a6dfd33264149988d49585177f84,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758713777516751566, guid: 5425a6dfd33264149988d49585177f84,
+        type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
