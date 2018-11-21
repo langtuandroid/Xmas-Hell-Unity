@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     public UnityEvent OnPlayerDeath = new UnityEvent();
     [SerializeField] private GameObject _deathFx;
 
+    [Header("Debug")]
+    [SerializeField] private bool _debugIsInvicible = false;
+
     // Shoot
     private float _nextFire = 0f;
     private Queue<AbstractBullet> _bulletsPool;
@@ -144,6 +147,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player killed by " + collision.gameObject.tag);
 
-        OnPlayerDeath.Invoke();
+        if (!_debugIsInvicible)
+            OnPlayerDeath.Invoke();
     }
 }

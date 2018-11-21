@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff09efef8739ab4292376e483d609f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMultiplier: 10
+  InitialSpeed: 10
   Acceleration: {x: 0, y: 0}
   Bounce: 1
 --- !u!114 &114360359632579668

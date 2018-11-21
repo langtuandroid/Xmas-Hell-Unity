@@ -25,7 +25,7 @@ public class AbstractBossBehaviour : MonoBehaviour
         return CurrentBehaviourLife / InitialBehaviourLife;
     }
 
-    public void Initialize(AbstractBoss boss)
+    public virtual void Initialize(AbstractBoss boss)
     {
         Boss = boss;
         CurrentBehaviourLife = InitialBehaviourLife;

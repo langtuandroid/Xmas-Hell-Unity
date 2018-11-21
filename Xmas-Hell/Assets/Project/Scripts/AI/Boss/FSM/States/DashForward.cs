@@ -4,7 +4,7 @@ namespace BossBehaviourState
 {
     public class DashForward : BossStateMachineBehaviour
     {
-        public float SpeedMultiplier = 1f;
+        public float InitialSpeed = 1f;
         public Vector2 Acceleration = Vector2.zero;
         public bool Bounce = false;
 
@@ -14,7 +14,7 @@ namespace BossBehaviourState
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
-            Boss.Speed *= SpeedMultiplier;
+            Boss.Speed = InitialSpeed;
             Boss.OnCollision.AddListener(OnCollision);
 
             _animator = animator;
