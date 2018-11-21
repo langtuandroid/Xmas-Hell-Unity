@@ -10,6 +10,7 @@ public class XmasSnowflakeBranch : AbstractEntity
     [SerializeField] private float _maxAcceleration = 5f;
     [SerializeField] private float _rushTimeMin = 1f;
     [SerializeField] private float _rushTimeMax = 10f;
+    [SerializeField] private string _patternName = "default";
 
     #endregion
 
@@ -79,8 +80,12 @@ public class XmasSnowflakeBranch : AbstractEntity
             Rigidbody.MoveRotation(Rigidbody.rotation + (_rotationFactor * _angularVelocity * Time.fixedDeltaTime));
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        IsAlive = false;
+        if (collision.gameObject.tag == "Wall")
+        {
+            IsAlive = false;
+            _boss.ShootPattern(_patternName, transform.position);
+        }
     }
 }

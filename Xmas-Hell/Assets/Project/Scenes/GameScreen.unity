@@ -483,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 393946482}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393946481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000022768974}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2124102670}
@@ -1089,9 +1089,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
         type: 3}
+      propertyPath: _behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
       propertyPath: Behaviours.Array.data[0]
       value: 
       objectReference: {fileID: 741044890}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: _behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 1229746975}
     - target: {fileID: 4143409632579208, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1123,6 +1133,11 @@ PrefabInstance:
     - target: {fileID: 4143409632579208, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497844811400206, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: InitialBehaviourLife
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
@@ -2258,6 +2273,18 @@ Transform:
   m_Father: {fileID: 368163146}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229746975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114497844811400206, guid: 088ae0f11e482d64a96a13bffa936192,
+    type: 3}
+  m_PrefabInstance: {fileID: 741044889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c00b029f49d34141b2c5d2711191722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373749438
 GameObject:
   m_ObjectHideFlags: 0

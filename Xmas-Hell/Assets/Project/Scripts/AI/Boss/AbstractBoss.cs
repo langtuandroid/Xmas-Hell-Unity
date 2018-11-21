@@ -293,18 +293,32 @@ public abstract class AbstractBoss : AbstractEntity
 
     #region Bullet pattern
 
-    public void ShootPattern(string patternName)
+    public void ShootPattern(string patternName, Vector2? position = null)
     {
         if (_bulletEmitters.Count == 0)
         {
             Debug.LogWarning("No bullet emitter found for this boss!");
         }
 
-        foreach (var bulletEmitter in _bulletEmitters)
+        var pattern = _bulletManager.GetPattern(patternName);
+
+        if (position.HasValue)
         {
-            var pattern = _bulletManager.GetPattern(patternName);
-            bulletEmitter.SetPattern(pattern);
-            bulletEmitter.AddBullet();
+            var bullet = (Bullet)_bulletManager.CreateBullet(true);
+
+            if (bullet != null)
+            {
+                bullet.SetPosition(position.Value);
+                bullet.InitTopNode(pattern.RootNode);
+            }
+        }
+        else
+        {
+            foreach (var bulletEmitter in _bulletEmitters)
+            {
+                bulletEmitter.SetPattern(pattern);
+                bulletEmitter.AddBullet();
+            }
         }
     }
 

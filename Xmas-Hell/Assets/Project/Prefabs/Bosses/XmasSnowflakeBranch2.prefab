@@ -144,7 +144,6 @@ MonoBehaviour:
   Speed: 10
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
-  AngularVelocity: 100
   Invincible: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -153,9 +152,10 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   TargetingPosition: 0
   TargetingAngle: 0
-  DamageBlinkTime: 0.2
+  DamageBlinkTime: 0.02
   _target: {fileID: 0}
   _accelerationOverTime: 0.01
   _maxAcceleration: 5
   _rushTimeMin: 2
   _rushTimeMax: 15
+  _patternName: XmasSnowflake.Pattern2

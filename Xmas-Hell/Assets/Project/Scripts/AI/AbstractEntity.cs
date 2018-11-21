@@ -49,7 +49,7 @@ public abstract class AbstractEntity : MonoBehaviour
     private SpriteRenderer[] _spriteRenderers;
 
     // Color blink
-    public float DamageBlinkTime = 0.2f;
+    public float DamageBlinkTime = 0.02f;
     private float _damageBlinkTimer;
     private Color _damageColor = new Color(0f, 0f, 0f, 1f);
     private bool _tookDamage = false;
