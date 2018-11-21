@@ -7,6 +7,8 @@ namespace BossBehaviourState
         public float InitialSpeed = 1f;
         public Vector2 Acceleration = Vector2.zero;
         public bool Bounce = false;
+        public bool ShootPatternOnCollision = false;
+        public string PatternToShoot = "default";
 
         private Animator _animator;
 
@@ -26,6 +28,11 @@ namespace BossBehaviourState
         {
             if (collision.gameObject.tag == "Wall")
             {
+                if (ShootPatternOnCollision)
+                {
+                    Boss.ShootPattern(PatternToShoot);
+                }
+
                 if (Bounce)
                 {
                     Boss.Direction = Vector2.Reflect(Boss.Direction, collision.contacts[0].normal);

@@ -230,7 +230,6 @@ MonoBehaviour:
   Speed: 1
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
-  AngularVelocity: 5
   Invincible: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -318,6 +317,7 @@ MonoBehaviour:
   FSM: {fileID: 9100000, guid: 568c7b389333dd74091e6e3ab9c5e831, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114752281738679952}
+  _maxAcceleration: {x: 2, y: 2}
 --- !u!50 &50960328967856826
 Rigidbody2D:
   serializedVersion: 4

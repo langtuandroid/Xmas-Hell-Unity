@@ -1866,7 +1866,7 @@ PrefabInstance:
     - target: {fileID: 114591431922106360, guid: 776b4d1a5a3f2fa40af844d43a190065,
         type: 3}
       propertyPath: _debugIsInvicible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776b4d1a5a3f2fa40af844d43a190065, type: 3}
@@ -2213,16 +2213,6 @@ PrefabInstance:
       propertyPath: _behaviours.Array.data[0]
       value: 
       objectReference: {fileID: 1762592510}
-    - target: {fileID: 7535960125402449629, guid: 39a0bace6994aa6489e7ec32c6339c32,
-        type: 3}
-      propertyPath: _maxAcceleration.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535960125402449629, guid: 39a0bace6994aa6489e7ec32c6339c32,
-        type: 3}
-      propertyPath: _maxAcceleration.y
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
 --- !u!114 &1134669622 stripped

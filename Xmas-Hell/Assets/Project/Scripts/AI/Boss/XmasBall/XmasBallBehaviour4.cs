@@ -10,6 +10,7 @@ public class XmasBallBehaviour4 : AbstractBossBehaviour
     {
         base.Initialize(boss);
 
+        Boss.AngularVelocity = 300f;
         _initialAcceleration = Boss.Acceleration;
     }
 
