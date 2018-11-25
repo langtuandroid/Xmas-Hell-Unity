@@ -1436,6 +1436,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _deathFx: {fileID: 8477277708102919793}
+  _debugIsInvicible: 0
 --- !u!50 &3002371693613541223
 Rigidbody2D:
   serializedVersion: 4
@@ -1539,7 +1540,7 @@ GameObject:
   - component: {fileID: 4108276064138650}
   - component: {fileID: 212664079665593056}
   - component: {fileID: 58596325803067020}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
