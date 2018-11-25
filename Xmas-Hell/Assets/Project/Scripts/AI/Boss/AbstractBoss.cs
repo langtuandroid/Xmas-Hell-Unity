@@ -293,6 +293,27 @@ public abstract class AbstractBoss : AbstractEntity
 
     #region Bullet pattern
 
+    public List<BulletEmitter> GetBulletEmitters()
+    {
+        return _bulletEmitters;
+    }
+
+    public void AddBulletEmitter(BulletEmitter bulletEmitter)
+    {
+        bulletEmitter.BulletManager = _bulletManager;
+        _bulletEmitters.Add(bulletEmitter);
+    }
+
+    public void SetBulletEmitters(List<BulletEmitter> bulletEmitters)
+    {
+        _bulletEmitters = bulletEmitters;
+
+        foreach (var bulletEmitter in _bulletEmitters)
+        {
+            bulletEmitter.BulletManager = _bulletManager;
+        }
+    }
+
     public void ShootPattern(string patternName, Vector2? position = null)
     {
         if (_bulletEmitters.Count == 0)
