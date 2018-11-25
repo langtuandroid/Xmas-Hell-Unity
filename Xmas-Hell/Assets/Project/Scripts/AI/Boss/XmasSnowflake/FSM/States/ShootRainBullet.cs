@@ -16,7 +16,7 @@ namespace BossBehaviourState
             //if (Random.value > 0.5f)
             {
                 // Left
-                randomPosition = new Vector2(-5, Random.Range(0f, -15f));
+                randomPosition = new Vector2(-7, Random.Range(0f, -15f));
             }
             //else
             //{

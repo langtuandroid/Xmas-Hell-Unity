@@ -981,7 +981,7 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: 17905b32d99e9e0428055466d091164c, type: 2}
   _bulletManager: {fileID: 663944611}
   _layer: 11
-  _camera: {fileID: 694070782}
+  _renderingCamera: {fileID: 694070782}
 --- !u!114 &663944614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,11 +1408,11 @@ GameObject:
   - component: {fileID: 867199341}
   - component: {fileID: 867199342}
   - component: {fileID: 867199348}
-  - component: {fileID: 867199343}
   - component: {fileID: 867199344}
   - component: {fileID: 867199345}
   - component: {fileID: 867199346}
   - component: {fileID: 867199347}
+  - component: {fileID: 867199343}
   m_Layer: 0
   m_Name: Root
   m_TagString: Root
@@ -1471,9 +1471,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 867199340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e273835edd79b47bfea58df82f9bd2, type: 3}
+  m_Script: {fileID: 11500000, guid: ab154a96ac5fb9c43be29e031ba6b49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderBulletWithMainCamera: 0
+  _mainCamera: {fileID: 519420031}
+  _bulletRenderer: {fileID: 0}
 --- !u!114 &867199344
 MonoBehaviour:
   m_ObjectHideFlags: 0
