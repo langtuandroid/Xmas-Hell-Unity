@@ -68,7 +68,7 @@ MonoBehaviour:
   RandomMovementTime: 1.5
   EnableShooting: 1
   ShootFrequency: 0.01
-  BottomLeftCorner: {x: 0, y: 0.95}
+  BottomLeftCorner: {x: 0, y: 0.25}
   TopRightCorner: {x: 1, y: 0.98}
 --- !u!114 &114335130831450274
 MonoBehaviour:
