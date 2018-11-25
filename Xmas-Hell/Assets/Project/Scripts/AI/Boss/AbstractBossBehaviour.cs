@@ -11,6 +11,10 @@ public class AbstractBossBehaviour : MonoBehaviour
     protected float CurrentBehaviourLife;
     protected bool BehaviourEnded = false;
 
+    private bool _isRunning = false;
+
+    public bool IsRunning => _isRunning;
+
     public AbstractBossBehaviour()
     {
     }
@@ -30,23 +34,28 @@ public class AbstractBossBehaviour : MonoBehaviour
         Boss = boss;
         CurrentBehaviourLife = InitialBehaviourLife;
         BehaviourEnded = false;
+        _isRunning = false;
     }
 
     public virtual void StartBehaviour()
     {
         Reset();
         Boss.Animator.runtimeAnimatorController = FSM;
+        _isRunning = true;
     }
 
     public virtual void Reset()
     {
         CurrentBehaviourLife = InitialBehaviourLife;
         BehaviourEnded = false;
-        StopBehaviour();
+
+        if (_isRunning)
+            StopBehaviour();
     }
 
     public virtual void StopBehaviour()
     {
+        _isRunning = false;
     }
 
     public bool IsBehaviourEnded()
