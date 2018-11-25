@@ -314,7 +314,7 @@ public abstract class AbstractBoss : AbstractEntity
         }
     }
 
-    public void ShootPattern(string patternName, Vector2? position = null)
+    public void ShootPattern(string patternName, Vector2? position = null, float? direction = null)
     {
         if (_bulletEmitters.Count == 0)
         {
@@ -330,6 +330,10 @@ public abstract class AbstractBoss : AbstractEntity
             if (bullet != null)
             {
                 bullet.SetPosition(position.Value);
+
+                if (direction.HasValue)
+                    bullet.SetDirection(direction.Value);
+
                 bullet.InitTopNode(pattern.RootNode);
             }
         }
