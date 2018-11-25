@@ -263,12 +263,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4340156668302760}
+  - component: {fileID: 210483198602635550}
+  - component: {fileID: 50640966534725202}
   - component: {fileID: 114122727025993540}
   - component: {fileID: 114873806180799666}
   - component: {fileID: 114474691010506998}
   - component: {fileID: 114401051063977042}
-  - component: {fileID: 50640966534725202}
-  - component: {fileID: 210483198602635550}
   m_Layer: 9
   m_Name: XmasBell
   m_TagString: Enemy
@@ -288,91 +288,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4534040290368358}
+  - {fileID: 2991050532476305627}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114122727025993540
-MonoBehaviour:
+--- !u!210 &210483198602635550
+SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152998548348758}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c165952442cb4d64691427f4ae251ca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
-  Direction: {x: 0, y: 0}
-  Acceleration: {x: 1, y: 1}
-  AngularVelocity: 5
-  Invincible: 0
-  OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  TargetingPosition: 0
-  TargetingAngle: 0
-  DamageBlinkTime: 0
-  Behaviours:
-  - {fileID: 114873806180799666}
-  - {fileID: 114474691010506998}
-  - {fileID: 114401051063977042}
-  BaseAnimatorController: {fileID: 9100000, guid: 2b34bb5cfc8768b4b90d34e5c153c291,
-    type: 2}
-  BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
-    type: 3}
-  _bulletEmitters: []
---- !u!114 &114873806180799666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152998548348758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc0089bd2521d64ab7a0369a3871fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1210828363884738}
-  FSM: {fileID: 9100000, guid: 487ec0b481b43f1428ffcf3b5944de45, type: 2}
-  InitialBehaviourLife: 50
-  Boss: {fileID: 114122727025993540}
---- !u!114 &114474691010506998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152998548348758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3b8cd0cb29c9e4da71c57778bd9336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1210828363884738}
-  FSM: {fileID: 9100000, guid: bfbfd469488e44a4e8f987ea420c48e6, type: 2}
-  InitialBehaviourLife: 50
-  Boss: {fileID: 114122727025993540}
---- !u!114 &114401051063977042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152998548348758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6b614b024bc8840bbad586f07d4805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 1210828363884738}
-  FSM: {fileID: 9100000, guid: 6c78558a16a8ee245b6d722164bbb01d, type: 2}
-  InitialBehaviourLife: 50
-  Boss: {fileID: 114122727025993540}
+  m_SortingLayerID: 208717037
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!50 &50640966534725202
 Rigidbody2D:
   serializedVersion: 4
@@ -394,17 +324,91 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!210 &210483198602635550
-SortingGroup:
+--- !u!114 &114122727025993540
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152998548348758}
   m_Enabled: 1
-  m_SortingLayerID: 208717037
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c165952442cb4d64691427f4ae251ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
+  Direction: {x: 0, y: 0}
+  Acceleration: {x: 1, y: 1}
+  Invincible: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  TargetingPosition: 0
+  TargetingAngle: 0
+  DamageBlinkTime: 0.02
+  _behaviours:
+  - {fileID: 114873806180799666}
+  - {fileID: 114474691010506998}
+  - {fileID: 114401051063977042}
+  _baseAnimatorController: {fileID: 0}
+  _animator: {fileID: 95976402188810926}
+  _bossLifeBarPrefab: {fileID: 114160035960221406, guid: 3a3cc911625df8743a05bd155027cac0,
+    type: 3}
+  _bulletEmitters:
+  - {fileID: 5184516702778939257}
+  _deathFx: {fileID: 7370715591085234675}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114873806180799666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152998548348758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc0089bd2521d64ab7a0369a3871fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FSM: {fileID: 9100000, guid: 487ec0b481b43f1428ffcf3b5944de45, type: 2}
+  InitialBehaviourLife: 500
+  Boss: {fileID: 114122727025993540}
+--- !u!114 &114474691010506998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152998548348758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3b8cd0cb29c9e4da71c57778bd9336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FSM: {fileID: 9100000, guid: bfbfd469488e44a4e8f987ea420c48e6, type: 2}
+  InitialBehaviourLife: 500
+  Boss: {fileID: 114122727025993540}
+--- !u!114 &114401051063977042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152998548348758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6b614b024bc8840bbad586f07d4805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FSM: {fileID: 9100000, guid: 6c78558a16a8ee245b6d722164bbb01d, type: 2}
+  InitialBehaviourLife: 500
+  Boss: {fileID: 114122727025993540}
 --- !u!1 &1210828363884738
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +777,7 @@ Transform:
   - {fileID: 4546349487336878}
   - {fileID: 4245717187834982}
   - {fileID: 4301877612944486}
+  - {fileID: 2457300252175781078}
   m_Father: {fileID: 4534040290368358}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -871,3 +876,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7370715591085234675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2991050532476305627}
+  m_Layer: 9
+  m_Name: DeathFx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2991050532476305627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370715591085234675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4340156668302760}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8060237923194558669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2457300252175781078}
+  - component: {fileID: 5184516702778939257}
+  m_Layer: 9
+  m_Name: BulletEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2457300252175781078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060237923194558669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.775, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4169322338447148}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5184516702778939257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060237923194558669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147aaeb6501865746ac0defcf13e9289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patternFile: {fileID: 0}
+  _bulletManager: {fileID: 0}
+  _repeat: 0
+  _repeatFrequency: 1

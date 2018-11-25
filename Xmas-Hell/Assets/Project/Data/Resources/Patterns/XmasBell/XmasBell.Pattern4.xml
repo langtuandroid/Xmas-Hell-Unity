@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<bulletml>
+  <action label="top">
+    <repeat>
+      <times>10 + ($rand * 20)</times>
+      <action label="shoot">
+        <fire>
+          <bulletRef label="bullet1">
+            <param>30</param>
+          </bulletRef>
+        </fire>
+        <vanish/>
+      </action>
+    </repeat>
+  </action>
+
+  <bullet label="bullet1">
+    <direction type="relative">($rand * $1) - ($1/2)</direction>
+    <speed>8 + ($rand * 3)</speed>
+    <sprite>1</sprite>
+    <color>
+      <red>1</red>
+      <green>0.85</green>
+      <blue>0</blue>
+    </color>
+  </bullet>
+</bulletml>
