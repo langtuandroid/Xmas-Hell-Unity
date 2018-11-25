@@ -214,7 +214,10 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        _gameTimer += Time.deltaTime;
+        if (_gameIsFinished)
+        {
+            _gameTimer += Time.deltaTime;
+        }
 
         UpdateUI();
     }
