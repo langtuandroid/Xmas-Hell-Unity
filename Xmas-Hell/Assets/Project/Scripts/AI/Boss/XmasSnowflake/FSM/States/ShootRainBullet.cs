@@ -5,6 +5,7 @@ namespace BossBehaviourState
     public class ShootRainBullet : BossStateMachineBehaviour
     {
         public string PatternName = "default";
+        public float BulletsPerWave = 5;
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -12,20 +13,22 @@ namespace BossBehaviourState
 
             Vector2 randomPosition;
 
-            // Left or top?
-            //if (Random.value > 0.5f)
+            for (int i = 0; i < BulletsPerWave; i++)
             {
-                // Left
-                randomPosition = new Vector2(-7, Random.Range(0f, -15f));
-            }
-            //else
-            //{
-            //    // Top
-            //    randomPosition = new Vector2(Random.Range(-5f, 0f), 15f);
-            //}
+                // Left or top?
+                if (Random.value > 0.5f)
+                {
+                    // Left
+                    randomPosition = new Vector2(-7, Random.Range(-8f, 12f));
+                }
+                else
+                {
+                    // Top
+                    randomPosition = new Vector2(Random.Range(-7f, 4f), 10f);
+                }
 
-            //randomPosition = Vector2.zero;
-            Boss.ShootPattern(PatternName, randomPosition);
+                Boss.ShootPattern(PatternName, randomPosition);
+            }
         }
     }
 }

@@ -996,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerCollider: {fileID: 613047456}
   _bulletManager: {fileID: 663944611}
-  _destroyBulletOnCollision: 0
+  _destroyBulletOnCollision: 1
 --- !u!1 &694070779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1877944070540562, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
         type: 3}
@@ -1476,7 +1476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderBulletWithMainCamera: 0
   _mainCamera: {fileID: 519420031}
-  _bulletRenderer: {fileID: 0}
+  _bulletRenderer: {fileID: 663944613}
 --- !u!114 &867199344
 MonoBehaviour:
   m_ObjectHideFlags: 0
