@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 50465413244262340}
   - component: {fileID: 114044016453238836}
   - component: {fileID: 114351855978273664}
+  - component: {fileID: 5138227286260706864}
   m_Layer: 9
   m_Name: XmasCandy
   m_TagString: Untagged
@@ -811,7 +812,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &114044016453238836
 MonoBehaviour:
@@ -839,6 +840,7 @@ MonoBehaviour:
   DamageBlinkTime: 0.02
   _behaviours:
   - {fileID: 114351855978273664}
+  - {fileID: 5138227286260706864}
   _baseAnimatorController: {fileID: 0}
   _animator: {fileID: 95900681589836894}
   _bossLifeBarPrefab: {fileID: 114160035960221406, guid: 3a3cc911625df8743a05bd155027cac0,
@@ -864,6 +866,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FSM: {fileID: 9100000, guid: 26496a757e50d784fb56feb21c3b4778, type: 2}
+  InitialBehaviourLife: 500
+  Boss: {fileID: 114044016453238836}
+--- !u!114 &5138227286260706864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899391742972712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d4c8b732228eb4db23c33bcdf54444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FSM: {fileID: 9100000, guid: b3a0a190812c301409a594890e0d3e58, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 114044016453238836}
 --- !u!1 &4766163883045900565
