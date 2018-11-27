@@ -16,7 +16,7 @@ public class PlayGamesServices : MonoBehaviour
 
     public void SignIn()
     {
-        Social.localUser.Authenticate((bool success) => 
+        Social.localUser.Authenticate((bool success) =>
         {
             Debug.Log("User logged in with GPGS.");
         });
@@ -26,4 +26,22 @@ public class PlayGamesServices : MonoBehaviour
     {
         PlayGamesPlatform.Instance.SignOut();
     }
+
+    #region Achievements
+
+    public void ShowAchievementsUI()
+    {
+        Social.ShowAchievementsUI();
+    }
+
+    #endregion
+
+    #region Leaderboard
+
+    public void ShowLeaderboardUI()
+    {
+        Social.ShowLeaderboardUI();
+    }
+
+    #endregion
 }
