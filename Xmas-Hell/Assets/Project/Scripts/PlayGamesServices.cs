@@ -25,9 +25,12 @@ public class PlayGamesServices : MonoBehaviour
 
     public void SignIn()
     {
-        Social.localUser.Authenticate((bool success) =>
+        Social.localUser.Authenticate((bool success, string error) =>
         {
-            Debug.Log("User logged in with GPGS.");
+            if (success)
+                Debug.Log("User logged in with GPGS.");
+            else
+                Debug.LogError("Error during GPGS sign in: " + error);
         });
     }
 
