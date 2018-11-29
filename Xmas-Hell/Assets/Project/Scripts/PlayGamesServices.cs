@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class PlayGamesServices : MonoBehaviour
 {
-    void Start()
+    public static PlayGamesServices Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+    }
+
+    private void Start()
     {
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = Debug.isDebugBuild;
         PlayGamesPlatform.Activate();
-
-        SignIn();
     }
 
     public void SignIn()

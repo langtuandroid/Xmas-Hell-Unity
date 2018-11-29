@@ -178,6 +178,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1506067898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506067900}
+  - component: {fileID: 1506067899}
+  m_Layer: 0
+  m_Name: PlayGamesServices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1506067899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506067898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa7e2c6ed208c442990f9ff272f1625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1506067900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506067898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866985138
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +383,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1761858297780722014, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
+        type: 3}
+      propertyPath: m_Name
+      value: ScreenTransitionManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1761858297780722008, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,11 +442,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1761858297780722014, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
-        type: 3}
-      propertyPath: m_Name
-      value: ScreenTransitionManager
       objectReference: {fileID: 0}
     - target: {fileID: 1276380115785600083, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
         type: 3}
@@ -495,11 +538,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1344184605210292935, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5856046826122703136, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -514,6 +552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 407.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344184605210292935, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ac6bfaaf5052a49bc5ba74bcc3958d, type: 3}
