@@ -16,8 +16,6 @@ public class MenuScreenManager : ScreenManager
             MenuAnimator.Play("GoToBossSelection", 0, 1f);
             PlayerFrontAnimator.StopAnimation(true);
         }
-
-        PlayGamesServices.Instance.SignIn();
     }
 
     public void GoToBossSelection()
