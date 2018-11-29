@@ -1,5 +1,5 @@
-lastUpgrade=00954
-proj.pluginVersion=0.9.54
+lastUpgrade=00955
+proj.pluginVersion=0.9.55
 proj.AppId=974096245219
 and.BundleId=io.noxalus.XmasHell
 proj.classDir=Assets
