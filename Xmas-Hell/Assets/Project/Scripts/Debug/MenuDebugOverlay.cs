@@ -14,7 +14,7 @@ public class MenuDebugOverlay : MonoBehaviour
     {
         if (!Debug.isDebugBuild)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

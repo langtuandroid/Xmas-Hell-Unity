@@ -1,11 +1,19 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using GooglePlayGames.BasicApi.SavedGame;
 using System;
+using System.Text;
 using UnityEngine;
 
 public class PlayGamesServices : MonoBehaviour
 {
     public static PlayGamesServices Instance { get; private set; }
+
+    private const string SAVE_NAME = "Save";
+    private const string SAVE_DATA_SEPARATOR = "@|@";
+
+    private bool _isSaving = false;
+    private bool _isCloudDataLoaded = false;
 
     private void Awake()
     {
@@ -13,18 +21,27 @@ public class PlayGamesServices : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
-
             Initialize();
         }
     }
 
     private void Initialize()
     {
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        if (!PlayerPrefs.HasKey(SAVE_NAME))
+            PlayerPrefs.SetString(SAVE_NAME, "0");
+        if (!PlayerPrefs.HasKey("IsFirstTime"))
+            PlayerPrefs.SetInt("IsFirstTime", 1);
+
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
+            .EnableSavedGames()
+            .Build();
+
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = Debug.isDebugBuild;
         PlayGamesPlatform.Activate();
     }
+
+    #region Authentication
 
     public void SignIn(Action<bool, string> callback = null)
     {
@@ -43,6 +60,186 @@ public class PlayGamesServices : MonoBehaviour
     {
         PlayGamesPlatform.Instance.SignOut();
     }
+
+    #endregion
+
+    #region Save
+
+    public string GameDataToString()
+    {
+        return 
+            PlayerSaveData.DeathCounter + SAVE_DATA_SEPARATOR +
+            PlayerSaveData.PlayTime;
+    }
+
+    public void StringToGameData(string cloudData, string localData)
+    {
+        if (PlayerPrefs.GetInt("IsFirstTime") == 1)
+        {
+            PlayerPrefs.SetInt("IsFirstTime", 0);
+
+            if (int.Parse(cloudData) > int.Parse(localData))
+            {
+                PlayerPrefs.SetString(SAVE_NAME, cloudData);
+            }
+        }
+        else
+        {
+            if (int.Parse(localData) > int.Parse(cloudData))
+            {
+                string[] saveData = cloudData.Split(new string[] { SAVE_DATA_SEPARATOR }, StringSplitOptions.None);
+
+                PlayerSaveData.DeathCounter = int.Parse(saveData[0]);
+                PlayerSaveData.PlayTime = long.Parse(saveData[1]);
+
+                _isCloudDataLoaded = true;
+                SaveData();
+
+                // Update achievement/leaderboard
+            }
+        }
+    }
+
+    public void StringToGameData(string localData)
+    {
+        PlayerSaveData.DeathCounter = int.Parse(localData);
+    }
+
+    public void LoadData()
+    {
+        if (Social.localUser.authenticated)
+        {
+            _isSaving = false;
+
+            ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(
+                SAVE_NAME, 
+                DataSource.ReadCacheOrNetwork, 
+                true, 
+                ResolveConflict, 
+                OnSavedGameOpened
+            );
+        }
+        else
+        {
+            LoadLocal();
+        }
+    }
+
+    private void LoadLocal()
+    {
+        StringToGameData(PlayerPrefs.GetString(SAVE_NAME));
+    }
+
+    public void SaveData()
+    {
+        if (!_isCloudDataLoaded)
+        {
+            SaveLocal();
+            return;
+        }
+
+        if (Social.localUser.authenticated)
+        {
+            _isSaving = true;
+
+            ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(
+                SAVE_NAME,
+                DataSource.ReadCacheOrNetwork,
+                true,
+                ResolveConflict,
+                OnSavedGameOpened
+            );
+        }
+        else
+        {
+            SaveLocal();
+        }
+    }
+
+    private void SaveLocal()
+    {
+        PlayerPrefs.SetString(SAVE_NAME, GameDataToString());
+    }
+
+    private void ResolveConflict(
+        IConflictResolver resolver, 
+        ISavedGameMetadata original, 
+        byte[] originalData, 
+        ISavedGameMetadata unmerged, 
+        byte[] unmergedData)
+    {
+        if (originalData == null)
+            resolver.ChooseMetadata(unmerged);
+        else if (unmergedData == null)
+            resolver.ChooseMetadata(original);
+        else
+        {
+            string originalString = Encoding.ASCII.GetString(originalData);
+            string unmergedString = Encoding.ASCII.GetString(unmergedData);
+
+            // TODO: Compare the save
+            resolver.ChooseMetadata(unmerged);
+        }
+    }
+
+    private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
+    {
+        if (status == SavedGameRequestStatus.Success)
+        {
+            if (!_isSaving)
+                LoadGame(game);
+            else
+                SaveGame(game);
+        }
+        else
+        {
+            if (!_isSaving)
+                LoadLocal();
+            else
+                SaveLocal();
+        }
+    }
+
+    private void LoadGame(ISavedGameMetadata game)
+    {
+        ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
+    }
+
+    private void SaveGame(ISavedGameMetadata game)
+    {
+        string stringToSave = GameDataToString();
+        SaveLocal();
+
+        byte[] dataToSave = Encoding.ASCII.GetBytes(stringToSave);
+
+        SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
+
+        ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, dataToSave, OnSavedGameDataWritten);
+    }
+
+    private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)
+    {
+        if (status == SavedGameRequestStatus.Success)
+        {
+            string cloudDataString = Encoding.ASCII.GetString(savedData);
+
+            if (savedData.Length == 0)
+                cloudDataString = "0";
+            else
+                cloudDataString = Encoding.ASCII.GetString(savedData);
+
+            string localDataString = PlayerPrefs.GetString(SAVE_NAME);
+
+            StringToGameData(cloudDataString, localDataString);
+        }
+    }
+
+    private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
+    {
+        Debug.Log("Saved data to the cloud!");
+    }
+
+    #endregion
 
     #region Achievements
 
