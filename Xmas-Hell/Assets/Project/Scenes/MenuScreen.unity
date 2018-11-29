@@ -1061,7 +1061,6 @@ GameObject:
   - component: {fileID: 319163752}
   - component: {fileID: 319163753}
   - component: {fileID: 319163754}
-  - component: {fileID: 319163751}
   m_Layer: 0
   m_Name: Root
   m_TagString: Root
@@ -1088,18 +1087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &319163751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319163749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa7e2c6ed208c442990f9ff272f1625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &319163752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1915,7 @@ GameObject:
   - component: {fileID: 514234764}
   - component: {fileID: 514234763}
   - component: {fileID: 514234762}
+  - component: {fileID: 514234765}
   m_Layer: 5
   m_Name: ShowAchievementsButton
   m_TagString: Untagged
@@ -1994,8 +1982,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319163751}
-        m_MethodName: ShowAchievementsUI
+      - m_Target: {fileID: 514234765}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2044,6 +2032,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514234760}
   m_CullTransparentMesh: 0
+--- !u!114 &514234765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514234760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7f8001b9cfaaa4b9583735e788873c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520933418
 GameObject:
   m_ObjectHideFlags: 0
@@ -9785,6 +9785,7 @@ GameObject:
   - component: {fileID: 1675104067}
   - component: {fileID: 1675104066}
   - component: {fileID: 1675104065}
+  - component: {fileID: 1675104068}
   m_Layer: 5
   m_Name: ShowLeaderboardButton
   m_TagString: Untagged
@@ -9851,8 +9852,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319163751}
-        m_MethodName: ShowLeaderboardUI
+      - m_Target: {fileID: 1675104068}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9901,6 +9902,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675104063}
   m_CullTransparentMesh: 0
+--- !u!114 &1675104068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675104063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c524cd5c6978bf44b8e02267c7a5f6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700178192
 GameObject:
   m_ObjectHideFlags: 0
