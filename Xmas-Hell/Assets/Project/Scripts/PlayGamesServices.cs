@@ -1,5 +1,6 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System;
 using UnityEngine;
 
 public class PlayGamesServices : MonoBehaviour
@@ -12,10 +13,12 @@ public class PlayGamesServices : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
+
+            Initialize();
         }
     }
 
-    private void Start()
+    private void Initialize()
     {
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
@@ -23,7 +26,7 @@ public class PlayGamesServices : MonoBehaviour
         PlayGamesPlatform.Activate();
     }
 
-    public void SignIn()
+    public void SignIn(Action<bool, string> callback)
     {
         Social.localUser.Authenticate((bool success, string error) =>
         {
@@ -31,6 +34,8 @@ public class PlayGamesServices : MonoBehaviour
                 Debug.Log("User logged in with GPGS.");
             else
                 Debug.LogError("Error during GPGS sign in: " + error);
+
+            callback(success, error);
         });
     }
 

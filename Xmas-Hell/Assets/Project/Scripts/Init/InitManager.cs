@@ -8,9 +8,10 @@ public class InitManager : MonoBehaviour
 
     void Awake()
     {
-        PlayGamesServices.Instance.SignIn();
-
-        _screenTransitionManager.Initialize(_screenTransitionStore);
-        _screenManager.GoToScreen(EScreen.MainMenu);
+        PlayGamesServices.Instance.SignIn((success, error) =>
+        {
+            _screenTransitionManager.Initialize(_screenTransitionStore);
+            _screenManager.GoToScreen(EScreen.MainMenu);
+        });
     }
 }
