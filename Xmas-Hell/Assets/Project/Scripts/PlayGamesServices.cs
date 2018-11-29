@@ -34,6 +34,23 @@ public class PlayGamesServices : MonoBehaviour
         Social.ShowAchievementsUI();
     }
 
+    public void UnlockAchievement(string id)
+    {
+        Social.ReportProgress(id, 100f, success => {
+            if (!success)
+                Debug.LogError("Error unlocking the achievement with ID: " + id);
+        });
+    }
+
+    public void IncrementAchievement(string id, int stepsToIncrement)
+    {
+        PlayGamesPlatform.Instance.IncrementAchievement(id, stepsToIncrement, success =>
+        {
+            if (!success)
+                Debug.LogError("Error incrementing the achievement with ID: " + id);
+        });
+    }
+
     #endregion
 
     #region Leaderboard
