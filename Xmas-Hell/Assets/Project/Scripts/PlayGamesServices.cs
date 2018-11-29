@@ -26,7 +26,7 @@ public class PlayGamesServices : MonoBehaviour
         PlayGamesPlatform.Activate();
     }
 
-    public void SignIn(Action<bool, string> callback)
+    public void SignIn(Action<bool, string> callback = null)
     {
         Social.localUser.Authenticate((bool success, string error) =>
         {
@@ -35,7 +35,7 @@ public class PlayGamesServices : MonoBehaviour
             else
                 Debug.LogError("Error during GPGS sign in: " + error);
 
-            callback(success, error);
+            callback?.Invoke(success, error);
         });
     }
 
