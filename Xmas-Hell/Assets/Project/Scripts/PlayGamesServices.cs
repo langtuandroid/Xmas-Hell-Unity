@@ -36,7 +36,8 @@ public class PlayGamesServices : MonoBehaviour
 
     public void UnlockAchievement(string id)
     {
-        Social.ReportProgress(id, 100f, success => {
+        Social.ReportProgress(id, 100f, success => 
+        {
             if (!success)
                 Debug.LogError("Error unlocking the achievement with ID: " + id);
         });
@@ -58,6 +59,15 @@ public class PlayGamesServices : MonoBehaviour
     public void ShowLeaderboardUI()
     {
         Social.ShowLeaderboardUI();
+    }
+
+    public void AddScoreToLeaderboard(string leaderboardId, long score)
+    {
+        Social.ReportScore(score, leaderboardId, success =>
+        {
+            if (!success)
+                Debug.LogError("Error adding a score to the leaderboard with ID: " + leaderboardId);
+        });
     }
 
     #endregion
