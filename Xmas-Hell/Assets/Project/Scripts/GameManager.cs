@@ -63,14 +63,15 @@ public class GameManager : MonoBehaviour
         if (!Boss)
         {
             Debug.Log("No boss found");
-            return;
+        }
+        else
+        {
+            Boss.OnDeath.AddListener(OnBossDeath);
         }
 
         _fsm = GetComponent<Animator>();
 
         Player.OnPlayerDeath.AddListener(OnPlayerDeath);
-
-        Boss.OnDeath.AddListener(OnBossDeath);
 
         BulletManager.LoadPatterns();
         BulletPhysics.OnCollision.AddListener(OnBulletCollision);
