@@ -1,6 +1,7 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
+using Newtonsoft.Json;
 using System;
 using System.Text;
 using UnityEngine;
@@ -10,8 +11,8 @@ public class PlayGamesServices : MonoBehaviour
     public static PlayGamesServices Instance { get; private set; }
 
     private const string SAVE_NAME = "Save";
-    private const string SAVE_DATA_SEPARATOR = "@|@";
 
+    private CloudSave _cloudSave;
     private bool _isSaving = false;
     private bool _isCloudDataLoaded = false;
 
@@ -28,7 +29,7 @@ public class PlayGamesServices : MonoBehaviour
     private void Initialize()
     {
         if (!PlayerPrefs.HasKey(SAVE_NAME))
-            PlayerPrefs.SetString(SAVE_NAME, "0");
+            PlayerPrefs.SetString(SAVE_NAME, string.Empty);
         if (!PlayerPrefs.HasKey("IsFirstTime"))
             PlayerPrefs.SetInt("IsFirstTime", 1);
 
@@ -39,6 +40,8 @@ public class PlayGamesServices : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = Debug.isDebugBuild;
         PlayGamesPlatform.Activate();
+
+        _cloudSave = new CloudSave();
     }
 
     #region Authentication
@@ -65,33 +68,63 @@ public class PlayGamesServices : MonoBehaviour
 
     #region Save
 
-    public string GameDataToString()
+    // -1 cloud save is more recent | 0 saves are equal | 1 local save is more recent
+    private int CompareSave(PlayerData localSave, PlayerData cloudSave)
     {
-        return 
-            PlayerSaveData.DeathCounter + SAVE_DATA_SEPARATOR +
-            PlayerSaveData.PlayTime;
+        // TODO: Implement real comparison (field by field)
+        return 0;
     }
 
+    public string GameDataToString()
+    {
+        return JsonConvert.SerializeObject(_cloudSave.PlayerData);
+    }
+
+    // This overload is used when user is connected to the interner
+    // parsing string to game data, also deciding if we should use local or cloud save
     public void StringToGameData(string cloudData, string localData)
     {
+        if (cloudData == string.Empty)
+        {
+            StringToGameData(localData);
+            _isCloudDataLoaded = true;
+            return;
+        }
+
+        if (localData == string.Empty)
+        {
+            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(cloudData);
+            PlayerPrefs.SetString(SAVE_NAME, cloudData);
+            _isCloudDataLoaded = true;
+            return;
+        }
+
+        PlayerData localSave = JsonConvert.DeserializeObject<PlayerData>(localData);
+        PlayerData cloudSave = JsonConvert.DeserializeObject<PlayerData>(cloudData);
+
+        // If it's the first time that game has been launched after installing it and successfuly logging into GPGS
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
         {
+            // 0 => false
             PlayerPrefs.SetInt("IsFirstTime", 0);
 
-            if (int.Parse(cloudData) > int.Parse(localData))
+            // If it's the first time we load cloud data
+            if (CompareSave(localSave, cloudSave) >= 0)
             {
                 PlayerPrefs.SetString(SAVE_NAME, cloudData);
             }
         }
+        // If it's not the first time, start comparing
         else
         {
+            if (CompareSave(localSave, cloudSave) <= 0)
+            {
+                PlayerPrefs.SetString(SAVE_NAME, cloudData);
+            }
+
             if (int.Parse(localData) > int.Parse(cloudData))
             {
-                string[] saveData = cloudData.Split(new string[] { SAVE_DATA_SEPARATOR }, StringSplitOptions.None);
-
-                PlayerSaveData.DeathCounter = int.Parse(saveData[0]);
-                PlayerSaveData.PlayTime = long.Parse(saveData[1]);
-
+                _cloudSave.PlayerData = cloudSave;
                 _isCloudDataLoaded = true;
                 SaveData();
 
@@ -100,9 +133,13 @@ public class PlayGamesServices : MonoBehaviour
         }
     }
 
+    // This overload is used when there's no internet connection - loading only local data
     public void StringToGameData(string localData)
     {
-        PlayerSaveData.DeathCounter = int.Parse(localData);
+        if (localData != string.Empty)
+        {
+            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(localData);
+        }
     }
 
     public void LoadData()
@@ -224,7 +261,7 @@ public class PlayGamesServices : MonoBehaviour
             string cloudDataString = Encoding.ASCII.GetString(savedData);
 
             if (savedData.Length == 0)
-                cloudDataString = "0";
+                cloudDataString = string.Empty;
             else
                 cloudDataString = Encoding.ASCII.GetString(savedData);
 
