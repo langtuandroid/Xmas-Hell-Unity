@@ -15,6 +15,9 @@ public class PlayGamesServices : MonoBehaviour
     private CloudSave _cloudSave;
     private bool _isSaving = false;
     private bool _isCloudDataLoaded = false;
+    
+    // Serialization/Deserialization
+    private JsonSerializerSettings _jsonSerializerSettings;
 
     private void Awake()
     {
@@ -28,8 +31,21 @@ public class PlayGamesServices : MonoBehaviour
 
     private void Initialize()
     {
+        _jsonSerializerSettings = new JsonSerializerSettings();
+        _jsonSerializerSettings.Formatting = Formatting.Indented;
+        _jsonSerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        _jsonSerializerSettings.ObjectCreationHandling = ObjectCreationHandling.Replace;
+
+
         if (!PlayerPrefs.HasKey(SAVE_NAME))
-            PlayerPrefs.SetString(SAVE_NAME, string.Empty);
+        {
+            _cloudSave = new CloudSave();
+            var stringPlayerData = JsonConvert.SerializeObject(_cloudSave.PlayerData, _jsonSerializerSettings);
+            var playerData = JsonConvert.DeserializeObject<PlayerData>(stringPlayerData, _jsonSerializerSettings);
+
+            PlayerPrefs.SetString(SAVE_NAME, stringPlayerData);
+        }
+
         if (!PlayerPrefs.HasKey("IsFirstTime"))
             PlayerPrefs.SetInt("IsFirstTime", 1);
 
@@ -41,7 +57,8 @@ public class PlayGamesServices : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = Debug.isDebugBuild;
         PlayGamesPlatform.Activate();
 
-        _cloudSave = new CloudSave();
+        // Load local save data
+        LoadLocal();
     }
 
     #region Authentication
@@ -56,6 +73,9 @@ public class PlayGamesServices : MonoBehaviour
                 Debug.LogError("Error during GPGS sign in: " + error);
 
             callback?.Invoke(success, error);
+
+            // Load data from cloud
+            LoadData();
         });
     }
 
@@ -77,7 +97,7 @@ public class PlayGamesServices : MonoBehaviour
 
     public string GameDataToString()
     {
-        return JsonConvert.SerializeObject(_cloudSave.PlayerData);
+        return JsonConvert.SerializeObject(_cloudSave.PlayerData, _jsonSerializerSettings);
     }
 
     // This overload is used when user is connected to the interner
@@ -93,14 +113,14 @@ public class PlayGamesServices : MonoBehaviour
 
         if (localData == string.Empty)
         {
-            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(cloudData);
+            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(cloudData, _jsonSerializerSettings);
             PlayerPrefs.SetString(SAVE_NAME, cloudData);
             _isCloudDataLoaded = true;
             return;
         }
 
-        PlayerData localSave = JsonConvert.DeserializeObject<PlayerData>(localData);
-        PlayerData cloudSave = JsonConvert.DeserializeObject<PlayerData>(cloudData);
+        PlayerData localSave = JsonConvert.DeserializeObject<PlayerData>(localData, _jsonSerializerSettings);
+        PlayerData cloudSave = JsonConvert.DeserializeObject<PlayerData>(cloudData, _jsonSerializerSettings);
 
         // If it's the first time that game has been launched after installing it and successfuly logging into GPGS
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
@@ -138,7 +158,8 @@ public class PlayGamesServices : MonoBehaviour
     {
         if (localData != string.Empty)
         {
-            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(localData);
+            PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(localData, _jsonSerializerSettings);
+            _cloudSave.PlayerData = playerData;
         }
     }
 
