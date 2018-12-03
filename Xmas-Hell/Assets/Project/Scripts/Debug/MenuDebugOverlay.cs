@@ -42,12 +42,12 @@ public class MenuDebugOverlay : MonoBehaviour
     [UsedImplicitly]
     public void OnWinXmasBallButtonClicked()
     {
-        PlayGamesServices.Instance.CloudSave.PlayerData.BossWon("XmasBall", 320f);
+        SaveSystem.BossWon("XmasBall", 320f);
     }
 
     [UsedImplicitly]
     public void OnLoseXmasBallButtonClicked()
     {
-        PlayGamesServices.Instance.CloudSave.PlayerData.BossLost("XmasBall", 53f);
+        SaveSystem.BossLost("XmasBall", 53f);
     }
 }

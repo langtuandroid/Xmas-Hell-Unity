@@ -183,7 +183,7 @@ public class PlayGamesServices : MonoBehaviour
 
     private void LoadLocal()
     {
-        StringToGameData(PlayerPrefs.GetString(SAVE_NAME));
+        SaveSystem.Load();
     }
 
     public void SaveData()
@@ -214,7 +214,7 @@ public class PlayGamesServices : MonoBehaviour
 
     private void SaveLocal()
     {
-        PlayerPrefs.SetString(SAVE_NAME, GameDataToString());
+        SaveSystem.Save();
     }
 
     private void ResolveConflict(
