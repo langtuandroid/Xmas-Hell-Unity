@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class PlayerData
 {
@@ -24,5 +26,40 @@ public class PlayerData
             new BossData("XmasSnowman"),
             new BossData("XmasSanta")
         };
+    }
+
+    public void BossWon(string bossName, float time)
+    {
+        var boss = BossesData.FirstOrDefault(b => b.Name == bossName);
+
+        if (boss != null)
+        {
+            boss.WinCounter++;
+            boss.TotalTime += time;
+
+            if (boss.BestTime > time)
+            {
+                boss.BestTime = time;
+            }
+        }
+        else
+        {
+            Debug.LogError("No boss found with this name in the player data: " + bossName);
+        }
+    }
+
+    public void BossLose(string bossName, float time)
+    {
+        var boss = BossesData.FirstOrDefault(b => b.Name == bossName);
+
+        if (boss != null)
+        {
+            boss.LoseCounter++;
+            boss.TotalTime += time;
+        }
+        else
+        {
+            Debug.LogError("No boss found with this name in the player data: " + bossName);
+        }
     }
 }
