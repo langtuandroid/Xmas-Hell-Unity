@@ -9,10 +9,10 @@ using UnityEngine;
 public class PlayGamesServices : MonoBehaviour
 {
     public static PlayGamesServices Instance { get; private set; }
+    public CloudSave CloudSave;
 
     private const string SAVE_NAME = "Save";
 
-    private CloudSave _cloudSave;
     private bool _isSaving = false;
     private bool _isCloudDataLoaded = false;
     
@@ -31,18 +31,16 @@ public class PlayGamesServices : MonoBehaviour
 
     private void Initialize()
     {
+        CloudSave = new CloudSave();
+
         _jsonSerializerSettings = new JsonSerializerSettings();
         _jsonSerializerSettings.Formatting = Formatting.Indented;
         _jsonSerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         _jsonSerializerSettings.ObjectCreationHandling = ObjectCreationHandling.Replace;
 
-
         if (!PlayerPrefs.HasKey(SAVE_NAME))
         {
-            _cloudSave = new CloudSave();
-            var stringPlayerData = JsonConvert.SerializeObject(_cloudSave.PlayerData, _jsonSerializerSettings);
-            var playerData = JsonConvert.DeserializeObject<PlayerData>(stringPlayerData, _jsonSerializerSettings);
-
+            var stringPlayerData = JsonConvert.SerializeObject(CloudSave.PlayerData, _jsonSerializerSettings);
             PlayerPrefs.SetString(SAVE_NAME, stringPlayerData);
         }
 
@@ -97,7 +95,7 @@ public class PlayGamesServices : MonoBehaviour
 
     public string GameDataToString()
     {
-        return JsonConvert.SerializeObject(_cloudSave.PlayerData, _jsonSerializerSettings);
+        return JsonConvert.SerializeObject(CloudSave.PlayerData, _jsonSerializerSettings);
     }
 
     // This overload is used when user is connected to the interner
@@ -113,7 +111,7 @@ public class PlayGamesServices : MonoBehaviour
 
         if (localData == string.Empty)
         {
-            _cloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(cloudData, _jsonSerializerSettings);
+            CloudSave.PlayerData = JsonConvert.DeserializeObject<PlayerData>(cloudData, _jsonSerializerSettings);
             PlayerPrefs.SetString(SAVE_NAME, cloudData);
             _isCloudDataLoaded = true;
             return;
@@ -144,7 +142,7 @@ public class PlayGamesServices : MonoBehaviour
 
             if (int.Parse(localData) > int.Parse(cloudData))
             {
-                _cloudSave.PlayerData = cloudSave;
+                CloudSave.PlayerData = cloudSave;
                 _isCloudDataLoaded = true;
                 SaveData();
 
@@ -159,7 +157,7 @@ public class PlayGamesServices : MonoBehaviour
         if (localData != string.Empty)
         {
             PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(localData, _jsonSerializerSettings);
-            _cloudSave.PlayerData = playerData;
+            CloudSave.PlayerData = playerData;
         }
     }
 

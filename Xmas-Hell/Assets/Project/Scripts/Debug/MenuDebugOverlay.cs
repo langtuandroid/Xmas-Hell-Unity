@@ -38,4 +38,16 @@ public class MenuDebugOverlay : MonoBehaviour
     {
         PlayGamesServices.Instance.SignOut();
     }
+
+    [UsedImplicitly]
+    public void OnWinXmasBallButtonClicked()
+    {
+        PlayGamesServices.Instance.CloudSave.PlayerData.BossWon("XmasBall", 320f);
+    }
+
+    [UsedImplicitly]
+    public void OnLoseXmasBallButtonClicked()
+    {
+        PlayGamesServices.Instance.CloudSave.PlayerData.BossLost("XmasBall", 53f);
+    }
 }

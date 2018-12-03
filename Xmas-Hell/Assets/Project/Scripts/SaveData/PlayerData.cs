@@ -41,6 +41,8 @@ public class PlayerData
             {
                 boss.BestTime = time;
             }
+
+            PlayGamesServices.Instance.SaveData();
         }
         else
         {
@@ -48,7 +50,7 @@ public class PlayerData
         }
     }
 
-    public void BossLose(string bossName, float time)
+    public void BossLost(string bossName, float time)
     {
         var boss = BossesData.FirstOrDefault(b => b.Name == bossName);
 
@@ -56,6 +58,8 @@ public class PlayerData
         {
             boss.LoseCounter++;
             boss.TotalTime += time;
+
+            PlayGamesServices.Instance.SaveData();
         }
         else
         {
