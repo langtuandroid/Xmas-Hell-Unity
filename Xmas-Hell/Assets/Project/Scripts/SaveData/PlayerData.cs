@@ -13,16 +13,16 @@ public class PlayerData
         PlayTime = 0;
         BossesData = new List<BossData>()
         {
-            new BossData("XmasBall"),
-            new BossData("XmasBell"),
-            new BossData("XmasSnowflake"),
-            new BossData("XmasCandy"),
-            new BossData("XmasGift"),
-            new BossData("XmasLog"),
-            new BossData("XmasTree"),
-            new BossData("XmasReindeer"),
-            new BossData("XmasSnowman"),
-            new BossData("XmasSanta")
+            new BossData(EBoss.XmasBall),
+            new BossData(EBoss.XmasBell),
+            new BossData(EBoss.XmasSnowflake),
+            new BossData(EBoss.XmasCandy),
+            new BossData(EBoss.XmasGift),
+            new BossData(EBoss.XmasLog),
+            new BossData(EBoss.XmasTree),
+            new BossData(EBoss.XmasReindeer),
+            new BossData(EBoss.XmasSnowman),
+            new BossData(EBoss.XmasSanta)
         };
     }
 }

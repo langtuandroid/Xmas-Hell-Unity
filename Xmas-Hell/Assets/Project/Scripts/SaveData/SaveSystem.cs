@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static PlayerData PlayerData = new PlayerData();
+    public static PlayerData PlayerData;
 
-    private const string SAVE_NAME = "Save";
+    private const string SAVE_NAME = "XmasSave";
     private static JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings();
 
     [RuntimeInitializeOnLoadMethod]
@@ -44,9 +44,21 @@ public static class SaveSystem
 
     #region Boss related methods
 
-    public static void BossWon(string bossName, float time)
+    public static BossData GetBossData(EBoss bossType)
     {
-        var boss = PlayerData.BossesData.FirstOrDefault(b => b.Name == bossName);
+        var boss = PlayerData.BossesData.FirstOrDefault(b => b.Type == bossType);
+
+        if (boss == null)
+        {
+            Debug.LogError("No boss found in the player data with name: " + boss.Type);
+        }
+
+        return boss;
+    }
+
+    public static void BossWon(EBoss bossType, float time)
+    {
+        var boss = GetBossData(bossType);
 
         if (boss != null)
         {
@@ -62,13 +74,13 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("No boss found with this name in the player data: " + bossName);
+            Debug.LogError("No boss found with this name in the player data: " + bossType);
         }
     }
 
-    public static void BossLost(string bossName, float time)
+    public static void BossLost(EBoss bossType, float time)
     {
-        var boss = PlayerData.BossesData.FirstOrDefault(b => b.Name == bossName);
+        var boss = GetBossData(bossType);
 
         if (boss != null)
         {
@@ -79,7 +91,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("No boss found with this name in the player data: " + bossName);
+            Debug.LogError("No boss found with this name in the player data: " + bossType);
         }
     }
 

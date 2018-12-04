@@ -8,13 +8,10 @@ public class BossBall : MonoBehaviour
     public GameObject BossPanel;
     public Image Image;
 
-    private EBossBallState _state = EBossBallState.Unknown;
-    private MenuScreenManager _menuScreenManager;
+    [Header("Database")]
+    [SerializeField] private BossStore _bossStore;
 
-    public void Awake()
-    {
-        _menuScreenManager = GameObject.FindGameObjectWithTag("Root").GetComponent<MenuScreenManager>();
-    }
+    private EBossBallState _state = EBossBallState.Unknown;
 
     public void Start()
     {
@@ -25,12 +22,13 @@ public class BossBall : MonoBehaviour
     public void SetState(EBossBallState state)
     {
         _state = state;
+        Image.sprite = _bossStore.GetBossBallSprite(BossType, _state);
     }
 
     public void SetBossType(EBoss bossType)
     {
         BossType = bossType;
-        Image.sprite = _menuScreenManager.BossStore.GetBossBallSprite(bossType, _state);
+        Image.sprite = _bossStore.GetBossBallSprite(bossType, _state);
     }
 
     public void OnClick()
