@@ -3,26 +3,36 @@ using UnityEngine;
 
 public enum EBoss
 {
-    Unknown,
-    Debug,
-    XmasBall,
-    XmasBell,
-    XmasCandy,
-    XmasSnowflake,
-    XmasLog,
-    XmasTree,
-    XmasGift,
-    XmasReindeer,
-    XmasSnowman,
-    XmasSanta
+    Unknown = 0,
+    Debug = 1,
+    XmasBall = 2,
+    XmasBell = 3,
+    XmasCandy = 4,
+    XmasSnowflake = 5,
+    XmasLog = 6,
+    XmasTree = 7,
+    XmasGift = 8,
+    XmasReindeer = 9,
+    XmasSnowman = 10,
+    XmasSanta = 11
 }
 
 public enum EBossBallState
 {
-    Unknown,
-    Available,
-    Beaten
+    Unknown = 0,
+    Available = 1,
+    Beaten = 2
 }
+
+[Serializable]
+public struct BossTuple
+{
+    public EBoss Boss1;
+    public EBoss Boss2;
+}
+
+[Serializable]
+public class BossRelationships : SerializableDictionary<EBoss, BossTuple> { }
 
 [Serializable]
 public class BossTypeToGameObjectDictionary : SerializableDictionary<EBoss, GameObject> { }
@@ -37,6 +47,10 @@ public class BossStore : ScriptableObject
     public BossTypeToSpriteDictionary BossTypeToBossBallAvailableSpriteDictionary;
     public BossTypeToSpriteDictionary BossTypeToBossBallBeatenSpriteDictionary;
     public Sprite BossBallUnknownSprite;
+    
+    [SerializeField] private BossRelationships _bossRelationships = null;
+
+    public BossRelationships BossRelationships => _bossRelationships;
 
     public GameObject GetBossPrefab(EBoss type)
     {

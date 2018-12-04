@@ -33,6 +33,9 @@ public class BossBall : MonoBehaviour
 
     public void OnClick()
     {
+        if (_state == EBossBallState.Unknown)
+            return;
+
         SessionData.SelectedBoss = BossType;
         BossPanel.SetActive(true);
     }
