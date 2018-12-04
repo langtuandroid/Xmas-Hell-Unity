@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1037396721540176
+--- !u!1 &2922467628172319892
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,53 +8,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 224760264746732942}
-  - component: {fileID: 222018524224578418}
-  - component: {fileID: 114121612720523236}
-  - component: {fileID: 114637669258861800}
-  - component: {fileID: 114536280507766670}
-  - component: {fileID: 95723114679684530}
+  - component: {fileID: 3140026084230434122}
+  - component: {fileID: 3141784076322104246}
+  - component: {fileID: 2961238061393430304}
+  - component: {fileID: 2961777600169745452}
+  - component: {fileID: 2962231044437268298}
+  - component: {fileID: 3015455689970077046}
   m_Layer: 0
-  m_Name: BossBallButton
+  m_Name: XmasSanta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &224760264746732942
+--- !u!224 &3140026084230434122
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2922467628172319892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.00032, y: 1.00032, z: 1.00032}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64, y: -638}
+  m_AnchoredPosition: {x: -5, y: 588.5245}
   m_SizeDelta: {x: 153, y: 153}
   m_Pivot: {x: 0.5, y: 1}
---- !u!222 &222018524224578418
+--- !u!222 &3141784076322104246
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 2922467628172319892}
   m_CullTransparentMesh: 0
---- !u!114 &114121612720523236
+--- !u!114 &2961238061393430304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 2922467628172319892}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -77,13 +77,13 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &114637669258861800
+--- !u!114 &2961777600169745452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 2922467628172319892}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -113,11 +113,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114121612720523236}
+  m_TargetGraphic: {fileID: 2961238061393430304}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114536280507766670}
+      - m_Target: {fileID: 2962231044437268298}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -130,33 +130,33 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114536280507766670
+--- !u!114 &2962231044437268298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 2922467628172319892}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35ca114a15cea3341a3423ea2009db9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossType: 2
-  Animator: {fileID: 95723114679684530}
+  BossType: 11
+  Animator: {fileID: 3015455689970077046}
   BossPanel: {fileID: 0}
-  Image: {fileID: 114121612720523236}
+  Image: {fileID: 2961238061393430304}
   _leftBossRelationship: 0
   _rightBossRelationship: 0
   _bossStore: {fileID: 11400000, guid: 949c84161f7420c409a6c785a1f8a236, type: 2}
---- !u!95 &95723114679684530
+--- !u!95 &3015455689970077046
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037396721540176}
+  m_GameObject: {fileID: 2922467628172319892}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0c6ab4ac1d79af6499d2b9894c02be65, type: 2}
