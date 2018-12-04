@@ -13,19 +13,31 @@ MonoBehaviour:
   m_Name: BossStore
   m_EditorClassIdentifier: 
   BossTypeToPrefabDictionary:
-    m_keys: 02000000030000000400000005000000
+    m_keys: 02000000030000000400000005000000080000000600000007000000090000000a0000000b000000
     m_values:
     - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
     - {fileID: 1152998548348758, guid: 828ba6d77f0ba6140b4a85ded747759b, type: 3}
     - {fileID: 1899391742972712, guid: a542a0ae333b5694dacf149b9a450789, type: 3}
     - {fileID: 1877944070540562, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
+    - {fileID: 4584292416155044786, guid: 9c2146d3dbe87cb4198682bb33683308, type: 3}
+    - {fileID: 8748619464388340487, guid: 7f46d689f5947974ca5b5bf81c564665, type: 3}
+    - {fileID: 9058199806986922262, guid: 9a33161e6973c344fa3241de56c8165c, type: 3}
+    - {fileID: 2190908006880899951, guid: 0cc8b026ab1eb3c40a8db597c3d5f6b4, type: 3}
+    - {fileID: 67929643249059801, guid: eccece40de907fa478647da11c754e37, type: 3}
+    - {fileID: 3812408868504878251, guid: f563270b2ca1e3744808dac160b70814, type: 3}
   BossTypeToBossBallAvailableSpriteDictionary:
-    m_keys: 02000000030000000400000005000000
+    m_keys: 02000000030000000400000005000000080000000600000007000000090000000a0000000b000000
     m_values:
     - {fileID: 21300000, guid: fb43b3a1cca5d584da6ab4af0a39d5c7, type: 3}
     - {fileID: 21300000, guid: 64f04e5bb23aad44db3971d0608d1e15, type: 3}
     - {fileID: 21300000, guid: d6ec6c90a85a2d34ea4642410cf7193b, type: 3}
     - {fileID: 21300000, guid: 3c3ad674a468e0642a25108b22310354, type: 3}
+    - {fileID: 21300000, guid: 6d721235cea81204bb190a505892c4c1, type: 3}
+    - {fileID: 21300000, guid: 842f83fc041d08b41b733b4e1575d5a4, type: 3}
+    - {fileID: 21300000, guid: 31e9c3c994dd2d54d87223507efaa8a6, type: 3}
+    - {fileID: 21300000, guid: 65d8e40123c96954ea0e263c9645afe7, type: 3}
+    - {fileID: 21300000, guid: 3d1ed16f4bdd91640992653b06ddf700, type: 3}
+    - {fileID: 21300000, guid: 4234aa819bcb6324db7dd2fd43838889, type: 3}
   BossTypeToBossBallBeatenSpriteDictionary:
     m_keys: 02000000030000000400000005000000
     m_values:
