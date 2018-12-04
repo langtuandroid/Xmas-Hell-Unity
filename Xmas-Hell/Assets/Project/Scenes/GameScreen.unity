@@ -937,7 +937,7 @@ MonoBehaviour:
   _difficulty: 0.5
   _patternFilesFolder: Patterns
   _playerTransform: {fileID: 90088562}
-  _maxBulletsAmount: 10000
+  _maxBulletsAmount: 2500
   _bulletInitialSize: 2
   _bulletsWidthBoundary: {x: -0.25, y: 1.25}
   _bulletsHeightBoundary: {x: -0.25, y: 1.25}
@@ -1081,26 +1081,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: Behaviours.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: _behaviours.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: Behaviours.Array.data[0]
-      value: 
-      objectReference: {fileID: 741044890}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: _behaviours.Array.data[0]
-      value: 
-      objectReference: {fileID: 1284236105}
     - target: {fileID: 4143409632579208, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1133,6 +1113,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: _behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: Behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 741044890}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: _behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 1284236105}
     - target: {fileID: 114497844811400206, guid: 088ae0f11e482d64a96a13bffa936192,
         type: 3}
       propertyPath: InitialBehaviourLife
@@ -3511,26 +3511,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: XmasSnowflake (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: Behaviours.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: _behaviours.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: Behaviours.Array.data[0]
-      value: 
-      objectReference: {fileID: 2071002972}
-    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
-        type: 3}
-      propertyPath: _behaviours.Array.data[0]
-      value: 
-      objectReference: {fileID: 2071002971}
     - target: {fileID: 4143409632579208, guid: 088ae0f11e482d64a96a13bffa936192, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3563,6 +3543,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: _behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: Behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 2071002972}
+    - target: {fileID: 114366224273595384, guid: 088ae0f11e482d64a96a13bffa936192,
+        type: 3}
+      propertyPath: _behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 2071002971}
     - target: {fileID: 114497844811400206, guid: 088ae0f11e482d64a96a13bffa936192,
         type: 3}
       propertyPath: InitialBehaviourLife
