@@ -24,8 +24,8 @@ namespace BossBehaviourState
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            if (_currentAnimator.GetBool("ReverseExtend") && 
-                _currentAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0 && 
+            if (_currentAnimator.GetBool("ReverseExtend") &&
+                _currentAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0 &&
                 !_currentAnimator.IsInTransition(0))
             {
                 _currentAnimator.SetTrigger("ExtendFinished");
@@ -41,8 +41,15 @@ namespace BossBehaviourState
 
             if (collision.gameObject.tag == "Wall")
             {
-                _currentAnimator.SetTrigger("OnWallCollision");
+                var contact = collision.GetContact(0);
+                _currentAnimator.SetFloat("CollisionContactPointX", contact.point.x);
+                _currentAnimator.SetFloat("CollisionContactPointY", contact.point.y);
+                _currentAnimator.SetFloat("CollisionContactNormalX", contact.normal.x);
+                _currentAnimator.SetFloat("CollisionContactNormalY", contact.normal.y);
+
                 _currentAnimator.SetBool("ReverseExtend", true);
+
+                _currentAnimator.SetTrigger("OnWallCollision");
             }
         }
 

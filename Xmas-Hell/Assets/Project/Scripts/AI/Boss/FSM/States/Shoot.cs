@@ -5,16 +5,21 @@ namespace BossBehaviourState
     public class Shoot : BossStateMachineBehaviour
     {
         public string PatternName = "default";
+        public bool ShootToCollisionContactPoint = false;
 
         [Header("Frequency")]
         public float ShootFrequency = 0f;
+
+        private Animator _currentAnimator;
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
+            _currentAnimator = animator;
+
             if (ShootFrequency == 0)
-                Boss.ShootPattern(PatternName);
+                ShootPattern();
             else
                 Boss.StartShootTimer(ShootFrequency, ShootTimerFinished);
         }
@@ -29,7 +34,29 @@ namespace BossBehaviourState
 
         private void ShootTimerFinished()
         {
-            Boss.ShootPattern(PatternName);
+            ShootPattern();
+        }
+
+        private void ShootPattern()
+        {
+            if (ShootToCollisionContactPoint)
+            {
+                Vector2 position = new Vector2(
+                    _currentAnimator.GetFloat("CollisionContactPointX"),
+                    _currentAnimator.GetFloat("CollisionContactPointY")
+                );
+
+                float direction = MathHelper.DirectionToAngle(new Vector2(
+                    _currentAnimator.GetFloat("CollisionContactNormalX"),
+                    _currentAnimator.GetFloat("CollisionContactNormalY")
+                ));
+
+                Boss.ShootPattern(PatternName, position, direction);
+            }
+            else
+            {
+                Boss.ShootPattern(PatternName);
+            }
         }
     }
 }

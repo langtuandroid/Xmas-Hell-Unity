@@ -9,7 +9,7 @@
           <bullet>
             <direction type="relative">($rand * 50) - 25</direction>
             <speed>3 + $rand * 3</speed>
-            <sprite>2</sprite>
+            <sprite>5</sprite>
             <color>
               <red>$rand</red>
               <green>$rand</green>
