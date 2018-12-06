@@ -181,6 +181,11 @@ public class GameManager : MonoBehaviour
     {
         _gameIsFinished = true;
         _gameIsWon = win;
+
+        if (win)
+            SaveSystem.BossWon(Boss.BossType, _gameTimer);
+        else
+            SaveSystem.BossLost(Boss.BossType, _gameTimer);
     }
 
     private void Update()
