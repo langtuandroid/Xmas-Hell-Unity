@@ -146,8 +146,8 @@ MonoBehaviour:
   Animator: {fileID: 3342901902487050151}
   BossPanel: {fileID: 0}
   Image: {fileID: 3361160021799329265}
-  _leftBossRelationship: 0
-  _rightBossRelationship: 0
+  _leftBossRelationship: 6
+  _rightBossRelationship: 7
   _bossStore: {fileID: 11400000, guid: 949c84161f7420c409a6c785a1f8a236, type: 2}
 --- !u!95 &3342901902487050151
 Animator:

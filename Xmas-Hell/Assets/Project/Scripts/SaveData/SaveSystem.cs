@@ -4,9 +4,8 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static PlayerData PlayerData;
-
     private const string SAVE_NAME = "XmasSave";
+    private static PlayerData _playerData;
     private static JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings();
 
     [RuntimeInitializeOnLoadMethod]
@@ -19,7 +18,7 @@ public static class SaveSystem
     {
         InitializeJsonSerializerSettings();
 
-        string stringPlayerData = JsonConvert.SerializeObject(PlayerData, _jsonSerializerSettings);
+        string stringPlayerData = JsonConvert.SerializeObject(_playerData, _jsonSerializerSettings);
 
         // Local save
         PlayerPrefs.SetString(SAVE_NAME, stringPlayerData);
@@ -35,18 +34,18 @@ public static class SaveSystem
 
         // First time
         if (playerData == null)
-        {
             playerData = new PlayerData();
-        }
 
-        PlayerData = playerData;
+        _playerData = playerData;
+
+        Save();
     }
 
     #region Boss related methods
 
     public static BossData GetBossData(EBoss bossType)
     {
-        var boss = PlayerData.BossesData.FirstOrDefault(b => b.Type == bossType);
+        var boss = _playerData.BossesData.FirstOrDefault(b => b.Type == bossType);
 
         if (boss == null)
         {

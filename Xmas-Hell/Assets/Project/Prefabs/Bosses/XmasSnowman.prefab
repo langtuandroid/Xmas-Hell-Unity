@@ -82,7 +82,6 @@ MonoBehaviour:
   Speed: 1
   Direction: {x: 0, y: 0}
   Acceleration: {x: 1, y: 1}
-  AngularVelocity: 5
   Invincible: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -92,12 +91,18 @@ MonoBehaviour:
   TargetingPosition: 0
   TargetingAngle: 0
   DamageBlinkTime: 0.2
-  Behaviours:
-  - {fileID: 2627912009781005909}
-  BaseAnimatorController: {fileID: 9100000, guid: 0384bd9a095fd1949be2b473265b03d1,
-    type: 2}
-  BossLifeBarPrefab: {fileID: 1210734321867590, guid: 3a3cc911625df8743a05bd155027cac0,
-    type: 3}
+  BossType: 10
+  _behaviours: []
+  _baseAnimatorController: {fileID: 0}
+  _animator: {fileID: 0}
+  _bossLifeBarPrefab: {fileID: 0}
+  _bulletEmitters: []
+  _deathFx: {fileID: 0}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2627912009781005909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca48f17a8ecb28a4a9a2c3eab71622ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationRoot: {fileID: 68379975817204835}
   FSM: {fileID: 9100000, guid: 3247172b65cf8424dba531faf6eb54db, type: 2}
   InitialBehaviourLife: 500
   Boss: {fileID: 1545416056588957448}

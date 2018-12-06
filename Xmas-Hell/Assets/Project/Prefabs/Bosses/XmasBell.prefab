@@ -348,6 +348,7 @@ MonoBehaviour:
   TargetingPosition: 0
   TargetingAngle: 0
   DamageBlinkTime: 0.02
+  BossType: 3
   _behaviours:
   - {fileID: 114873806180799666}
   - {fileID: 114474691010506998}

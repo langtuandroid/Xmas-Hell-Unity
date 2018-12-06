@@ -10,6 +10,8 @@ public abstract class AbstractBoss : AbstractEntity
 {
     #region Serialize fields
 
+    public EBoss BossType;
+
     [SerializeField] private List<AbstractBossBehaviour> _behaviours;
     [SerializeField] private RuntimeAnimatorController _baseAnimatorController;
     [SerializeField] private Animator _animator;
@@ -29,8 +31,6 @@ public abstract class AbstractBoss : AbstractEntity
     // Events
     public CollisionEvent OnCollision = new CollisionEvent();
     public UnityEvent OnDeath = new UnityEvent();
-
-    public readonly EBoss BossType;
 
     protected int CurrentBehaviourIndex;
     protected int PreviousBehaviourIndex;
