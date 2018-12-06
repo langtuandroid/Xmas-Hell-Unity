@@ -247,6 +247,8 @@ public abstract class AbstractBoss : AbstractEntity
             _behaviours[PreviousBehaviourIndex].StopBehaviour();
 
         // TODO: Trigger signal to clear all bullets
+        _bulletManager.Clear();
+
         // TODO: Make sure we restore the initial boss state for transition
         RestoreDefaultState();
 
