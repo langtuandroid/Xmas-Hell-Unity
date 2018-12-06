@@ -5,7 +5,11 @@ namespace BossBehaviourState
     public class Shoot : BossStateMachineBehaviour
     {
         public string PatternName = "default";
+
+        [Header("Collision related data")]
         public bool ShootToCollisionContactPoint = false;
+        public bool UseCollisionContactNormal = false;
+        public Vector2 ShootToCollisionContactNormalModifier = Vector2.one;
 
         [Header("Frequency")]
         public float ShootFrequency = 0f;
@@ -46,12 +50,19 @@ namespace BossBehaviourState
                     _currentAnimator.GetFloat("CollisionContactPointY")
                 );
 
-                float direction = MathHelper.DirectionToAngle(new Vector2(
-                    _currentAnimator.GetFloat("CollisionContactNormalX"),
-                    _currentAnimator.GetFloat("CollisionContactNormalY")
-                ));
+                if (UseCollisionContactNormal)
+                {
+                    float direction = MathHelper.DirectionToAngle(new Vector2(
+                        _currentAnimator.GetFloat("CollisionContactNormalX"),
+                        _currentAnimator.GetFloat("CollisionContactNormalY")
+                    ) * ShootToCollisionContactNormalModifier);
 
-                Boss.ShootPattern(PatternName, position, direction);
+                    Boss.ShootPattern(PatternName, position, direction);
+                }
+                else
+                {
+                    Boss.ShootPattern(PatternName, position);
+                }
             }
             else
             {
