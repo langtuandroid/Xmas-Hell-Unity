@@ -16,6 +16,12 @@ public class BossBall : MonoBehaviour
     [SerializeField] private BossStore _bossStore;
 
     private EBossBallState _state = EBossBallState.Unknown;
+    private MenuScreenManager _menuScreenManager;
+
+    private void Awake()
+    {
+        _menuScreenManager = FindObjectOfType<MenuScreenManager>();
+    }
 
     public void Start()
     {
@@ -72,6 +78,6 @@ public class BossBall : MonoBehaviour
             return;
 
         SessionData.SelectedBoss = BossType;
-        BossPanel.SetActive(true);
+        _menuScreenManager.ShowBossPanel();
     }
 }

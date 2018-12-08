@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class MenuScreenManager : ScreenManager
@@ -6,6 +7,9 @@ public class MenuScreenManager : ScreenManager
     public Animator MenuAnimator;
     public PlayerFrontAnimator PlayerFrontAnimator;
     public BossStore BossStore;
+
+
+    [SerializeField] private BossPanel _bossPanel;
 
     public void Start()
     {
@@ -42,5 +46,11 @@ public class MenuScreenManager : ScreenManager
 
             MenuAnimator.SetFloat("SpeedMultiplier", 0f);
         }
+    }
+
+    [UsedImplicitly]
+    public void ShowBossPanel()
+    {
+        _bossPanel.gameObject.SetActive(true);
     }
 }
