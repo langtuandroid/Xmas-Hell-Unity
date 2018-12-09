@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum EBoss
 {
@@ -25,16 +26,6 @@ public enum EBossBallState
 }
 
 [Serializable]
-public struct BossTuple
-{
-    public EBoss Boss1;
-    public EBoss Boss2;
-}
-
-[Serializable]
-public class BossRelationships : SerializableDictionary<EBoss, BossTuple> { }
-
-[Serializable]
 public class BossTypeToGameObjectDictionary : SerializableDictionary<EBoss, GameObject> { }
 
 [Serializable]
@@ -43,14 +34,17 @@ public class BossTypeToSpriteDictionary : SerializableDictionary<EBoss, Sprite> 
 [CreateAssetMenu(fileName = "BossStore", menuName = "GameData/BossStore", order = 1)]
 public class BossStore : ScriptableObject
 {
-    public BossTypeToGameObjectDictionary BossTypeToPrefabDictionary;
-    public BossTypeToSpriteDictionary BossTypeToBossBallAvailableSpriteDictionary;
-    public BossTypeToSpriteDictionary BossTypeToBossBallBeatenSpriteDictionary;
-    public Sprite BossBallUnknownSprite;
-    
-    [SerializeField] private BossRelationships _bossRelationships = null;
+    [SerializeField] private BossTypeToGameObjectDictionary _bossTypeToPrefabDictionary;
+    [SerializeField] private BossTypeToSpriteDictionary _bossTypeToBossBallAvailableSpriteDictionary;
+    [SerializeField] private BossTypeToSpriteDictionary _bossTypeToBossBallBeatenSpriteDictionary;
+    [SerializeField] private Sprite _bossBallUnknownSprite;
+    [SerializeField] private BossTypeToSpriteDictionary _bossTypeToBossDeathIconSpriteDictionary;
 
-    public BossRelationships BossRelationships => _bossRelationships;
+    public BossTypeToGameObjectDictionary BossTypeToPrefabDictionary => _bossTypeToPrefabDictionary;
+    public BossTypeToSpriteDictionary BossTypeToBossBallAvailableSpriteDictionary => _bossTypeToBossBallAvailableSpriteDictionary;
+    public BossTypeToSpriteDictionary BossTypeToBossBallBeatenSpriteDictionary => _bossTypeToBossBallBeatenSpriteDictionary;
+    public BossTypeToSpriteDictionary BossTypeToBossDeathIconSpriteDictionary => _bossTypeToBossDeathIconSpriteDictionary;
+    public Sprite BossBallUnknownSprite => _bossBallUnknownSprite;
 
     public GameObject GetBossPrefab(EBoss type)
     {

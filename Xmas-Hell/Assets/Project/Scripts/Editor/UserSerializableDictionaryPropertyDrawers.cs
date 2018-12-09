@@ -11,6 +11,3 @@ public class ScreenCornerGameObjectSerializableDictionaryPropertyDrawer : Serial
 
 [CustomPropertyDrawer(typeof(StringToFloatDictionary))]
 public class StringToFloatDictionarySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
-
-[CustomPropertyDrawer(typeof(BossRelationships))]
-public class BossRelationshipsPropertyDrawer : SerializableDictionaryPropertyDrawer { }

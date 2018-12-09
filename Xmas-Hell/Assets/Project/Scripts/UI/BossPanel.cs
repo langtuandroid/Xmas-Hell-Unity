@@ -9,12 +9,16 @@ public class BossPanel : MonoBehaviour
     #region Serialize fields
 
     [Header("UI references")]
-    [SerializeField] private Image _bossBallImage;
+    [SerializeField] private Image _bossBallIcon;
     [SerializeField] private TextMeshProUGUI _bossNameText;
     [SerializeField] private TextMeshProUGUI _bestTimeText;
     [SerializeField] private TextMeshProUGUI _playTimeText;
     [SerializeField] private TextMeshProUGUI _playerDeathsText;
     [SerializeField] private TextMeshProUGUI _bossDeathsText;
+    [SerializeField] private Image _bossDeathsIcon;
+
+    [Header("Assets")]
+    [SerializeField] private BossStore _bossStore;
 
     #endregion
 
@@ -30,7 +34,7 @@ public class BossPanel : MonoBehaviour
         if (_bossNameText)
             _bossNameText.text = SessionData.SelectedBoss.ToString();
 
-        _bossBallImage.sprite = _menuScreenManager.BossStore.GetBossBallSprite(SessionData.SelectedBoss, EBossBallState.Available);
+        _bossBallIcon.sprite = _menuScreenManager.BossStore.GetBossBallSprite(SessionData.SelectedBoss, EBossBallState.Available);
 
         // Get boss data from player save
         var bossData = SaveSystem.GetBossData(bossType);
@@ -46,6 +50,8 @@ public class BossPanel : MonoBehaviour
 
         _playerDeathsText.text = bossData.LoseCounter.ToString();
         _bossDeathsText.text = bossData.WinCounter.ToString();
+
+        _bossDeathsIcon.sprite = _bossStore.BossTypeToBossDeathIconSpriteDictionary[bossType];
     }
 
     [UsedImplicitly]

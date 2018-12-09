@@ -44,13 +44,12 @@ public class BossBall : MonoBehaviour
         {
             if (_leftBossRelationship == EBoss.Unknown && _rightBossRelationship == EBoss.Unknown)
                 bossState = EBossBallState.Available;
-            else if (_bossStore.BossRelationships.ContainsKey(bossData.Type))
+            else
             {
-                var bossRelationShip = _bossStore.BossRelationships[bossData.Type];
-                var boss1Data = SaveSystem.GetBossData(bossRelationShip.Boss1);
-                var boss2Data = SaveSystem.GetBossData(bossRelationShip.Boss2);
+                var lestBossData = SaveSystem.GetBossData(_leftBossRelationship);
+                var rightBossData = SaveSystem.GetBossData(_rightBossRelationship);
 
-                if (boss1Data.WinCounter > 0 && boss2Data.WinCounter > 0)
+                if (lestBossData.WinCounter > 0 && rightBossData.WinCounter > 0)
                 {
                     bossState = EBossBallState.Available;
                 }

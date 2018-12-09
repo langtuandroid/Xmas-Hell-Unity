@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae7887cc5b5e914bb51480d398314e4, type: 3}
   m_Name: BossStore
   m_EditorClassIdentifier: 
-  BossTypeToPrefabDictionary:
+  _bossTypeToPrefabDictionary:
     m_keys: 02000000030000000400000005000000080000000600000007000000090000000a0000000b000000
     m_values:
     - {fileID: 1034342319130522, guid: 39a0bace6994aa6489e7ec32c6339c32, type: 3}
@@ -25,7 +25,7 @@ MonoBehaviour:
     - {fileID: 2190908006880899951, guid: 0cc8b026ab1eb3c40a8db597c3d5f6b4, type: 3}
     - {fileID: 67929643249059801, guid: eccece40de907fa478647da11c754e37, type: 3}
     - {fileID: 3812408868504878251, guid: f563270b2ca1e3744808dac160b70814, type: 3}
-  BossTypeToBossBallAvailableSpriteDictionary:
+  _bossTypeToBossBallAvailableSpriteDictionary:
     m_keys: 02000000030000000400000005000000080000000600000007000000090000000a0000000b000000
     m_values:
     - {fileID: 21300000, guid: fb43b3a1cca5d584da6ab4af0a39d5c7, type: 3}
@@ -38,7 +38,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 65d8e40123c96954ea0e263c9645afe7, type: 3}
     - {fileID: 21300000, guid: 3d1ed16f4bdd91640992653b06ddf700, type: 3}
     - {fileID: 21300000, guid: 4234aa819bcb6324db7dd2fd43838889, type: 3}
-  BossTypeToBossBallBeatenSpriteDictionary:
+  _bossTypeToBossBallBeatenSpriteDictionary:
     m_keys: 02000000030000000400000005000000
     m_values:
     - {fileID: 21300000, guid: f031eff823299904884ad3f6d35e884f, type: 3}
@@ -47,8 +47,16 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 55fe9dcb33bb44a49870f8c5eb4d6985, type: 3}
   BossBallUnknownSprite: {fileID: 21300000, guid: bdd8bc1d95a79c94897965a9c3e20d9f,
     type: 3}
-  _bossRelationships:
-    m_keys: 07000000
+  _bossTypeToBossDeathIconSpriteDictionary:
+    m_keys: 02000000030000000400000005000000060000000700000008000000090000000a0000000b000000
     m_values:
-    - Boss1: 2
-      Boss2: 5
+    - {fileID: 21300000, guid: eb18724e3328eae46bb2fd0f43bb928f, type: 3}
+    - {fileID: 21300000, guid: e60a533c03ed56843a2d35afe2121c7f, type: 3}
+    - {fileID: 21300000, guid: f1dafe76d8475d84784e134baed4a6be, type: 3}
+    - {fileID: 21300000, guid: f70c31b43031d694881e894767a36d61, type: 3}
+    - {fileID: 21300000, guid: a7a61e85243ce194caf9731bdb0b999d, type: 3}
+    - {fileID: 21300000, guid: 57e680432c42be04083904c05f79d95d, type: 3}
+    - {fileID: 21300000, guid: 6abfd30026ba6aa438e7fbaa4fc05334, type: 3}
+    - {fileID: 21300000, guid: 3ee11cdbc1de86c4e8fd729c1d540cc4, type: 3}
+    - {fileID: 21300000, guid: 0f4c9b1a34e33d446a58900ae02c4f78, type: 3}
+    - {fileID: 21300000, guid: 113f7d5a0ce832841ba8ad660ea370a8, type: 3}

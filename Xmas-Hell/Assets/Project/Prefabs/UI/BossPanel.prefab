@@ -1248,12 +1248,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4f81293bcd08741844755d7d1ae978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bossBallImage: {fileID: 6229560184575410805}
+  _bossBallIcon: {fileID: 6229560184575410805}
   _bossNameText: {fileID: 0}
   _bestTimeText: {fileID: 4055637272059315456}
   _playTimeText: {fileID: 719186751892543219}
   _playerDeathsText: {fileID: 1886016416072434700}
   _bossDeathsText: {fileID: 4195826733302096110}
+  _bossDeathsIcon: {fileID: 2497322111693899072}
+  _bossStore: {fileID: 11400000, guid: 949c84161f7420c409a6c785a1f8a236, type: 2}
 --- !u!1 &6229560184575410807
 GameObject:
   m_ObjectHideFlags: 0
