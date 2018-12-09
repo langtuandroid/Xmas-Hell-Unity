@@ -42,24 +42,24 @@ public class MenuDebugOverlay : MonoBehaviour
     [UsedImplicitly]
     public void OnWinXmasBallButtonClicked()
     {
-        SaveSystem.BossWon(EBoss.XmasBall, 320f);
+        SaveSystem.BossEnd(EBoss.XmasBall, true, 320f);
     }
 
     [UsedImplicitly]
     public void OnWinXmasSnowflakeButtonClicked()
     {
-        SaveSystem.BossWon(EBoss.XmasSnowflake, 320f);
+        SaveSystem.BossEnd(EBoss.XmasSnowflake, true, 320f);
     }
 
     [UsedImplicitly]
     public void OnWinBossButtonClicked(EBoss bossType)
     {
-        SaveSystem.BossWon(bossType, 320f);
+        SaveSystem.BossEnd(bossType, true, 320f);
     }
 
     [UsedImplicitly]
     public void OnLoseXmasBallButtonClicked()
     {
-        SaveSystem.BossLost(EBoss.XmasBall, 53f);
+        SaveSystem.BossEnd(EBoss.XmasBall, false, 53f);
     }
 }

@@ -78,6 +78,6 @@ public class BossBall : MonoBehaviour
             return;
 
         SessionData.SelectedBoss = BossType;
-        _menuScreenManager.ShowBossPanel();
+        _menuScreenManager.ShowBossPanel(BossType);
     }
 }

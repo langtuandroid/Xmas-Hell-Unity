@@ -55,36 +55,23 @@ public static class SaveSystem
         return boss;
     }
 
-    public static void BossWon(EBoss bossType, float time)
+    public static void BossEnd(EBoss bossType, bool win, float time)
     {
         var boss = GetBossData(bossType);
 
         if (boss != null)
         {
-            boss.WinCounter++;
-            boss.TotalTime += time;
+            boss.TotalTime += Mathf.Ceil(time); // seconds
 
-            if (boss.BestTime > time)
+            if (win)
             {
-                boss.BestTime = time;
+                boss.WinCounter++;
+
+                if (boss.BestTime == 0 || boss.BestTime > time)
+                    boss.BestTime = time * 1000f; // milliseconds
             }
-
-            Save();
-        }
-        else
-        {
-            Debug.LogError("No boss found with this name in the player data: " + bossType);
-        }
-    }
-
-    public static void BossLost(EBoss bossType, float time)
-    {
-        var boss = GetBossData(bossType);
-
-        if (boss != null)
-        {
-            boss.LoseCounter++;
-            boss.TotalTime += time;
+            else
+                boss.LoseCounter++;
 
             Save();
         }

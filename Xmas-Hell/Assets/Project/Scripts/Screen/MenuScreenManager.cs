@@ -49,8 +49,9 @@ public class MenuScreenManager : ScreenManager
     }
 
     [UsedImplicitly]
-    public void ShowBossPanel()
+    public void ShowBossPanel(EBoss bossType)
     {
         _bossPanel.gameObject.SetActive(true);
+        _bossPanel.Initialize(bossType);
     }
 }
