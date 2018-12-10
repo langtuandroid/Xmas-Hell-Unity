@@ -40,7 +40,15 @@ public class BossPanel : MonoBehaviour
         var bossData = SaveSystem.GetBossData(bossType);
 
         if (bossData.BestTime > 0 && bossData.WinCounter > 0)
+        {
+            _bestTimeText.gameObject.transform.parent.gameObject.SetActive(true);
             _bestTimeText.text = TimeSpan.FromMilliseconds(bossData.BestTime).ToString("mm\\:ss\\.fff");
+        }
+        else
+        {
+            _bestTimeText.gameObject.transform.parent.gameObject.SetActive(false);
+            _bestTimeText.text = "--:--.---";
+        }
 
         var totalTime = TimeSpan.FromSeconds(bossData.TotalTime);
         if (totalTime.TotalMinutes >= 100)
