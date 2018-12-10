@@ -11,3 +11,6 @@ public class ScreenCornerGameObjectSerializableDictionaryPropertyDrawer : Serial
 
 [CustomPropertyDrawer(typeof(StringToFloatDictionary))]
 public class StringToFloatDictionarySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
+
+[CustomPropertyDrawer(typeof(SoundTypeToAudioSourceDictionary))]
+public class SoundTypeToAudioSourceDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }
