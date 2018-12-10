@@ -45,7 +45,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d91362730799bec449974d08cf1c57c0, type: 3}
     - {fileID: 21300000, guid: 1887fcb39da8f714e84700e4e3b4c8d7, type: 3}
     - {fileID: 21300000, guid: 55fe9dcb33bb44a49870f8c5eb4d6985, type: 3}
-  BossBallUnknownSprite: {fileID: 21300000, guid: bdd8bc1d95a79c94897965a9c3e20d9f,
+  _bossBallUnknownSprite: {fileID: 21300000, guid: bdd8bc1d95a79c94897965a9c3e20d9f,
     type: 3}
   _bossTypeToBossDeathIconSpriteDictionary:
     m_keys: 02000000030000000400000005000000060000000700000008000000090000000a0000000b000000
