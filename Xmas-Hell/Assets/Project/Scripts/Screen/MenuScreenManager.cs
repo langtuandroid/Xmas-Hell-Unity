@@ -37,6 +37,11 @@ public class MenuScreenManager : ScreenManager
             MenuAnimator.Play("GoToBossSelection");
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SoundManager.Instance.PlaySound(ESoundType.SELECT);
+        }
+
         // Make sure we stop the animation when we played it entirely
         if ((MenuAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1 && MenuAnimator.GetFloat("SpeedMultiplier") > 0) ||
             (MenuAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0 && MenuAnimator.GetFloat("SpeedMultiplier") < 0))

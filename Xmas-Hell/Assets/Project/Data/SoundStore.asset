@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SoundStore
   m_EditorClassIdentifier: 
   _sounds:
-    m_keys: 
-    m_values: []
+  - soundType: 1
+    audioClips:
+    - {fileID: 8300000, guid: e36eb5c28d935fd46a5b996a00ca76dd, type: 3}
