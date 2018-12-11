@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace BossBehaviourState
 {
@@ -10,7 +9,6 @@ namespace BossBehaviourState
 
         private Transform _branch1Group;
         private Transform _branch2Group;
-        private List<XmasSnowflakeBranch> _branches = new List<XmasSnowflakeBranch>(8);
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -34,7 +32,7 @@ namespace BossBehaviourState
                 snowflakeBranch.Initialize(Boss);
                 snowflakeBranch.SetTarget(Boss.Player.transform);
 
-                _branches.Add(snowflakeBranch);
+                ((XmasSnowflakeBoss)Boss).AddBranch(snowflakeBranch);
             }
 
             _branch1Group.gameObject.SetActive(false);
@@ -48,7 +46,7 @@ namespace BossBehaviourState
                 snowflakeBranch.Initialize(Boss);
                 snowflakeBranch.SetTarget(Boss.Player.transform);
 
-                _branches.Add(snowflakeBranch);
+                ((XmasSnowflakeBoss)Boss).AddBranch(snowflakeBranch);
             }
 
             _branch2Group.gameObject.SetActive(false);
@@ -58,32 +56,27 @@ namespace BossBehaviourState
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
 
-            for (int i = 0; i < _branches.Count; i++)
-            {
-                if (_branches[i] != null)
-                {
-                    Destroy(_branches[i].gameObject);
-                }
-            }
+            ((XmasSnowflakeBoss)Boss).DestroyBranches();
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            for (int i = 0; i < _branches.Count; i++)
+            var branches = ((XmasSnowflakeBoss)Boss).Branches;
+
+            for (int i = 0; i < branches.Count; i++)
             {
-                var branch = _branches[i];
+                var branch = branches[i];
 
                 if (!branch.IsAlive)
                 {
-                    _branches.Remove(branch);
-                    // TODO: Trigger pattern
+                    branches.Remove(branch);
                     Destroy(branch.gameObject);
                 }
             }
 
-            if (_branches.Count == 0)
+            if (branches.Count == 0)
                 animator.SetTrigger("RespawnBranches");
         }
     }

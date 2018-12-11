@@ -74,6 +74,9 @@ public class XmasSnowflakeBranch : AbstractEntity
 
     protected override void FixedUpdate()
     {
+        if (_pause)
+            return;
+
         base.FixedUpdate();
 
         if (!_rushing)
