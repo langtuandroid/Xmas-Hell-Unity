@@ -61,6 +61,9 @@ TagManager:
   - name: Front
     uniqueID: 1730042713
     locked: 0
+  - name: PlayerFront
+    uniqueID: 1899459157
+    locked: 0
   - name: ScreenTransition
     uniqueID: 2696180817
     locked: 0
